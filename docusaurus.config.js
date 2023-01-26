@@ -6,18 +6,19 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
-  url: "https://your-docusaurus-test-site.com",
-  baseUrl: "/",
+  title: "Automat",
+  tagline: "Documentation for Automat data sources and endpoints.",
+  url: "https://robokopu24.github.io",
+  baseUrl: "/api-docs/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
+  trailingSlash: false,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "RobokopU24", // Usually your GitHub org/user name.
+  projectName: "api-docs", // Usually your repo name.
 
   presets: [
     [
@@ -56,26 +57,19 @@ const config = {
         }
       },
       navbar: {
-        title: "My Site",
+        title: "Robokop U24",
         logo: {
           alt: "My Site Logo",
-          src: "img/logo.svg"
+          src: "img/police-officer.png"
         },
         items: [
+          // {
+          //   label: "Automat",
+          //   position: "left",
+          //   to: "/docs/category/automat"
+          // },
           {
-            type: "doc",
-            docId: "intro",
-            position: "left",
-            label: "Tutorial"
-          },
-          { to: "/blog", label: "Blog", position: "left" },
-          {
-            label: "Petstore API",
-            position: "left",
-            to: "/docs/category/petstore-api"
-          },
-          {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/RobokopU24/api-docs",
             label: "GitHub",
             position: "right"
           }
@@ -88,25 +82,25 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Tutorial",
-                to: "/docs/intro"
+                label: "Automat API",
+                to: "/docs/category/automat"
               }
             ]
           },
           {
-            title: "Community",
+            title: "Tools",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus"
+                label: "Robokop Question Builder",
+                href: "https://robokop.renci.org/question"
               },
               {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus"
+                label: "Robokop Answer Explorer",
+                href: "https://robokop.renci.org/answer"
               },
               {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus"
+                label: "ExEmPLAR",
+                href: "https://www.exemplar.mml.unc.edu/"
               }
             ]
           },
@@ -114,17 +108,13 @@ const config = {
             title: "More",
             items: [
               {
-                label: "Blog",
-                to: "/blog"
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus"
+                label: "API Documentation GitHub",
+                href: "https://github.com/robokopu24/api-docs"
               }
             ]
           }
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`
+        copyright: `Copyright © ${new Date().getFullYear()}`
       },
       prism: {
         theme: lightCodeTheme,
@@ -140,18 +130,19 @@ const config = {
         id: "openapi",
         docsPluginId: "classic",
         config: {
-          petstore: {
-            specPath: "examples/petstore.yaml",
-            outputDir: "docs/petstore",
-            downloadUrl:
-              "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml",
+          automat: {
+            // specPath: "https://automat.renci.org/openapi.yml",
+            specPath: "api/openapi.json",
+            outputDir: "docs/automat",
+            // downloadUrl:
+            //   "https://automat.renci.org/openapi.yml",
             sidebarOptions: {
               groupPathsBy: "tag",
               categoryLinkSource: "tag"
             }
-          }
+          },
         }
-      }
+      },
     ]
   ],
 
