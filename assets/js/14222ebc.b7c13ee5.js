@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[6918],{12198:t=>{t.exports=JSON.parse('{"title":"Automat","description":"Automat API docs.","slug":"/category/automat","permalink":"/api-docs/docs/category/automat","navigation":{"next":{"title":"biolink","permalink":"/api-docs/docs/automat/biolink"}}}')}}]);
