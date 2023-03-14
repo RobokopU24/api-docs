@@ -32,20 +32,20 @@ const config = {
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
           docLayoutComponent: "@theme/DocPage",
-          docItemComponent: "@theme/ApiItem" // Derived from docusaurus-theme-openapi
+          docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css")
-        }
-      })
-    ]
+          customCss: require.resolve("./src/css/custom.css"),
+        },
+      }),
+    ],
   ],
 
   themeConfig:
@@ -53,14 +53,14 @@ const config = {
     ({
       docs: {
         sidebar: {
-          hideable: true
-        }
+          hideable: true,
+        },
       },
       navbar: {
-        title: "Robokop U24",
+        title: "Automat API Docs",
         logo: {
-          alt: "My Site Logo",
-          src: "img/police-officer.png"
+          alt: "ROBOKOP",
+          src: "img/logo.png",
         },
         items: [
           // {
@@ -71,9 +71,9 @@ const config = {
           {
             href: "https://github.com/RobokopU24/api-docs",
             label: "GitHub",
-            position: "right"
-          }
-        ]
+            position: "right",
+          },
+        ],
       },
       footer: {
         style: "dark",
@@ -83,44 +83,44 @@ const config = {
             items: [
               {
                 label: "Automat API",
-                to: "/docs/category/automat"
-              }
-            ]
+                to: "/docs/category/automat",
+              },
+            ],
           },
           {
             title: "Tools",
             items: [
               {
                 label: "Robokop Question Builder",
-                href: "https://robokop.renci.org/question"
+                href: "https://robokop.renci.org/question",
               },
               {
                 label: "Robokop Answer Explorer",
-                href: "https://robokop.renci.org/answer"
+                href: "https://robokop.renci.org/answer",
               },
               {
                 label: "ExEmPLAR",
-                href: "https://www.exemplar.mml.unc.edu/"
-              }
-            ]
+                href: "https://www.exemplar.mml.unc.edu/",
+              },
+            ],
           },
           {
             title: "More",
             items: [
               {
                 label: "API Documentation GitHub",
-                href: "https://github.com/robokopu24/api-docs"
-              }
-            ]
-          }
+                href: "https://github.com/robokopu24/api-docs",
+              },
+            ],
+          },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()}`
+        copyright: `Copyright © ${new Date().getFullYear()}`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ["ruby", "csharp", "php"]
-      }
+        additionalLanguages: ["ruby", "csharp", "php"],
+      },
     }),
 
   plugins: [
@@ -138,15 +138,15 @@ const config = {
             //   "https://automat.renci.org/openapi.yml",
             sidebarOptions: {
               groupPathsBy: "tag",
-              categoryLinkSource: "tag"
-            }
+              categoryLinkSource: "tag",
+            },
           },
-        }
+        },
       },
-    ]
+    ],
   ],
 
-  themes: ["docusaurus-theme-openapi-docs"]
+  themes: ["docusaurus-theme-openapi-docs"],
 };
 
 module.exports = config;
