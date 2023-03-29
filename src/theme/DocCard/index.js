@@ -56,7 +56,7 @@ const SOURCES = new Set([
   "string-db",
   "uberongraph",
   "viral-proteome",
-  "automat",
+  // "automat",
 ]);
 
 const getMetaData = async (label) => {
