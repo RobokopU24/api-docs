@@ -57,7 +57,7 @@ const config = {
         },
       },
       navbar: {
-        title: "Automat API Docs",
+        title: "ROBOKOP API Docs",
         logo: {
           alt: "ROBOKOP",
           src: "img/logo.png",
