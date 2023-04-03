@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Automat",
+  title: "ROBOKOP API",
   tagline: "Documentation for Automat data sources and endpoints.",
   url: "https://robokopu24.github.io",
   baseUrl: "/api-docs/",
