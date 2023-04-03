@@ -18,7 +18,7 @@ function CardContainer({ href, children }) {
     </Link>
   );
 }
-function CardLayout({ href, icon, title, description }) {
+function CardLayout({ href, icon, title, description, info }) {
   return (
     <CardContainer href={href}>
       <h2 className={clsx("text--truncate", styles.cardTitle)} title={title}>
@@ -30,6 +30,11 @@ function CardLayout({ href, icon, title, description }) {
           title={description}
         >
           {description}
+        </p>
+      )}
+      {info && (
+        <p title={info} className={styles.info}>
+          {info}
         </p>
       )}
     </CardContainer>
@@ -75,11 +80,13 @@ const getMetaData = async (label) => {
       }
     );
 
-    const { final_node_count, final_edge_count } = await response.json();
+    const { final_node_count, final_edge_count, sources } =
+      await response.json();
 
     return {
       final_node_count: parseInt(final_node_count).toLocaleString(),
       final_edge_count: parseInt(final_edge_count).toLocaleString(),
+      description: sources?.[0]?.description,
     };
   } catch {
     return null;
@@ -123,6 +130,7 @@ function CardCategory({ item }) {
           final_edge_count: md?.final_edge_count,
         }
       )}
+      info={!md || !md.description ? undefined : md.description}
     />
   );
 }
