@@ -15,7 +15,7 @@
       "get": {
         "tags": [
           "trapi",
-          "biolink"
+          "RENCI SRI Reference KG"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -38,7 +38,7 @@
       "get": {
         "tags": [
           "trapi",
-          "biolink"
+          "RENCI SRI Reference KG"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -61,7 +61,7 @@
       "post": {
         "tags": [
           "trapi",
-          "biolink"
+          "RENCI SRI Reference KG"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -198,7 +198,7 @@
           }
         },
         "tags": [
-          "biolink"
+          "RENCI SRI Reference KG"
         ]
       }
     },
@@ -206,7 +206,7 @@
       "post": {
         "tags": [
           "translator",
-          "biolink"
+          "RENCI SRI Reference KG"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -479,7 +479,7 @@
           }
         },
         "tags": [
-          "biolink"
+          "RENCI SRI Reference KG"
         ]
       }
     },
@@ -542,7 +542,7 @@
           }
         },
         "tags": [
-          "biolink"
+          "RENCI SRI Reference KG"
         ]
       }
     },
@@ -596,7 +596,7 @@
           }
         },
         "tags": [
-          "biolink"
+          "RENCI SRI Reference KG"
         ]
       }
     },
@@ -652,7 +652,7 @@
           }
         },
         "tags": [
-          "biolink"
+          "RENCI SRI Reference KG"
         ]
       }
     },
@@ -1305,7 +1305,7 @@
       "get": {
         "tags": [
           "trapi",
-          "drugcentral"
+          "DrugCentral"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -1328,7 +1328,7 @@
       "get": {
         "tags": [
           "trapi",
-          "drugcentral"
+          "DrugCentral"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -1351,7 +1351,7 @@
       "post": {
         "tags": [
           "trapi",
-          "drugcentral"
+          "DrugCentral"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -1488,7 +1488,7 @@
           }
         },
         "tags": [
-          "drugcentral"
+          "DrugCentral"
         ]
       }
     },
@@ -1496,7 +1496,7 @@
       "post": {
         "tags": [
           "translator",
-          "drugcentral"
+          "DrugCentral"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -1769,7 +1769,7 @@
           }
         },
         "tags": [
-          "drugcentral"
+          "DrugCentral"
         ]
       }
     },
@@ -1832,7 +1832,7 @@
           }
         },
         "tags": [
-          "drugcentral"
+          "DrugCentral"
         ]
       }
     },
@@ -1886,7 +1886,7 @@
           }
         },
         "tags": [
-          "drugcentral"
+          "DrugCentral"
         ]
       }
     },
@@ -1942,7 +1942,7 @@
           }
         },
         "tags": [
-          "drugcentral"
+          "DrugCentral"
         ]
       }
     },
@@ -1950,7 +1950,7 @@
       "get": {
         "tags": [
           "trapi",
-          "gtex"
+          "GTEx"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -1973,7 +1973,7 @@
       "get": {
         "tags": [
           "trapi",
-          "gtex"
+          "GTEx"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -1996,7 +1996,7 @@
       "post": {
         "tags": [
           "trapi",
-          "gtex"
+          "GTEx"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -2133,7 +2133,7 @@
           }
         },
         "tags": [
-          "gtex"
+          "GTEx"
         ]
       }
     },
@@ -2141,7 +2141,7 @@
       "post": {
         "tags": [
           "translator",
-          "gtex"
+          "GTEx"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -2414,7 +2414,7 @@
           }
         },
         "tags": [
-          "gtex"
+          "GTEx"
         ]
       }
     },
@@ -2477,7 +2477,7 @@
           }
         },
         "tags": [
-          "gtex"
+          "GTEx"
         ]
       }
     },
@@ -2531,7 +2531,7 @@
           }
         },
         "tags": [
-          "gtex"
+          "GTEx"
         ]
       }
     },
@@ -2587,7 +2587,7 @@
           }
         },
         "tags": [
-          "gtex"
+          "GTEx"
         ]
       }
     },
@@ -2595,7 +2595,7 @@
       "get": {
         "tags": [
           "trapi",
-          "gtopdb"
+          "GtoPdb"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -2618,7 +2618,7 @@
       "get": {
         "tags": [
           "trapi",
-          "gtopdb"
+          "GtoPdb"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -2641,7 +2641,7 @@
       "post": {
         "tags": [
           "trapi",
-          "gtopdb"
+          "GtoPdb"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -2778,7 +2778,7 @@
           }
         },
         "tags": [
-          "gtopdb"
+          "GtoPdb"
         ]
       }
     },
@@ -2786,7 +2786,7 @@
       "post": {
         "tags": [
           "translator",
-          "gtopdb"
+          "GtoPdb"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -3059,7 +3059,7 @@
           }
         },
         "tags": [
-          "gtopdb"
+          "GtoPdb"
         ]
       }
     },
@@ -3122,7 +3122,7 @@
           }
         },
         "tags": [
-          "gtopdb"
+          "GtoPdb"
         ]
       }
     },
@@ -3176,7 +3176,7 @@
           }
         },
         "tags": [
-          "gtopdb"
+          "GtoPdb"
         ]
       }
     },
@@ -3232,7 +3232,7 @@
           }
         },
         "tags": [
-          "gtopdb"
+          "GtoPdb"
         ]
       }
     },
@@ -3240,7 +3240,7 @@
       "get": {
         "tags": [
           "trapi",
-          "gwas-catalog"
+          "GWAS Catalog"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -3263,7 +3263,7 @@
       "get": {
         "tags": [
           "trapi",
-          "gwas-catalog"
+          "GWAS Catalog"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -3286,7 +3286,7 @@
       "post": {
         "tags": [
           "trapi",
-          "gwas-catalog"
+          "GWAS Catalog"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -3423,7 +3423,7 @@
           }
         },
         "tags": [
-          "gwas-catalog"
+          "GWAS Catalog"
         ]
       }
     },
@@ -3431,7 +3431,7 @@
       "post": {
         "tags": [
           "translator",
-          "gwas-catalog"
+          "GWAS Catalog"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -3704,7 +3704,7 @@
           }
         },
         "tags": [
-          "gwas-catalog"
+          "GWAS Catalog"
         ]
       }
     },
@@ -3767,7 +3767,7 @@
           }
         },
         "tags": [
-          "gwas-catalog"
+          "GWAS Catalog"
         ]
       }
     },
@@ -3821,7 +3821,7 @@
           }
         },
         "tags": [
-          "gwas-catalog"
+          "GWAS Catalog"
         ]
       }
     },
@@ -3877,7 +3877,7 @@
           }
         },
         "tags": [
-          "gwas-catalog"
+          "GWAS Catalog"
         ]
       }
     },
@@ -3885,7 +3885,7 @@
       "get": {
         "tags": [
           "trapi",
-          "hetio"
+          "Hetionet"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -3908,7 +3908,7 @@
       "get": {
         "tags": [
           "trapi",
-          "hetio"
+          "Hetionet"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -3931,7 +3931,7 @@
       "post": {
         "tags": [
           "trapi",
-          "hetio"
+          "Hetionet"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -4068,7 +4068,7 @@
           }
         },
         "tags": [
-          "hetio"
+          "Hetionet"
         ]
       }
     },
@@ -4076,7 +4076,7 @@
       "post": {
         "tags": [
           "translator",
-          "hetio"
+          "Hetionet"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -4349,7 +4349,7 @@
           }
         },
         "tags": [
-          "hetio"
+          "Hetionet"
         ]
       }
     },
@@ -4412,7 +4412,7 @@
           }
         },
         "tags": [
-          "hetio"
+          "Hetionet"
         ]
       }
     },
@@ -4466,7 +4466,7 @@
           }
         },
         "tags": [
-          "hetio"
+          "Hetionet"
         ]
       }
     },
@@ -4522,7 +4522,7 @@
           }
         },
         "tags": [
-          "hetio"
+          "Hetionet"
         ]
       }
     },
@@ -4530,7 +4530,7 @@
       "get": {
         "tags": [
           "trapi",
-          "hgnc"
+          "HGNC"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -4553,7 +4553,7 @@
       "get": {
         "tags": [
           "trapi",
-          "hgnc"
+          "HGNC"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -4576,7 +4576,7 @@
       "post": {
         "tags": [
           "trapi",
-          "hgnc"
+          "HGNC"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -4713,7 +4713,7 @@
           }
         },
         "tags": [
-          "hgnc"
+          "HGNC"
         ]
       }
     },
@@ -4721,7 +4721,7 @@
       "post": {
         "tags": [
           "translator",
-          "hgnc"
+          "HGNC"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -4994,7 +4994,7 @@
           }
         },
         "tags": [
-          "hgnc"
+          "HGNC"
         ]
       }
     },
@@ -5057,7 +5057,7 @@
           }
         },
         "tags": [
-          "hgnc"
+          "HGNC"
         ]
       }
     },
@@ -5111,7 +5111,7 @@
           }
         },
         "tags": [
-          "hgnc"
+          "HGNC"
         ]
       }
     },
@@ -5167,7 +5167,7 @@
           }
         },
         "tags": [
-          "hgnc"
+          "HGNC"
         ]
       }
     },
@@ -5820,7 +5820,7 @@
       "get": {
         "tags": [
           "trapi",
-          "human-goa"
+          "Human GOA"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -5843,7 +5843,7 @@
       "get": {
         "tags": [
           "trapi",
-          "human-goa"
+          "Human GOA"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -5866,7 +5866,7 @@
       "post": {
         "tags": [
           "trapi",
-          "human-goa"
+          "Human GOA"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -6003,7 +6003,7 @@
           }
         },
         "tags": [
-          "human-goa"
+          "Human GOA"
         ]
       }
     },
@@ -6011,7 +6011,7 @@
       "post": {
         "tags": [
           "translator",
-          "human-goa"
+          "Human GOA"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -6284,7 +6284,7 @@
           }
         },
         "tags": [
-          "human-goa"
+          "Human GOA"
         ]
       }
     },
@@ -6347,7 +6347,7 @@
           }
         },
         "tags": [
-          "human-goa"
+          "Human GOA"
         ]
       }
     },
@@ -6401,7 +6401,7 @@
           }
         },
         "tags": [
-          "human-goa"
+          "Human GOA"
         ]
       }
     },
@@ -6457,7 +6457,7 @@
           }
         },
         "tags": [
-          "human-goa"
+          "Human GOA"
         ]
       }
     },
@@ -7110,7 +7110,7 @@
       "get": {
         "tags": [
           "trapi",
-          "intact"
+          "InTact"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -7133,7 +7133,7 @@
       "get": {
         "tags": [
           "trapi",
-          "intact"
+          "InTact"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -7156,7 +7156,7 @@
       "post": {
         "tags": [
           "trapi",
-          "intact"
+          "InTact"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -7293,7 +7293,7 @@
           }
         },
         "tags": [
-          "intact"
+          "InTact"
         ]
       }
     },
@@ -7301,7 +7301,7 @@
       "post": {
         "tags": [
           "translator",
-          "intact"
+          "InTact"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -7574,7 +7574,7 @@
           }
         },
         "tags": [
-          "intact"
+          "InTact"
         ]
       }
     },
@@ -7637,7 +7637,7 @@
           }
         },
         "tags": [
-          "intact"
+          "InTact"
         ]
       }
     },
@@ -7691,7 +7691,7 @@
           }
         },
         "tags": [
-          "intact"
+          "InTact"
         ]
       }
     },
@@ -7747,7 +7747,7 @@
           }
         },
         "tags": [
-          "intact"
+          "InTact"
         ]
       }
     },
@@ -7755,7 +7755,7 @@
       "get": {
         "tags": [
           "trapi",
-          "ontological-hierarchy"
+          "Ubergraph Redundant"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -7778,7 +7778,7 @@
       "get": {
         "tags": [
           "trapi",
-          "ontological-hierarchy"
+          "Ubergraph Redundant"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -7801,7 +7801,7 @@
       "post": {
         "tags": [
           "trapi",
-          "ontological-hierarchy"
+          "Ubergraph Redundant"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -7938,7 +7938,7 @@
           }
         },
         "tags": [
-          "ontological-hierarchy"
+          "Ubergraph Redundant"
         ]
       }
     },
@@ -7946,7 +7946,7 @@
       "post": {
         "tags": [
           "translator",
-          "ontological-hierarchy"
+          "Ubergraph Redundant"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -8219,7 +8219,7 @@
           }
         },
         "tags": [
-          "ontological-hierarchy"
+          "Ubergraph Redundant"
         ]
       }
     },
@@ -8282,7 +8282,7 @@
           }
         },
         "tags": [
-          "ontological-hierarchy"
+          "Ubergraph Redundant"
         ]
       }
     },
@@ -8336,7 +8336,7 @@
           }
         },
         "tags": [
-          "ontological-hierarchy"
+          "Ubergraph Redundant"
         ]
       }
     },
@@ -8392,7 +8392,7 @@
           }
         },
         "tags": [
-          "ontological-hierarchy"
+          "Ubergraph Redundant"
         ]
       }
     },
@@ -8400,7 +8400,7 @@
       "get": {
         "tags": [
           "trapi",
-          "panther"
+          "PANTHER"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -8423,7 +8423,7 @@
       "get": {
         "tags": [
           "trapi",
-          "panther"
+          "PANTHER"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -8446,7 +8446,7 @@
       "post": {
         "tags": [
           "trapi",
-          "panther"
+          "PANTHER"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -8583,7 +8583,7 @@
           }
         },
         "tags": [
-          "panther"
+          "PANTHER"
         ]
       }
     },
@@ -8591,7 +8591,7 @@
       "post": {
         "tags": [
           "translator",
-          "panther"
+          "PANTHER"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -8864,7 +8864,7 @@
           }
         },
         "tags": [
-          "panther"
+          "PANTHER"
         ]
       }
     },
@@ -8927,7 +8927,7 @@
           }
         },
         "tags": [
-          "panther"
+          "PANTHER"
         ]
       }
     },
@@ -8981,7 +8981,7 @@
           }
         },
         "tags": [
-          "panther"
+          "PANTHER"
         ]
       }
     },
@@ -9037,7 +9037,7 @@
           }
         },
         "tags": [
-          "panther"
+          "PANTHER"
         ]
       }
     },
@@ -9045,7 +9045,7 @@
       "get": {
         "tags": [
           "trapi",
-          "pharos"
+          "Pharos"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -9068,7 +9068,7 @@
       "get": {
         "tags": [
           "trapi",
-          "pharos"
+          "Pharos"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -9091,7 +9091,7 @@
       "post": {
         "tags": [
           "trapi",
-          "pharos"
+          "Pharos"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -9228,7 +9228,7 @@
           }
         },
         "tags": [
-          "pharos"
+          "Pharos"
         ]
       }
     },
@@ -9236,7 +9236,7 @@
       "post": {
         "tags": [
           "translator",
-          "pharos"
+          "Pharos"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -9509,7 +9509,7 @@
           }
         },
         "tags": [
-          "pharos"
+          "Pharos"
         ]
       }
     },
@@ -9572,7 +9572,7 @@
           }
         },
         "tags": [
-          "pharos"
+          "Pharos"
         ]
       }
     },
@@ -9626,7 +9626,7 @@
           }
         },
         "tags": [
-          "pharos"
+          "Pharos"
         ]
       }
     },
@@ -9682,7 +9682,7 @@
           }
         },
         "tags": [
-          "pharos"
+          "Pharos"
         ]
       }
     },
@@ -9690,7 +9690,7 @@
       "get": {
         "tags": [
           "trapi",
-          "robokopkg"
+          "ROBOKOP KG"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -9713,7 +9713,7 @@
       "get": {
         "tags": [
           "trapi",
-          "robokopkg"
+          "ROBOKOP KG"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -9736,7 +9736,7 @@
       "post": {
         "tags": [
           "trapi",
-          "robokopkg"
+          "ROBOKOP KG"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -9873,7 +9873,7 @@
           }
         },
         "tags": [
-          "robokopkg"
+          "ROBOKOP KG"
         ]
       }
     },
@@ -9881,7 +9881,7 @@
       "post": {
         "tags": [
           "translator",
-          "robokopkg"
+          "ROBOKOP KG"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -10154,7 +10154,7 @@
           }
         },
         "tags": [
-          "robokopkg"
+          "ROBOKOP KG"
         ]
       }
     },
@@ -10217,7 +10217,7 @@
           }
         },
         "tags": [
-          "robokopkg"
+          "ROBOKOP KG"
         ]
       }
     },
@@ -10271,7 +10271,7 @@
           }
         },
         "tags": [
-          "robokopkg"
+          "ROBOKOP KG"
         ]
       }
     },
@@ -10327,7 +10327,7 @@
           }
         },
         "tags": [
-          "robokopkg"
+          "ROBOKOP KG"
         ]
       }
     },
@@ -10335,7 +10335,7 @@
       "get": {
         "tags": [
           "trapi",
-          "string-db"
+          "STRING"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -10358,7 +10358,7 @@
       "get": {
         "tags": [
           "trapi",
-          "string-db"
+          "STRING"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -10381,7 +10381,7 @@
       "post": {
         "tags": [
           "trapi",
-          "string-db"
+          "STRING"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -10518,7 +10518,7 @@
           }
         },
         "tags": [
-          "string-db"
+          "STRING"
         ]
       }
     },
@@ -10526,7 +10526,7 @@
       "post": {
         "tags": [
           "translator",
-          "string-db"
+          "STRING"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -10799,7 +10799,7 @@
           }
         },
         "tags": [
-          "string-db"
+          "STRING"
         ]
       }
     },
@@ -10862,7 +10862,7 @@
           }
         },
         "tags": [
-          "string-db"
+          "STRING"
         ]
       }
     },
@@ -10916,7 +10916,7 @@
           }
         },
         "tags": [
-          "string-db"
+          "STRING"
         ]
       }
     },
@@ -10972,7 +10972,7 @@
           }
         },
         "tags": [
-          "string-db"
+          "STRING"
         ]
       }
     },
@@ -10980,7 +10980,7 @@
       "get": {
         "tags": [
           "trapi",
-          "uberongraph"
+          "Ubergraph"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -11003,7 +11003,7 @@
       "get": {
         "tags": [
           "trapi",
-          "uberongraph"
+          "Ubergraph"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -11026,7 +11026,7 @@
       "post": {
         "tags": [
           "trapi",
-          "uberongraph"
+          "Ubergraph"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -11163,7 +11163,7 @@
           }
         },
         "tags": [
-          "uberongraph"
+          "Ubergraph"
         ]
       }
     },
@@ -11171,7 +11171,7 @@
       "post": {
         "tags": [
           "translator",
-          "uberongraph"
+          "Ubergraph"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -11444,7 +11444,7 @@
           }
         },
         "tags": [
-          "uberongraph"
+          "Ubergraph"
         ]
       }
     },
@@ -11507,7 +11507,7 @@
           }
         },
         "tags": [
-          "uberongraph"
+          "Ubergraph"
         ]
       }
     },
@@ -11561,7 +11561,7 @@
           }
         },
         "tags": [
-          "uberongraph"
+          "Ubergraph"
         ]
       }
     },
@@ -11617,7 +11617,7 @@
           }
         },
         "tags": [
-          "uberongraph"
+          "Ubergraph"
         ]
       }
     },
@@ -11625,7 +11625,7 @@
       "get": {
         "tags": [
           "trapi",
-          "viral-proteome"
+          "Viral Proteome"
         ],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
@@ -11648,7 +11648,7 @@
       "get": {
         "tags": [
           "trapi",
-          "viral-proteome"
+          "Viral Proteome"
         ],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
@@ -11671,7 +11671,7 @@
       "post": {
         "tags": [
           "trapi",
-          "viral-proteome"
+          "Viral Proteome"
         ],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
@@ -11808,7 +11808,7 @@
           }
         },
         "tags": [
-          "viral-proteome"
+          "Viral Proteome"
         ]
       }
     },
@@ -11816,7 +11816,7 @@
       "post": {
         "tags": [
           "translator",
-          "viral-proteome"
+          "Viral Proteome"
         ],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
@@ -12089,7 +12089,7 @@
           }
         },
         "tags": [
-          "viral-proteome"
+          "Viral Proteome"
         ]
       }
     },
@@ -12152,7 +12152,7 @@
           }
         },
         "tags": [
-          "viral-proteome"
+          "Viral Proteome"
         ]
       }
     },
@@ -12206,7 +12206,7 @@
           }
         },
         "tags": [
-          "viral-proteome"
+          "Viral Proteome"
         ]
       }
     },
@@ -12262,7 +12262,7 @@
           }
         },
         "tags": [
-          "viral-proteome"
+          "Viral Proteome"
         ]
       }
     },
@@ -12296,80 +12296,80 @@
   },
   "tags": [
     {
-      "name": "biolink",
-      "description": "Operations for biolink."
+      "name": "RENCI SRI Reference KG",
+      "description": "\nA subset of the SRI Reference KG, a combination of the integrated Monarch KG and other relevant data sources.\nVersion: 30c8c410e695ee67\nGraph URL: [https://github.com/Knowledge-Graph-Hub/sri-reference-kg](https://github.com/Knowledge-Graph-Hub/sri-reference-kg)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/Biolink_Automat/30c8c410e695ee67/graph_30c8c410e695ee67.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/Biolink_Automat/30c8c410e695ee67/graph_30c8c410e695ee67.db.dump)\nNodes: 604082\nEdges: 4617136\n"
     },
     {
       "name": "ctd",
-      "description": "Operations for ctd."
+      "description": "\nThe Comparative Toxicogenomics Database (CTD) is an open-source database that provides manually curated information about chemical-gene/protein, chemical-disease, and gene-disease relationships, with additional support for the curated relationships provided by functional and pathway data.\nVersion: b95856ba1051bfc2\nGraph URL: [http://ctdbase.org/about/](http://ctdbase.org/about/)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/CTD_Automat/b95856ba1051bfc2/graph_b95856ba1051bfc2.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/CTD_Automat/b95856ba1051bfc2/graph_b95856ba1051bfc2.db.dump)\nNodes: 441879\nEdges: 1462391\n"
     },
     {
-      "name": "drugcentral",
-      "description": "Operations for drugcentral."
+      "name": "DrugCentral",
+      "description": "\nDrugCentral provides open-source data on active ingredients, chemical entities, pharmaceutical products, drug mode of action, indications, and pharmacologic action for approved drugs, derived from information provided by the US Food & Drug Administration, the European Medicines Agency, and the Pharmaceutical and Medical Devices Agency. Caveat: DrugCentral provides limited information on discontinued and drugs approved outside of the US, but users should be aware that that information has not been validated.\nVersion: deb87c2b73b99b98\nGraph URL: [https://drugcentral.org/](https://drugcentral.org/)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/DrugCentral_Automat/deb87c2b73b99b98/graph_deb87c2b73b99b98.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/DrugCentral_Automat/deb87c2b73b99b98/graph_deb87c2b73b99b98.db.dump)\nNodes: 76362\nEdges: 646723\n"
     },
     {
-      "name": "gtex",
-      "description": "Operations for gtex."
+      "name": "GTEx",
+      "description": "\nThe Genotype-Tissue Expression (GTEx) portal provides open access to data on tissue-specific gene expression and regulation, derived from molecular assays (e.g., WGS, WES, RNA-Seq) on 54 non-diseased tissue sites across nearly 1000 individuals.\nVersion: 44d871edeee74680\nGraph URL: [https://gtexportal.org/home/](https://gtexportal.org/home/)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/GTEx_Automat/44d871edeee74680/graph_44d871edeee74680.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/GTEx_Automat/44d871edeee74680/graph_44d871edeee74680.db.dump)\nNodes: 4924964\nEdges: 49258128\n"
     },
     {
-      "name": "gtopdb",
-      "description": "Operations for gtopdb."
+      "name": "GtoPdb",
+      "description": "\nThe International Union of Basic and Clinical Pharmacology (IUPHAR) / British Pharmacological Society (BPS) Guide to Pharmacology database (GtoPdb) provides searchable open-source quantitative information on drug targets and the prescription medicines and experimental drugs that act on them.\nVersion: e7d6b71aa6130b22\nGraph URL: [http://www.guidetopharmacology.org/](http://www.guidetopharmacology.org/)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/GtoPdb_Automat/e7d6b71aa6130b22/graph_e7d6b71aa6130b22.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/GtoPdb_Automat/e7d6b71aa6130b22/graph_e7d6b71aa6130b22.db.dump)\nNodes: 11706\nEdges: 91047\n"
     },
     {
-      "name": "gwas-catalog",
-      "description": "Operations for gwas-catalog."
+      "name": "GWAS Catalog",
+      "description": "\nThe Genome-Wide Association Studies (GWAS) Catalog provides a curated, searchable, visualisable, and openly available database of single nucleotide polymorphism (SNP)-trait associations, derived from all GWAS publications identified by curators, who then extract the reported trait, significant SNP-trait associations, and sample metadata.\nVersion: 4781b79ceb253fb2\nGraph URL: [https://www.ebi.ac.uk/gwas/](https://www.ebi.ac.uk/gwas/)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/GWASCatalog_Automat/4781b79ceb253fb2/graph_4781b79ceb253fb2.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/GWASCatalog_Automat/4781b79ceb253fb2/graph_4781b79ceb253fb2.db.dump)\nNodes: 315186\nEdges: 2052906\n"
     },
     {
-      "name": "hetio",
-      "description": "Operations for hetio."
+      "name": "Hetionet",
+      "description": "\nHetionet is an open-source biomedical heterogeneous information network (hetnet) or graph-based resource describing relationships uncovered by millions of biomedical research studies over the past fifty years.\nVersion: efb4e98b11761231\nGraph URL: [https://het.io/](https://het.io/)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/Hetio_Automat/efb4e98b11761231/graph_efb4e98b11761231.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/Hetio_Automat/efb4e98b11761231/graph_efb4e98b11761231.db.dump)\nNodes: 116144\nEdges: 2703595\n"
     },
     {
-      "name": "hgnc",
-      "description": "Operations for hgnc."
+      "name": "HGNC",
+      "description": "\nThe HUGO Gene Nomenclature Committee (HGNC) database provides open access to HGNC-approved unique symbols and names for human genes, gene groups, and associated resources, including links to genomic, proteomic and phenotypic information.\nVersion: b653a6fba39f722f\nGraph URL: [https://www.genenames.org/](https://www.genenames.org/)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/HGNC_Automat/b653a6fba39f722f/graph_b653a6fba39f722f.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/HGNC_Automat/b653a6fba39f722f/graph_b653a6fba39f722f.db.dump)\nNodes: 26467\nEdges: 52259\n"
     },
     {
       "name": "hmdb",
-      "description": "Operations for hmdb."
+      "description": "\nThe Human Metabolome Database (HMDB) is an openly accessible database containing detailed information about small molecule metabolites found in the human body, with links between chemical data, clinical data, and molecular biology/biochemistry data, including protein sequences (enzymes and transporters).\nVersion: a55c31f14363380e\nGraph URL: [https://hmdb.ca/](https://hmdb.ca/)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/HMDB_Automat/a55c31f14363380e/graph_a55c31f14363380e.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/HMDB_Automat/a55c31f14363380e/graph_a55c31f14363380e.db.dump)\nNodes: 130311\nEdges: 1880382\n"
     },
     {
-      "name": "human-goa",
-      "description": "Operations for human-goa."
+      "name": "Human GOA",
+      "description": "\nThe Gene Ontology (GO) Consortium’s Human Gene Ontologies Annotations (Human GOA) resource provides open access to curated assignment of GO terms to proteins in the UniProt KnowledgeBase (UniProtKB), RNA molecules from RNACentral, and protein complexes from the Complex Portal.\nVersion: b0d4edf034771ff0\nGraph URL: [https://www.ebi.ac.uk/GOA/index](https://www.ebi.ac.uk/GOA/index)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/HumanGOA_Automat/b0d4edf034771ff0/graph_b0d4edf034771ff0.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/HumanGOA_Automat/b0d4edf034771ff0/graph_b0d4edf034771ff0.db.dump)\nNodes: 129884\nEdges: 1315245\n"
     },
     {
       "name": "icees-kg",
       "description": "Operations for icees-kg."
     },
     {
-      "name": "intact",
-      "description": "Operations for intact."
+      "name": "InTact",
+      "description": "\nThe IntAct Molecular Interaction Database provides open access to molecular interactions data derived from literature curation or direct user submission.\nVersion: 47923e95174e4f29\nGraph URL: [https://www.ebi.ac.uk/intact/home](https://www.ebi.ac.uk/intact/home)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/IntAct_Automat/47923e95174e4f29/graph_47923e95174e4f29.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/IntAct_Automat/47923e95174e4f29/graph_47923e95174e4f29.db.dump)\nNodes: 215343\nEdges: 2463214\n"
     },
     {
-      "name": "ontological-hierarchy",
-      "description": "Operations for ontological-hierarchy."
+      "name": "Ubergraph Redundant",
+      "description": "\nSubclass relationships from the redundant version of Ubergraph. The redundant version of Ubergraph is the complete inference closure for all subclass and existential relations. This includes all transitive, reflexive subclass relations.\nVersion: c94a9337ce64c21d\nGraph URL: [https://github.com/INCATools/ubergraph](https://github.com/INCATools/ubergraph)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.1.2/OntologicalHierarchy_Automat/c94a9337ce64c21d/graph_c94a9337ce64c21d.db.dump](https://stars.renci.org/var/plater/bl-3.1.2/OntologicalHierarchy_Automat/c94a9337ce64c21d/graph_c94a9337ce64c21d.db.dump)\nNodes: 3099093\nEdges: 60294865\n"
     },
     {
-      "name": "panther",
-      "description": "Operations for panther."
+      "name": "PANTHER",
+      "description": "\nThe Protein ANalysis THrough Evolutionary Relationships (PANTHER) classification system provides an openly available annotation library of gene family phylogenetic trees, with persistent identifiers attached to all nodes in the trees and annotation of each protein member of the family by its family and protein class, subfamily, orthologs, paralogs, GO Phylogenetic Annotation Project function and Reactome pathways.\nVersion: 41742d795b6fde8e\nGraph URL: [http://pantherdb.org/](http://pantherdb.org/)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/PANTHER_Automat/41742d795b6fde8e/graph_41742d795b6fde8e.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/PANTHER_Automat/41742d795b6fde8e/graph_41742d795b6fde8e.db.dump)\nNodes: 88510\nEdges: 1192443\n"
     },
     {
-      "name": "pharos",
-      "description": "Operations for pharos."
+      "name": "Pharos",
+      "description": "\nPharos is the openly accessible user interface to the Illuminating the Druggable Genome (IDG) program’s Knowledge Management Center (KMC), which aims to develop a comprehensive, integrated knowledge-base for the Druggable Genome (DG) to illuminate the uncharacterized and/or poorly annotated portion of the DG, focusing on three of the most commonly drug-targeted protein families: G-protein-coupled receptors; ion channels; and kinases.\nVersion: b57b54dc09054e1f\nGraph URL: [https://pharos.nih.gov/](https://pharos.nih.gov/)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/PHAROS_Automat/b57b54dc09054e1f/graph_b57b54dc09054e1f.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/PHAROS_Automat/b57b54dc09054e1f/graph_b57b54dc09054e1f.db.dump)\nNodes: 341478\nEdges: 1073418\n"
     },
     {
-      "name": "robokopkg",
-      "description": "Operations for robokopkg."
+      "name": "ROBOKOP KG",
+      "description": "\nROBOKOP Knowledge Graph (KG) is an open-source biomedical knowledge graph that supports the ROBOKOP application and currently contains ~ 10M nodes and ~ 250M edges drawn from ~30 integrated and harmonized biological data sources and bio-ontologies.\nVersion: b0ed1e26f7f3726e\nGraph URL: [https://robokop.renci.org/](https://robokop.renci.org/)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/RobokopKG/b0ed1e26f7f3726e/graph_b0ed1e26f7f3726e.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/RobokopKG/b0ed1e26f7f3726e/graph_b0ed1e26f7f3726e.db.dump)\nNodes: 8660052\nEdges: 132035404\n"
     },
     {
-      "name": "string-db",
-      "description": "Operations for string-db."
+      "name": "STRING",
+      "description": "\nThe Search Tool for the Retrieval of Interacting Genes/Proteins (STRING) database provides information on known and predicted protein-protein interactions (both direct and indirect) derived from genomic context predictions, high-throughput laboratory experiments, conserved co-expression, automated text mining, and aggregated knowledge from primary data sources.\nVersion: 3c38e09fe10970d3\nGraph URL: [https://string-db.org/](https://string-db.org/)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/STRING-DB_Automat/3c38e09fe10970d3/graph_3c38e09fe10970d3.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/STRING-DB_Automat/3c38e09fe10970d3/graph_3c38e09fe10970d3.db.dump)\nNodes: 56115\nEdges: 8749817\n"
     },
     {
-      "name": "uberongraph",
-      "description": "Operations for uberongraph."
+      "name": "Ubergraph",
+      "description": "\nUbergraph is an open-source graph database containing integrated ontologies, including GO, CHEBI, HPO, and Uberon’s anatomical ontology.\nVersion: 03b828fdc97b68fe\nGraph URL: [https://github.com/INCATools/ubergraph](https://github.com/INCATools/ubergraph)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/Ubergraph_Automat/03b828fdc97b68fe/graph_03b828fdc97b68fe.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/Ubergraph_Automat/03b828fdc97b68fe/graph_03b828fdc97b68fe.db.dump)\nNodes: 2996502\nEdges: 63630038\n"
     },
     {
-      "name": "viral-proteome",
-      "description": "Operations for viral-proteome."
+      "name": "Viral Proteome",
+      "description": "\nThe Gene Ontology (GO) Consortium’s Viral Proteome resource provides open access to curated assignment of GO terms to proteins and proteome relationships derived from the UniProt KnowledgeBase for all NCBI Taxa considered viruses.\nVersion: 4bb615511b97395a\nGraph URL: [https://www.ebi.ac.uk/GOA/proteomes](https://www.ebi.ac.uk/GOA/proteomes)\nNeo4J: [https://stars.renci.org/var/plater/bl-3.2.1/ViralProteome_Automat/4bb615511b97395a/graph_4bb615511b97395a.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/ViralProteome_Automat/4bb615511b97395a/graph_4bb615511b97395a.db.dump)\nNodes: 87297\nEdges: 359818\n"
     }
   ],
   "components": {
