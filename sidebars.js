@@ -20,14 +20,13 @@ const sidebars = {
       link: {
         type: "generated-index",
         title: "Automat",
-        description:
-          "Automat API docs.",
-        slug: "/category/automat"
+        description: "ROBOKOP API Docs.",
+        slug: "/category/automat",
       },
       // @ts-ignore
-      items: require("./docs/automat/sidebar.js")
-    }
-  ]
+      items: require("./docs/automat/sidebar.js"),
+    },
+  ],
 };
 
 module.exports = sidebars;
