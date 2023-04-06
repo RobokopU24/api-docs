@@ -80,13 +80,13 @@ const getMetaData = async (label) => {
       }
     );
 
-    const { final_node_count, final_edge_count, sources } =
+    const { final_node_count, final_edge_count, graph_description } =
       await response.json();
 
     return {
       final_node_count: parseInt(final_node_count).toLocaleString(),
       final_edge_count: parseInt(final_edge_count).toLocaleString(),
-      description: sources?.[0]?.description,
+      description: graph_description,
     };
   } catch {
     return null;
@@ -130,7 +130,7 @@ function CardCategory({ item }) {
           final_edge_count: md?.final_edge_count,
         }
       )}
-      info={!md || !md.description ? undefined : md.description}
+      info={md?.description}
     />
   );
 }
