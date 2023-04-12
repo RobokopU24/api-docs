@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[4195],{62841:(e,t,a)=>{a.r(t),a.d(t,{default:()=>r});var c=a(67294),u=a(16550);function r(){return c.createElement(u.l_,{to:"/api-docs/docs/category/automat"})}}}]);

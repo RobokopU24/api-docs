@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[6918],{12198:t=>{t.exports=JSON.parse('{"title":"Automat","description":"ROBOKOP API Docs.","slug":"/category/automat","permalink":"/api-docs/docs/category/automat","navigation":{"next":{"title":"Introduction","permalink":"/api-docs/docs/automat/automat"}}}')}}]);
