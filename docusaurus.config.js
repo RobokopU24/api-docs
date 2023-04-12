@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "ROBOKOP API",
+  title: "ROBOKOP",
   tagline: "Documentation for Automat data sources and endpoints.",
   url: "https://robokopu24.github.io",
   baseUrl: "/api-docs/",
@@ -57,10 +57,12 @@ const config = {
         },
       },
       navbar: {
-        title: "ROBOKOP API Docs",
+        title: "ROBOKOP",
         logo: {
           alt: "ROBOKOP",
           src: "img/logo.png",
+          href: "https://robokop.renci.org",
+          target: "_blank",
         },
         items: [
           // {
@@ -92,11 +94,7 @@ const config = {
             items: [
               {
                 label: "Robokop Question Builder",
-                href: "https://robokop.renci.org/question",
-              },
-              {
-                label: "Robokop Answer Explorer",
-                href: "https://robokop.renci.org/answer",
+                href: "https://qgraph.renci.org/question",
               },
               {
                 label: "ExEmPLAR",
@@ -108,13 +106,13 @@ const config = {
             title: "More",
             items: [
               {
-                label: "API Documentation GitHub",
-                href: "https://github.com/robokopu24/api-docs",
+                label: "ROBOKOP U24 Github",
+                href: "https://github.com/robokopu24/",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()}`,
+        // copyright: `Copyright © ${new Date().getFullYear()}`,
       },
       prism: {
         theme: lightCodeTheme,
