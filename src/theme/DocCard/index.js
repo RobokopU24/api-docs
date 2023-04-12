@@ -43,14 +43,14 @@ function CardLayout({ href, icon, title, description, info }) {
 
 const SOURCES = new Map([
   ["RENCI SRI Reference KG", "biolink"],
-  ["ctd", "ctd"],
+  ["CTD", "ctd"],
   ["DrugCentral", "drugcentral"],
   ["GTEx", "gtex"],
   ["GtoPdb", "gtopdb"],
   ["GWAS Catalog", "gwas-catalog"],
   ["Hetionet", "hetio"],
   ["HGNC", "hgnc"],
-  ["hmdb", "hmdb"],
+  ["HMDB", "hmdb"],
   ["Human GOA", "human-goa"],
   ["icees-kg", "icees-kg"],
   ["InTact", "intact"],
