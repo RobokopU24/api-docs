@@ -69,7 +69,7 @@ const config = {
           //   to: "/docs/category/automat"
           // },
           {
-            href: "https://github.com/RobokopU24/api-docs",
+            href: "https://github.com/RobokopU24/",
             label: "GitHub",
             position: "right",
           },
