@@ -59,7 +59,7 @@ jobs:
       - name: Commit changes to staging
         if: ${{ env.UPDATED == 'true' }}
         run: |
-          git commit -m $(echo "Update documentation - ${{ env.DATE }}")
+          git commit -m "$(echo 'Update documentation - ${{ env.DATE }}')"
           git push
 
       - name: Deploy the site
