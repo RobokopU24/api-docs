@@ -1,5 +1,4 @@
 module.exports = [
-  { type: "doc", id: "automat/automat" },
   {
     type: "category",
     label: "ROBOKOP KG",
