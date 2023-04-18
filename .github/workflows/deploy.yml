@@ -62,6 +62,6 @@ jobs:
           git commit -m $(echo "Update documentation - ${{ env.DATE }}")
           git push
 
-      - name: Create a new pull request
+      - name: Deploy the site
         if: ${{ env.UPDATED == 'true' }}
         run: npm run deploy
