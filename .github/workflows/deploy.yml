@@ -25,23 +25,18 @@ jobs:
           cache: 'npm'
 
       - name: Cache node modules
-        id: cache-npm
-        uses: actions/cache@v3
+        id: cache-nodemodules
+        uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
         with:
-          # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.npm
+          # caching node_modules
+          path: node_modules
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
-      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        name: List the state of node modules
-        continue-on-error: true
-        run: npm list
 
       - name: Write current date to environment variable
         run: echo "DATE=$(date +'%Y-%m-%d-%I.%M.%S%p')" >> $GITHUB_ENV
@@ -57,6 +52,7 @@ jobs:
           git switch staging
           
       - name: Install dependencies
+        if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile --non-interactive
 
       - name: Fetch newest Automat OpenAPI document and metadata
