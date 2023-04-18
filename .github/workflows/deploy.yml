@@ -5,8 +5,16 @@ on:
   repository_dispatch:
     types: [deploy]
     
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+    
 jobs:
-  build-and-deploy:
+  build:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,8 +24,19 @@ jobs:
           node-version: 18
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm i
+      - name: Cache node modules
+        id: cache-nodemodules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # caching node_modules
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
 
       - name: Write current date to environment variable
         run: echo "DATE=$(date +'%Y-%m-%d-%I.%M.%S%p')" >> $GITHUB_ENV
@@ -31,6 +50,10 @@ jobs:
         run: |
           git fetch
           git switch staging
+          
+      - name: Install dependencies
+        if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile --non-interactive
 
       - name: Fetch newest Automat OpenAPI document and metadata
         run: npm run preprocess
@@ -59,9 +82,27 @@ jobs:
       - name: Commit changes to staging
         if: ${{ env.UPDATED == 'true' }}
         run: |
-          git commit -m $(echo "Update documentation - ${{ env.DATE }}")
+          git commit -m "$(echo 'Update documentation - ${{ env.DATE }}')"
           git push
 
-      - name: Deploy the site
+      - name: Build the site
         if: ${{ env.UPDATED == 'true' }}
-        run: npm run deploy
+        run: npm run build
+        
+      - name: Setup GH Pages
+        if: ${{ env.UPDATED == 'true' }}
+        uses: actions/configure-pages@v1
+        
+      - name: Upload artifact
+        if: ${{ env.UPDATED == 'true' }}
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./build
+          
+      - name: Deploy to GitHub Pages
+        if: ${{ env.UPDATED == 'true' }}
+        id: deployment
+        uses: actions/deploy-pages@v1
+        
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
