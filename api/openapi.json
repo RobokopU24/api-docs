@@ -16,7 +16,7 @@
         "tags": ["trapi", "RENCI SRI Reference KG"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-3ae329c3-4873-4ddc-803f-21a2aa5689d7",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-5281817b-654d-453c-9cd6-66f4c703785b",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -36,7 +36,7 @@
         "tags": ["trapi", "RENCI SRI Reference KG"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-ead53890-cc51-4780-bc6c-89280254b695",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-891bc8ec-18d4-44b1-8eb1-2ce0670e13f8",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -56,7 +56,7 @@
         "tags": ["trapi", "RENCI SRI Reference KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-9ec7644a-a76e-496b-8736-bc4eb9b8f349",
+        "operationId": "reasoner_api_1_3_query_post-29c01e5d-a5a3-4712-891b-36c01cc5902d",
         "requestBody": {
           "content": {
             "application/json": {
@@ -144,7 +144,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-cae90fec-6176-489c-8c65-10d9e1280d24",
+        "operationId": "cypher_cypher_post-94cce6e1-d3d1-4f8c-8bfd-68c6eb721305",
         "requestBody": {
           "content": {
             "application/json": {
@@ -188,7 +188,7 @@
         "tags": ["translator", "RENCI SRI Reference KG"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-88e1e1ed-a1de-4dd2-a7e5-38b08e3a0179",
+        "operationId": "overlay_overlay_post-d5364c69-46ef-47e2-8444-b9c97bf80597",
         "requestBody": {
           "content": {
             "application/json": {
@@ -439,7 +439,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-dfb4211f-892e-47d7-9a07-97ac44097b72",
+        "operationId": "metadata_metadata_get-7ed89560-1a45-4262-baa1-34c389cd5b3a",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -459,7 +459,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-d2948e35-2ced-48f2-8498-a61efb368dd1",
+        "operationId": "one_hop__source_type___target_type___curie__get-6bf5a9a1-3776-44cc-82fe-461513bcf156",
         "parameters": [
           {
             "required": true,
@@ -520,7 +520,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-2a728207-0bb5-4ef6-b07a-8638d21aff90",
+        "operationId": "node__node_type___curie__get-23c169bf-7555-49eb-a4f5-aab388463a7b",
         "parameters": [
           {
             "required": true,
@@ -572,7 +572,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-d4b86c5f-c360-4cd5-a251-7f1975248ca8",
+        "operationId": "simple_spec_simple_spec_get-94cee7c3-89d2-4d12-915c-ac4b34348816",
         "parameters": [
           {
             "required": false,
@@ -627,7 +627,7 @@
         "tags": ["trapi", "CTD"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-e4de7e0c-11bd-40fc-ae02-c34c8c7b449c",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-772f28cf-2bbb-4324-88c6-f23b25acc483",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -647,7 +647,7 @@
         "tags": ["trapi", "CTD"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-658dbe27-4e66-4c8d-8735-9008d777ca05",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-01f9f594-9998-4c8c-bc71-6e246b085e6e",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -667,7 +667,7 @@
         "tags": ["trapi", "CTD"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-631d52f6-faec-4de1-930d-82c2444e714c",
+        "operationId": "reasoner_api_1_3_query_post-3c33a9a7-792c-43d5-9739-25043879a379",
         "requestBody": {
           "content": {
             "application/json": {
@@ -755,7 +755,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-a7690c71-ea50-4a45-bc0d-159971bfec88",
+        "operationId": "cypher_cypher_post-b1f83d62-63df-4f42-ab40-c8ffd31c3b9f",
         "requestBody": {
           "content": {
             "application/json": {
@@ -799,7 +799,7 @@
         "tags": ["translator", "CTD"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-3cde7320-287f-4a8b-bb4b-2c1a4b79d224",
+        "operationId": "overlay_overlay_post-f1634608-8ce5-4653-8463-d10fd68ba2aa",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1050,7 +1050,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-a5196c14-bb26-4981-a8bb-be2db83364f5",
+        "operationId": "metadata_metadata_get-1786f767-491a-46a3-acf2-f0b231df5d0f",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -1070,7 +1070,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-df764562-c5f7-4724-83fd-36758d4b05d1",
+        "operationId": "one_hop__source_type___target_type___curie__get-b3b7510d-838f-49a8-afa8-6427a3ec5144",
         "parameters": [
           {
             "required": true,
@@ -1131,7 +1131,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-bfcd0e45-6be8-4529-9e89-7da240eac64c",
+        "operationId": "node__node_type___curie__get-9520cff7-8983-4b43-a59a-6df149c3b1ef",
         "parameters": [
           {
             "required": true,
@@ -1183,7 +1183,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-69c2feec-981b-4b18-9cf5-ae29eaa4e8ce",
+        "operationId": "simple_spec_simple_spec_get-22c0b2cb-bac8-42dc-8224-47f52b72c47b",
         "parameters": [
           {
             "required": false,
@@ -1238,7 +1238,7 @@
         "tags": ["trapi", "DrugCentral"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-2f45cd17-aa8e-48ff-8fa3-09fdd81ac691",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-a5af3150-d1e5-49a3-b9c1-4e86f48108b6",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -1258,7 +1258,7 @@
         "tags": ["trapi", "DrugCentral"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-b092671f-3312-498c-8ec3-e7124553ad18",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-7286c222-1e50-4fbc-9f73-9705245563b3",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -1278,7 +1278,7 @@
         "tags": ["trapi", "DrugCentral"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-4f3ae146-ab98-481a-af02-701c87a11733",
+        "operationId": "reasoner_api_1_3_query_post-8b8b174e-a8d0-4e35-8758-bd8e74df1a58",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1366,7 +1366,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-449ef6c8-4d97-4e32-8dbc-efbfb7582259",
+        "operationId": "cypher_cypher_post-28a275db-2984-4e9f-9301-e9af020641bc",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1410,7 +1410,7 @@
         "tags": ["translator", "DrugCentral"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-39ca73b6-d162-496c-b9a4-1dd6ca0ade5c",
+        "operationId": "overlay_overlay_post-a837cc33-16d5-48d7-aefd-58818207a183",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1661,7 +1661,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-3a7b5164-49db-4502-af50-33b8c41e9540",
+        "operationId": "metadata_metadata_get-e2edfc05-dec8-4486-9dd3-d094fc65d6b1",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -1681,7 +1681,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-3e75183b-7098-4a10-aa96-24e364045da4",
+        "operationId": "one_hop__source_type___target_type___curie__get-e69adc89-f2c8-4812-a9cc-456fbffec812",
         "parameters": [
           {
             "required": true,
@@ -1742,7 +1742,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-dce30c3c-48b3-4edb-904a-5bfdc82c2381",
+        "operationId": "node__node_type___curie__get-48e345ef-d3e6-485a-b493-11bd3ae58387",
         "parameters": [
           {
             "required": true,
@@ -1794,7 +1794,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-72eb6a36-5331-4e06-9497-4c9cd4c50435",
+        "operationId": "simple_spec_simple_spec_get-3ea7bd6d-e4b8-417e-a3e8-ca0d97edb6a4",
         "parameters": [
           {
             "required": false,
@@ -1849,7 +1849,7 @@
         "tags": ["trapi", "GTEx"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-dfbf5d89-ac60-4497-b48f-cad0aac1326c",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-90188d3f-9127-4381-b71a-738d32c7082d",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -1869,7 +1869,7 @@
         "tags": ["trapi", "GTEx"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-d020ac77-5996-497f-a628-c132a598b848",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-ab4eb092-678e-4cb2-a4e6-f70c5be0c3d9",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -1889,7 +1889,7 @@
         "tags": ["trapi", "GTEx"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-38d7a52a-64bd-4407-9385-87992ab3260b",
+        "operationId": "reasoner_api_1_3_query_post-2764cbbe-23a0-42f9-9b90-ab42ea22935f",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1977,7 +1977,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-09f6c569-5227-47c4-b0ac-98585df00c8e",
+        "operationId": "cypher_cypher_post-cd34e1a3-13be-42ed-94c1-c86419198913",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2021,7 +2021,7 @@
         "tags": ["translator", "GTEx"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-d4cf53af-014d-4039-b00a-56f5af8ab5c7",
+        "operationId": "overlay_overlay_post-0d56ceb7-217f-4cf8-bfaa-abb9a99a1f64",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2272,7 +2272,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-0daead5b-4b49-4402-bfa4-e5450752269e",
+        "operationId": "metadata_metadata_get-0156dbbf-da90-4082-970a-821fc485200f",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -2292,7 +2292,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-ce7e8d5b-f096-4ed3-b6bd-c333619ceb03",
+        "operationId": "one_hop__source_type___target_type___curie__get-de6623d2-eff1-4f3f-9507-f47b7de77256",
         "parameters": [
           {
             "required": true,
@@ -2353,7 +2353,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-6007ecc2-acf5-4526-8ab0-c6cdafba59e3",
+        "operationId": "node__node_type___curie__get-bd098944-2ad6-4628-967f-265891aed431",
         "parameters": [
           {
             "required": true,
@@ -2405,7 +2405,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-8ceb0535-b0c6-4f8a-9772-e96da996e618",
+        "operationId": "simple_spec_simple_spec_get-b5070a66-6833-4b09-96f9-053bedcef180",
         "parameters": [
           {
             "required": false,
@@ -2460,7 +2460,7 @@
         "tags": ["trapi", "GtoPdb"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-bb8d6047-015e-4ae0-beeb-0e3b03d290f7",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-20a62e64-26c3-49ad-8ce7-467b38984896",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -2480,7 +2480,7 @@
         "tags": ["trapi", "GtoPdb"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-b3f9ab06-d213-4dd4-b8c2-b3cb2fc2da06",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-68e43c54-2163-4df2-8cae-9be221509609",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -2500,7 +2500,7 @@
         "tags": ["trapi", "GtoPdb"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-d7516c05-a74a-48b4-9acb-a858400646ce",
+        "operationId": "reasoner_api_1_3_query_post-8775e243-8ed4-46e0-986f-fc89ce14f206",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2588,7 +2588,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-8b954eb1-807f-4559-979d-854aa377a9cd",
+        "operationId": "cypher_cypher_post-41a6c780-b180-4843-bb10-2bd4b91ab9eb",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2632,7 +2632,7 @@
         "tags": ["translator", "GtoPdb"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-83043a99-4ae0-45af-9fd6-fa9ee5ed0414",
+        "operationId": "overlay_overlay_post-2f048bd6-e5ad-4c7a-907d-49e542afdd06",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2883,7 +2883,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-b95e3d2b-d264-4865-880d-16a25e27b852",
+        "operationId": "metadata_metadata_get-ab57ca4e-ccc8-4517-8a97-b63e7883b196",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -2903,7 +2903,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-3ceafd2c-d691-4deb-9517-d2bb97f280bc",
+        "operationId": "one_hop__source_type___target_type___curie__get-a38ff500-16d0-4061-b103-bb7be36e004a",
         "parameters": [
           {
             "required": true,
@@ -2964,7 +2964,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-8bb7dd63-c7bd-42eb-bea6-3f6cf4302104",
+        "operationId": "node__node_type___curie__get-2b0e327f-e0c5-4035-a9c7-81c15d09751e",
         "parameters": [
           {
             "required": true,
@@ -3016,7 +3016,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-d8624324-5391-4003-9a18-0561f9b1776f",
+        "operationId": "simple_spec_simple_spec_get-90732daa-078b-4633-b889-073398ffbb6a",
         "parameters": [
           {
             "required": false,
@@ -3071,7 +3071,7 @@
         "tags": ["trapi", "GWAS Catalog"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-47907a9a-faff-44ba-97d6-4d25d86e4393",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-2b6536cb-5b52-4dd3-b549-7b612726bb9f",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3091,7 +3091,7 @@
         "tags": ["trapi", "GWAS Catalog"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-9bf54e2d-98e9-437f-b4c1-d87b414ffeb7",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-a26541c7-6454-4a7e-8bda-caadec36bb92",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3111,7 +3111,7 @@
         "tags": ["trapi", "GWAS Catalog"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-db782a2e-aad1-49c0-a893-80f235a5659a",
+        "operationId": "reasoner_api_1_3_query_post-6e94bccc-621b-465b-b0f5-045c986d66ed",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3199,7 +3199,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-edc35c5d-c9f7-4c7b-a100-678929e06314",
+        "operationId": "cypher_cypher_post-f899d649-112b-4497-b3c8-efc067534d1c",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3243,7 +3243,7 @@
         "tags": ["translator", "GWAS Catalog"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-c10b7ed8-b8e3-489d-b465-b17756359f26",
+        "operationId": "overlay_overlay_post-08b995b0-2476-4310-a28d-d869d44377af",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3494,7 +3494,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-9252fc01-f4fb-4150-941e-e7a39979248d",
+        "operationId": "metadata_metadata_get-42369e38-9eb2-4ab9-9fd1-a165ffa70018",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3514,7 +3514,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-7908d54b-b5d3-4f96-af94-18743007e4e8",
+        "operationId": "one_hop__source_type___target_type___curie__get-74a6b30d-d020-4516-91da-09cf1f562e9e",
         "parameters": [
           {
             "required": true,
@@ -3575,7 +3575,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-1ed070cd-80c0-4967-9a14-44d6a9c7324f",
+        "operationId": "node__node_type___curie__get-ce7f6235-35a9-4db0-8cae-461e149caed8",
         "parameters": [
           {
             "required": true,
@@ -3627,7 +3627,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-4499ef9f-d0cf-48ec-b615-0794653aa99d",
+        "operationId": "simple_spec_simple_spec_get-3ea3fb5d-17b7-4179-8e2a-14d0183c346e",
         "parameters": [
           {
             "required": false,
@@ -3682,7 +3682,7 @@
         "tags": ["trapi", "Hetionet"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-946dfe7d-5e3a-46b5-a62b-a5e0dc4081f5",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-515eafa4-b909-4043-b3bb-1774aa4c87d3",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3702,7 +3702,7 @@
         "tags": ["trapi", "Hetionet"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-be26e68d-f344-481b-b82e-9edc0b83583e",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-d9c4adab-522c-4742-8496-06d01808dc83",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3722,7 +3722,7 @@
         "tags": ["trapi", "Hetionet"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-d3b71aa6-170c-4494-932e-e74789bbd613",
+        "operationId": "reasoner_api_1_3_query_post-3d5b78c9-03fe-414c-83e9-db319251a76c",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3810,7 +3810,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-bb605dbe-adbf-41aa-81f5-3667512e82b1",
+        "operationId": "cypher_cypher_post-e0dea1b7-bd0a-4b34-85ec-edfe8aab6069",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3854,7 +3854,7 @@
         "tags": ["translator", "Hetionet"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-c34d441f-9cb3-4be6-b76a-442b051c44f5",
+        "operationId": "overlay_overlay_post-808fc0f5-ebfc-4429-994b-91b8def29ddd",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4105,7 +4105,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-ffef00e5-a695-46c7-b09d-b1b4322cfe08",
+        "operationId": "metadata_metadata_get-fe22f24b-f242-44f2-a0d0-5bccf9984099",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -4125,7 +4125,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-e69f62c9-34ba-4e58-8e3d-12870936dc4f",
+        "operationId": "one_hop__source_type___target_type___curie__get-147e84ff-e38e-42a6-91d6-69b1c1c8ee9f",
         "parameters": [
           {
             "required": true,
@@ -4186,7 +4186,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-f9362a08-f36f-44c6-a067-98e7460f0e68",
+        "operationId": "node__node_type___curie__get-62fbe21e-c877-4f08-ab08-56af02767ff3",
         "parameters": [
           {
             "required": true,
@@ -4238,7 +4238,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-cd86f688-bcd4-428e-bf4d-9deac2037942",
+        "operationId": "simple_spec_simple_spec_get-41351d13-b2fd-418d-aad2-646cc150d7a7",
         "parameters": [
           {
             "required": false,
@@ -4293,7 +4293,7 @@
         "tags": ["trapi", "HGNC"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-c8cf89db-ec61-41f5-bd8e-02b26a447c84",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-4cab0899-dd06-4290-9820-b6e00197cda7",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -4313,7 +4313,7 @@
         "tags": ["trapi", "HGNC"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-48796312-b042-4278-99db-007a73dfd73a",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-a829445e-4148-4d4a-9ad1-164e9b84006b",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -4333,7 +4333,7 @@
         "tags": ["trapi", "HGNC"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-b48a0153-e31f-4596-8ea0-1001f7d53ff4",
+        "operationId": "reasoner_api_1_3_query_post-bc560036-5b05-4e9f-bbd7-0cdeb184566b",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4421,7 +4421,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-55043fc3-ee53-4d7b-8ffd-a9ad790c68df",
+        "operationId": "cypher_cypher_post-898bb0c3-1f37-4664-9171-89626cc33f60",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4465,7 +4465,7 @@
         "tags": ["translator", "HGNC"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-879b6319-6250-40dd-86fd-fdf615ac6f76",
+        "operationId": "overlay_overlay_post-7264076d-0634-4316-972a-555cd75c651e",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4716,7 +4716,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-ed787bbe-ae4c-4f05-8017-570c36ca5228",
+        "operationId": "metadata_metadata_get-0e380c11-d1dd-468d-831c-5001b36f97df",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -4736,7 +4736,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-3eef9552-25f5-4d15-8d8f-905e8b20b2a6",
+        "operationId": "one_hop__source_type___target_type___curie__get-15a70e44-d02f-4b83-b215-d638bd768164",
         "parameters": [
           {
             "required": true,
@@ -4797,7 +4797,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-af5a675f-7ec3-44e9-ae61-4db63922822e",
+        "operationId": "node__node_type___curie__get-811c2a1d-6a9f-4382-a2c6-fc705fba0f2c",
         "parameters": [
           {
             "required": true,
@@ -4849,7 +4849,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-95203485-4643-47b1-afa1-7ba4addad9fb",
+        "operationId": "simple_spec_simple_spec_get-7a4c65bf-abce-4a81-8d8e-3d9ac907a505",
         "parameters": [
           {
             "required": false,
@@ -4904,7 +4904,7 @@
         "tags": ["trapi", "HMDB"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-8a2d965a-0f56-48f0-abce-a5d10cba38b7",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-f6c987a4-024e-405a-8435-121d1cd07690",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -4924,7 +4924,7 @@
         "tags": ["trapi", "HMDB"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-dca3675a-2fe2-4b57-996a-a04ffc579f5b",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-a295e5a7-4020-4e3e-a2b1-a56c437fb4d0",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -4944,7 +4944,7 @@
         "tags": ["trapi", "HMDB"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-56f5957a-205b-45e4-84fc-c82e88704802",
+        "operationId": "reasoner_api_1_3_query_post-f4ce2f7e-c243-4236-8682-2e7c03b029c1",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5032,7 +5032,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-1f3b0a92-c3fe-4b4d-a5b1-bdf2f5fb2653",
+        "operationId": "cypher_cypher_post-9965c18e-c155-4058-97c1-9a8be24aea9d",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5076,7 +5076,7 @@
         "tags": ["translator", "HMDB"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-6e0ca31e-da28-4653-84aa-a8d71f25d188",
+        "operationId": "overlay_overlay_post-6cbb93fb-b4c3-48fb-903a-c6be8462d5c5",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5327,7 +5327,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-743e1921-6b4b-4dae-a174-aa0944cd3a6f",
+        "operationId": "metadata_metadata_get-7591114b-e0c1-4195-b2b1-2d29b89930e1",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -5347,7 +5347,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-07b13140-9075-4f3a-bfe1-6949a9d5370e",
+        "operationId": "one_hop__source_type___target_type___curie__get-bcd5fd0f-3e68-426e-aee5-3eb295bdc5d6",
         "parameters": [
           {
             "required": true,
@@ -5408,7 +5408,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-f0637ca7-5ae3-4661-b6d7-2f629f044510",
+        "operationId": "node__node_type___curie__get-fbcb7a3d-eacd-4875-b6d3-75645baebc03",
         "parameters": [
           {
             "required": true,
@@ -5460,7 +5460,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-2694d143-e829-429a-bdfb-e1aa3b775d39",
+        "operationId": "simple_spec_simple_spec_get-39b48dc8-f1ed-4bab-b018-9a7bdeec8e91",
         "parameters": [
           {
             "required": false,
@@ -5515,7 +5515,7 @@
         "tags": ["trapi", "Human GOA"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-67a0dfb2-17c5-463c-b52a-679d3b19867a",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-b542425d-0a8e-47f5-bda3-8fe6b0638f50",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -5535,7 +5535,7 @@
         "tags": ["trapi", "Human GOA"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-ef14af12-3202-4aa2-9f3b-08d0df972a52",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-35657b06-c21e-4640-8d3e-ddd9ea40cc39",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -5555,7 +5555,7 @@
         "tags": ["trapi", "Human GOA"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-b781e3e1-7db8-4160-8358-81d9a00aeac3",
+        "operationId": "reasoner_api_1_3_query_post-58466705-28ea-44eb-8a63-52637445215d",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5643,7 +5643,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-77cdc390-3d4d-407e-9ab6-d5770c87c893",
+        "operationId": "cypher_cypher_post-6e7e04ca-91cb-46c5-bf10-d3eac51669c9",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5687,7 +5687,7 @@
         "tags": ["translator", "Human GOA"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-da5b71a5-d351-4f51-aefe-3b47243e1bd3",
+        "operationId": "overlay_overlay_post-81050907-717d-4983-999d-78997c7e5407",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5938,7 +5938,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-8fa7e1d1-5010-4855-a086-14a335caa1f4",
+        "operationId": "metadata_metadata_get-e1143c7f-6855-47c3-a497-03d0e3dbb105",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -5958,7 +5958,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-538e261e-6702-40c2-92b7-853a581cf6ca",
+        "operationId": "one_hop__source_type___target_type___curie__get-cba94886-3838-407b-8893-2d4fdca8d3a9",
         "parameters": [
           {
             "required": true,
@@ -6019,7 +6019,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-166d29a7-96ab-438f-b116-6dd90335988d",
+        "operationId": "node__node_type___curie__get-7f198efe-2007-44cb-a734-f3e70cfe1a97",
         "parameters": [
           {
             "required": true,
@@ -6071,7 +6071,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-8cf07255-2746-4f50-ba61-1b9c1d7deca9",
+        "operationId": "simple_spec_simple_spec_get-2efd49bb-4b2e-4b19-826d-3abdd64171ee",
         "parameters": [
           {
             "required": false,
@@ -6126,7 +6126,7 @@
         "tags": ["trapi", "icees-kg"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-ce1a784b-c551-4e5d-a0bf-609f96498476",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-8bf66817-bf6c-4df1-bf55-c071bfda3c61",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -6146,7 +6146,7 @@
         "tags": ["trapi", "icees-kg"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-2e81a6d0-b312-46ac-aaef-e0a55389c7d2",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-3f576a97-45b6-44b6-9afb-e5843b36e9f3",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -6166,7 +6166,7 @@
         "tags": ["trapi", "icees-kg"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-aa69da1c-6c67-4643-8421-6acc3bcf1420",
+        "operationId": "reasoner_api_1_3_query_post-e2bdb94d-38df-4886-a740-c206d726928d",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6254,7 +6254,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-38525d92-3cc9-475a-b4db-d292dd25965a",
+        "operationId": "cypher_cypher_post-a5a807d0-bc38-4e3a-9e26-03bf8101ffd7",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6298,7 +6298,7 @@
         "tags": ["translator", "icees-kg"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-3efa6954-17fb-4825-beb9-0597f11af28f",
+        "operationId": "overlay_overlay_post-094183f9-0324-4a2c-8a58-94b5f25107f7",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6549,7 +6549,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-6963da56-549c-42df-b8eb-6abf6a641924",
+        "operationId": "metadata_metadata_get-77e20838-0529-44b2-b5b0-67013deecf77",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -6569,7 +6569,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-e924c058-6167-4bde-bf6e-ec5c65af0697",
+        "operationId": "one_hop__source_type___target_type___curie__get-bb2fcb31-e451-439d-bf81-b2ca838988ea",
         "parameters": [
           {
             "required": true,
@@ -6630,7 +6630,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-05e9f181-cd22-43f6-9f5c-29c995906268",
+        "operationId": "node__node_type___curie__get-04d46287-68bc-429b-9432-5c771b3eab0b",
         "parameters": [
           {
             "required": true,
@@ -6682,7 +6682,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-498fc6de-b0ec-4ef9-8cfe-4d866c088034",
+        "operationId": "simple_spec_simple_spec_get-38ef6e2f-1be9-484e-a957-bebf166226e7",
         "parameters": [
           {
             "required": false,
@@ -6737,7 +6737,7 @@
         "tags": ["trapi", "InTact"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-31b9df03-2707-4b00-9429-b4da14ccd0a1",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-a66a0459-0605-4b68-b800-ee69e0c16f27",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -6757,7 +6757,7 @@
         "tags": ["trapi", "InTact"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-36d72337-cf29-42a2-820b-018a7edf9ecd",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-fef7ba65-d054-4015-aff7-029a9a4ea49c",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -6777,7 +6777,7 @@
         "tags": ["trapi", "InTact"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-3d074a7d-e37d-4b2d-92e0-8c93297b6f6a",
+        "operationId": "reasoner_api_1_3_query_post-223261b5-2f86-47ce-960f-12c8004d02af",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6865,7 +6865,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-240bd447-02cd-4a6d-b656-d96094d88085",
+        "operationId": "cypher_cypher_post-fbcc2bdf-1dbc-4aee-a39e-0568ec98241a",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6909,7 +6909,7 @@
         "tags": ["translator", "InTact"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-00b4ba66-d87e-4b05-8d2a-f49e6d26a27b",
+        "operationId": "overlay_overlay_post-a2f4fe93-e8bc-4df7-ae17-1f57f8412ae9",
         "requestBody": {
           "content": {
             "application/json": {
@@ -7160,7 +7160,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-6ed6a836-95c8-4501-8ee8-1849b3be8883",
+        "operationId": "metadata_metadata_get-a196db6f-ae97-46da-bc42-9eaf19331948",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -7180,7 +7180,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-b6a8e73f-f4be-4038-af41-3f82f06cb0b5",
+        "operationId": "one_hop__source_type___target_type___curie__get-71485c86-e6b8-4a61-bbd0-5737874e1e6d",
         "parameters": [
           {
             "required": true,
@@ -7241,7 +7241,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-cfe7157d-6f86-4d25-8861-e75810272289",
+        "operationId": "node__node_type___curie__get-d79c24f2-72e4-4e76-ae87-af8ed83aa7e4",
         "parameters": [
           {
             "required": true,
@@ -7293,7 +7293,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-745d630e-eef8-4992-a021-d6c508f3cbfa",
+        "operationId": "simple_spec_simple_spec_get-9a1bda85-20bd-44e7-a0ed-074af659b9bb",
         "parameters": [
           {
             "required": false,
@@ -7348,7 +7348,7 @@
         "tags": ["trapi", "Ubergraph Redundant"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-6218f7b7-fed3-42a5-b9a6-6a25401a1fce",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-b4105124-3f49-4304-9ab4-94b9e2113cc7",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -7368,7 +7368,7 @@
         "tags": ["trapi", "Ubergraph Redundant"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-026647a6-c45e-4a9a-ad9b-9f9ca38b6dcb",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-5f99f2eb-9ded-4f29-8fe0-53e17686d23e",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -7388,7 +7388,7 @@
         "tags": ["trapi", "Ubergraph Redundant"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-3a41e035-f4c7-4ca1-a1fb-43319f39db08",
+        "operationId": "reasoner_api_1_3_query_post-b9497b6c-54d3-42ac-a7e2-1e4c0fd5eeda",
         "requestBody": {
           "content": {
             "application/json": {
@@ -7476,7 +7476,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-991aa400-36c4-43a7-ad77-8292a9cb2f15",
+        "operationId": "cypher_cypher_post-047a7dd8-ac5f-413f-83e5-c51807dde607",
         "requestBody": {
           "content": {
             "application/json": {
@@ -7520,7 +7520,7 @@
         "tags": ["translator", "Ubergraph Redundant"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-ee6e2a96-41b5-45d8-9168-bcd85209596d",
+        "operationId": "overlay_overlay_post-a5f2a7a1-0730-4b99-954a-9b08c53450e4",
         "requestBody": {
           "content": {
             "application/json": {
@@ -7771,7 +7771,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-9e0744f5-4cb7-421e-bb42-939f0c79cb28",
+        "operationId": "metadata_metadata_get-849e6f56-af00-475e-b0cc-b19f51f4ffe5",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -7791,7 +7791,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-63b49616-5c20-46c3-98b0-1520f287c8b0",
+        "operationId": "one_hop__source_type___target_type___curie__get-66df60d5-4742-479f-88e7-185ef3a06d7b",
         "parameters": [
           {
             "required": true,
@@ -7852,7 +7852,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-01fc035d-38f2-4c7f-8b34-4d247634be33",
+        "operationId": "node__node_type___curie__get-95fb22df-23c1-44cf-9988-ca3e4d0e0e64",
         "parameters": [
           {
             "required": true,
@@ -7904,7 +7904,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-2c22d419-7d2f-46fd-8809-5b755eed1da4",
+        "operationId": "simple_spec_simple_spec_get-57797e8c-8c93-43be-b383-82dc21e67ba6",
         "parameters": [
           {
             "required": false,
@@ -7959,7 +7959,7 @@
         "tags": ["trapi", "PANTHER"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-d7ac9a7e-6ca6-4be6-a05a-3a74277b12ff",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-3fc540aa-4a1a-4039-8af2-b04c6b713233",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -7979,7 +7979,7 @@
         "tags": ["trapi", "PANTHER"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-9974f21f-3d5b-4413-a7e3-4eba5153c94a",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-819d34f8-0173-44ff-a52b-6bc331787a61",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -7999,7 +7999,7 @@
         "tags": ["trapi", "PANTHER"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-f028cfee-cc87-4b61-93b4-abb24800dbfd",
+        "operationId": "reasoner_api_1_3_query_post-6a5cfd82-44ec-4992-ad38-dbde5b347170",
         "requestBody": {
           "content": {
             "application/json": {
@@ -8087,7 +8087,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-3818ab4c-f4d2-4b4c-9e47-630da403df9b",
+        "operationId": "cypher_cypher_post-dab247fc-9a63-498c-b52f-94ab58db38bc",
         "requestBody": {
           "content": {
             "application/json": {
@@ -8131,7 +8131,7 @@
         "tags": ["translator", "PANTHER"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-5cd13b4d-fcf0-4e8b-80af-39704d90a0a4",
+        "operationId": "overlay_overlay_post-adda2ff5-3318-49b7-a032-971bf278b95c",
         "requestBody": {
           "content": {
             "application/json": {
@@ -8382,7 +8382,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-61f678ce-741a-49d2-8aa8-1cc8497f6e30",
+        "operationId": "metadata_metadata_get-fdda2ff1-2e57-4c51-adb3-65d24c8cf3de",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -8402,7 +8402,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-d457a663-eab8-4385-a0c1-760ee3fd8f35",
+        "operationId": "one_hop__source_type___target_type___curie__get-48969a8d-8910-4dd9-b883-c2b6505be8d6",
         "parameters": [
           {
             "required": true,
@@ -8463,7 +8463,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-14427ff1-8274-4290-8b40-2101a7b0dfdf",
+        "operationId": "node__node_type___curie__get-5eee1d89-4c72-4917-bd34-89d7e94676a1",
         "parameters": [
           {
             "required": true,
@@ -8515,7 +8515,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-3f87b431-1aae-488a-b54d-2e09fa56e9f1",
+        "operationId": "simple_spec_simple_spec_get-f2a6280d-fcc4-426f-ae45-409cfbfa16b1",
         "parameters": [
           {
             "required": false,
@@ -8570,7 +8570,7 @@
         "tags": ["trapi", "Pharos"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-005a1319-4084-4feb-91c3-b08a047e8b29",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-962e540e-0249-4d38-a28f-f74271c529c8",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -8590,7 +8590,7 @@
         "tags": ["trapi", "Pharos"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-12f954f7-6ae1-4c1e-a87b-f70c0648784b",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-8097f64a-ff4d-4da4-90bd-0676dcc7e518",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -8610,7 +8610,7 @@
         "tags": ["trapi", "Pharos"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-bf2738fc-f54b-409c-b373-dd57a99edd06",
+        "operationId": "reasoner_api_1_3_query_post-ed1e65ef-dfd2-406d-83be-235d38f1167f",
         "requestBody": {
           "content": {
             "application/json": {
@@ -8698,7 +8698,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-096157fc-8ad7-42f3-aa0a-6dcfce250434",
+        "operationId": "cypher_cypher_post-fe0feffc-84d9-4bfb-aaeb-86a7e2ca504f",
         "requestBody": {
           "content": {
             "application/json": {
@@ -8742,7 +8742,7 @@
         "tags": ["translator", "Pharos"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-7dc0fde7-278f-4352-8fa4-f9c486d102ce",
+        "operationId": "overlay_overlay_post-2b0b28f5-098a-4910-8ae2-96910e01a456",
         "requestBody": {
           "content": {
             "application/json": {
@@ -8993,7 +8993,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-ca1219e3-b85c-45bc-9cdd-29c7a95ca7fb",
+        "operationId": "metadata_metadata_get-d8edb2f8-d7bd-462a-b6c4-e30c01739761",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -9013,7 +9013,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-06a7ced9-9674-4f86-8a74-b035b497d8cf",
+        "operationId": "one_hop__source_type___target_type___curie__get-3de6bc01-429e-44e5-ac81-79c55dc414ab",
         "parameters": [
           {
             "required": true,
@@ -9074,7 +9074,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-ea7dab6a-c590-4e79-b7c3-c3243b522185",
+        "operationId": "node__node_type___curie__get-31be0828-65ea-41ab-ba25-f763b9aa814b",
         "parameters": [
           {
             "required": true,
@@ -9126,7 +9126,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-f1208f51-2194-45d0-959a-1e450a62faa5",
+        "operationId": "simple_spec_simple_spec_get-2e94ae71-9ead-489b-ba1d-c3d847d6b508",
         "parameters": [
           {
             "required": false,
@@ -9181,7 +9181,7 @@
         "tags": ["trapi", "ROBOKOP KG"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-17d7c8d7-74a2-467b-8ca5-caa133203453",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-8da15ba0-7ed2-4e6e-b19e-7cdf69067bec",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -9201,7 +9201,7 @@
         "tags": ["trapi", "ROBOKOP KG"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-2391c3f9-a87c-4a58-99a8-729ff1205179",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-55c47411-042c-4035-bbfe-0522f1231303",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -9221,7 +9221,7 @@
         "tags": ["trapi", "ROBOKOP KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-50ed49ee-3ad8-416e-b13a-5b531478a70f",
+        "operationId": "reasoner_api_1_3_query_post-489ded87-f47f-4193-ab64-ad6ce04bf65d",
         "requestBody": {
           "content": {
             "application/json": {
@@ -9309,7 +9309,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-be166e5b-86db-45df-ad9d-d2752cc50ca2",
+        "operationId": "cypher_cypher_post-8cb3d7fb-316a-420c-bb31-c73a97fd8940",
         "requestBody": {
           "content": {
             "application/json": {
@@ -9353,7 +9353,7 @@
         "tags": ["translator", "ROBOKOP KG"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-47cb6b2d-93c8-4d4d-9b2e-18a3c6e26051",
+        "operationId": "overlay_overlay_post-58143950-67de-4705-a0b0-d8a4579709db",
         "requestBody": {
           "content": {
             "application/json": {
@@ -9604,7 +9604,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-b9543b13-6e09-4c60-9c4b-a17cacb9abae",
+        "operationId": "metadata_metadata_get-c832e79b-292f-49ea-8af0-0744a2588b69",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -9624,7 +9624,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-3fcf2ec6-dba3-447a-8eef-0747e805fde8",
+        "operationId": "one_hop__source_type___target_type___curie__get-3e9a704d-399a-43ea-a0dd-a5911febf8be",
         "parameters": [
           {
             "required": true,
@@ -9685,7 +9685,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-02a3d4dc-033b-4b99-9eba-6889f9955066",
+        "operationId": "node__node_type___curie__get-0f2c8ec7-c935-4307-a75a-ecf9850e6ddb",
         "parameters": [
           {
             "required": true,
@@ -9737,7 +9737,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-625323b6-515f-440d-b864-f9fe7a265561",
+        "operationId": "simple_spec_simple_spec_get-5fc0c94b-0aee-4bea-a9c9-0adac32bb3b6",
         "parameters": [
           {
             "required": false,
@@ -9792,7 +9792,7 @@
         "tags": ["trapi", "SRI Reference KG"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-d36410ac-8ab4-4038-ac3c-611759107c9d",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-71a9733c-7850-4544-a53b-0913da30549c",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -9812,7 +9812,7 @@
         "tags": ["trapi", "SRI Reference KG"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-300277da-90b4-4eaa-a6d8-71c83d823acd",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-336f0dd0-6e5c-44a4-86a4-06e789c4040d",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -9832,7 +9832,7 @@
         "tags": ["trapi", "SRI Reference KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-db4b6674-ca04-437b-8239-78896a9c7903",
+        "operationId": "reasoner_api_1_3_query_post-6f9c9a0d-eded-4e70-a001-09fd9eab0d7d",
         "requestBody": {
           "content": {
             "application/json": {
@@ -9920,7 +9920,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-f515710f-8ed6-4e76-803c-71d8d195b9f8",
+        "operationId": "cypher_cypher_post-aed79a9a-07c7-474f-a545-464818b849b0",
         "requestBody": {
           "content": {
             "application/json": {
@@ -9964,7 +9964,7 @@
         "tags": ["translator", "SRI Reference KG"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-a806abad-5d5b-4aae-a10e-646d31c3a662",
+        "operationId": "overlay_overlay_post-09e806a3-f7a5-4930-bfdf-343e76d1a467",
         "requestBody": {
           "content": {
             "application/json": {
@@ -10215,7 +10215,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-e6cb7fb9-51a0-446d-8edc-9d5c21c65105",
+        "operationId": "metadata_metadata_get-a27a3b42-4524-4143-9cda-e22d21006ee9",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -10235,7 +10235,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-34f865cb-db69-49a2-983c-e63c3f048397",
+        "operationId": "one_hop__source_type___target_type___curie__get-d3e4394b-39ea-477a-aedd-8dab1ebaba6e",
         "parameters": [
           {
             "required": true,
@@ -10296,7 +10296,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-ad00976c-bbac-41ee-ba5f-33ea93cbde16",
+        "operationId": "node__node_type___curie__get-6d07d838-9e9f-4263-abee-3a42cdaf329a",
         "parameters": [
           {
             "required": true,
@@ -10348,7 +10348,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-134706b7-3720-4ed0-8f17-c444927a95a7",
+        "operationId": "simple_spec_simple_spec_get-f962d296-adb9-4afc-9526-062a1fd31d5b",
         "parameters": [
           {
             "required": false,
@@ -10403,7 +10403,7 @@
         "tags": ["trapi", "STRING"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-868f52f4-0448-4142-9ea1-b0aafe3d0fb2",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-82b8ff1d-4ffd-4802-af4e-516a3d337910",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -10423,7 +10423,7 @@
         "tags": ["trapi", "STRING"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-63a49d92-9164-4972-a75a-0703f0175274",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-f08c69cc-4139-4ca6-b92f-abffac690428",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -10443,7 +10443,7 @@
         "tags": ["trapi", "STRING"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-614e851d-46ad-43ed-b8a8-03bb36b25ca5",
+        "operationId": "reasoner_api_1_3_query_post-999c6f29-c980-4109-b657-40556a338e49",
         "requestBody": {
           "content": {
             "application/json": {
@@ -10531,7 +10531,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-c7bb30bb-b76f-4514-9832-0c12b71610fc",
+        "operationId": "cypher_cypher_post-79352fe3-3810-4b34-8769-e9ebcfbb0c7b",
         "requestBody": {
           "content": {
             "application/json": {
@@ -10575,7 +10575,7 @@
         "tags": ["translator", "STRING"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-649d1f94-2e57-476c-824f-bcfa3bda3db7",
+        "operationId": "overlay_overlay_post-415f86e9-8c18-471b-9f71-9f6b6b2a239c",
         "requestBody": {
           "content": {
             "application/json": {
@@ -10826,7 +10826,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-546b69b0-30c7-4662-9439-547e8b3a4e55",
+        "operationId": "metadata_metadata_get-deb5cd93-56c6-4202-9917-d68ddf3ed025",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -10846,7 +10846,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-93acf17f-b033-428f-a658-462aeaaa7237",
+        "operationId": "one_hop__source_type___target_type___curie__get-8626a452-3f38-428b-8c28-4b30c6aca1ea",
         "parameters": [
           {
             "required": true,
@@ -10907,7 +10907,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-9176ee0f-33ab-46a4-b1fa-183b670fdebf",
+        "operationId": "node__node_type___curie__get-c0cab1a6-7b0b-45a2-b5bb-8f0c3ba4e8b4",
         "parameters": [
           {
             "required": true,
@@ -10959,7 +10959,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-8a52d7da-5727-42ff-aad2-b727ff1cf095",
+        "operationId": "simple_spec_simple_spec_get-4e43d1bc-18e4-4e66-ae14-586092616257",
         "parameters": [
           {
             "required": false,
@@ -11014,7 +11014,7 @@
         "tags": ["trapi", "Ubergraph"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-131002b5-389b-4bdb-9c0c-ce19bb3df161",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-9f997c4f-ea72-49dc-953c-66c6a98bb0c3",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -11034,7 +11034,7 @@
         "tags": ["trapi", "Ubergraph"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-6bf2970b-adad-44c7-9e5b-57d24c16637c",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-c88314a0-1e17-4af4-b763-656653519e5b",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -11054,7 +11054,7 @@
         "tags": ["trapi", "Ubergraph"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-9a6569ba-e5ea-4784-9978-51de35a9be4b",
+        "operationId": "reasoner_api_1_3_query_post-4a9bdca4-c7bd-4272-91af-c56589297596",
         "requestBody": {
           "content": {
             "application/json": {
@@ -11142,7 +11142,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-3ae98417-0519-4bf8-9f7e-352f718ccc9d",
+        "operationId": "cypher_cypher_post-5f3d67a3-7b60-480b-b007-3035f12077ea",
         "requestBody": {
           "content": {
             "application/json": {
@@ -11186,7 +11186,7 @@
         "tags": ["translator", "Ubergraph"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-948c4034-7328-464b-bafa-69241b845c25",
+        "operationId": "overlay_overlay_post-cb990d5d-2aa2-4349-9c2c-471ca8679678",
         "requestBody": {
           "content": {
             "application/json": {
@@ -11437,7 +11437,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-019c59b8-1ada-4f9a-bb94-cd89bddb4713",
+        "operationId": "metadata_metadata_get-8bee02a5-eed3-4eca-b2c8-519f87f11f82",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -11457,7 +11457,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-56855692-9d0d-4cc0-8d7e-e47035c4a47c",
+        "operationId": "one_hop__source_type___target_type___curie__get-d9f43ac9-e2b1-49dc-9591-1e7444d48d53",
         "parameters": [
           {
             "required": true,
@@ -11518,7 +11518,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-6776571d-bee9-4acb-b574-c083b5f8e388",
+        "operationId": "node__node_type___curie__get-fb37b382-a0b7-418d-b532-8cc2d6d68cd1",
         "parameters": [
           {
             "required": true,
@@ -11570,7 +11570,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-13c99d40-ffd6-4906-88ab-3eed8a9b6b42",
+        "operationId": "simple_spec_simple_spec_get-a383456b-bdb7-4f35-95ac-24070774d533",
         "parameters": [
           {
             "required": false,
@@ -11625,7 +11625,7 @@
         "tags": ["trapi", "Viral Proteome"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-742c5c60-72ed-4677-8158-39a02de6189e",
+        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-06d62d54-3a1e-4eec-a02f-b4530065cc3c",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -11645,7 +11645,7 @@
         "tags": ["trapi", "Viral Proteome"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-899661ee-2dcf-498a-b155-b4b74522ce4b",
+        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-c558e453-2570-48e6-8647-51ff43b7498f",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -11665,7 +11665,7 @@
         "tags": ["trapi", "Viral Proteome"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post-f8f23b75-16ff-49a6-88d5-099e176d4f7e",
+        "operationId": "reasoner_api_1_3_query_post-57c0ab15-6106-4623-a894-c545ba93a06c",
         "requestBody": {
           "content": {
             "application/json": {
@@ -11753,7 +11753,7 @@
       "post": {
         "summary": "Run cypher query",
         "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post-a2e6dac7-b216-40ec-8bb1-27bd570a6355",
+        "operationId": "cypher_cypher_post-7322f2c6-0cc7-4ce0-b58c-6e77465b6cb6",
         "requestBody": {
           "content": {
             "application/json": {
@@ -11797,7 +11797,7 @@
         "tags": ["translator", "Viral Proteome"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post-7ba1cee1-a509-422f-b05f-198b7bf36354",
+        "operationId": "overlay_overlay_post-9e2820a6-f76a-4f32-aaac-c43e2ed95c1b",
         "requestBody": {
           "content": {
             "application/json": {
@@ -12048,7 +12048,7 @@
       "get": {
         "summary": "Metadata about the knowledge graph.",
         "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get-1994f8c0-1e31-4ad0-9646-5138a3f36418",
+        "operationId": "metadata_metadata_get-39b748c2-3a90-4801-bf10-c70c974b0abb",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -12068,7 +12068,7 @@
       "get": {
         "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get-7c524afe-74a7-4fbb-9c1e-86dc9959d926",
+        "operationId": "one_hop__source_type___target_type___curie__get-41bb2a4b-aaec-45c7-931b-a125525db76a",
         "parameters": [
           {
             "required": true,
@@ -12129,7 +12129,7 @@
       "get": {
         "summary": "Find `node` by `curie`",
         "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get-64a6356b-fa6e-48d0-931c-0739436ee8c5",
+        "operationId": "node__node_type___curie__get-63a98f9c-db86-4849-bcfa-1e2916bb50ba",
         "parameters": [
           {
             "required": true,
@@ -12181,7 +12181,7 @@
       "get": {
         "summary": "Get one-hop connection schema",
         "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get-63a58c5e-30d0-449d-8f34-f3ee03c4eb87",
+        "operationId": "simple_spec_simple_spec_get-a9c061f2-0ffc-4c1b-89b0-82168620e52e",
         "parameters": [
           {
             "required": false,
@@ -12234,7 +12234,7 @@
     "/registry": {
       "get": {
         "description": "Returns list of available PLATER instances.An entry from this list can be a prefix to route requests to specific PLATER backend",
-        "operationId": "get_list_of_platers-fd318850-6714-4a38-8e5c-f55f0bd24e09",
+        "operationId": "get_list_of_platers-06956d66-b636-4f0e-9b73-6d4b30a62ceb",
         "summary": "List of platers available",
         "parameters": [],
         "tags": ["automat"],
