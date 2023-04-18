@@ -1,0 +1,67 @@
+name: Generate and deploy docs
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [deploy]
+    
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Write current date to environment variable
+        run: echo "DATE=$(date +'%Y-%m-%d-%I.%M.%S%p')" >> $GITHUB_ENV
+
+      - name: Add git user configuration
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Fetch staging from remote
+        run: |
+          git fetch
+          git switch staging
+
+      - name: Fetch newest Automat OpenAPI document and metadata
+        run: npm run preprocess
+        
+      - name: Generate Docusaurus mdx files
+        run: |
+          npm run clean-api-docs automat
+          npm run gen-api-docs automat
+          
+      - name: Rewrite sidebar.js
+        run: npm run rearrange-sidebar
+        
+      - name: Remove "Introduction" page
+        run: rm ./docs/automat/automat.info.mdx || echo "Introduction docs page is already deleted"
+
+      - name: Check for untracked files
+        run: |
+          git add -A
+          if git status | grep -q 'Changes to be committed'; then
+            echo "UPDATED=true" >> $GITHUB_ENV
+          else
+            echo "Docs have not been updated, nothing has changed." > $GITHUB_STEP_SUMMARY
+          fi
+
+      # Only run the next two steps if there were changes detected by `git status` in the previous step
+      - name: Commit changes to staging
+        if: ${{ env.UPDATED == 'true' }}
+        run: |
+          git commit -m $(echo "Update documentation - ${{ env.DATE }}")
+          git push
+
+      - name: Create a new pull request
+        if: ${{ env.UPDATED == 'true' }}
+        run: npm run deploy
