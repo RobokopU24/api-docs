@@ -90,14 +90,17 @@ jobs:
         run: npm run build
         
       - name: Setup GH Pages
+        if: ${{ env.UPDATED == 'true' }}
         uses: actions/configure-pages@v1
         
       - name: Upload artifact
+        if: ${{ env.UPDATED == 'true' }}
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./build
           
       - name: Deploy to GitHub Pages
+        if: ${{ env.UPDATED == 'true' }}
         id: deployment
         uses: actions/deploy-pages@v1
         
