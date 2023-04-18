@@ -5,6 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "preprocess": "node ./scripts/preprocess.js",
+    "rearrange-sidebar": "node ./scripts/rearrange-sidebar.js && prettier --write ./docs/automat/sidebar.js",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
@@ -40,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.8.7"
   }
 }

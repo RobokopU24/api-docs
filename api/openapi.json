@@ -13,10 +13,7 @@
   "paths": {
     "/biolink/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "RENCI SRI Reference KG"
-        ],
+        "tags": ["trapi", "RENCI SRI Reference KG"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-26e2e83e-9abb-4aef-9c84-1d7f70bcaae0",
@@ -36,10 +33,7 @@
     },
     "/biolink/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "RENCI SRI Reference KG"
-        ],
+        "tags": ["trapi", "RENCI SRI Reference KG"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-4cbc16d1-5c94-49e8-a8ae-916afce2376b",
@@ -59,10 +53,7 @@
     },
     "/biolink/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "RENCI SRI Reference KG"
-        ],
+        "tags": ["trapi", "RENCI SRI Reference KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-b789d367-1fe0-4bc8-bd0d-be69862c7e7e",
@@ -77,30 +68,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -197,17 +180,12 @@
             }
           }
         },
-        "tags": [
-          "RENCI SRI Reference KG"
-        ]
+        "tags": ["RENCI SRI Reference KG"]
       }
     },
     "/biolink/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "RENCI SRI Reference KG"
-        ],
+        "tags": ["translator", "RENCI SRI Reference KG"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-515d8f7a-a2a5-4a46-a78a-c40d690dc7d9",
@@ -269,9 +247,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -282,9 +258,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -478,9 +452,7 @@
             }
           }
         },
-        "tags": [
-          "RENCI SRI Reference KG"
-        ]
+        "tags": ["RENCI SRI Reference KG"]
       }
     },
     "/biolink/{source_type}/{target_type}/{curie}": {
@@ -541,9 +513,7 @@
             }
           }
         },
-        "tags": [
-          "RENCI SRI Reference KG"
-        ]
+        "tags": ["RENCI SRI Reference KG"]
       }
     },
     "/biolink/{node_type}/{curie}": {
@@ -595,9 +565,7 @@
             }
           }
         },
-        "tags": [
-          "RENCI SRI Reference KG"
-        ]
+        "tags": ["RENCI SRI Reference KG"]
       }
     },
     "/biolink/simple_spec": {
@@ -651,17 +619,12 @@
             }
           }
         },
-        "tags": [
-          "RENCI SRI Reference KG"
-        ]
+        "tags": ["RENCI SRI Reference KG"]
       }
     },
     "/ctd/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "CTD"
-        ],
+        "tags": ["trapi", "CTD"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-3a7be26c-69aa-494d-8cf6-1177cac9c832",
@@ -681,10 +644,7 @@
     },
     "/ctd/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "CTD"
-        ],
+        "tags": ["trapi", "CTD"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-51cc8a40-9a7c-4e82-b3da-c0c677e0cd92",
@@ -704,10 +664,7 @@
     },
     "/ctd/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "CTD"
-        ],
+        "tags": ["trapi", "CTD"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-cc5578b8-f4d3-45e7-944e-dd967f9ef48b",
@@ -722,30 +679,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -842,17 +791,12 @@
             }
           }
         },
-        "tags": [
-          "CTD"
-        ]
+        "tags": ["CTD"]
       }
     },
     "/ctd/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "CTD"
-        ],
+        "tags": ["translator", "CTD"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-0812e346-4335-46da-a2d2-74e757dd68be",
@@ -914,9 +858,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -927,9 +869,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -1123,9 +1063,7 @@
             }
           }
         },
-        "tags": [
-          "CTD"
-        ]
+        "tags": ["CTD"]
       }
     },
     "/ctd/{source_type}/{target_type}/{curie}": {
@@ -1186,9 +1124,7 @@
             }
           }
         },
-        "tags": [
-          "CTD"
-        ]
+        "tags": ["CTD"]
       }
     },
     "/ctd/{node_type}/{curie}": {
@@ -1240,9 +1176,7 @@
             }
           }
         },
-        "tags": [
-          "CTD"
-        ]
+        "tags": ["CTD"]
       }
     },
     "/ctd/simple_spec": {
@@ -1296,17 +1230,12 @@
             }
           }
         },
-        "tags": [
-          "CTD"
-        ]
+        "tags": ["CTD"]
       }
     },
     "/drugcentral/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "DrugCentral"
-        ],
+        "tags": ["trapi", "DrugCentral"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-1045eb8d-bef0-4a0e-92cc-c0167ed0cbcb",
@@ -1326,10 +1255,7 @@
     },
     "/drugcentral/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "DrugCentral"
-        ],
+        "tags": ["trapi", "DrugCentral"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-51635b3a-4a33-476b-9e1b-516814b6da69",
@@ -1349,10 +1275,7 @@
     },
     "/drugcentral/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "DrugCentral"
-        ],
+        "tags": ["trapi", "DrugCentral"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-a1c6efd6-6402-4b93-96dd-cbd596c35eae",
@@ -1367,30 +1290,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -1487,17 +1402,12 @@
             }
           }
         },
-        "tags": [
-          "DrugCentral"
-        ]
+        "tags": ["DrugCentral"]
       }
     },
     "/drugcentral/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "DrugCentral"
-        ],
+        "tags": ["translator", "DrugCentral"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-4661b9b2-0796-4295-b223-1c91373a6de4",
@@ -1559,9 +1469,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -1572,9 +1480,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -1768,9 +1674,7 @@
             }
           }
         },
-        "tags": [
-          "DrugCentral"
-        ]
+        "tags": ["DrugCentral"]
       }
     },
     "/drugcentral/{source_type}/{target_type}/{curie}": {
@@ -1831,9 +1735,7 @@
             }
           }
         },
-        "tags": [
-          "DrugCentral"
-        ]
+        "tags": ["DrugCentral"]
       }
     },
     "/drugcentral/{node_type}/{curie}": {
@@ -1885,9 +1787,7 @@
             }
           }
         },
-        "tags": [
-          "DrugCentral"
-        ]
+        "tags": ["DrugCentral"]
       }
     },
     "/drugcentral/simple_spec": {
@@ -1941,17 +1841,12 @@
             }
           }
         },
-        "tags": [
-          "DrugCentral"
-        ]
+        "tags": ["DrugCentral"]
       }
     },
     "/gtex/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "GTEx"
-        ],
+        "tags": ["trapi", "GTEx"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-64ad4e8c-c53c-480d-a651-e3a5cb673558",
@@ -1971,10 +1866,7 @@
     },
     "/gtex/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "GTEx"
-        ],
+        "tags": ["trapi", "GTEx"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-d23b1540-3173-488d-bcb8-c1f9e7c8337d",
@@ -1994,10 +1886,7 @@
     },
     "/gtex/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "GTEx"
-        ],
+        "tags": ["trapi", "GTEx"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-db6beb2f-1d13-45b5-9e3b-7af125ac5e81",
@@ -2012,30 +1901,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -2132,17 +2013,12 @@
             }
           }
         },
-        "tags": [
-          "GTEx"
-        ]
+        "tags": ["GTEx"]
       }
     },
     "/gtex/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "GTEx"
-        ],
+        "tags": ["translator", "GTEx"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-375a66eb-8902-4ebf-9295-83a9225b2d85",
@@ -2204,9 +2080,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -2217,9 +2091,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -2413,9 +2285,7 @@
             }
           }
         },
-        "tags": [
-          "GTEx"
-        ]
+        "tags": ["GTEx"]
       }
     },
     "/gtex/{source_type}/{target_type}/{curie}": {
@@ -2476,9 +2346,7 @@
             }
           }
         },
-        "tags": [
-          "GTEx"
-        ]
+        "tags": ["GTEx"]
       }
     },
     "/gtex/{node_type}/{curie}": {
@@ -2530,9 +2398,7 @@
             }
           }
         },
-        "tags": [
-          "GTEx"
-        ]
+        "tags": ["GTEx"]
       }
     },
     "/gtex/simple_spec": {
@@ -2586,17 +2452,12 @@
             }
           }
         },
-        "tags": [
-          "GTEx"
-        ]
+        "tags": ["GTEx"]
       }
     },
     "/gtopdb/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "GtoPdb"
-        ],
+        "tags": ["trapi", "GtoPdb"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-bf3d59bc-58f7-491a-98fb-e0b7a6cb8ee7",
@@ -2616,10 +2477,7 @@
     },
     "/gtopdb/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "GtoPdb"
-        ],
+        "tags": ["trapi", "GtoPdb"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-88c2277e-a63a-4032-9500-38f1d2584a52",
@@ -2639,10 +2497,7 @@
     },
     "/gtopdb/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "GtoPdb"
-        ],
+        "tags": ["trapi", "GtoPdb"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-6a793d43-5528-41ab-bc55-77f691bc3a84",
@@ -2657,30 +2512,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -2777,17 +2624,12 @@
             }
           }
         },
-        "tags": [
-          "GtoPdb"
-        ]
+        "tags": ["GtoPdb"]
       }
     },
     "/gtopdb/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "GtoPdb"
-        ],
+        "tags": ["translator", "GtoPdb"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-1a1c602e-2360-4127-a98e-3bd068b0c53a",
@@ -2849,9 +2691,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -2862,9 +2702,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -3058,9 +2896,7 @@
             }
           }
         },
-        "tags": [
-          "GtoPdb"
-        ]
+        "tags": ["GtoPdb"]
       }
     },
     "/gtopdb/{source_type}/{target_type}/{curie}": {
@@ -3121,9 +2957,7 @@
             }
           }
         },
-        "tags": [
-          "GtoPdb"
-        ]
+        "tags": ["GtoPdb"]
       }
     },
     "/gtopdb/{node_type}/{curie}": {
@@ -3175,9 +3009,7 @@
             }
           }
         },
-        "tags": [
-          "GtoPdb"
-        ]
+        "tags": ["GtoPdb"]
       }
     },
     "/gtopdb/simple_spec": {
@@ -3231,17 +3063,12 @@
             }
           }
         },
-        "tags": [
-          "GtoPdb"
-        ]
+        "tags": ["GtoPdb"]
       }
     },
     "/gwas-catalog/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "GWAS Catalog"
-        ],
+        "tags": ["trapi", "GWAS Catalog"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-3347891d-7058-4846-b44d-e0e9a25514a9",
@@ -3261,10 +3088,7 @@
     },
     "/gwas-catalog/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "GWAS Catalog"
-        ],
+        "tags": ["trapi", "GWAS Catalog"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-ae087319-9542-426e-8545-86d9163d107a",
@@ -3284,10 +3108,7 @@
     },
     "/gwas-catalog/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "GWAS Catalog"
-        ],
+        "tags": ["trapi", "GWAS Catalog"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-63000165-f402-429e-95ba-1751374aa417",
@@ -3302,30 +3123,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -3422,17 +3235,12 @@
             }
           }
         },
-        "tags": [
-          "GWAS Catalog"
-        ]
+        "tags": ["GWAS Catalog"]
       }
     },
     "/gwas-catalog/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "GWAS Catalog"
-        ],
+        "tags": ["translator", "GWAS Catalog"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-ab19157e-fc90-47de-bae7-65e93f7c66f0",
@@ -3494,9 +3302,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -3507,9 +3313,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -3703,9 +3507,7 @@
             }
           }
         },
-        "tags": [
-          "GWAS Catalog"
-        ]
+        "tags": ["GWAS Catalog"]
       }
     },
     "/gwas-catalog/{source_type}/{target_type}/{curie}": {
@@ -3766,9 +3568,7 @@
             }
           }
         },
-        "tags": [
-          "GWAS Catalog"
-        ]
+        "tags": ["GWAS Catalog"]
       }
     },
     "/gwas-catalog/{node_type}/{curie}": {
@@ -3820,9 +3620,7 @@
             }
           }
         },
-        "tags": [
-          "GWAS Catalog"
-        ]
+        "tags": ["GWAS Catalog"]
       }
     },
     "/gwas-catalog/simple_spec": {
@@ -3876,17 +3674,12 @@
             }
           }
         },
-        "tags": [
-          "GWAS Catalog"
-        ]
+        "tags": ["GWAS Catalog"]
       }
     },
     "/hetio/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "Hetionet"
-        ],
+        "tags": ["trapi", "Hetionet"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-ad84167b-ddf2-4078-b4b9-55389cf4280b",
@@ -3906,10 +3699,7 @@
     },
     "/hetio/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "Hetionet"
-        ],
+        "tags": ["trapi", "Hetionet"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-31412ebd-45b6-41bc-b379-4847a04ca3ae",
@@ -3929,10 +3719,7 @@
     },
     "/hetio/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "Hetionet"
-        ],
+        "tags": ["trapi", "Hetionet"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-82e67951-015a-4107-8424-4a275a60fcbc",
@@ -3947,30 +3734,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -4067,17 +3846,12 @@
             }
           }
         },
-        "tags": [
-          "Hetionet"
-        ]
+        "tags": ["Hetionet"]
       }
     },
     "/hetio/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "Hetionet"
-        ],
+        "tags": ["translator", "Hetionet"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-372c9f44-7ff8-49c3-b3dc-ecead559c9cb",
@@ -4139,9 +3913,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -4152,9 +3924,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -4348,9 +4118,7 @@
             }
           }
         },
-        "tags": [
-          "Hetionet"
-        ]
+        "tags": ["Hetionet"]
       }
     },
     "/hetio/{source_type}/{target_type}/{curie}": {
@@ -4411,9 +4179,7 @@
             }
           }
         },
-        "tags": [
-          "Hetionet"
-        ]
+        "tags": ["Hetionet"]
       }
     },
     "/hetio/{node_type}/{curie}": {
@@ -4465,9 +4231,7 @@
             }
           }
         },
-        "tags": [
-          "Hetionet"
-        ]
+        "tags": ["Hetionet"]
       }
     },
     "/hetio/simple_spec": {
@@ -4521,17 +4285,12 @@
             }
           }
         },
-        "tags": [
-          "Hetionet"
-        ]
+        "tags": ["Hetionet"]
       }
     },
     "/hgnc/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "HGNC"
-        ],
+        "tags": ["trapi", "HGNC"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-40c009b1-95fa-4539-86f7-81233ddd95f3",
@@ -4551,10 +4310,7 @@
     },
     "/hgnc/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "HGNC"
-        ],
+        "tags": ["trapi", "HGNC"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-2700bbcf-07a7-4698-8d47-b347ffdeb1a0",
@@ -4574,10 +4330,7 @@
     },
     "/hgnc/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "HGNC"
-        ],
+        "tags": ["trapi", "HGNC"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-0a61d4a4-49be-4779-9dc2-a0232c0f27a7",
@@ -4592,30 +4345,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -4712,17 +4457,12 @@
             }
           }
         },
-        "tags": [
-          "HGNC"
-        ]
+        "tags": ["HGNC"]
       }
     },
     "/hgnc/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "HGNC"
-        ],
+        "tags": ["translator", "HGNC"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-96e4cf8d-7e7a-4f62-a215-f93bb9933f45",
@@ -4784,9 +4524,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -4797,9 +4535,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -4993,9 +4729,7 @@
             }
           }
         },
-        "tags": [
-          "HGNC"
-        ]
+        "tags": ["HGNC"]
       }
     },
     "/hgnc/{source_type}/{target_type}/{curie}": {
@@ -5056,9 +4790,7 @@
             }
           }
         },
-        "tags": [
-          "HGNC"
-        ]
+        "tags": ["HGNC"]
       }
     },
     "/hgnc/{node_type}/{curie}": {
@@ -5110,9 +4842,7 @@
             }
           }
         },
-        "tags": [
-          "HGNC"
-        ]
+        "tags": ["HGNC"]
       }
     },
     "/hgnc/simple_spec": {
@@ -5166,17 +4896,12 @@
             }
           }
         },
-        "tags": [
-          "HGNC"
-        ]
+        "tags": ["HGNC"]
       }
     },
     "/hmdb/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "HMDB"
-        ],
+        "tags": ["trapi", "HMDB"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-f3d45250-cbe3-42bf-9b78-ac0bf856f0bf",
@@ -5196,10 +4921,7 @@
     },
     "/hmdb/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "HMDB"
-        ],
+        "tags": ["trapi", "HMDB"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-c8b9814a-7726-46e7-865a-0cd335baa9d4",
@@ -5219,10 +4941,7 @@
     },
     "/hmdb/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "HMDB"
-        ],
+        "tags": ["trapi", "HMDB"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-ccd730b7-a16f-455a-aa5c-7d168e81a197",
@@ -5237,30 +4956,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -5357,17 +5068,12 @@
             }
           }
         },
-        "tags": [
-          "HMDB"
-        ]
+        "tags": ["HMDB"]
       }
     },
     "/hmdb/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "HMDB"
-        ],
+        "tags": ["translator", "HMDB"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-4f653817-7010-49bc-a3dc-c7ba45d66419",
@@ -5429,9 +5135,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -5442,9 +5146,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -5638,9 +5340,7 @@
             }
           }
         },
-        "tags": [
-          "HMDB"
-        ]
+        "tags": ["HMDB"]
       }
     },
     "/hmdb/{source_type}/{target_type}/{curie}": {
@@ -5701,9 +5401,7 @@
             }
           }
         },
-        "tags": [
-          "HMDB"
-        ]
+        "tags": ["HMDB"]
       }
     },
     "/hmdb/{node_type}/{curie}": {
@@ -5755,9 +5453,7 @@
             }
           }
         },
-        "tags": [
-          "HMDB"
-        ]
+        "tags": ["HMDB"]
       }
     },
     "/hmdb/simple_spec": {
@@ -5811,17 +5507,12 @@
             }
           }
         },
-        "tags": [
-          "HMDB"
-        ]
+        "tags": ["HMDB"]
       }
     },
     "/human-goa/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "Human GOA"
-        ],
+        "tags": ["trapi", "Human GOA"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-34edcbe4-dc21-4036-b601-d473ff99b022",
@@ -5841,10 +5532,7 @@
     },
     "/human-goa/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "Human GOA"
-        ],
+        "tags": ["trapi", "Human GOA"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-776819eb-1d9f-4d7a-8061-bfafd3f1f4c4",
@@ -5864,10 +5552,7 @@
     },
     "/human-goa/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "Human GOA"
-        ],
+        "tags": ["trapi", "Human GOA"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-9973e560-8af2-48f9-bac7-50ab9b7a1ca6",
@@ -5882,30 +5567,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -6002,17 +5679,12 @@
             }
           }
         },
-        "tags": [
-          "Human GOA"
-        ]
+        "tags": ["Human GOA"]
       }
     },
     "/human-goa/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "Human GOA"
-        ],
+        "tags": ["translator", "Human GOA"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-fec99bd4-eb1e-401e-a990-0958f9c625df",
@@ -6074,9 +5746,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -6087,9 +5757,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -6283,9 +5951,7 @@
             }
           }
         },
-        "tags": [
-          "Human GOA"
-        ]
+        "tags": ["Human GOA"]
       }
     },
     "/human-goa/{source_type}/{target_type}/{curie}": {
@@ -6346,9 +6012,7 @@
             }
           }
         },
-        "tags": [
-          "Human GOA"
-        ]
+        "tags": ["Human GOA"]
       }
     },
     "/human-goa/{node_type}/{curie}": {
@@ -6400,9 +6064,7 @@
             }
           }
         },
-        "tags": [
-          "Human GOA"
-        ]
+        "tags": ["Human GOA"]
       }
     },
     "/human-goa/simple_spec": {
@@ -6456,17 +6118,12 @@
             }
           }
         },
-        "tags": [
-          "Human GOA"
-        ]
+        "tags": ["Human GOA"]
       }
     },
     "/icees-kg/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "icees-kg"
-        ],
+        "tags": ["trapi", "icees-kg"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-29b18bd4-bb95-4a54-84ba-5948891bfca5",
@@ -6486,10 +6143,7 @@
     },
     "/icees-kg/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "icees-kg"
-        ],
+        "tags": ["trapi", "icees-kg"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-9ddb91b6-51aa-4940-8445-87dce39abbb2",
@@ -6509,10 +6163,7 @@
     },
     "/icees-kg/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "icees-kg"
-        ],
+        "tags": ["trapi", "icees-kg"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-72b9db62-0bb0-4ad7-b3af-ecbb216aa3da",
@@ -6527,30 +6178,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -6647,17 +6290,12 @@
             }
           }
         },
-        "tags": [
-          "icees-kg"
-        ]
+        "tags": ["icees-kg"]
       }
     },
     "/icees-kg/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "icees-kg"
-        ],
+        "tags": ["translator", "icees-kg"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-bd4a1460-25d2-4af2-b795-c61356a7cfb2",
@@ -6719,9 +6357,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -6732,9 +6368,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -6928,9 +6562,7 @@
             }
           }
         },
-        "tags": [
-          "icees-kg"
-        ]
+        "tags": ["icees-kg"]
       }
     },
     "/icees-kg/{source_type}/{target_type}/{curie}": {
@@ -6991,9 +6623,7 @@
             }
           }
         },
-        "tags": [
-          "icees-kg"
-        ]
+        "tags": ["icees-kg"]
       }
     },
     "/icees-kg/{node_type}/{curie}": {
@@ -7045,9 +6675,7 @@
             }
           }
         },
-        "tags": [
-          "icees-kg"
-        ]
+        "tags": ["icees-kg"]
       }
     },
     "/icees-kg/simple_spec": {
@@ -7101,17 +6729,12 @@
             }
           }
         },
-        "tags": [
-          "icees-kg"
-        ]
+        "tags": ["icees-kg"]
       }
     },
     "/intact/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "InTact"
-        ],
+        "tags": ["trapi", "InTact"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-4d367c0f-352d-44d1-ac0a-42cdf4fac355",
@@ -7131,10 +6754,7 @@
     },
     "/intact/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "InTact"
-        ],
+        "tags": ["trapi", "InTact"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-40f98241-426f-4746-99f2-490336ae69f0",
@@ -7154,10 +6774,7 @@
     },
     "/intact/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "InTact"
-        ],
+        "tags": ["trapi", "InTact"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-bde12034-dbcd-4deb-99c5-93e87ae40e00",
@@ -7172,30 +6789,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -7292,17 +6901,12 @@
             }
           }
         },
-        "tags": [
-          "InTact"
-        ]
+        "tags": ["InTact"]
       }
     },
     "/intact/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "InTact"
-        ],
+        "tags": ["translator", "InTact"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-f1f23e63-afab-41a5-9db4-5bb32aea3757",
@@ -7364,9 +6968,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -7377,9 +6979,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -7573,9 +7173,7 @@
             }
           }
         },
-        "tags": [
-          "InTact"
-        ]
+        "tags": ["InTact"]
       }
     },
     "/intact/{source_type}/{target_type}/{curie}": {
@@ -7636,9 +7234,7 @@
             }
           }
         },
-        "tags": [
-          "InTact"
-        ]
+        "tags": ["InTact"]
       }
     },
     "/intact/{node_type}/{curie}": {
@@ -7690,9 +7286,7 @@
             }
           }
         },
-        "tags": [
-          "InTact"
-        ]
+        "tags": ["InTact"]
       }
     },
     "/intact/simple_spec": {
@@ -7746,17 +7340,12 @@
             }
           }
         },
-        "tags": [
-          "InTact"
-        ]
+        "tags": ["InTact"]
       }
     },
     "/ontological-hierarchy/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "Ubergraph Redundant"
-        ],
+        "tags": ["trapi", "Ubergraph Redundant"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-f71101bd-9dbc-4d49-ac52-9092343cb07f",
@@ -7776,10 +7365,7 @@
     },
     "/ontological-hierarchy/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "Ubergraph Redundant"
-        ],
+        "tags": ["trapi", "Ubergraph Redundant"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-5ee0883c-cb69-46ea-8cf2-bb62f6ecfa49",
@@ -7799,10 +7385,7 @@
     },
     "/ontological-hierarchy/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "Ubergraph Redundant"
-        ],
+        "tags": ["trapi", "Ubergraph Redundant"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-e1a17cdd-a568-4ee9-8136-2c1ac43c6d66",
@@ -7817,30 +7400,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -7937,17 +7512,12 @@
             }
           }
         },
-        "tags": [
-          "Ubergraph Redundant"
-        ]
+        "tags": ["Ubergraph Redundant"]
       }
     },
     "/ontological-hierarchy/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "Ubergraph Redundant"
-        ],
+        "tags": ["translator", "Ubergraph Redundant"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-1478435d-de3e-4ab4-a79c-02fb01c01028",
@@ -8009,9 +7579,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -8022,9 +7590,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -8218,9 +7784,7 @@
             }
           }
         },
-        "tags": [
-          "Ubergraph Redundant"
-        ]
+        "tags": ["Ubergraph Redundant"]
       }
     },
     "/ontological-hierarchy/{source_type}/{target_type}/{curie}": {
@@ -8281,9 +7845,7 @@
             }
           }
         },
-        "tags": [
-          "Ubergraph Redundant"
-        ]
+        "tags": ["Ubergraph Redundant"]
       }
     },
     "/ontological-hierarchy/{node_type}/{curie}": {
@@ -8335,9 +7897,7 @@
             }
           }
         },
-        "tags": [
-          "Ubergraph Redundant"
-        ]
+        "tags": ["Ubergraph Redundant"]
       }
     },
     "/ontological-hierarchy/simple_spec": {
@@ -8391,17 +7951,12 @@
             }
           }
         },
-        "tags": [
-          "Ubergraph Redundant"
-        ]
+        "tags": ["Ubergraph Redundant"]
       }
     },
     "/panther/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "PANTHER"
-        ],
+        "tags": ["trapi", "PANTHER"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-fc151568-11d5-4a5c-87d1-73bd6840e7d5",
@@ -8421,10 +7976,7 @@
     },
     "/panther/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "PANTHER"
-        ],
+        "tags": ["trapi", "PANTHER"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-78bc3898-a7fc-4a02-b90a-75019d47bdfe",
@@ -8444,10 +7996,7 @@
     },
     "/panther/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "PANTHER"
-        ],
+        "tags": ["trapi", "PANTHER"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-2a0c905d-e273-4f2d-a077-19cc6ea43ce0",
@@ -8462,30 +8011,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -8582,17 +8123,12 @@
             }
           }
         },
-        "tags": [
-          "PANTHER"
-        ]
+        "tags": ["PANTHER"]
       }
     },
     "/panther/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "PANTHER"
-        ],
+        "tags": ["translator", "PANTHER"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-a3452317-51ba-496d-90b2-08b29b1699ba",
@@ -8654,9 +8190,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -8667,9 +8201,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -8863,9 +8395,7 @@
             }
           }
         },
-        "tags": [
-          "PANTHER"
-        ]
+        "tags": ["PANTHER"]
       }
     },
     "/panther/{source_type}/{target_type}/{curie}": {
@@ -8926,9 +8456,7 @@
             }
           }
         },
-        "tags": [
-          "PANTHER"
-        ]
+        "tags": ["PANTHER"]
       }
     },
     "/panther/{node_type}/{curie}": {
@@ -8980,9 +8508,7 @@
             }
           }
         },
-        "tags": [
-          "PANTHER"
-        ]
+        "tags": ["PANTHER"]
       }
     },
     "/panther/simple_spec": {
@@ -9036,17 +8562,12 @@
             }
           }
         },
-        "tags": [
-          "PANTHER"
-        ]
+        "tags": ["PANTHER"]
       }
     },
     "/pharos/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "Pharos"
-        ],
+        "tags": ["trapi", "Pharos"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-f78dfd16-6690-4ba8-87c4-e028ca85a9ba",
@@ -9066,10 +8587,7 @@
     },
     "/pharos/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "Pharos"
-        ],
+        "tags": ["trapi", "Pharos"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-9df65831-a499-458a-972e-ad5b41347325",
@@ -9089,10 +8607,7 @@
     },
     "/pharos/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "Pharos"
-        ],
+        "tags": ["trapi", "Pharos"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-6718a2c6-29dd-46e6-862e-7ec81ae07bcf",
@@ -9107,30 +8622,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -9227,17 +8734,12 @@
             }
           }
         },
-        "tags": [
-          "Pharos"
-        ]
+        "tags": ["Pharos"]
       }
     },
     "/pharos/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "Pharos"
-        ],
+        "tags": ["translator", "Pharos"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-237490a5-bdf9-48dc-8d02-730bbc1a8b02",
@@ -9299,9 +8801,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -9312,9 +8812,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -9508,9 +9006,7 @@
             }
           }
         },
-        "tags": [
-          "Pharos"
-        ]
+        "tags": ["Pharos"]
       }
     },
     "/pharos/{source_type}/{target_type}/{curie}": {
@@ -9571,9 +9067,7 @@
             }
           }
         },
-        "tags": [
-          "Pharos"
-        ]
+        "tags": ["Pharos"]
       }
     },
     "/pharos/{node_type}/{curie}": {
@@ -9625,9 +9119,7 @@
             }
           }
         },
-        "tags": [
-          "Pharos"
-        ]
+        "tags": ["Pharos"]
       }
     },
     "/pharos/simple_spec": {
@@ -9681,17 +9173,12 @@
             }
           }
         },
-        "tags": [
-          "Pharos"
-        ]
+        "tags": ["Pharos"]
       }
     },
     "/robokopkg/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "ROBOKOP KG"
-        ],
+        "tags": ["trapi", "ROBOKOP KG"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-54b8d394-1bf8-44ef-b3bf-b0654231cf00",
@@ -9711,10 +9198,7 @@
     },
     "/robokopkg/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "ROBOKOP KG"
-        ],
+        "tags": ["trapi", "ROBOKOP KG"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-a2ced9ee-bb95-4063-b01c-e05825a5458e",
@@ -9734,10 +9218,7 @@
     },
     "/robokopkg/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "ROBOKOP KG"
-        ],
+        "tags": ["trapi", "ROBOKOP KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-f2cd4e81-4df9-4f29-a624-386af10e9477",
@@ -9752,30 +9233,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -9872,17 +9345,12 @@
             }
           }
         },
-        "tags": [
-          "ROBOKOP KG"
-        ]
+        "tags": ["ROBOKOP KG"]
       }
     },
     "/robokopkg/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "ROBOKOP KG"
-        ],
+        "tags": ["translator", "ROBOKOP KG"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-877fc7a7-beae-4d7e-99dc-6b5ae785a5c7",
@@ -9944,9 +9412,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -9957,9 +9423,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -10153,9 +9617,7 @@
             }
           }
         },
-        "tags": [
-          "ROBOKOP KG"
-        ]
+        "tags": ["ROBOKOP KG"]
       }
     },
     "/robokopkg/{source_type}/{target_type}/{curie}": {
@@ -10216,9 +9678,7 @@
             }
           }
         },
-        "tags": [
-          "ROBOKOP KG"
-        ]
+        "tags": ["ROBOKOP KG"]
       }
     },
     "/robokopkg/{node_type}/{curie}": {
@@ -10270,9 +9730,7 @@
             }
           }
         },
-        "tags": [
-          "ROBOKOP KG"
-        ]
+        "tags": ["ROBOKOP KG"]
       }
     },
     "/robokopkg/simple_spec": {
@@ -10326,17 +9784,12 @@
             }
           }
         },
-        "tags": [
-          "ROBOKOP KG"
-        ]
+        "tags": ["ROBOKOP KG"]
       }
     },
     "/sri-reference-kg/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "SRI Reference KG"
-        ],
+        "tags": ["trapi", "SRI Reference KG"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-a59357ce-2667-4985-a534-580e4fe7398e",
@@ -10356,10 +9809,7 @@
     },
     "/sri-reference-kg/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "SRI Reference KG"
-        ],
+        "tags": ["trapi", "SRI Reference KG"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-8ab4e62c-ceb2-4aa9-8c6e-f646d7bcd43f",
@@ -10379,10 +9829,7 @@
     },
     "/sri-reference-kg/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "SRI Reference KG"
-        ],
+        "tags": ["trapi", "SRI Reference KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-e63307c1-b6f6-460f-baf2-c3585a747b5c",
@@ -10397,30 +9844,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -10517,17 +9956,12 @@
             }
           }
         },
-        "tags": [
-          "SRI Reference KG"
-        ]
+        "tags": ["SRI Reference KG"]
       }
     },
     "/sri-reference-kg/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "SRI Reference KG"
-        ],
+        "tags": ["translator", "SRI Reference KG"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-74d526ce-5d05-47b4-a741-8ea42d7b92c7",
@@ -10589,9 +10023,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -10602,9 +10034,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -10798,9 +10228,7 @@
             }
           }
         },
-        "tags": [
-          "SRI Reference KG"
-        ]
+        "tags": ["SRI Reference KG"]
       }
     },
     "/sri-reference-kg/{source_type}/{target_type}/{curie}": {
@@ -10861,9 +10289,7 @@
             }
           }
         },
-        "tags": [
-          "SRI Reference KG"
-        ]
+        "tags": ["SRI Reference KG"]
       }
     },
     "/sri-reference-kg/{node_type}/{curie}": {
@@ -10915,9 +10341,7 @@
             }
           }
         },
-        "tags": [
-          "SRI Reference KG"
-        ]
+        "tags": ["SRI Reference KG"]
       }
     },
     "/sri-reference-kg/simple_spec": {
@@ -10971,17 +10395,12 @@
             }
           }
         },
-        "tags": [
-          "SRI Reference KG"
-        ]
+        "tags": ["SRI Reference KG"]
       }
     },
     "/string-db/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "STRING"
-        ],
+        "tags": ["trapi", "STRING"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-75ed1305-b2b3-4bb2-8dbf-fe5a39379cc3",
@@ -11001,10 +10420,7 @@
     },
     "/string-db/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "STRING"
-        ],
+        "tags": ["trapi", "STRING"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-35d5fba2-3678-4168-a04f-d0a412be1d0c",
@@ -11024,10 +10440,7 @@
     },
     "/string-db/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "STRING"
-        ],
+        "tags": ["trapi", "STRING"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-c764db83-c8ed-4e65-bb5f-1369cd01c888",
@@ -11042,30 +10455,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -11162,17 +10567,12 @@
             }
           }
         },
-        "tags": [
-          "STRING"
-        ]
+        "tags": ["STRING"]
       }
     },
     "/string-db/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "STRING"
-        ],
+        "tags": ["translator", "STRING"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-59e6465c-0486-4329-bfaf-fc5bf77f1597",
@@ -11234,9 +10634,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -11247,9 +10645,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -11443,9 +10839,7 @@
             }
           }
         },
-        "tags": [
-          "STRING"
-        ]
+        "tags": ["STRING"]
       }
     },
     "/string-db/{source_type}/{target_type}/{curie}": {
@@ -11506,9 +10900,7 @@
             }
           }
         },
-        "tags": [
-          "STRING"
-        ]
+        "tags": ["STRING"]
       }
     },
     "/string-db/{node_type}/{curie}": {
@@ -11560,9 +10952,7 @@
             }
           }
         },
-        "tags": [
-          "STRING"
-        ]
+        "tags": ["STRING"]
       }
     },
     "/string-db/simple_spec": {
@@ -11616,17 +11006,12 @@
             }
           }
         },
-        "tags": [
-          "STRING"
-        ]
+        "tags": ["STRING"]
       }
     },
     "/uberongraph/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "Ubergraph"
-        ],
+        "tags": ["trapi", "Ubergraph"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-ebcea8f1-d62a-4c03-8c2d-d3e11ae0b23d",
@@ -11646,10 +11031,7 @@
     },
     "/uberongraph/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "Ubergraph"
-        ],
+        "tags": ["trapi", "Ubergraph"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-b1634ca4-5b7a-4d21-ad5a-8f283c60cb63",
@@ -11669,10 +11051,7 @@
     },
     "/uberongraph/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "Ubergraph"
-        ],
+        "tags": ["trapi", "Ubergraph"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-998089b6-f5f7-40f2-bccc-8ee05e7c7ccd",
@@ -11687,30 +11066,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -11807,17 +11178,12 @@
             }
           }
         },
-        "tags": [
-          "Ubergraph"
-        ]
+        "tags": ["Ubergraph"]
       }
     },
     "/uberongraph/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "Ubergraph"
-        ],
+        "tags": ["translator", "Ubergraph"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-04b02d16-f444-44c7-938f-fdd18c80c0bc",
@@ -11879,9 +11245,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -11892,9 +11256,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -12088,9 +11450,7 @@
             }
           }
         },
-        "tags": [
-          "Ubergraph"
-        ]
+        "tags": ["Ubergraph"]
       }
     },
     "/uberongraph/{source_type}/{target_type}/{curie}": {
@@ -12151,9 +11511,7 @@
             }
           }
         },
-        "tags": [
-          "Ubergraph"
-        ]
+        "tags": ["Ubergraph"]
       }
     },
     "/uberongraph/{node_type}/{curie}": {
@@ -12205,9 +11563,7 @@
             }
           }
         },
-        "tags": [
-          "Ubergraph"
-        ]
+        "tags": ["Ubergraph"]
       }
     },
     "/uberongraph/simple_spec": {
@@ -12261,17 +11617,12 @@
             }
           }
         },
-        "tags": [
-          "Ubergraph"
-        ]
+        "tags": ["Ubergraph"]
       }
     },
     "/viral-proteome/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": [
-          "trapi",
-          "Viral Proteome"
-        ],
+        "tags": ["trapi", "Viral Proteome"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get-66483da7-9a22-47f8-befa-da9f233b9dba",
@@ -12291,10 +11642,7 @@
     },
     "/viral-proteome/1.3/sri_testing_data": {
       "get": {
-        "tags": [
-          "trapi",
-          "Viral Proteome"
-        ],
+        "tags": ["trapi", "Viral Proteome"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get-c09c9871-2520-401b-a356-e9674da7fcf2",
@@ -12314,10 +11662,7 @@
     },
     "/viral-proteome/1.3/query": {
       "post": {
-        "tags": [
-          "trapi",
-          "Viral Proteome"
-        ],
+        "tags": ["trapi", "Viral Proteome"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post-1b59ec8a-9199-4cbd-a56d-a737fae6a5ca",
@@ -12332,30 +11677,22 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": [
-                          "biolink:ChemicalEntity"
-                        ],
+                        "categories": ["biolink:ChemicalEntity"],
                         "ids": [
                           "CHEMBL.COMPOUND:CHEMBL3234626",
                           "CHEMBL.COMPOUND:CHEMBL3234633"
                         ]
                       },
                       "n1": {
-                        "categories": [
-                          "biolink:GeneOrGeneProduct"
-                        ],
-                        "ids": [
-                          "NCBIGene:2099"
-                        ]
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": [
-                          "biolink:affects"
-                        ],
+                        "predicates": ["biolink:affects"],
                         "qualifier_constraints": [
                           {
                             "qualifier_set": [
@@ -12452,17 +11789,12 @@
             }
           }
         },
-        "tags": [
-          "Viral Proteome"
-        ]
+        "tags": ["Viral Proteome"]
       }
     },
     "/viral-proteome/overlay": {
       "post": {
-        "tags": [
-          "translator",
-          "Viral Proteome"
-        ],
+        "tags": ["translator", "Viral Proteome"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post-a74b6b9d-5e3c-4f0f-80d1-5a71e117f029",
@@ -12524,9 +11856,7 @@
                               "synonyms": [],
                               "chromosome": "17",
                               "location": "17q12",
-                              "gene_family": [
-                                "Chemokine ligands"
-                              ],
+                              "gene_family": ["Chemokine ligands"],
                               "taxon": 9606,
                               "category": [
                                 "biolink:BiologicalEntity",
@@ -12537,9 +11867,7 @@
                                 "biolink:MolecularEntity",
                                 "biolink:Gene"
                               ],
-                              "gene_family_id": [
-                                483
-                              ],
+                              "gene_family_id": [483],
                               "equivalent_identifiers": [
                                 "ENSEMBL:ENSG00000271503",
                                 "NCBIGene:6352",
@@ -12733,9 +12061,7 @@
             }
           }
         },
-        "tags": [
-          "Viral Proteome"
-        ]
+        "tags": ["Viral Proteome"]
       }
     },
     "/viral-proteome/{source_type}/{target_type}/{curie}": {
@@ -12796,9 +12122,7 @@
             }
           }
         },
-        "tags": [
-          "Viral Proteome"
-        ]
+        "tags": ["Viral Proteome"]
       }
     },
     "/viral-proteome/{node_type}/{curie}": {
@@ -12850,9 +12174,7 @@
             }
           }
         },
-        "tags": [
-          "Viral Proteome"
-        ]
+        "tags": ["Viral Proteome"]
       }
     },
     "/viral-proteome/simple_spec": {
@@ -12906,9 +12228,7 @@
             }
           }
         },
-        "tags": [
-          "Viral Proteome"
-        ]
+        "tags": ["Viral Proteome"]
       }
     },
     "/registry": {
@@ -12917,9 +12237,7 @@
         "operationId": "get_list_of_platers-594fb7bc-6abb-4ed1-a737-de08f5452203",
         "summary": "List of platers available",
         "parameters": [],
-        "tags": [
-          "automat"
-        ],
+        "tags": ["automat"],
         "responses": {
           "200": {
             "description": "OK",
@@ -12927,10 +12245,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "example": [
-                    "plater-1",
-                    "plater-2"
-                  ]
+                  "example": ["plater-1", "plater-2"]
                 }
               }
             }
@@ -13025,10 +12340,7 @@
     "schemas": {
       "AboveOrBelowEnum": {
         "title": "AboveOrBelowEnum",
-        "enum": [
-          "above",
-          "below"
-        ],
+        "enum": ["above", "below"],
         "type": "string",
         "description": "'above' or 'below'."
       },
@@ -13054,19 +12366,13 @@
       },
       "AscOrDescEnum": {
         "title": "AscOrDescEnum",
-        "enum": [
-          "ascending",
-          "descending"
-        ],
+        "enum": ["ascending", "descending"],
         "type": "string",
         "description": "'ascending' or 'descending'."
       },
       "Attribute": {
         "title": "Attribute",
-        "required": [
-          "attribute_type_id",
-          "value"
-        ],
+        "required": ["attribute_type_id", "value"],
         "type": "object",
         "properties": {
           "attribute_type_id": {
@@ -13116,12 +12422,7 @@
       },
       "AttributeConstraint": {
         "title": "AttributeConstraint",
-        "required": [
-          "name",
-          "id",
-          "operator",
-          "value"
-        ],
+        "required": ["name", "id", "operator", "value"],
         "type": "object",
         "properties": {
           "name": {
@@ -13162,10 +12463,7 @@
       },
       "CypherDatum": {
         "title": "CypherDatum",
-        "required": [
-          "row",
-          "meta"
-        ],
+        "required": ["row", "meta"],
         "type": "object",
         "properties": {
           "row": {
@@ -13182,10 +12480,7 @@
       },
       "CypherError": {
         "title": "CypherError",
-        "required": [
-          "code",
-          "message"
-        ],
+        "required": ["code", "message"],
         "type": "object",
         "properties": {
           "code": {
@@ -13200,9 +12495,7 @@
       },
       "CypherRequest": {
         "title": "CypherRequest",
-        "required": [
-          "query"
-        ],
+        "required": ["query"],
         "type": "object",
         "properties": {
           "query": {
@@ -13213,10 +12506,7 @@
       },
       "CypherResponse": {
         "title": "CypherResponse",
-        "required": [
-          "results",
-          "errors"
-        ],
+        "required": ["results", "errors"],
         "type": "object",
         "properties": {
           "results": {
@@ -13237,10 +12527,7 @@
       },
       "CypherResult": {
         "title": "CypherResult",
-        "required": [
-          "columns",
-          "data"
-        ],
+        "required": ["columns", "data"],
         "type": "object",
         "properties": {
           "columns": {
@@ -13261,10 +12548,7 @@
       },
       "Edge": {
         "title": "knowledge-graph edge",
-        "required": [
-          "subject",
-          "object"
-        ],
+        "required": ["subject", "object"],
         "type": "object",
         "properties": {
           "subject": {
@@ -13305,9 +12589,7 @@
       },
       "EdgeBinding": {
         "title": "edge binding",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "id": {
@@ -13388,11 +12670,7 @@
       },
       "FilterKgraphContinuousKedgeAttributeParameters": {
         "title": "FilterKgraphContinuousKedgeAttributeParameters",
-        "required": [
-          "edge_attribute",
-          "threshold",
-          "remove_above_or_below"
-        ],
+        "required": ["edge_attribute", "threshold", "remove_above_or_below"],
         "type": "object",
         "properties": {
           "edge_attribute": {
@@ -13423,9 +12701,7 @@
       },
       "FilterKgraphDiscreteKedgeAttributeParameters": {
         "title": "FilterKgraphDiscreteKedgeAttributeParameters",
-        "required": [
-          "edge_attribute"
-        ],
+        "required": ["edge_attribute"],
         "type": "object",
         "properties": {
           "edge_attribute": {
@@ -13452,9 +12728,7 @@
       },
       "FilterKgraphDiscreteKnodeAttributeParameters": {
         "title": "FilterKgraphDiscreteKnodeAttributeParameters",
-        "required": [
-          "node_attribute"
-        ],
+        "required": ["node_attribute"],
         "type": "object",
         "properties": {
           "node_attribute": {
@@ -13472,9 +12746,7 @@
       },
       "FilterKgraphPercentileParameters": {
         "title": "FilterKgraphPercentileParameters",
-        "required": [
-          "edge_attribute"
-        ],
+        "required": ["edge_attribute"],
         "type": "object",
         "properties": {
           "edge_attribute": {
@@ -13513,9 +12785,7 @@
       },
       "FilterKgraphStdDevParameters": {
         "title": "FilterKgraphStdDevParameters",
-        "required": [
-          "edge_attribute"
-        ],
+        "required": ["edge_attribute"],
         "type": "object",
         "properties": {
           "edge_attribute": {
@@ -13561,9 +12831,7 @@
       },
       "FilterKgraphTopNParameters": {
         "title": "FilterKgraphTopNParameters",
-        "required": [
-          "edge_attribute"
-        ],
+        "required": ["edge_attribute"],
         "type": "object",
         "properties": {
           "edge_attribute": {
@@ -13601,9 +12869,7 @@
       },
       "FilterResultsTopNParameters": {
         "title": "FilterResultsTopNParameters",
-        "required": [
-          "max_results"
-        ],
+        "required": ["max_results"],
         "type": "object",
         "properties": {
           "max_results": {
@@ -13873,10 +13139,7 @@
       },
       "KnowledgeGraph": {
         "title": "knowledge graph",
-        "required": [
-          "nodes",
-          "edges"
-        ],
+        "required": ["nodes", "edges"],
         "type": "object",
         "properties": {
           "nodes": {
@@ -13900,10 +13163,7 @@
       },
       "KnowledgeType": {
         "title": "KnowledgeType",
-        "enum": [
-          "lookup",
-          "inferred"
-        ],
+        "enum": ["lookup", "inferred"],
         "type": "string",
         "description": "Knowledge Type."
       },
@@ -13914,12 +13174,7 @@
       },
       "LogLevelEnum": {
         "title": "LogLevelEnum",
-        "enum": [
-          "ERROR",
-          "WARNING",
-          "INFO",
-          "DEBUG"
-        ],
+        "enum": ["ERROR", "WARNING", "INFO", "DEBUG"],
         "type": "string",
         "description": "Log level."
       },
@@ -13960,9 +13215,7 @@
       },
       "MetaAttribute": {
         "title": "MetaAttribute",
-        "required": [
-          "attribute_type_id"
-        ],
+        "required": ["attribute_type_id"],
         "type": "object",
         "properties": {
           "attribute_type_id": {
@@ -13990,11 +13243,7 @@
       },
       "MetaEdge": {
         "title": "MetaEdge",
-        "required": [
-          "subject",
-          "predicate",
-          "object"
-        ],
+        "required": ["subject", "predicate", "object"],
         "type": "object",
         "properties": {
           "subject": {
@@ -14024,10 +13273,7 @@
       },
       "MetaKnowledgeGraph": {
         "title": "MetaKnowledgeGraph",
-        "required": [
-          "nodes",
-          "edges"
-        ],
+        "required": ["nodes", "edges"],
         "type": "object",
         "properties": {
           "nodes": {
@@ -14041,9 +13287,7 @@
       },
       "MetaNode": {
         "title": "MetaNode",
-        "required": [
-          "id_prefixes"
-        ],
+        "required": ["id_prefixes"],
         "type": "object",
         "properties": {
           "id_prefixes": {
@@ -14092,9 +13336,7 @@
       },
       "NodeBinding": {
         "title": "node binding",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "id": {
@@ -14215,9 +13457,7 @@
       },
       "OperationAnnotate": {
         "title": "OperationAnnotate",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14235,9 +13475,7 @@
       },
       "OperationAnnotateEdges": {
         "title": "OperationAnnotateEdges",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14255,9 +13493,7 @@
       },
       "OperationAnnotateNodes": {
         "title": "OperationAnnotateNodes",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14275,9 +13511,7 @@
       },
       "OperationBind": {
         "title": "OperationBind",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14295,9 +13529,7 @@
       },
       "OperationCompleteResults": {
         "title": "OperationCompleteResults",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14315,9 +13547,7 @@
       },
       "OperationEnrichResults": {
         "title": "OperationEnrichResults",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14335,9 +13565,7 @@
       },
       "OperationFill": {
         "title": "OperationFill",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14355,9 +13583,7 @@
       },
       "OperationFilterKgraph": {
         "title": "OperationFilterKgraph",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14375,10 +13601,7 @@
       },
       "OperationFilterKgraphContinuousKedgeAttribute": {
         "title": "OperationFilterKgraphContinuousKedgeAttribute",
-        "required": [
-          "id",
-          "parameters"
-        ],
+        "required": ["id", "parameters"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14396,10 +13619,7 @@
       },
       "OperationFilterKgraphDiscreteKedgeAttribute": {
         "title": "OperationFilterKgraphDiscreteKedgeAttribute",
-        "required": [
-          "id",
-          "parameters"
-        ],
+        "required": ["id", "parameters"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14417,10 +13637,7 @@
       },
       "OperationFilterKgraphDiscreteKnodeAttribute": {
         "title": "OperationFilterKgraphDiscreteKnodeAttribute",
-        "required": [
-          "id",
-          "parameters"
-        ],
+        "required": ["id", "parameters"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14438,9 +13655,7 @@
       },
       "OperationFilterKgraphOrphans": {
         "title": "OperationFilterKgraphOrphans",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14458,10 +13673,7 @@
       },
       "OperationFilterKgraphPercentile": {
         "title": "OperationFilterKgraphPercentile",
-        "required": [
-          "id",
-          "parameters"
-        ],
+        "required": ["id", "parameters"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14479,10 +13691,7 @@
       },
       "OperationFilterKgraphStdDev": {
         "title": "OperationFilterKgraphStdDev",
-        "required": [
-          "id",
-          "parameters"
-        ],
+        "required": ["id", "parameters"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14500,10 +13709,7 @@
       },
       "OperationFilterKgraphTopN": {
         "title": "OperationFilterKgraphTopN",
-        "required": [
-          "id",
-          "parameters"
-        ],
+        "required": ["id", "parameters"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14521,9 +13727,7 @@
       },
       "OperationFilterResults": {
         "title": "OperationFilterResults",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14541,9 +13745,7 @@
       },
       "OperationFilterResultsTopN": {
         "title": "OperationFilterResultsTopN",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14561,9 +13763,7 @@
       },
       "OperationLookup": {
         "title": "OperationLookup",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14581,9 +13781,7 @@
       },
       "OperationOverlay": {
         "title": "OperationOverlay",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14601,10 +13799,7 @@
       },
       "OperationOverlayComputeJaccard": {
         "title": "OperationOverlayComputeJaccard",
-        "required": [
-          "id",
-          "parameters"
-        ],
+        "required": ["id", "parameters"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14622,10 +13817,7 @@
       },
       "OperationOverlayComputeNgd": {
         "title": "OperationOverlayComputeNgd",
-        "required": [
-          "id",
-          "parameters"
-        ],
+        "required": ["id", "parameters"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14643,9 +13835,7 @@
       },
       "OperationOverlayConnectKnodes": {
         "title": "OperationOverlayConnectKnodes",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14663,10 +13853,7 @@
       },
       "OperationOverlayFisherExactTest": {
         "title": "OperationOverlayFisherExactTest",
-        "required": [
-          "id",
-          "parameters"
-        ],
+        "required": ["id", "parameters"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14684,9 +13871,7 @@
       },
       "OperationRestate": {
         "title": "OperationRestate",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14704,9 +13889,7 @@
       },
       "OperationScore": {
         "title": "OperationScore",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14724,9 +13907,7 @@
       },
       "OperationSortResults": {
         "title": "OperationSortResults",
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14744,10 +13925,7 @@
       },
       "OperationSortResultsEdgeAttribute": {
         "title": "OperationSortResultsEdgeAttribute",
-        "required": [
-          "id",
-          "parameters"
-        ],
+        "required": ["id", "parameters"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14765,10 +13943,7 @@
       },
       "OperationSortResultsNodeAttribute": {
         "title": "OperationSortResultsNodeAttribute",
-        "required": [
-          "id",
-          "parameters"
-        ],
+        "required": ["id", "parameters"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14786,10 +13961,7 @@
       },
       "OperationSortResultsScore": {
         "title": "OperationSortResultsScore",
-        "required": [
-          "id",
-          "parameters"
-        ],
+        "required": ["id", "parameters"],
         "type": "object",
         "properties": {
           "runner_parameters": {
@@ -14807,13 +13979,7 @@
       },
       "Operator": {
         "title": "Operator",
-        "enum": [
-          "==",
-          "===",
-          ">",
-          "<",
-          "matches"
-        ],
+        "enum": ["==", "===", ">", "<", "matches"],
         "type": "string",
         "description": "Operator."
       },
@@ -14842,10 +14008,7 @@
       },
       "OverlayComputeNgdParameters": {
         "title": "OverlayComputeNgdParameters",
-        "required": [
-          "qnode_keys",
-          "virtual_relation_label"
-        ],
+        "required": ["qnode_keys", "virtual_relation_label"],
         "type": "object",
         "properties": {
           "qnode_keys": {
@@ -14888,19 +14051,13 @@
       },
       "PlusOrMinusEnum": {
         "title": "PlusOrMinusEnum",
-        "enum": [
-          "plus",
-          "minus"
-        ],
+        "enum": ["plus", "minus"],
         "type": "string",
         "description": "'plus' or 'minus'."
       },
       "QEdge": {
         "title": "query-graph edge",
-        "required": [
-          "subject",
-          "object"
-        ],
+        "required": ["subject", "object"],
         "type": "object",
         "properties": {
           "subject": {
@@ -14996,10 +14153,7 @@
       },
       "Qualifier": {
         "title": "Qualifier",
-        "required": [
-          "qualifier_type_id",
-          "qualifier_value"
-        ],
+        "required": ["qualifier_type_id", "qualifier_value"],
         "type": "object",
         "properties": {
           "qualifier_type_id": {
@@ -15034,10 +14188,7 @@
       },
       "QueryGraph": {
         "title": "simple query graph",
-        "required": [
-          "nodes",
-          "edges"
-        ],
+        "required": ["nodes", "edges"],
         "type": "object",
         "properties": {
           "nodes": {
@@ -15061,9 +14212,7 @@
       },
       "ReasonerRequest": {
         "title": "query",
-        "required": [
-          "message"
-        ],
+        "required": ["message"],
         "type": "object",
         "properties": {
           "message": {
@@ -15092,10 +14241,7 @@
       },
       "RecursiveAttribute": {
         "title": "RecursiveAttribute",
-        "required": [
-          "attribute_type_id",
-          "value"
-        ],
+        "required": ["attribute_type_id", "value"],
         "type": "object",
         "properties": {
           "attribute_type_id": {
@@ -15145,10 +14291,7 @@
       },
       "Result": {
         "title": "result",
-        "required": [
-          "node_bindings",
-          "edge_bindings"
-        ],
+        "required": ["node_bindings", "edge_bindings"],
         "type": "object",
         "properties": {
           "node_bindings": {
@@ -15211,11 +14354,7 @@
       },
       "SRITestData": {
         "title": "SRITestData",
-        "required": [
-          "version",
-          "source_type",
-          "edges"
-        ],
+        "required": ["version", "source_type", "edges"],
         "type": "object",
         "properties": {
           "version": {
@@ -15275,11 +14414,7 @@
       },
       "SimpleSpecElement": {
         "title": "SimpleSpecElement",
-        "required": [
-          "source_type",
-          "target_type",
-          "edge_type"
-        ],
+        "required": ["source_type", "target_type", "edge_type"],
         "type": "object",
         "properties": {
           "source_type": {
@@ -15298,10 +14433,7 @@
       },
       "SortResultsEdgeAttributeParameters": {
         "title": "SortResultsEdgeAttributeParameters",
-        "required": [
-          "edge_attribute",
-          "ascending_or_descending"
-        ],
+        "required": ["edge_attribute", "ascending_or_descending"],
         "type": "object",
         "properties": {
           "edge_attribute": {
@@ -15319,10 +14451,7 @@
       },
       "SortResultsNodeAttributeParameters": {
         "title": "SortResultsNodeAttributeParameters",
-        "required": [
-          "node_attribute",
-          "ascending_or_descending"
-        ],
+        "required": ["node_attribute", "ascending_or_descending"],
         "type": "object",
         "properties": {
           "node_attribute": {
@@ -15340,9 +14469,7 @@
       },
       "SortResultsScoreParameters": {
         "title": "SortResultsScoreParameters",
-        "required": [
-          "ascending_or_descending"
-        ],
+        "required": ["ascending_or_descending"],
         "type": "object",
         "properties": {
           "ascending_or_descending": {
@@ -15353,10 +14480,7 @@
       },
       "SubAttribute": {
         "title": "SubAttribute",
-        "required": [
-          "attribute_type_id",
-          "value"
-        ],
+        "required": ["attribute_type_id", "value"],
         "type": "object",
         "properties": {
           "attribute_type_id": {
@@ -15406,20 +14530,13 @@
       },
       "TopOrBottomEnum": {
         "title": "TopOrBottomEnum",
-        "enum": [
-          "top",
-          "bottom"
-        ],
+        "enum": ["top", "bottom"],
         "type": "string",
         "description": "'top' or 'bottom'."
       },
       "ValidationError": {
         "title": "ValidationError",
-        "required": [
-          "loc",
-          "msg",
-          "type"
-        ],
+        "required": ["loc", "msg", "type"],
         "type": "object",
         "properties": {
           "loc": {
@@ -15453,233 +14570,175 @@
       },
       "annotate": {
         "title": "annotate",
-        "enum": [
-          "annotate"
-        ],
+        "enum": ["annotate"],
         "type": "string",
         "description": "An enumeration."
       },
       "annotate_edges": {
         "title": "annotate_edges",
-        "enum": [
-          "annotate_edges"
-        ],
+        "enum": ["annotate_edges"],
         "type": "string",
         "description": "An enumeration."
       },
       "annotate_nodes": {
         "title": "annotate_nodes",
-        "enum": [
-          "annotate_nodes"
-        ],
+        "enum": ["annotate_nodes"],
         "type": "string",
         "description": "An enumeration."
       },
       "bind": {
         "title": "bind",
-        "enum": [
-          "bind"
-        ],
+        "enum": ["bind"],
         "type": "string",
         "description": "An enumeration."
       },
       "complete_results": {
         "title": "complete_results",
-        "enum": [
-          "complete_results"
-        ],
+        "enum": ["complete_results"],
         "type": "string",
         "description": "An enumeration."
       },
       "enrich_results": {
         "title": "enrich_results",
-        "enum": [
-          "enrich_results"
-        ],
+        "enum": ["enrich_results"],
         "type": "string",
         "description": "An enumeration."
       },
       "fill": {
         "title": "fill",
-        "enum": [
-          "fill"
-        ],
+        "enum": ["fill"],
         "type": "string",
         "description": "An enumeration."
       },
       "filter_kgraph": {
         "title": "filter_kgraph",
-        "enum": [
-          "filter_kgraph"
-        ],
+        "enum": ["filter_kgraph"],
         "type": "string",
         "description": "An enumeration."
       },
       "filter_kgraph_continuous_kedge_attribute": {
         "title": "filter_kgraph_continuous_kedge_attribute",
-        "enum": [
-          "filter_kgraph_continuous_kedge_attribute"
-        ],
+        "enum": ["filter_kgraph_continuous_kedge_attribute"],
         "type": "string",
         "description": "An enumeration."
       },
       "filter_kgraph_discrete_kedge_attribute": {
         "title": "filter_kgraph_discrete_kedge_attribute",
-        "enum": [
-          "filter_kgraph_discrete_kedge_attribute"
-        ],
+        "enum": ["filter_kgraph_discrete_kedge_attribute"],
         "type": "string",
         "description": "An enumeration."
       },
       "filter_kgraph_discrete_knode_attribute": {
         "title": "filter_kgraph_discrete_knode_attribute",
-        "enum": [
-          "filter_kgraph_discrete_knode_attribute"
-        ],
+        "enum": ["filter_kgraph_discrete_knode_attribute"],
         "type": "string",
         "description": "An enumeration."
       },
       "filter_kgraph_orphans": {
         "title": "filter_kgraph_orphans",
-        "enum": [
-          "filter_kgraph_orphans"
-        ],
+        "enum": ["filter_kgraph_orphans"],
         "type": "string",
         "description": "An enumeration."
       },
       "filter_kgraph_percentile": {
         "title": "filter_kgraph_percentile",
-        "enum": [
-          "filter_kgraph_percentile"
-        ],
+        "enum": ["filter_kgraph_percentile"],
         "type": "string",
         "description": "An enumeration."
       },
       "filter_kgraph_std_dev": {
         "title": "filter_kgraph_std_dev",
-        "enum": [
-          "filter_kgraph_std_dev"
-        ],
+        "enum": ["filter_kgraph_std_dev"],
         "type": "string",
         "description": "An enumeration."
       },
       "filter_kgraph_top_n": {
         "title": "filter_kgraph_top_n",
-        "enum": [
-          "filter_kgraph_top_n"
-        ],
+        "enum": ["filter_kgraph_top_n"],
         "type": "string",
         "description": "An enumeration."
       },
       "filter_results": {
         "title": "filter_results",
-        "enum": [
-          "filter_results"
-        ],
+        "enum": ["filter_results"],
         "type": "string",
         "description": "An enumeration."
       },
       "filter_results_top_n": {
         "title": "filter_results_top_n",
-        "enum": [
-          "filter_results_top_n"
-        ],
+        "enum": ["filter_results_top_n"],
         "type": "string",
         "description": "An enumeration."
       },
       "lookup": {
         "title": "lookup",
-        "enum": [
-          "lookup"
-        ],
+        "enum": ["lookup"],
         "type": "string",
         "description": "An enumeration."
       },
       "overlay": {
         "title": "overlay",
-        "enum": [
-          "overlay"
-        ],
+        "enum": ["overlay"],
         "type": "string",
         "description": "An enumeration."
       },
       "overlay_compute_jaccard": {
         "title": "overlay_compute_jaccard",
-        "enum": [
-          "overlay_compute_jaccard"
-        ],
+        "enum": ["overlay_compute_jaccard"],
         "type": "string",
         "description": "An enumeration."
       },
       "overlay_compute_ngd": {
         "title": "overlay_compute_ngd",
-        "enum": [
-          "overlay_compute_ngd"
-        ],
+        "enum": ["overlay_compute_ngd"],
         "type": "string",
         "description": "An enumeration."
       },
       "overlay_connect_knodes": {
         "title": "overlay_connect_knodes",
-        "enum": [
-          "overlay_connect_knodes"
-        ],
+        "enum": ["overlay_connect_knodes"],
         "type": "string",
         "description": "An enumeration."
       },
       "overlay_fisher_exact_test": {
         "title": "overlay_fisher_exact_test",
-        "enum": [
-          "overlay_fisher_exact_test"
-        ],
+        "enum": ["overlay_fisher_exact_test"],
         "type": "string",
         "description": "An enumeration."
       },
       "restate": {
         "title": "restate",
-        "enum": [
-          "restate"
-        ],
+        "enum": ["restate"],
         "type": "string",
         "description": "An enumeration."
       },
       "score": {
         "title": "score",
-        "enum": [
-          "score"
-        ],
+        "enum": ["score"],
         "type": "string",
         "description": "An enumeration."
       },
       "sort_results": {
         "title": "sort_results",
-        "enum": [
-          "sort_results"
-        ],
+        "enum": ["sort_results"],
         "type": "string",
         "description": "An enumeration."
       },
       "sort_results_edge_attribute": {
         "title": "sort_results_edge_attribute",
-        "enum": [
-          "sort_results_edge_attribute"
-        ],
+        "enum": ["sort_results_edge_attribute"],
         "type": "string",
         "description": "An enumeration."
       },
       "sort_results_node_attribute": {
         "title": "sort_results_node_attribute",
-        "enum": [
-          "sort_results_node_attribute"
-        ],
+        "enum": ["sort_results_node_attribute"],
         "type": "string",
         "description": "An enumeration."
       },
       "sort_results_score": {
         "title": "sort_results_score",
-        "enum": [
-          "sort_results_score"
-        ],
+        "enum": ["sort_results_score"],
         "type": "string",
         "description": "An enumeration."
       }
