@@ -1,9 +1,10 @@
 {
-  "name": "",
+  "name": "robokop-api-docs",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
+    "preprocess": "node ./scripts/preprocess.js",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
