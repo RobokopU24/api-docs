@@ -15,7 +15,6 @@ async function main() {
   addUuidToOperationId(jsonData);
   await writeSourceMetadata(jsonData);
 
-  console.log(jsonData);
   fs.writeFile(OPENAPI_PATH, JSON.stringify(jsonData, null, 2), (err) => {
     if (err) throw err;
   });
