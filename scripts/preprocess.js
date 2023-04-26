@@ -5,7 +5,7 @@
 const fs = require("fs");
 const { v4 } = require("uuid");
 
-const AUTOMAT_OPENAPI_URL = "https://automat.renci.org/openapi.yml";
+const AUTOMAT_OPENAPI_URL = "https://automat-u24.apps.renci.org/openapi.yml";
 const OPENAPI_PATH = "./api/openapi.json";
 
 async function main() {
