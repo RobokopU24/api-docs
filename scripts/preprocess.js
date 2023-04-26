@@ -11,7 +11,6 @@ const OPENAPI_PATH = "./api/openapi.json";
 async function main() {
   let jsonData = await fetchSpec();
 
-  addServer(jsonData);
   await writeSourceMetadata(jsonData);
 
   fs.writeFile(OPENAPI_PATH, JSON.stringify(jsonData, null, 2), (err) => {
@@ -25,10 +24,6 @@ async function fetchSpec() {
     method: "GET",
     headers: { Accept: "application/json" },
   }).then((data) => data.json());
-}
-
-function addServer(jsonData) {
-  jsonData["servers"] = [{ url: "https://automat.renci.org" }];
 }
 
 async function writeSourceMetadata(jsonData) {
