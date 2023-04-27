@@ -73,7 +73,7 @@ const getMetaData = async (label) => {
 
   try {
     const response = await fetch(
-      `https://automat-u24.app.renci.org/${SOURCES.get(label)}/metadata`,
+      `https://automat-u24.apps.renci.org/${SOURCES.get(label)}/metadata`,
       {
         method: "GET",
         headers: {
