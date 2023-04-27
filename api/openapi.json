@@ -14,7 +14,7 @@
     "/biolink/1.3/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "RENCI SRI Reference KG"],
-        "summary": "Meta knowledge graph representation of this TRAPI web service",
+        "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_biolink_trapi",
         "responses": {
