@@ -5,7 +5,8 @@
 const fs = require("fs");
 const { v4 } = require("uuid");
 
-const AUTOMAT_OPENAPI_URL = "https://automat-u24.apps.renci.org/openapi.yml";
+const BASE_URL = "https://automat-u24.apps.renci.org";
+const AUTOMAT_OPENAPI_URL = `${BASE_URL}/openapi.yml`;
 const OPENAPI_PATH = "./api/openapi.json";
 
 async function main() {
@@ -29,8 +30,10 @@ async function fetchSpec() {
 async function writeSourceMetadata(jsonData) {
   const SOURCES = [
     "biolink",
+    "cam-kp",
     "ctd",
     "drugcentral",
+    "genome-alliance",
     "gtex",
     "gtopdb",
     "gwas-catalog",
@@ -40,20 +43,20 @@ async function writeSourceMetadata(jsonData) {
     "human-goa",
     "icees-kg",
     "intact",
-    "ontological-hierarchy",
     "panther",
     "pharos",
-    "sri-reference-kg",
     "robokopkg",
+    "sri-reference-kg",
     "string-db",
-    "uberongraph",
+    "textminingkp",
+    "ubergraph",
     "viral-proteome",
   ];
 
   const metadata = new Map();
 
   for (const source of SOURCES) {
-    const res = await fetch(`https://automat.renci.org/${source}/metadata`);
+    const res = await fetch(`${BASE_URL}/${source}/metadata`);
     if (!res.ok)
       throw new Error(`Something went wrong fetching the ${source} metadata`);
     const json = await res.json();
