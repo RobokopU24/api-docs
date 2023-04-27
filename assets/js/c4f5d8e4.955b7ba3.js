@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkrobokop_api_docs=self.webpackChunkrobokop_api_docs||[]).push([[4195],{62841:(o,e,a)=>{a.r(e),a.d(e,{default:()=>r});var t=a(67294),c=a(16550);function r(){return t.createElement(c.l_,{to:"/api-docs/docs/category/automat"})}}}]);
