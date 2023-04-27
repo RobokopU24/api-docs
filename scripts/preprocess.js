@@ -5,14 +5,12 @@
 const fs = require("fs");
 const { v4 } = require("uuid");
 
-const AUTOMAT_OPENAPI_URL = "https://automat.renci.org/openapi.yml";
+const AUTOMAT_OPENAPI_URL = "https://automat-u24.apps.renci.org/openapi.yml";
 const OPENAPI_PATH = "./api/openapi.json";
 
 async function main() {
   let jsonData = await fetchSpec();
 
-  addServer(jsonData);
-  addUuidToOperationId(jsonData);
   await writeSourceMetadata(jsonData);
 
   fs.writeFile(OPENAPI_PATH, JSON.stringify(jsonData, null, 2), (err) => {
@@ -26,23 +24,6 @@ async function fetchSpec() {
     method: "GET",
     headers: { Accept: "application/json" },
   }).then((data) => data.json());
-}
-
-function addServer(jsonData) {
-  jsonData["servers"] = [{ url: "https://automat.renci.org" }];
-}
-
-function addUuidToOperationId(jsonData) {
-  for (let key in jsonData) {
-    if (jsonData.hasOwnProperty(key)) {
-      if (key === "operationId") {
-        jsonData[key] += "-" + v4();
-      } else if (typeof jsonData[key] === "object") {
-        jsonData[key] = addUuidToOperationId(jsonData[key]);
-      }
-    }
-  }
-  return jsonData;
 }
 
 async function writeSourceMetadata(jsonData) {
