@@ -624,7 +624,7 @@
     },
     "/cam-kp/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "cam-kp"],
+        "tags": ["trapi", "CAM KP"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_cam-kp_trapi",
@@ -644,7 +644,7 @@
     },
     "/cam-kp/1.3/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "cam-kp"],
+        "tags": ["trapi", "CAM KP"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_cam-kp_trapi",
@@ -664,7 +664,7 @@
     },
     "/cam-kp/1.3/query": {
       "post": {
-        "tags": ["trapi", "cam-kp"],
+        "tags": ["trapi", "CAM KP"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post_cam-kp_trapi",
@@ -791,12 +791,12 @@
             }
           }
         },
-        "tags": ["cam-kp"]
+        "tags": ["CAM KP"]
       }
     },
     "/cam-kp/overlay": {
       "post": {
-        "tags": ["translator", "cam-kp"],
+        "tags": ["translator", "CAM KP"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post_cam-kp_translator",
@@ -1063,7 +1063,7 @@
             }
           }
         },
-        "tags": ["cam-kp"]
+        "tags": ["CAM KP"]
       }
     },
     "/cam-kp/{source_type}/{target_type}/{curie}": {
@@ -1124,7 +1124,7 @@
             }
           }
         },
-        "tags": ["cam-kp"]
+        "tags": ["CAM KP"]
       }
     },
     "/cam-kp/{node_type}/{curie}": {
@@ -1176,7 +1176,7 @@
             }
           }
         },
-        "tags": ["cam-kp"]
+        "tags": ["CAM KP"]
       }
     },
     "/cam-kp/simple_spec": {
@@ -1230,7 +1230,7 @@
             }
           }
         },
-        "tags": ["cam-kp"]
+        "tags": ["CAM KP"]
       }
     },
     "/ctd/1.3/meta_knowledge_graph": {
@@ -2457,7 +2457,7 @@
     },
     "/genome-alliance/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "genome-alliance"],
+        "tags": ["trapi", "Alliance of Genome Resources Orthology"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_genome-alliance_trapi",
@@ -2477,7 +2477,7 @@
     },
     "/genome-alliance/1.3/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "genome-alliance"],
+        "tags": ["trapi", "Alliance of Genome Resources Orthology"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_genome-alliance_trapi",
@@ -2497,7 +2497,7 @@
     },
     "/genome-alliance/1.3/query": {
       "post": {
-        "tags": ["trapi", "genome-alliance"],
+        "tags": ["trapi", "Alliance of Genome Resources Orthology"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post_genome-alliance_trapi",
@@ -2624,12 +2624,12 @@
             }
           }
         },
-        "tags": ["genome-alliance"]
+        "tags": ["Alliance of Genome Resources Orthology"]
       }
     },
     "/genome-alliance/overlay": {
       "post": {
-        "tags": ["translator", "genome-alliance"],
+        "tags": ["translator", "Alliance of Genome Resources Orthology"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post_genome-alliance_translator",
@@ -2896,7 +2896,7 @@
             }
           }
         },
-        "tags": ["genome-alliance"]
+        "tags": ["Alliance of Genome Resources Orthology"]
       }
     },
     "/genome-alliance/{source_type}/{target_type}/{curie}": {
@@ -2957,7 +2957,7 @@
             }
           }
         },
-        "tags": ["genome-alliance"]
+        "tags": ["Alliance of Genome Resources Orthology"]
       }
     },
     "/genome-alliance/{node_type}/{curie}": {
@@ -3009,7 +3009,7 @@
             }
           }
         },
-        "tags": ["genome-alliance"]
+        "tags": ["Alliance of Genome Resources Orthology"]
       }
     },
     "/genome-alliance/simple_spec": {
@@ -3063,7 +3063,7 @@
             }
           }
         },
-        "tags": ["genome-alliance"]
+        "tags": ["Alliance of Genome Resources Orthology"]
       }
     },
     "/gtex/1.3/meta_knowledge_graph": {
@@ -7345,7 +7345,7 @@
     },
     "/icees-kg/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "icees-kg"],
+        "tags": ["trapi", "ICEES KG"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_icees-kg_trapi",
@@ -7365,7 +7365,7 @@
     },
     "/icees-kg/1.3/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "icees-kg"],
+        "tags": ["trapi", "ICEES KG"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_icees-kg_trapi",
@@ -7385,7 +7385,7 @@
     },
     "/icees-kg/1.3/query": {
       "post": {
-        "tags": ["trapi", "icees-kg"],
+        "tags": ["trapi", "ICEES KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post_icees-kg_trapi",
@@ -7512,12 +7512,12 @@
             }
           }
         },
-        "tags": ["icees-kg"]
+        "tags": ["ICEES KG"]
       }
     },
     "/icees-kg/overlay": {
       "post": {
-        "tags": ["translator", "icees-kg"],
+        "tags": ["translator", "ICEES KG"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post_icees-kg_translator",
@@ -7784,7 +7784,7 @@
             }
           }
         },
-        "tags": ["icees-kg"]
+        "tags": ["ICEES KG"]
       }
     },
     "/icees-kg/{source_type}/{target_type}/{curie}": {
@@ -7845,7 +7845,7 @@
             }
           }
         },
-        "tags": ["icees-kg"]
+        "tags": ["ICEES KG"]
       }
     },
     "/icees-kg/{node_type}/{curie}": {
@@ -7897,7 +7897,7 @@
             }
           }
         },
-        "tags": ["icees-kg"]
+        "tags": ["ICEES KG"]
       }
     },
     "/icees-kg/simple_spec": {
@@ -7951,12 +7951,12 @@
             }
           }
         },
-        "tags": ["icees-kg"]
+        "tags": ["ICEES KG"]
       }
     },
     "/intact/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "InTact"],
+        "tags": ["trapi", "IntAct Molecular Interaction Database"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_intact_trapi",
@@ -7976,7 +7976,7 @@
     },
     "/intact/1.3/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "InTact"],
+        "tags": ["trapi", "IntAct Molecular Interaction Database"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_intact_trapi",
@@ -7996,7 +7996,7 @@
     },
     "/intact/1.3/query": {
       "post": {
-        "tags": ["trapi", "InTact"],
+        "tags": ["trapi", "IntAct Molecular Interaction Database"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post_intact_trapi",
@@ -8123,12 +8123,12 @@
             }
           }
         },
-        "tags": ["InTact"]
+        "tags": ["IntAct Molecular Interaction Database"]
       }
     },
     "/intact/overlay": {
       "post": {
-        "tags": ["translator", "InTact"],
+        "tags": ["translator", "IntAct Molecular Interaction Database"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post_intact_translator",
@@ -8395,7 +8395,7 @@
             }
           }
         },
-        "tags": ["InTact"]
+        "tags": ["IntAct Molecular Interaction Database"]
       }
     },
     "/intact/{source_type}/{target_type}/{curie}": {
@@ -8456,7 +8456,7 @@
             }
           }
         },
-        "tags": ["InTact"]
+        "tags": ["IntAct Molecular Interaction Database"]
       }
     },
     "/intact/{node_type}/{curie}": {
@@ -8508,7 +8508,7 @@
             }
           }
         },
-        "tags": ["InTact"]
+        "tags": ["IntAct Molecular Interaction Database"]
       }
     },
     "/intact/simple_spec": {
@@ -8562,7 +8562,7 @@
             }
           }
         },
-        "tags": ["InTact"]
+        "tags": ["IntAct Molecular Interaction Database"]
       }
     },
     "/panther/1.3/meta_knowledge_graph": {
@@ -11622,7 +11622,7 @@
     },
     "/textminingkp/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "textminingkp"],
+        "tags": ["trapi", "Text Mining Provider KG"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_textminingkp_trapi",
@@ -11642,7 +11642,7 @@
     },
     "/textminingkp/1.3/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "textminingkp"],
+        "tags": ["trapi", "Text Mining Provider KG"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_textminingkp_trapi",
@@ -11662,7 +11662,7 @@
     },
     "/textminingkp/1.3/query": {
       "post": {
-        "tags": ["trapi", "textminingkp"],
+        "tags": ["trapi", "Text Mining Provider KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post_textminingkp_trapi",
@@ -11789,12 +11789,12 @@
             }
           }
         },
-        "tags": ["textminingkp"]
+        "tags": ["Text Mining Provider KG"]
       }
     },
     "/textminingkp/overlay": {
       "post": {
-        "tags": ["translator", "textminingkp"],
+        "tags": ["translator", "Text Mining Provider KG"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post_textminingkp_translator",
@@ -12061,7 +12061,7 @@
             }
           }
         },
-        "tags": ["textminingkp"]
+        "tags": ["Text Mining Provider KG"]
       }
     },
     "/textminingkp/{source_type}/{target_type}/{curie}": {
@@ -12122,7 +12122,7 @@
             }
           }
         },
-        "tags": ["textminingkp"]
+        "tags": ["Text Mining Provider KG"]
       }
     },
     "/textminingkp/{node_type}/{curie}": {
@@ -12174,7 +12174,7 @@
             }
           }
         },
-        "tags": ["textminingkp"]
+        "tags": ["Text Mining Provider KG"]
       }
     },
     "/textminingkp/simple_spec": {
@@ -12228,12 +12228,12 @@
             }
           }
         },
-        "tags": ["textminingkp"]
+        "tags": ["Text Mining Provider KG"]
       }
     },
     "/ubergraph/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "ubergraph"],
+        "tags": ["trapi", "Ubergraph Redundant"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_trapi_ubergraph",
@@ -12253,7 +12253,7 @@
     },
     "/ubergraph/1.3/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "ubergraph"],
+        "tags": ["trapi", "Ubergraph Redundant"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_trapi_ubergraph",
@@ -12273,7 +12273,7 @@
     },
     "/ubergraph/1.3/query": {
       "post": {
-        "tags": ["trapi", "ubergraph"],
+        "tags": ["trapi", "Ubergraph Redundant"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post_trapi_ubergraph",
@@ -12400,12 +12400,12 @@
             }
           }
         },
-        "tags": ["ubergraph"]
+        "tags": ["Ubergraph Redundant"]
       }
     },
     "/ubergraph/overlay": {
       "post": {
-        "tags": ["translator", "ubergraph"],
+        "tags": ["translator", "Ubergraph Redundant"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post_translator_ubergraph",
@@ -12672,7 +12672,7 @@
             }
           }
         },
-        "tags": ["ubergraph"]
+        "tags": ["Ubergraph Redundant"]
       }
     },
     "/ubergraph/{source_type}/{target_type}/{curie}": {
@@ -12733,7 +12733,7 @@
             }
           }
         },
-        "tags": ["ubergraph"]
+        "tags": ["Ubergraph Redundant"]
       }
     },
     "/ubergraph/{node_type}/{curie}": {
@@ -12785,7 +12785,7 @@
             }
           }
         },
-        "tags": ["ubergraph"]
+        "tags": ["Ubergraph Redundant"]
       }
     },
     "/ubergraph/simple_spec": {
@@ -12839,618 +12839,7 @@
             }
           }
         },
-        "tags": ["ubergraph"]
-      }
-    },
-    "/ubergraph-nonredundant/1.3/meta_knowledge_graph": {
-      "get": {
-        "tags": ["trapi", "ubergraph-nonredundant"],
-        "summary": "Meta knowledge graph representation of this TRAPI web service.",
-        "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_trapi_ubergraph-nonredundant",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MetaKnowledgeGraph"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/ubergraph-nonredundant/1.3/sri_testing_data": {
-      "get": {
-        "tags": ["trapi", "ubergraph-nonredundant"],
-        "summary": "Test data for usage by the SRI Testing Harness.",
-        "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_trapi_ubergraph-nonredundant",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SRITestData"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/ubergraph-nonredundant/1.3/query": {
-      "post": {
-        "tags": ["trapi", "ubergraph-nonredundant"],
-        "summary": "Query reasoner via one of several inputs.",
-        "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_trapi_ubergraph-nonredundant",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReasonerRequest"
-              },
-              "example": {
-                "message": {
-                  "query_graph": {
-                    "nodes": {
-                      "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
-                      },
-                      "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
-                      }
-                    },
-                    "edges": {
-                      "e01": {
-                        "subject": "n0",
-                        "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    }
-                  }
-                },
-                "workflow": [
-                  {
-                    "id": "lookup"
-                  }
-                ]
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReasonerRequest"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/ubergraph-nonredundant/cypher": {
-      "post": {
-        "summary": "Run cypher query",
-        "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post_ubergraph-nonredundant",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CypherRequest"
-              },
-              "example": {
-                "query": "MATCH (n) RETURN count(n)"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["ubergraph-nonredundant"]
-      }
-    },
-    "/ubergraph-nonredundant/overlay": {
-      "post": {
-        "tags": ["translator", "ubergraph-nonredundant"],
-        "summary": "Overlay results with available connections between each node.",
-        "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post_translator_ubergraph-nonredundant",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReasonerRequest"
-              },
-              "example": {
-                "message": {
-                  "query_graph": {
-                    "nodes": {
-                      "n1": {
-                        "id": "NCBIGene:6352",
-                        "category": "biolink:Gene",
-                        "is_set": false
-                      },
-                      "n2": {
-                        "category": "biolink:GeneFamily",
-                        "is_set": false
-                      },
-                      "n3": {
-                        "category": "biolink:GeneFamily",
-                        "is_set": false
-                      }
-                    },
-                    "edges": {
-                      "e12": {
-                        "subject": "n1",
-                        "object": "n2",
-                        "predicate": "biolink:part_of"
-                      },
-                      "e23": {
-                        "subject": "n3",
-                        "object": "n2",
-                        "predicate": "biolink:part_of"
-                      }
-                    }
-                  },
-                  "knowledge_graph": {
-                    "nodes": {
-                      "NCBIGene:6352": {
-                        "category": [
-                          "biolink:NamedThing",
-                          "biolink:BiologicalEntity",
-                          "biolink:MolecularEntity",
-                          "biolink:GenomicEntity",
-                          "biolink:GeneOrGeneProduct",
-                          "biolink:MacromolecularMachine",
-                          "biolink:Gene"
-                        ],
-                        "name": "CCL5",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "locus_group": "protein-coding gene",
-                              "synonyms": [],
-                              "chromosome": "17",
-                              "location": "17q12",
-                              "gene_family": ["Chemokine ligands"],
-                              "taxon": 9606,
-                              "category": [
-                                "biolink:BiologicalEntity",
-                                "biolink:GenomicEntity",
-                                "biolink:GeneOrGeneProduct",
-                                "biolink:MacromolecularMachine",
-                                "biolink:NamedThing",
-                                "biolink:MolecularEntity",
-                                "biolink:Gene"
-                              ],
-                              "gene_family_id": [483],
-                              "equivalent_identifiers": [
-                                "ENSEMBL:ENSG00000271503",
-                                "NCBIGene:6352",
-                                "NCBIGene:6352",
-                                "HGNC:10632",
-                                "UniProtKB:P13501"
-                              ]
-                            }
-                          }
-                        ]
-                      },
-                      "PANTHER.FAMILY:PTHR12015:SF170": {
-                        "category": [
-                          "biolink:NamedThing",
-                          "biolink:BiologicalEntity",
-                          "biolink:GeneFamily",
-                          "biolink:MolecularEntity",
-                          "biolink:Entity"
-                        ],
-                        "name": "C-C MOTIF CHEMOKINE 5",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "synonyms": [],
-                              "category": [
-                                "biolink:BiologicalEntity",
-                                "biolink:GeneFamily",
-                                "biolink:NamedThing",
-                                "biolink:MolecularEntity",
-                                "biolink:Entity"
-                              ],
-                              "equivalent_identifiers": [
-                                "PANTHER.FAMILY:PTHR12015:SF170"
-                              ]
-                            }
-                          }
-                        ]
-                      },
-                      "PANTHER.FAMILY:PTHR12015": {
-                        "category": [
-                          "biolink:NamedThing",
-                          "biolink:BiologicalEntity",
-                          "biolink:GeneFamily",
-                          "biolink:MolecularEntity",
-                          "biolink:Entity"
-                        ],
-                        "name": "SMALL INDUCIBLE CYTOKINE A",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "synonyms": [],
-                              "category": [
-                                "biolink:BiologicalEntity",
-                                "biolink:GeneFamily",
-                                "biolink:NamedThing",
-                                "biolink:MolecularEntity",
-                                "biolink:Entity"
-                              ],
-                              "equivalent_identifiers": [
-                                "PANTHER.FAMILY:PTHR12015"
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    "edges": {
-                      "dd8ef7a4606c4f8e405e6a5b1b095993": {
-                        "subject": "NCBIGene:6352",
-                        "object": "PANTHER.FAMILY:PTHR12015",
-                        "predicate": "biolink:part_of",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "predicate": "biolink:part_of",
-                              "relation_label": "part of",
-                              "provided_by": "panther.get_gene_by_gene_family",
-                              "ctime": 1584932086.0009434,
-                              "target_id": "PANTHER.FAMILY:PTHR12015",
-                              "source_id": "NCBIGene:6352",
-                              "source_database": "panther",
-                              "relation": "BFO:0000050",
-                              "publications": []
-                            }
-                          }
-                        ]
-                      },
-                      "9f7f9d86cb57e7190aafa57f7564eb05": {
-                        "subject": "PANTHER.FAMILY:PTHR12015:SF170",
-                        "object": "PANTHER.FAMILY:PTHR12015",
-                        "predicate": "biolink:part_of",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "predicate": "biolink:part_of",
-                              "relation_label": "part of",
-                              "provided_by": "panther.get_gene_family_by_gene_family",
-                              "ctime": 1610437123.7988985,
-                              "target_id": "PANTHER.FAMILY:PTHR12015",
-                              "source_id": "PANTHER.FAMILY:PTHR12015:SF170",
-                              "source_database": "panther",
-                              "relation": "BFO:0000050",
-                              "publications": []
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  },
-                  "results": [
-                    {
-                      "node_bindings": {
-                        "n1": [
-                          {
-                            "id": "NCBIGene:6352"
-                          }
-                        ],
-                        "n2": [
-                          {
-                            "id": "PANTHER.FAMILY:PTHR12015"
-                          }
-                        ],
-                        "n3": [
-                          {
-                            "id": "PANTHER.FAMILY:PTHR12015:SF170"
-                          }
-                        ]
-                      },
-                      "edge_bindings": {
-                        "e12": [
-                          {
-                            "id": "dd8ef7a4606c4f8e405e6a5b1b095993"
-                          }
-                        ],
-                        "e23": [
-                          {
-                            "id": "9f7f9d86cb57e7190aafa57f7564eb05"
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Message"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/ubergraph-nonredundant/metadata": {
-      "get": {
-        "summary": "Metadata about the knowledge graph.",
-        "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get_ubergraph-nonredundant",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "Response Metadata Metadata Get"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["ubergraph-nonredundant"]
-      }
-    },
-    "/ubergraph-nonredundant/{source_type}/{target_type}/{curie}": {
-      "get": {
-        "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
-        "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get_ubergraph-nonredundant",
-        "parameters": [
-          {
-            "required": true,
-            "schema": {
-              "title": "Source Type",
-              "type": "string"
-            },
-            "name": "source_type",
-            "in": "path"
-          },
-          {
-            "required": true,
-            "schema": {
-              "title": "Target Type",
-              "type": "string"
-            },
-            "name": "target_type",
-            "in": "path"
-          },
-          {
-            "required": true,
-            "schema": {
-              "title": "Curie",
-              "type": "string"
-            },
-            "name": "curie",
-            "in": "path"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "Response One Hop  Source Type   Target Type   Curie  Get",
-                  "type": "array",
-                  "items": {}
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["ubergraph-nonredundant"]
-      }
-    },
-    "/ubergraph-nonredundant/{node_type}/{curie}": {
-      "get": {
-        "summary": "Find `node` by `curie`",
-        "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get_ubergraph-nonredundant",
-        "parameters": [
-          {
-            "required": true,
-            "schema": {
-              "title": "Node Type",
-              "type": "string"
-            },
-            "name": "node_type",
-            "in": "path"
-          },
-          {
-            "required": true,
-            "schema": {
-              "title": "Curie",
-              "type": "string"
-            },
-            "name": "curie",
-            "in": "path"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "Response Node  Node Type   Curie  Get",
-                  "type": "array",
-                  "items": {}
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["ubergraph-nonredundant"]
-      }
-    },
-    "/ubergraph-nonredundant/simple_spec": {
-      "get": {
-        "summary": "Get one-hop connection schema",
-        "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get_ubergraph-nonredundant",
-        "parameters": [
-          {
-            "required": false,
-            "schema": {
-              "title": "Source",
-              "type": "string"
-            },
-            "name": "source",
-            "in": "query"
-          },
-          {
-            "required": false,
-            "schema": {
-              "title": "Target",
-              "type": "string"
-            },
-            "name": "target",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "Response Simple Spec Simple Spec Get",
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SimpleSpecElement"
-                  }
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["ubergraph-nonredundant"]
+        "tags": ["Ubergraph Redundant"]
       }
     },
     "/viral-proteome/1.3/meta_knowledge_graph": {
@@ -14090,71 +13479,71 @@
   "tags": [
     {
       "name": "RENCI SRI Reference KG",
-      "description": "\nA subset of the SRI Reference KG, a combination of the integrated Monarch KG and other relevant data sources.\n\n**Version:** 30c8c410e695ee67\n\n**URL:** [https://github.com/Knowledge-Graph-Hub/sri-reference-kg](https://github.com/Knowledge-Graph-Hub/sri-reference-kg)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/Biolink_Automat/30c8c410e695ee67/graph_30c8c410e695ee67.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/Biolink_Automat/30c8c410e695ee67/graph_30c8c410e695ee67.db.dump)\n\n**Nodes:** 604,082\n\n**Edges:** 4,617,136\n\n"
+      "description": "\nThe RENCI Standards and Reference Implementation (SRI) Reference KG represents a subset of the SRI Reference KG.\n\n**Version:** 11163199d3ca8a16\n\n**URL:** [https://github.com/Knowledge-Graph-Hub/sri-reference-kg](https://github.com/Knowledge-Graph-Hub/sri-reference-kg)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/Biolink_Automat/11163199d3ca8a16/graph_11163199d3ca8a16.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/Biolink_Automat/11163199d3ca8a16/graph_11163199d3ca8a16.db.dump)\n\n**Nodes:** 604,067\n\n**Edges:** 4,616,569\n\n"
     },
     {
-      "name": "cam-kp",
-      "description": "Operations for cam-kp."
+      "name": "CAM KP",
+      "description": "\nCAMs (Causal Activity Models) are small knowledge graphs built using the Web Ontology Language (OWL). The CAM database combines many CAM graphs along with a large merged bio-ontology containing the full vocabulary of concepts referenced within the individual CAMs. Each CAM describes an instantiation of some of those concepts in a particular context, modeling the interactions between those instances as an interlinked representation of a complex biological or environmental process.\n\n**Version:** 766ee0e72d9016ef\n\n\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/CAMKP_Automat/766ee0e72d9016ef/graph_766ee0e72d9016ef.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/CAMKP_Automat/766ee0e72d9016ef/graph_766ee0e72d9016ef.db.dump)\n\n**Nodes:** 48,819\n\n**Edges:** 575,781\n\n"
     },
     {
       "name": "CTD",
-      "description": "\nThe Comparative Toxicogenomics Database (CTD) is an open-source database that provides manually curated information about chemical-gene/protein, chemical-disease, and gene-disease relationships, with additional support for the curated relationships provided by functional and pathway data.\n\n**Version:** b95856ba1051bfc2\n\n**URL:** [http://ctdbase.org/about/](http://ctdbase.org/about/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/CTD_Automat/b95856ba1051bfc2/graph_b95856ba1051bfc2.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/CTD_Automat/b95856ba1051bfc2/graph_b95856ba1051bfc2.db.dump)\n\n**Nodes:** 441,879\n\n**Edges:** 1,462,391\n\n"
+      "description": "\nThe Comparative Toxicogenomics Database (CTD) is an open-source database that provides manually curated information about chemical-gene/protein, chemical-disease, and gene/protein-disease relationships, with additional support for the curated relationships provided by function and pathway data.\n\n**Version:** eb067a5f55c8a4dd\n\n**URL:** [http://ctdbase.org/about/](http://ctdbase.org/about/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/CTD_Automat/eb067a5f55c8a4dd/graph_eb067a5f55c8a4dd.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/CTD_Automat/eb067a5f55c8a4dd/graph_eb067a5f55c8a4dd.db.dump)\n\n**Nodes:** 441,863\n\n**Edges:** 1,462,012\n\n"
     },
     {
       "name": "DrugCentral",
-      "description": "\nDrugCentral provides open-source data on active ingredients, chemical entities, pharmaceutical products, drug mode of action, indications, and pharmacologic action for approved drugs, derived from information provided by the US Food & Drug Administration, the European Medicines Agency, and the Pharmaceutical and Medical Devices Agency. Caveat: DrugCentral provides limited information on discontinued and drugs approved outside of the US, but users should be aware that that information has not been validated.\n\n**Version:** deb87c2b73b99b98\n\n**URL:** [https://drugcentral.org/](https://drugcentral.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/DrugCentral_Automat/deb87c2b73b99b98/graph_deb87c2b73b99b98.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/DrugCentral_Automat/deb87c2b73b99b98/graph_deb87c2b73b99b98.db.dump)\n\n**Nodes:** 76,362\n\n**Edges:** 646,723\n\n"
+      "description": "\nDrugCentral provides open-source data on active ingredients, chemical entities, pharmaceutical products, drug mode of action, indications, and pharmacologic action for approved drugs, derived from information provided by the US Food & Drug Administration, the European Medicines Agency, and the Pharmaceutical and Medical Devices Agency. Caveat: DrugCentral provides limited information on discontinued drugs and drugs approved outside of the US, but that information has not been validated.\n\n**Version:** 40591a308833c43a\n\n**URL:** [https://drugcentral.org/](https://drugcentral.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/DrugCentral_Automat/40591a308833c43a/graph_40591a308833c43a.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/DrugCentral_Automat/40591a308833c43a/graph_40591a308833c43a.db.dump)\n\n**Nodes:** 76,355\n\n**Edges:** 645,905\n\n"
     },
     {
-      "name": "genome-alliance",
-      "description": "Operations for genome-alliance."
+      "name": "Alliance of Genome Resources Orthology",
+      "description": "\nThe Alliance of Genome Resources is a consortium of 7 model organism databases (MODs) and the Gene Ontology (GO) Consortium whose goal is to provide an integrated view of their data to all biologists, clinicians and other interested parties. The Alliance provides the results of all methods that have been benchmarked by the Quest for Orthologs Consortium (QfO), as well as curated ortholog inferences from HGNC (for human, mouse and rat genes).\n\n**Version:** eeadb0cfeb83a973\n\n**URL:** [https://www.alliancegenome.org/](https://www.alliancegenome.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/GenomeAllianceOrthologs_Automat/eeadb0cfeb83a973/graph_eeadb0cfeb83a973.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/GenomeAllianceOrthologs_Automat/eeadb0cfeb83a973/graph_eeadb0cfeb83a973.db.dump)\n\n**Nodes:** 94,352\n\n**Edges:** 530,513\n\n"
     },
     {
       "name": "GTEx",
-      "description": "\nThe Genotype-Tissue Expression (GTEx) portal provides open access to data on tissue-specific gene expression and regulation, derived from molecular assays (e.g., WGS, WES, RNA-Seq) on 54 non-diseased tissue sites across nearly 1000 individuals.\n\n**Version:** 44d871edeee74680\n\n**URL:** [https://gtexportal.org/home/](https://gtexportal.org/home/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/GTEx_Automat/44d871edeee74680/graph_44d871edeee74680.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/GTEx_Automat/44d871edeee74680/graph_44d871edeee74680.db.dump)\n\n**Nodes:** 4,924,964\n\n**Edges:** 49,258,128\n\n"
+      "description": "\nThe Genotype-Tissue Expression (GTEx) portal provides open access to data on tissue-specific gene expression and regulation, derived from molecular assays (e.g., WGS, WES, RNA-Seq) on 54 non-diseased tissue sites across nearly 1000 individuals.\n\n**Version:** 84a3ea1931622448\n\n**URL:** [https://gtexportal.org/home/](https://gtexportal.org/home/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/GTEx_Automat/84a3ea1931622448/graph_84a3ea1931622448.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/GTEx_Automat/84a3ea1931622448/graph_84a3ea1931622448.db.dump)\n\n**Nodes:** 4,924,964\n\n**Edges:** 49,258,128\n\n"
     },
     {
       "name": "GtoPdb",
-      "description": "\nThe International Union of Basic and Clinical Pharmacology (IUPHAR) / British Pharmacological Society (BPS) Guide to Pharmacology database (GtoPdb) provides searchable open-source quantitative information on drug targets and the prescription medicines and experimental drugs that act on them.\n\n**Version:** e7d6b71aa6130b22\n\n**URL:** [http://www.guidetopharmacology.org/](http://www.guidetopharmacology.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/GtoPdb_Automat/e7d6b71aa6130b22/graph_e7d6b71aa6130b22.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/GtoPdb_Automat/e7d6b71aa6130b22/graph_e7d6b71aa6130b22.db.dump)\n\n**Nodes:** 11,706\n\n**Edges:** 91,047\n\n"
+      "description": "\nThe International Union of Basic and Clinical Pharmacology (IUPHAR) / British Pharmacological Society (BPS) Guide to Pharmacology database (GtoPdb) provides searchable open-source quantitative information on drug targets and the prescription medicines and experimental drugs that act on them.\n\n**Version:** 0e262e752794616a\n\n**URL:** [http://www.guidetopharmacology.org/](http://www.guidetopharmacology.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/GtoPdb_Automat/0e262e752794616a/graph_0e262e752794616a.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/GtoPdb_Automat/0e262e752794616a/graph_0e262e752794616a.db.dump)\n\n**Nodes:** 11,706\n\n**Edges:** 90,908\n\n"
     },
     {
       "name": "GWAS Catalog",
-      "description": "\nThe Genome-Wide Association Studies (GWAS) Catalog provides a curated, searchable, visualisable, and openly available database of single nucleotide polymorphism (SNP)-trait associations, derived from all GWAS publications identified by curators, who then extract the reported trait, significant SNP-trait associations, and sample metadata.\n\n**Version:** 4781b79ceb253fb2\n\n**URL:** [https://www.ebi.ac.uk/gwas/](https://www.ebi.ac.uk/gwas/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/GWASCatalog_Automat/4781b79ceb253fb2/graph_4781b79ceb253fb2.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/GWASCatalog_Automat/4781b79ceb253fb2/graph_4781b79ceb253fb2.db.dump)\n\n**Nodes:** 315,186\n\n**Edges:** 2,052,906\n\n"
+      "description": "\nThe Genome-Wide Association Studies (GWAS) Catalog provides a curated, searchable, visualisable, and openly available database of single nucleotide polymorphism (SNP)-trait associations, derived from GWAS publications, including the reported trait, significant SNP-trait associations, and sample metadata.\n\n**Version:** d452d59852264c0e\n\n**URL:** [https://www.ebi.ac.uk/gwas/](https://www.ebi.ac.uk/gwas/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/GWASCatalog_Automat/d452d59852264c0e/graph_d452d59852264c0e.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/GWASCatalog_Automat/d452d59852264c0e/graph_d452d59852264c0e.db.dump)\n\n**Nodes:** 315,084\n\n**Edges:** 2,052,628\n\n"
     },
     {
       "name": "Hetionet",
-      "description": "\nHetionet is an open-source biomedical heterogeneous information network (hetnet) or graph-based resource describing relationships uncovered by millions of biomedical research studies over the past fifty years.\n\n**Version:** efb4e98b11761231\n\n**URL:** [https://het.io/](https://het.io/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/Hetio_Automat/efb4e98b11761231/graph_efb4e98b11761231.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/Hetio_Automat/efb4e98b11761231/graph_efb4e98b11761231.db.dump)\n\n**Nodes:** 116,144\n\n**Edges:** 2,703,595\n\n"
+      "description": "\nHetionet is an open-source biomedical \"heterogeneous information network\" (hetnet) or graph-based resource describing relationships uncovered by millions of biomedical research studies over the past fifty years.\n\n**Version:** b3ca6690f8b0b8e9\n\n**URL:** [https://het.io/](https://het.io/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/Hetio_Automat/b3ca6690f8b0b8e9/graph_b3ca6690f8b0b8e9.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/Hetio_Automat/b3ca6690f8b0b8e9/graph_b3ca6690f8b0b8e9.db.dump)\n\n**Nodes:** 116,044\n\n**Edges:** 2,697,025\n\n"
     },
     {
       "name": "HGNC",
-      "description": "\nThe HUGO Gene Nomenclature Committee (HGNC) database provides open access to HGNC-approved unique symbols and names for human genes, gene groups, and associated resources, including links to genomic, proteomic and phenotypic information.\n\n**Version:** b653a6fba39f722f\n\n**URL:** [https://www.genenames.org/](https://www.genenames.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/HGNC_Automat/b653a6fba39f722f/graph_b653a6fba39f722f.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/HGNC_Automat/b653a6fba39f722f/graph_b653a6fba39f722f.db.dump)\n\n**Nodes:** 26,467\n\n**Edges:** 52,259\n\n"
+      "description": "\nThe HUGO Gene Nomenclature Committee (HGNC) database provides open access to HGNC-approved unique symbols and names for human genes, gene groups, and associated resources, including links to genomic, proteomic and phenotypic information.\n\n**Version:** c161ca6a9005d5c4\n\n**URL:** [https://www.genenames.org/](https://www.genenames.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/HGNC_Automat/c161ca6a9005d5c4/graph_c161ca6a9005d5c4.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/HGNC_Automat/c161ca6a9005d5c4/graph_c161ca6a9005d5c4.db.dump)\n\n**Nodes:** 26,473\n\n**Edges:** 52,274\n\n"
     },
     {
       "name": "HMDB",
-      "description": "\nThe Human Metabolome Database (HMDB) is an openly accessible database containing detailed information about small molecule metabolites found in the human body, with links between chemical data, clinical data, and molecular biology/biochemistry data, including protein sequences (enzymes and transporters).\n\n**Version:** a55c31f14363380e\n\n**URL:** [https://hmdb.ca/](https://hmdb.ca/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/HMDB_Automat/a55c31f14363380e/graph_a55c31f14363380e.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/HMDB_Automat/a55c31f14363380e/graph_a55c31f14363380e.db.dump)\n\n**Nodes:** 130,311\n\n**Edges:** 1,880,382\n\n"
+      "description": "\nThe Human Metabolome DataBase (HMDB) is an openly accessible database containing detailed information about small molecule metabolites found in the human body, with links between chemical data, clinical data, and molecular biology/biochemistry data, including protein sequences (enzymes and transporters).\n\n**Version:** 804f10a099251451\n\n**URL:** [https://hmdb.ca/](https://hmdb.ca/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/HMDB_Automat/804f10a099251451/graph_804f10a099251451.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/HMDB_Automat/804f10a099251451/graph_804f10a099251451.db.dump)\n\n**Nodes:** 130,300\n\n**Edges:** 1,880,070\n\n"
     },
     {
       "name": "Human GOA",
-      "description": "\nThe Gene Ontology (GO) Consortium’s Human Gene Ontologies Annotations (Human GOA) resource provides open access to curated assignment of GO terms to proteins in the UniProt KnowledgeBase (UniProtKB), RNA molecules from RNACentral, and protein complexes from the Complex Portal.\n\n**Version:** b0d4edf034771ff0\n\n**URL:** [https://www.ebi.ac.uk/GOA/index](https://www.ebi.ac.uk/GOA/index)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/HumanGOA_Automat/b0d4edf034771ff0/graph_b0d4edf034771ff0.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/HumanGOA_Automat/b0d4edf034771ff0/graph_b0d4edf034771ff0.db.dump)\n\n**Nodes:** 129,884\n\n**Edges:** 1,315,245\n\n"
+      "description": "\nThe Gene Ontology (GO) Consortium’s Human Gene Ontologies Annotations (Human GOA) resource provides open access to curated assignment of GO terms to proteins in the UniProt KnowledgeBase (UniProtKB), RNA molecules from RNACentral, and protein complexes from the Complex Portal.\n\n**Version:** 8d70f9e595173d0f\n\n**URL:** [https://www.ebi.ac.uk/GOA/index](https://www.ebi.ac.uk/GOA/index)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/HumanGOA_Automat/8d70f9e595173d0f/graph_8d70f9e595173d0f.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/HumanGOA_Automat/8d70f9e595173d0f/graph_8d70f9e595173d0f.db.dump)\n\n**Nodes:** 129,867\n\n**Edges:** 1,314,623\n\n"
     },
     {
-      "name": "icees-kg",
-      "description": "\nicees-kg is the knowledge graph version of the Integrated Clinical and Environmental Exposures Service (ICEES), which provides regulatory-compliant open access to clinical data (e.g., electronic health records, survey data, clinical research data) that have been integrated at the patient level with environmental exposures data (e.g., airborne pollutants, landfills, concentrated animal feeding operations, socio-economic indicators).\n\n\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES](https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-2.1/icees-kg/3_27_23/icees_kg_03_27_23.dump](https://stars.renci.org/var/plater/bl-2.1/icees-kg/3_27_23/icees_kg_03_27_23.dump)\n\n**Nodes:** 811\n\n**Edges:** 2,601,835\n\n"
+      "name": "ICEES KG",
+      "description": "\nICEES KG is the KG version of the Integrated Clinical and Environmental Exposures Service (ICEES), which provides regulatory-compliant open access to clinical data (e.g., electronic health records, survey data, clinical research data) that have been integrated at the patient level with environmental exposures data (e.g., airborne pollutants, landfills, concentrated animal feeding operations, socio-economic indicators).\n\n\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES](https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-2.1/icees-kg/3_27_23/icees_kg_03_27_23.dump](https://stars.renci.org/var/plater/bl-2.1/icees-kg/3_27_23/icees_kg_03_27_23.dump)\n\n**Nodes:** 811\n\n**Edges:** 2,601,835\n\n"
     },
     {
-      "name": "InTact",
-      "description": "\nThe IntAct Molecular Interaction Database provides open access to molecular interactions data derived from literature curation or direct user submission.\n\n**Version:** 47923e95174e4f29\n\n**URL:** [https://www.ebi.ac.uk/intact/home](https://www.ebi.ac.uk/intact/home)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/IntAct_Automat/47923e95174e4f29/graph_47923e95174e4f29.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/IntAct_Automat/47923e95174e4f29/graph_47923e95174e4f29.db.dump)\n\n**Nodes:** 215,343\n\n**Edges:** 2,463,214\n\n"
+      "name": "IntAct Molecular Interaction Database",
+      "description": "\nThe IntAct Molecular Interaction Database provides open access to molecular interactions data derived from literature curation or direct user submission.\n\n**Version:** 5055b5d916b9fb0d\n\n**URL:** [https://www.ebi.ac.uk/intact/home](https://www.ebi.ac.uk/intact/home)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/IntAct_Automat/5055b5d916b9fb0d/graph_5055b5d916b9fb0d.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/IntAct_Automat/5055b5d916b9fb0d/graph_5055b5d916b9fb0d.db.dump)\n\n**Nodes:** 215,343\n\n**Edges:** 2,463,214\n\n"
     },
     {
       "name": "PANTHER",
-      "description": "\nThe Protein ANalysis THrough Evolutionary Relationships (PANTHER) classification system provides an openly available annotation library of gene family phylogenetic trees, with persistent identifiers attached to all nodes in the trees and annotation of each protein member of the family by its family and protein class, subfamily, orthologs, paralogs, GO Phylogenetic Annotation Project function and Reactome pathways.\n\n**Version:** 41742d795b6fde8e\n\n**URL:** [http://pantherdb.org/](http://pantherdb.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/PANTHER_Automat/41742d795b6fde8e/graph_41742d795b6fde8e.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/PANTHER_Automat/41742d795b6fde8e/graph_41742d795b6fde8e.db.dump)\n\n**Nodes:** 88,510\n\n**Edges:** 1,192,443\n\n"
+      "description": "\nThe Protein ANalysis THrough Evolutionary Relationships (PANTHER) classification system provides an openly available annotation library of gene family phylogenetic trees, with persistent identifiers attached to all nodes in the trees and annotation of each protein member of the family by its family and protein class, subfamily, orthologs, paralogs, GO Phylogenetic Annotation Project function and Reactome pathways.\n\n**Version:** 3e790a43b7817525\n\n**URL:** [http://pantherdb.org/](http://pantherdb.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/PANTHER_Automat/3e790a43b7817525/graph_3e790a43b7817525.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/PANTHER_Automat/3e790a43b7817525/graph_3e790a43b7817525.db.dump)\n\n**Nodes:** 88,494\n\n**Edges:** 1,192,222\n\n"
     },
     {
       "name": "Pharos",
-      "description": "\nPharos is the openly accessible user interface to the Illuminating the Druggable Genome (IDG) program’s Knowledge Management Center (KMC), which aims to develop a comprehensive, integrated knowledge-base for the Druggable Genome (DG) to illuminate the uncharacterized and/or poorly annotated portion of the DG, focusing on three of the most commonly drug-targeted protein families: G-protein-coupled receptors; ion channels; and kinases.\n\n**Version:** b57b54dc09054e1f\n\n**URL:** [https://pharos.nih.gov/](https://pharos.nih.gov/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/PHAROS_Automat/b57b54dc09054e1f/graph_b57b54dc09054e1f.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/PHAROS_Automat/b57b54dc09054e1f/graph_b57b54dc09054e1f.db.dump)\n\n**Nodes:** 341,478\n\n**Edges:** 1,073,418\n\n"
+      "description": "\nPharos is the openly accessible user interface to the Illuminating the Druggable Genome (IDG) program’s Knowledge Management Center (KMC), which aims to develop a comprehensive, integrated knowledge-base for the Druggable Genome (DG) to illuminate the uncharacterized and/or poorly annotated portion of the DG, focusing on three of the most common drug-targeted protein families: G-protein-coupled receptors; ion channels; and kinases.\n\n**Version:** b7ec4c82dd54f9d4\n\n**URL:** [https://pharos.nih.gov/](https://pharos.nih.gov/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/PHAROS_Automat/b7ec4c82dd54f9d4/graph_b7ec4c82dd54f9d4.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/PHAROS_Automat/b7ec4c82dd54f9d4/graph_b7ec4c82dd54f9d4.db.dump)\n\n**Nodes:** 341,462\n\n**Edges:** 1,072,544\n\n"
     },
     {
       "name": "ROBOKOP KG",
-      "description": "\nROBOKOP Knowledge Graph (KG) is an open-source biomedical knowledge graph that supports the ROBOKOP application and currently contains ~ 10M nodes and ~ 250M edges drawn from ~30 integrated and harmonized biological data sources and bio-ontologies.\n\n**Version:** b0ed1e26f7f3726e\n\n**URL:** [https://robokop.renci.org/](https://robokop.renci.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/RobokopKG/b0ed1e26f7f3726e/graph_b0ed1e26f7f3726e.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/RobokopKG/b0ed1e26f7f3726e/graph_b0ed1e26f7f3726e.db.dump)\n\n**Nodes:** 8,660,052\n\n**Edges:** 132,035,404\n\n"
+      "description": "\nROBOKOP (KG) is an open-source biomedical KG that supports the ROBOKOP application and currently contains millions of biomedical relationships derived from dozens of integrated and harmonized biological knowledge sources and bio-ontologies, including the Automat primary and aggregate knowledge sources. ROBOKOP KG also includes text-mined assertions from PubMed and PubMed Central, derived from natural language processing (NLP). Note that text-based assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** fea2a2951a8c18a3\n\n**URL:** [http://robokopkg.renci.org/browser/](http://robokopkg.renci.org/browser/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/RobokopKG/fea2a2951a8c18a3/graph_fea2a2951a8c18a3.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/RobokopKG/fea2a2951a8c18a3/graph_fea2a2951a8c18a3.db.dump)\n\n**Nodes:** 8,661,893\n\n**Edges:** 130,429,763\n\n"
     },
     {
       "name": "SRI Reference KG",
@@ -14162,23 +13551,19 @@
     },
     {
       "name": "STRING",
-      "description": "\nThe Search Tool for the Retrieval of Interacting Genes/Proteins (STRING) database provides information on known and predicted protein-protein interactions (both direct and indirect) derived from genomic context predictions, high-throughput laboratory experiments, conserved co-expression, automated text mining, and aggregated knowledge from primary data sources.\n\n**Version:** 3c38e09fe10970d3\n\n**URL:** [https://string-db.org/](https://string-db.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/STRING-DB_Automat/3c38e09fe10970d3/graph_3c38e09fe10970d3.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/STRING-DB_Automat/3c38e09fe10970d3/graph_3c38e09fe10970d3.db.dump)\n\n**Nodes:** 56,115\n\n**Edges:** 8,749,817\n\n"
+      "description": "\nThe Search Tool for the Retrieval of INteracting Genes/proteins (STRING) database provides information on known and predicted protein-protein interactions (both direct and indirect) derived from genomic context predictions, high-throughput laboratory experiments, conserved co-expression, automated text mining, and aggregated knowledge from primary data sources.\n\n**Version:** 5f825f8481bc10fe\n\n**URL:** [https://string-db.org/](https://string-db.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/STRING-DB_Automat/5f825f8481bc10fe/graph_5f825f8481bc10fe.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/STRING-DB_Automat/5f825f8481bc10fe/graph_5f825f8481bc10fe.db.dump)\n\n**Nodes:** 56,115\n\n**Edges:** 8,749,817\n\n"
     },
     {
-      "name": "textminingkp",
-      "description": "Operations for textminingkp."
+      "name": "Text Mining Provider KG",
+      "description": "\nThe Text Mining Provider KG contains subject-predicate-object assertions derived from the application of natural language processing (NLP) algorithms to the PubMedCentral Open Access collection of publications plus additional titles and abstracts from PubMed. Caveat: Text-mined assertions must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** e9168f8fd1192afa\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider](https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/TMKP_Automat/e9168f8fd1192afa/graph_e9168f8fd1192afa.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/TMKP_Automat/e9168f8fd1192afa/graph_e9168f8fd1192afa.db.dump)\n\n**Nodes:** 161,041\n\n**Edges:** 2,843,020\n\n"
     },
     {
-      "name": "ubergraph",
-      "description": "Operations for ubergraph."
-    },
-    {
-      "name": "ubergraph-nonredundant",
-      "description": "Operations for ubergraph-nonredundant."
+      "name": "Ubergraph Redundant",
+      "description": "\nThe redundant version of Ubergraph contains the complete inference closure for all subclass and existential relations, including transitive, reflexive subclass relations.\n\n**Version:** 4b41581778f020c3\n\n**URL:** [https://github.com/INCATools/ubergraph](https://github.com/INCATools/ubergraph)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/UbergraphRedundant_Automat/4b41581778f020c3/graph_4b41581778f020c3.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/UbergraphRedundant_Automat/4b41581778f020c3/graph_4b41581778f020c3.db.dump)\n\n**Nodes:** 3,098,316\n\n**Edges:** 142,239,591\n\n"
     },
     {
       "name": "Viral Proteome",
-      "description": "\nThe Gene Ontology (GO) Consortium’s Viral Proteome resource provides open access to curated assignment of GO terms to proteins and proteome relationships derived from the UniProt KnowledgeBase for all NCBI Taxa considered viruses.\n\n**Version:** 4bb615511b97395a\n\n**URL:** [https://www.ebi.ac.uk/GOA/proteomes](https://www.ebi.ac.uk/GOA/proteomes)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/ViralProteome_Automat/4bb615511b97395a/graph_4bb615511b97395a.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/ViralProteome_Automat/4bb615511b97395a/graph_4bb615511b97395a.db.dump)\n\n**Nodes:** 87,297\n\n**Edges:** 359,818\n\n"
+      "description": "\nThe Gene Ontology (GO) Consortium’s Viral Proteome resource provides open access to curated assignment of GO terms to proteins and proteome relationships derived from the UniProt KnowledgeBase for all NCBI taxa classified as viruses.\n\n**Version:** 631a7899574c1c60\n\n**URL:** [https://www.ebi.ac.uk/GOA/proteomes](https://www.ebi.ac.uk/GOA/proteomes)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/ViralProteome_Automat/631a7899574c1c60/graph_631a7899574c1c60.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/ViralProteome_Automat/631a7899574c1c60/graph_631a7899574c1c60.db.dump)\n\n**Nodes:** 87,280\n\n**Edges:** 359,227\n\n"
     }
   ],
   "components": {

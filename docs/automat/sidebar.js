@@ -125,7 +125,7 @@ module.exports = [
   },
   {
     type: "category",
-    label: "cam-kp",
+    label: "CAM KP",
     link: { type: "doc", id: "automat/cam-kp" },
     items: [
       {
@@ -311,8 +311,8 @@ module.exports = [
   },
   {
     type: "category",
-    label: "genome-alliance",
-    link: { type: "doc", id: "automat/genome-alliance" },
+    label: "Alliance of Genome Resources Orthology",
+    link: { type: "doc", id: "automat/alliance-of-genome-resources-orthology" },
     items: [
       {
         type: "doc",
@@ -807,7 +807,7 @@ module.exports = [
   },
   {
     type: "category",
-    label: "icees-kg",
+    label: "ICEES KG",
     link: { type: "doc", id: "automat/icees-kg" },
     items: [
       {
@@ -869,8 +869,8 @@ module.exports = [
   },
   {
     type: "category",
-    label: "InTact",
-    link: { type: "doc", id: "automat/in-tact" },
+    label: "IntAct Molecular Interaction Database",
+    link: { type: "doc", id: "automat/int-act-molecular-interaction-database" },
     items: [
       {
         type: "doc",
@@ -1179,8 +1179,8 @@ module.exports = [
   },
   {
     type: "category",
-    label: "textminingkp",
-    link: { type: "doc", id: "automat/textminingkp" },
+    label: "Text Mining Provider KG",
+    link: { type: "doc", id: "automat/text-mining-provider-kg" },
     items: [
       {
         type: "doc",
@@ -1241,8 +1241,8 @@ module.exports = [
   },
   {
     type: "category",
-    label: "ubergraph",
-    link: { type: "doc", id: "automat/ubergraph" },
+    label: "Ubergraph Redundant",
+    link: { type: "doc", id: "automat/ubergraph-redundant" },
     items: [
       {
         type: "doc",
@@ -1296,68 +1296,6 @@ module.exports = [
       {
         type: "doc",
         id: "automat/simple-spec-simple-spec-get-ubergraph",
-        label: "Get one-hop connection schema",
-        className: "api-method get",
-      },
-    ],
-  },
-  {
-    type: "category",
-    label: "ubergraph-nonredundant",
-    link: { type: "doc", id: "automat/ubergraph-nonredundant" },
-    items: [
-      {
-        type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-trapi-ubergraph-nonredundant",
-        label: "Meta knowledge graph representation of this TRAPI web service.",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-trapi-ubergraph-nonredundant",
-        label: "Test data for usage by the SRI Testing Harness.",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-trapi-ubergraph-nonredundant",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-ubergraph-nonredundant",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-translator-ubergraph-nonredundant",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/metadata-metadata-get-ubergraph-nonredundant",
-        label: "Metadata about the knowledge graph.",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-ubergraph-nonredundant",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/node-node-type-curie-get-ubergraph-nonredundant",
-        label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/simple-spec-simple-spec-get-ubergraph-nonredundant",
         label: "Get one-hop connection schema",
         className: "api-method get",
       },
