@@ -43,8 +43,10 @@ function CardLayout({ href, icon, title, description, info }) {
 
 const SOURCES = new Map([
   ["RENCI SRI Reference KG", "biolink"],
+  ["CAM KP", "cam-kp"],
   ["CTD", "ctd"],
   ["DrugCentral", "drugcentral"],
+  ["Alliance of Genome Resources Orthology", "genome-alliance"],
   ["GTEx", "gtex"],
   ["GtoPdb", "gtopdb"],
   ["GWAS Catalog", "gwas-catalog"],
@@ -52,15 +54,15 @@ const SOURCES = new Map([
   ["HGNC", "hgnc"],
   ["HMDB", "hmdb"],
   ["Human GOA", "human-goa"],
-  ["icees-kg", "icees-kg"],
-  ["InTact", "intact"],
-  ["Ubergraph Redundant", "ontological-hierarchy"],
+  ["ICEES KG", "icees-kg"],
+  ["IntAct Molecular Interaction Database", "intact"],
   ["PANTHER", "panther"],
   ["Pharos", "pharos"],
   ["ROBOKOP KG", "robokopkg"],
   ["SRI Reference KG", "sri-reference-kg"],
   ["STRING", "string-db"],
-  ["Ubergraph", "uberongraph"],
+  ["Text Mining Provider KG", "textminingkp"],
+  ["Ubergraph Redundant", "ubergraph"],
   ["Viral Proteome", "viral-proteome"],
 ]);
 
@@ -71,7 +73,7 @@ const getMetaData = async (label) => {
 
   try {
     const response = await fetch(
-      `https://automat.renci.org/${SOURCES.get(label)}/metadata`,
+      `https://automat-u24.apps.renci.org/${SOURCES.get(label)}/metadata`,
       {
         method: "GET",
         headers: {

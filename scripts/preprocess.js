@@ -5,46 +5,35 @@
 const fs = require("fs");
 const { v4 } = require("uuid");
 
-const filePath = process.argv[2]; // path to JSON file passed as command line argument
+const BASE_URL = "https://automat-u24.apps.renci.org";
+const AUTOMAT_OPENAPI_URL = `${BASE_URL}/openapi.yml`;
+const OPENAPI_PATH = "./api/openapi.json";
 
 async function main() {
-  fs.readFile(filePath, async (err, data) => {
+  let jsonData = await fetchSpec();
+
+  await writeSourceMetadata(jsonData);
+
+  fs.writeFile(OPENAPI_PATH, JSON.stringify(jsonData, null, 2), (err) => {
     if (err) throw err;
-    let jsonData = JSON.parse(data);
-
-    addServer(jsonData);
-    addUuidToOperationId(jsonData);
-    await writeSourceMetadata(jsonData);
-
-    fs.writeFile(filePath, JSON.stringify(jsonData, null, 2), (err) => {
-      if (err) throw err;
-    });
   });
 }
 main();
 
-function addServer(jsonData) {
-  jsonData["servers"] = [{ url: "https://automat.renci.org" }];
-}
-
-function addUuidToOperationId(jsonData) {
-  for (let key in jsonData) {
-    if (jsonData.hasOwnProperty(key)) {
-      if (key === "operationId") {
-        jsonData[key] += "-" + v4();
-      } else if (typeof jsonData[key] === "object") {
-        jsonData[key] = addUuidToOperationId(jsonData[key]);
-      }
-    }
-  }
-  return jsonData;
+async function fetchSpec() {
+  return await fetch(AUTOMAT_OPENAPI_URL, {
+    method: "GET",
+    headers: { Accept: "application/json" },
+  }).then((data) => data.json());
 }
 
 async function writeSourceMetadata(jsonData) {
   const SOURCES = [
     "biolink",
+    "cam-kp",
     "ctd",
     "drugcentral",
+    "genome-alliance",
     "gtex",
     "gtopdb",
     "gwas-catalog",
@@ -54,20 +43,20 @@ async function writeSourceMetadata(jsonData) {
     "human-goa",
     "icees-kg",
     "intact",
-    "ontological-hierarchy",
     "panther",
     "pharos",
-    "sri-reference-kg",
     "robokopkg",
+    "sri-reference-kg",
     "string-db",
-    "uberongraph",
+    "textminingkp",
+    "ubergraph",
     "viral-proteome",
   ];
 
   const metadata = new Map();
 
   for (const source of SOURCES) {
-    const res = await fetch(`https://automat.renci.org/${source}/metadata`);
+    const res = await fetch(`${BASE_URL}/${source}/metadata`);
     if (!res.ok)
       throw new Error(`Something went wrong fetching the ${source} metadata`);
     const json = await res.json();
