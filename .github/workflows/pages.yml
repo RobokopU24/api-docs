@@ -1,4 +1,4 @@
-name: Generate and deploy docs
+name: Deploy to GH Pages
 
 on:
   workflow_dispatch:
