@@ -21,7 +21,7 @@ const sidebars = {
         type: "generated-index",
         title: "Automat",
         description:
-          "Automat hosts a diverse set of knowledge graphs that support the open-source ROBOKOP application. The Automat system uses a standardized pipeline, Operational Routine for the Ingest and Output of Networks (ORION), to provide automated ingestion, curation, and harmonization of new knowledge sources, represented as graphs and accessible via application programming interfaces (APIs). The Automat APIs are configured as dockerized PLATER instances on the backend.",
+          "Automat hosts a diverse set of knowledge sources that support the open-source ROBOKOP application. The Automat system uses a standardized pipeline, Operational Routine for the Ingest and Output of Networks (ORION), to provide automated ingestion, curation, and harmonization across new knowledge sources, represented as graphs and accessible via application programming interfaces (APIs). The Automat APIs are configured as dockerized Plater instances on the backend. ",
         slug: "/category/automat",
       },
       // @ts-ignore
