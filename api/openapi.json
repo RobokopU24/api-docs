@@ -12233,7 +12233,7 @@
     },
     "/ubergraph/1.3/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "Ubergraph Redundant"],
+        "tags": ["trapi", "Ubergraph"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_trapi_ubergraph",
@@ -12253,7 +12253,7 @@
     },
     "/ubergraph/1.3/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "Ubergraph Redundant"],
+        "tags": ["trapi", "Ubergraph"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_trapi_ubergraph",
@@ -12273,7 +12273,7 @@
     },
     "/ubergraph/1.3/query": {
       "post": {
-        "tags": ["trapi", "Ubergraph Redundant"],
+        "tags": ["trapi", "Ubergraph"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_3_query_post_trapi_ubergraph",
@@ -12400,12 +12400,12 @@
             }
           }
         },
-        "tags": ["Ubergraph Redundant"]
+        "tags": ["Ubergraph"]
       }
     },
     "/ubergraph/overlay": {
       "post": {
-        "tags": ["translator", "Ubergraph Redundant"],
+        "tags": ["translator", "Ubergraph"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post_translator_ubergraph",
@@ -12672,7 +12672,7 @@
             }
           }
         },
-        "tags": ["Ubergraph Redundant"]
+        "tags": ["Ubergraph"]
       }
     },
     "/ubergraph/{source_type}/{target_type}/{curie}": {
@@ -12733,7 +12733,7 @@
             }
           }
         },
-        "tags": ["Ubergraph Redundant"]
+        "tags": ["Ubergraph"]
       }
     },
     "/ubergraph/{node_type}/{curie}": {
@@ -12785,7 +12785,7 @@
             }
           }
         },
-        "tags": ["Ubergraph Redundant"]
+        "tags": ["Ubergraph"]
       }
     },
     "/ubergraph/simple_spec": {
@@ -12839,7 +12839,7 @@
             }
           }
         },
-        "tags": ["Ubergraph Redundant"]
+        "tags": ["Ubergraph"]
       }
     },
     "/viral-proteome/1.3/meta_knowledge_graph": {
@@ -13558,8 +13558,8 @@
       "description": "\nThe Text Mining Provider KG contains subject-predicate-object assertions derived from the application of natural language processing (NLP) algorithms to the PubMedCentral Open Access collection of publications plus additional titles and abstracts from PubMed. Caveat: Text-mined assertions must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** e9168f8fd1192afa\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider](https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/TMKP_Automat/e9168f8fd1192afa/graph_e9168f8fd1192afa.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/TMKP_Automat/e9168f8fd1192afa/graph_e9168f8fd1192afa.db.dump)\n\n**Nodes:** 161,041\n\n**Edges:** 2,843,020\n\n"
     },
     {
-      "name": "Ubergraph Redundant",
-      "description": "\nThe redundant version of Ubergraph contains the complete inference closure for all subclass and existential relations, including transitive, reflexive subclass relations.\n\n**Version:** 4b41581778f020c3\n\n**URL:** [https://github.com/INCATools/ubergraph](https://github.com/INCATools/ubergraph)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/UbergraphRedundant_Automat/4b41581778f020c3/graph_4b41581778f020c3.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/UbergraphRedundant_Automat/4b41581778f020c3/graph_4b41581778f020c3.db.dump)\n\n**Nodes:** 3,098,316\n\n**Edges:** 142,239,591\n\n"
+      "name": "Ubergraph",
+      "description": "\nUbergraph is an open-source graph database containing integrated ontologies, including Gene Ontology (GO), Chemical Entities of Biological Interest (ChEBI), Human Phenotype Ontology (HPO), and the Uber-anatomy ontology (Uberon).\n\n**Version:** 4b41581778f020c3\n\n**URL:** [https://github.com/INCATools/ubergraph](https://github.com/INCATools/ubergraph)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/UbergraphRedundant_Automat/4b41581778f020c3/graph_4b41581778f020c3.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/UbergraphRedundant_Automat/4b41581778f020c3/graph_4b41581778f020c3.db.dump)\n\n**Nodes:** 3,098,316\n\n**Edges:** 142,239,591\n\n"
     },
     {
       "name": "Viral Proteome",

@@ -62,7 +62,7 @@ const SOURCES = new Map([
   ["SRI Reference KG", "sri-reference-kg"],
   ["STRING", "string-db"],
   ["Text Mining Provider KG", "textminingkp"],
-  ["Ubergraph Redundant", "ubergraph"],
+  ["Ubergraph", "ubergraph"],
   ["Viral Proteome", "viral-proteome"],
 ]);
 

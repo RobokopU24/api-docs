@@ -1241,8 +1241,8 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Ubergraph Redundant",
-    link: { type: "doc", id: "automat/ubergraph-redundant" },
+    label: "Ubergraph",
+    link: { type: "doc", id: "automat/ubergraph" },
     items: [
       {
         type: "doc",
