@@ -14,6 +14,7 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   openApiSidebar: [
+    "intro/intro",
     {
       type: "category",
       label: "Automat",
