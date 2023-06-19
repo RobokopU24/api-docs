@@ -9,7 +9,7 @@ const config = {
   title: "ROBOKOP",
   tagline: "Documentation for Automat data sources and endpoints",
   url: "https://robokopu24.github.io",
-  baseUrl: "/api-docs/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
