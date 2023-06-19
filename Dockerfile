@@ -1,11 +1,11 @@
 FROM node:18-alpine as builder
 WORKDIR /app
-COPY . .
+COPY package.json package-lock.json ./
 RUN npm ci
-RUN npm build
+COPY . .
+RUN npm run build
 
-FROM nginx:latest
+FROM nginxinc/nginx-unprivileged:alpine
 COPY --from=builder /app/build /usr/share/nginx/html
-RUN adduser -D nonroot
-USER nonroot
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 CMD ["nginx", "-g", "daemon off;"]
