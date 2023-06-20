@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "ROBOKOP",
   tagline: "Documentation for Automat data sources and endpoints",
-  url: "https://robokopu24.github.io",
+  url: "https://robokop-frontend.apps.renci.org",
   baseUrl: "/api-docs/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
