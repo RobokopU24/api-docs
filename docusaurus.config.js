@@ -58,7 +58,7 @@ const config = {
           alt: "ROBOKOP",
           src: "img/logo.png",
           href: "https://robokop.renci.org",
-          target: "_blank",
+          target: "_self",
         },
         items: [
           // {
@@ -90,7 +90,7 @@ const config = {
             items: [
               {
                 label: "Robokop Question Builder",
-                href: "https://qgraph.renci.org/question",
+                href: "https://robokop.renci.org/question-builder",
               },
               {
                 label: "ExEmPLAR",
