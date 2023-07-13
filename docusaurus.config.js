@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "ROBOKOP",
   tagline: "Documentation for Automat data sources and endpoints",
-  url: "https://robokopu24.github.io",
+  url: "https://robokop-frontend.apps.renci.org",
   baseUrl: "/api-docs/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -58,7 +58,7 @@ const config = {
           alt: "ROBOKOP",
           src: "img/logo.png",
           href: "https://robokop.renci.org",
-          target: "_blank",
+          target: "_self",
         },
         items: [
           // {
@@ -90,7 +90,7 @@ const config = {
             items: [
               {
                 label: "Robokop Question Builder",
-                href: "https://qgraph.renci.org/question",
+                href: "https://robokop.renci.org/question-builder",
               },
               {
                 label: "ExEmPLAR",

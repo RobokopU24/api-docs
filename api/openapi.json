@@ -13479,7 +13479,7 @@
   "tags": [
     {
       "name": "RENCI SRI Reference KG",
-      "description": "\nThe RENCI Standards and Reference Implementation (SRI) Reference KG represents a subset of the SRI Reference KG.\n\n**Version:** 11163199d3ca8a16\n\n**URL:** [https://github.com/Knowledge-Graph-Hub/sri-reference-kg](https://github.com/Knowledge-Graph-Hub/sri-reference-kg)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/Biolink_Automat/11163199d3ca8a16/graph_11163199d3ca8a16.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/Biolink_Automat/11163199d3ca8a16/graph_11163199d3ca8a16.db.dump)\n\n**Nodes:** 604,067\n\n**Edges:** 4,616,569\n\n"
+      "description": "\nThis KG represents a RENCI instantiation of the SRI Reference KG (https://robokop.renci.org/api-docs/docs/automat/sri-reference-kg). It contains select edges drawn from the Monarch KG and several OBO ontologies.\n\n**Version:** 11163199d3ca8a16\n\n**URL:** [https://github.com/Knowledge-Graph-Hub/sri-reference-kg](https://github.com/Knowledge-Graph-Hub/sri-reference-kg)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/Biolink_Automat/11163199d3ca8a16/graph_11163199d3ca8a16.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/Biolink_Automat/11163199d3ca8a16/graph_11163199d3ca8a16.db.dump)\n\n**Nodes:** 604,067\n\n**Edges:** 4,616,569\n\n"
     },
     {
       "name": "CAM KP",
@@ -13547,7 +13547,7 @@
     },
     {
       "name": "SRI Reference KG",
-      "description": "\nThe SRI Reference Knowledge Graph, a combination of the integrated Monarch KG and other relevant data sources.\n\n\n\n**URL:** [https://github.com/Knowledge-Graph-Hub/sri-reference-kg](https://github.com/Knowledge-Graph-Hub/sri-reference-kg)\n\n**Neo4J:** [https://data.monarchinitiative.org/monarch-kg-dev/2023-03-17/monarch-kg.neo4j.dump](https://data.monarchinitiative.org/monarch-kg-dev/2023-03-17/monarch-kg.neo4j.dump)\n\n**Nodes:** 832,694\n\n**Edges:** 5,730,115\n\n"
+      "description": "\nThe SRI knowledge graph is a reference implementation of the Biolink model specification. It contains data from the Monarch Initiative aggregated database, as well as several OBO ontologies. These data sources provide links between diseases, phenotypes, genomic features across human and non-human organisms. It is built using the knowledge graph exchange (KGX) framework, which transforms a variety of standard formats, such as RDF, OWL, and TRAPI JSON, to nodes and edges CSV files that are uploaded into Neo4j. The TRAPI API (https://github.com/NCATSTranslator/ReasonerAPI) is built using PLATER (https://github.com/NCATSTranslator/Translator-All/wiki/Plater), a tool that creates a TRAPI service given a Biolink compliant instance of Neo4j.\n\n\n\n**URL:** [https://github.com/Knowledge-Graph-Hub/sri-reference-kg](https://github.com/Knowledge-Graph-Hub/sri-reference-kg)\n\n**Neo4J:** [https://data.monarchinitiative.org/monarch-kg-dev/2023-03-17/monarch-kg.neo4j.dump](https://data.monarchinitiative.org/monarch-kg-dev/2023-03-17/monarch-kg.neo4j.dump)\n\n**Nodes:** 832,694\n\n**Edges:** 5,730,115\n\n"
     },
     {
       "name": "STRING",
