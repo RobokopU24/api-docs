@@ -1,4 +1,4 @@
-name: "Push to Github Container Registry"
+name: "Build and push image to Github Container Registry"
 
 on:
   release:
@@ -14,7 +14,7 @@ jobs:
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-      - name: Push landing page
+      - name: Push api docs
         uses: docker/build-push-action@v1
         with:
           registry: ghcr.io

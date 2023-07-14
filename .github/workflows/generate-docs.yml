@@ -1,15 +1,15 @@
-name: Generate and deploy docs
+name: Generate docs
 
 on:
   workflow_dispatch:
   repository_dispatch:
     types: [deploy]
-    
+
 permissions:
   contents: write
   pages: write
   id-token: write
-    
+
 jobs:
   build:
     environment:
@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'npm'
+          cache: "npm"
 
       - name: Cache node modules
         id: cache-nodemodules
@@ -50,22 +50,22 @@ jobs:
         run: |
           git fetch
           git switch staging
-          
+
       - name: Install dependencies
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile --non-interactive
 
       - name: Fetch newest Automat OpenAPI document and metadata
         run: npm run preprocess
-        
+
       - name: Generate Docusaurus mdx files
         run: |
           npm run clean-api-docs automat
           npm run gen-api-docs automat
-          
+
       - name: Rewrite sidebar.js
         run: npm run rearrange-sidebar
-        
+
       - name: Remove "Introduction" page
         run: rm ./docs/automat/automat.info.mdx || echo "Introduction docs page is already deleted"
 
@@ -85,24 +85,28 @@ jobs:
           git commit -m "$(echo 'Update documentation - ${{ env.DATE }}')"
           git push
 
-      - name: Build the site
-        if: ${{ env.UPDATED == 'true' }}
-        run: npm run build
-        
-      - name: Setup GH Pages
-        if: ${{ env.UPDATED == 'true' }}
-        uses: actions/configure-pages@v1
-        
-      - name: Upload artifact
-        if: ${{ env.UPDATED == 'true' }}
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./build
-          
-      - name: Deploy to GitHub Pages
-        if: ${{ env.UPDATED == 'true' }}
-        id: deployment
-        uses: actions/deploy-pages@v1
-        
+        # These steps were used to deploy to github pages, but now we're using Sterling, so we just
+        # want to update the documentation and commit it back to the repository. We can then create
+        # a release to trigger the other action which builds an image we can use in k8s
+
+        # - name: Build the site
+        #   if: ${{ env.UPDATED == 'true' }}
+        #   run: npm run build
+
+        # - name: Setup GH Pages
+        #   if: ${{ env.UPDATED == 'true' }}
+        #   uses: actions/configure-pages@v1
+
+        # - name: Upload artifact
+        #   if: ${{ env.UPDATED == 'true' }}
+        #   uses: actions/upload-pages-artifact@v1
+        #   with:
+        #     path: ./build
+
+        # - name: Deploy to GitHub Pages
+        #   if: ${{ env.UPDATED == 'true' }}
+        #   id: deployment
+        #   uses: actions/deploy-pages@v1
+
         env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
