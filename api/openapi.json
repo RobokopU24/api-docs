@@ -7,16 +7,16 @@
   },
   "servers": [
     {
-      "url": "https://automat-u24.apps.renci.org"
+      "url": "https://robokop-automat.apps.renci.org"
     }
   ],
   "paths": {
-    "/biolink/1.3/meta_knowledge_graph": {
+    "/binding-db/1.4/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "RENCI SRI Reference KG"],
+        "tags": ["trapi", "BINDING"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_biolink_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_binding-db_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -31,12 +31,12 @@
         }
       }
     },
-    "/biolink/1.3/sri_testing_data": {
+    "/binding-db/1.4/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "RENCI SRI Reference KG"],
+        "tags": ["trapi", "BINDING"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_biolink_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_binding-db_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -51,12 +51,623 @@
         }
       }
     },
-    "/biolink/1.3/query": {
+    "/binding-db/1.4/query": {
+      "post": {
+        "tags": ["trapi", "BINDING"],
+        "summary": "Query reasoner via one of several inputs.",
+        "description": "Handle TRAPI request.",
+        "operationId": "reasoner_api_1_4_query_post_binding-db_trapi",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReasonerRequest"
+              },
+              "example": {
+                "message": {
+                  "query_graph": {
+                    "nodes": {
+                      "n0": {
+                        "categories": ["biolink:ChemicalEntity"],
+                        "ids": [
+                          "CHEMBL.COMPOUND:CHEMBL3234626",
+                          "CHEMBL.COMPOUND:CHEMBL3234633"
+                        ]
+                      },
+                      "n1": {
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
+                      }
+                    },
+                    "edges": {
+                      "e01": {
+                        "subject": "n0",
+                        "object": "n1",
+                        "predicates": ["biolink:affects"],
+                        "qualifier_constraints": [
+                          {
+                            "qualifier_set": [
+                              {
+                                "qualifier_type_id": "biolink:object_aspect_qualifier",
+                                "qualifier_value": "activity"
+                              },
+                              {
+                                "qualifier_type_id": "biolink:object_direction_qualifier",
+                                "qualifier_value": "increased"
+                              },
+                              {
+                                "qualifier_type_id": "biolink:qualified_predicate",
+                                "qualifier_value": "biolink:causes"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "workflow": [
+                  {
+                    "id": "lookup"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/binding-db/cypher": {
+      "post": {
+        "summary": "Run cypher query",
+        "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
+        "operationId": "cypher_cypher_post_binding-db",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CypherRequest"
+              },
+              "example": {
+                "query": "MATCH (n) RETURN count(n)"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["BINDING"]
+      }
+    },
+    "/binding-db/overlay": {
+      "post": {
+        "tags": ["translator", "BINDING"],
+        "summary": "Overlay results with available connections between each node.",
+        "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
+        "operationId": "overlay_overlay_post_binding-db_translator",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReasonerRequest"
+              },
+              "example": {
+                "message": {
+                  "query_graph": {
+                    "nodes": {
+                      "n1": {
+                        "id": "NCBIGene:6352",
+                        "category": "biolink:Gene",
+                        "is_set": false
+                      },
+                      "n2": {
+                        "category": "biolink:GeneFamily",
+                        "is_set": false
+                      },
+                      "n3": {
+                        "category": "biolink:GeneFamily",
+                        "is_set": false
+                      }
+                    },
+                    "edges": {
+                      "e12": {
+                        "subject": "n1",
+                        "object": "n2",
+                        "predicate": "biolink:part_of"
+                      },
+                      "e23": {
+                        "subject": "n3",
+                        "object": "n2",
+                        "predicate": "biolink:part_of"
+                      }
+                    }
+                  },
+                  "knowledge_graph": {
+                    "nodes": {
+                      "NCBIGene:6352": {
+                        "category": [
+                          "biolink:NamedThing",
+                          "biolink:BiologicalEntity",
+                          "biolink:MolecularEntity",
+                          "biolink:GenomicEntity",
+                          "biolink:GeneOrGeneProduct",
+                          "biolink:MacromolecularMachine",
+                          "biolink:Gene"
+                        ],
+                        "name": "CCL5",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "locus_group": "protein-coding gene",
+                              "synonyms": [],
+                              "chromosome": "17",
+                              "location": "17q12",
+                              "gene_family": ["Chemokine ligands"],
+                              "taxon": 9606,
+                              "category": [
+                                "biolink:BiologicalEntity",
+                                "biolink:GenomicEntity",
+                                "biolink:GeneOrGeneProduct",
+                                "biolink:MacromolecularMachine",
+                                "biolink:NamedThing",
+                                "biolink:MolecularEntity",
+                                "biolink:Gene"
+                              ],
+                              "gene_family_id": [483],
+                              "equivalent_identifiers": [
+                                "ENSEMBL:ENSG00000271503",
+                                "NCBIGene:6352",
+                                "NCBIGene:6352",
+                                "HGNC:10632",
+                                "UniProtKB:P13501"
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "PANTHER.FAMILY:PTHR12015:SF170": {
+                        "category": [
+                          "biolink:NamedThing",
+                          "biolink:BiologicalEntity",
+                          "biolink:GeneFamily",
+                          "biolink:MolecularEntity",
+                          "biolink:Entity"
+                        ],
+                        "name": "C-C MOTIF CHEMOKINE 5",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "synonyms": [],
+                              "category": [
+                                "biolink:BiologicalEntity",
+                                "biolink:GeneFamily",
+                                "biolink:NamedThing",
+                                "biolink:MolecularEntity",
+                                "biolink:Entity"
+                              ],
+                              "equivalent_identifiers": [
+                                "PANTHER.FAMILY:PTHR12015:SF170"
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "PANTHER.FAMILY:PTHR12015": {
+                        "category": [
+                          "biolink:NamedThing",
+                          "biolink:BiologicalEntity",
+                          "biolink:GeneFamily",
+                          "biolink:MolecularEntity",
+                          "biolink:Entity"
+                        ],
+                        "name": "SMALL INDUCIBLE CYTOKINE A",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "synonyms": [],
+                              "category": [
+                                "biolink:BiologicalEntity",
+                                "biolink:GeneFamily",
+                                "biolink:NamedThing",
+                                "biolink:MolecularEntity",
+                                "biolink:Entity"
+                              ],
+                              "equivalent_identifiers": [
+                                "PANTHER.FAMILY:PTHR12015"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "edges": {
+                      "dd8ef7a4606c4f8e405e6a5b1b095993": {
+                        "subject": "NCBIGene:6352",
+                        "object": "PANTHER.FAMILY:PTHR12015",
+                        "predicate": "biolink:part_of",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "predicate": "biolink:part_of",
+                              "relation_label": "part of",
+                              "provided_by": "panther.get_gene_by_gene_family",
+                              "ctime": 1584932086.0009434,
+                              "target_id": "PANTHER.FAMILY:PTHR12015",
+                              "source_id": "NCBIGene:6352",
+                              "source_database": "panther",
+                              "relation": "BFO:0000050",
+                              "publications": []
+                            }
+                          }
+                        ]
+                      },
+                      "9f7f9d86cb57e7190aafa57f7564eb05": {
+                        "subject": "PANTHER.FAMILY:PTHR12015:SF170",
+                        "object": "PANTHER.FAMILY:PTHR12015",
+                        "predicate": "biolink:part_of",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "predicate": "biolink:part_of",
+                              "relation_label": "part of",
+                              "provided_by": "panther.get_gene_family_by_gene_family",
+                              "ctime": 1610437123.7988985,
+                              "target_id": "PANTHER.FAMILY:PTHR12015",
+                              "source_id": "PANTHER.FAMILY:PTHR12015:SF170",
+                              "source_database": "panther",
+                              "relation": "BFO:0000050",
+                              "publications": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "results": [
+                    {
+                      "node_bindings": {
+                        "n1": [
+                          {
+                            "id": "NCBIGene:6352"
+                          }
+                        ],
+                        "n2": [
+                          {
+                            "id": "PANTHER.FAMILY:PTHR12015"
+                          }
+                        ],
+                        "n3": [
+                          {
+                            "id": "PANTHER.FAMILY:PTHR12015:SF170"
+                          }
+                        ]
+                      },
+                      "edge_bindings": {
+                        "e12": [
+                          {
+                            "id": "dd8ef7a4606c4f8e405e6a5b1b095993"
+                          }
+                        ],
+                        "e23": [
+                          {
+                            "id": "9f7f9d86cb57e7190aafa57f7564eb05"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/binding-db/metadata": {
+      "get": {
+        "summary": "Metadata about the knowledge graph.",
+        "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
+        "operationId": "metadata_metadata_get_binding-db",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Metadata Metadata Get"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["BINDING"]
+      }
+    },
+    "/binding-db/{source_type}/{target_type}/{curie}": {
+      "get": {
+        "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
+        "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
+        "operationId": "one_hop__source_type___target_type___curie__get_binding-db",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Source Type",
+              "type": "string"
+            },
+            "name": "source_type",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Target Type",
+              "type": "string"
+            },
+            "name": "target_type",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Curie",
+              "type": "string"
+            },
+            "name": "curie",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response One Hop  Source Type   Target Type   Curie  Get",
+                  "type": "array",
+                  "items": {}
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["BINDING"]
+      }
+    },
+    "/binding-db/{node_type}/{curie}": {
+      "get": {
+        "summary": "Find `node` by `curie`",
+        "description": "Returns `node` matching `curie`.",
+        "operationId": "node__node_type___curie__get_binding-db",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Node Type",
+              "type": "string"
+            },
+            "name": "node_type",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Curie",
+              "type": "string"
+            },
+            "name": "curie",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Node  Node Type   Curie  Get",
+                  "type": "array",
+                  "items": {}
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["BINDING"]
+      }
+    },
+    "/binding-db/simple_spec": {
+      "get": {
+        "summary": "Get one-hop connection schema",
+        "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
+        "operationId": "simple_spec_simple_spec_get_binding-db",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Source",
+              "type": "string"
+            },
+            "name": "source",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Target",
+              "type": "string"
+            },
+            "name": "target",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Simple Spec Simple Spec Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SimpleSpecElement"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["BINDING"]
+      }
+    },
+    "/biolink/1.4/meta_knowledge_graph": {
+      "get": {
+        "tags": ["trapi", "RENCI SRI Reference KG"],
+        "summary": "Meta knowledge graph representation of this TRAPI web service.",
+        "description": "Returns meta knowledge graph representation of this TRAPI web service.",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_biolink_trapi",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetaKnowledgeGraph"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/biolink/1.4/sri_testing_data": {
+      "get": {
+        "tags": ["trapi", "RENCI SRI Reference KG"],
+        "summary": "Test data for usage by the SRI Testing Harness.",
+        "description": "Returns a list of edges that are representative examples of the knowledge graph.",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_biolink_trapi",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SRITestData"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/biolink/1.4/query": {
       "post": {
         "tags": ["trapi", "RENCI SRI Reference KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_biolink_trapi",
+        "operationId": "reasoner_api_1_4_query_post_biolink_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -622,12 +1233,12 @@
         "tags": ["RENCI SRI Reference KG"]
       }
     },
-    "/cam-kp/1.3/meta_knowledge_graph": {
+    "/cam-kp/1.4/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "CAM KP"],
+        "tags": ["trapi", "CAM Provider KG"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_cam-kp_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_cam-kp_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -642,12 +1253,12 @@
         }
       }
     },
-    "/cam-kp/1.3/sri_testing_data": {
+    "/cam-kp/1.4/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "CAM KP"],
+        "tags": ["trapi", "CAM Provider KG"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_cam-kp_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_cam-kp_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -662,12 +1273,12 @@
         }
       }
     },
-    "/cam-kp/1.3/query": {
+    "/cam-kp/1.4/query": {
       "post": {
-        "tags": ["trapi", "CAM KP"],
+        "tags": ["trapi", "CAM Provider KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_cam-kp_trapi",
+        "operationId": "reasoner_api_1_4_query_post_cam-kp_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -791,12 +1402,12 @@
             }
           }
         },
-        "tags": ["CAM KP"]
+        "tags": ["CAM Provider KG"]
       }
     },
     "/cam-kp/overlay": {
       "post": {
-        "tags": ["translator", "CAM KP"],
+        "tags": ["translator", "CAM Provider KG"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post_cam-kp_translator",
@@ -1063,7 +1674,7 @@
             }
           }
         },
-        "tags": ["CAM KP"]
+        "tags": ["CAM Provider KG"]
       }
     },
     "/cam-kp/{source_type}/{target_type}/{curie}": {
@@ -1124,7 +1735,7 @@
             }
           }
         },
-        "tags": ["CAM KP"]
+        "tags": ["CAM Provider KG"]
       }
     },
     "/cam-kp/{node_type}/{curie}": {
@@ -1176,7 +1787,7 @@
             }
           }
         },
-        "tags": ["CAM KP"]
+        "tags": ["CAM Provider KG"]
       }
     },
     "/cam-kp/simple_spec": {
@@ -1230,15 +1841,15 @@
             }
           }
         },
-        "tags": ["CAM KP"]
+        "tags": ["CAM Provider KG"]
       }
     },
-    "/ctd/1.3/meta_knowledge_graph": {
+    "/ctd/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "CTD"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_ctd_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_ctd_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -1253,12 +1864,12 @@
         }
       }
     },
-    "/ctd/1.3/sri_testing_data": {
+    "/ctd/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "CTD"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_ctd_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_ctd_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -1273,12 +1884,12 @@
         }
       }
     },
-    "/ctd/1.3/query": {
+    "/ctd/1.4/query": {
       "post": {
         "tags": ["trapi", "CTD"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_ctd_trapi",
+        "operationId": "reasoner_api_1_4_query_post_ctd_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -1844,12 +2455,12 @@
         "tags": ["CTD"]
       }
     },
-    "/drugcentral/1.3/meta_knowledge_graph": {
+    "/drugcentral/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "DrugCentral"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_drugcentral_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_drugcentral_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -1864,12 +2475,12 @@
         }
       }
     },
-    "/drugcentral/1.3/sri_testing_data": {
+    "/drugcentral/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "DrugCentral"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_drugcentral_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_drugcentral_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -1884,12 +2495,12 @@
         }
       }
     },
-    "/drugcentral/1.3/query": {
+    "/drugcentral/1.4/query": {
       "post": {
         "tags": ["trapi", "DrugCentral"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_drugcentral_trapi",
+        "operationId": "reasoner_api_1_4_query_post_drugcentral_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2455,12 +3066,12 @@
         "tags": ["DrugCentral"]
       }
     },
-    "/genome-alliance/1.3/meta_knowledge_graph": {
+    "/genome-alliance/1.4/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "Alliance of Genome Resources Orthology"],
+        "tags": ["trapi", "Alliance of Genome Resources"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_genome-alliance_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_genome-alliance_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -2475,12 +3086,12 @@
         }
       }
     },
-    "/genome-alliance/1.3/sri_testing_data": {
+    "/genome-alliance/1.4/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "Alliance of Genome Resources Orthology"],
+        "tags": ["trapi", "Alliance of Genome Resources"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_genome-alliance_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_genome-alliance_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -2495,12 +3106,12 @@
         }
       }
     },
-    "/genome-alliance/1.3/query": {
+    "/genome-alliance/1.4/query": {
       "post": {
-        "tags": ["trapi", "Alliance of Genome Resources Orthology"],
+        "tags": ["trapi", "Alliance of Genome Resources"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_genome-alliance_trapi",
+        "operationId": "reasoner_api_1_4_query_post_genome-alliance_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -2624,12 +3235,12 @@
             }
           }
         },
-        "tags": ["Alliance of Genome Resources Orthology"]
+        "tags": ["Alliance of Genome Resources"]
       }
     },
     "/genome-alliance/overlay": {
       "post": {
-        "tags": ["translator", "Alliance of Genome Resources Orthology"],
+        "tags": ["translator", "Alliance of Genome Resources"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post_genome-alliance_translator",
@@ -2896,7 +3507,7 @@
             }
           }
         },
-        "tags": ["Alliance of Genome Resources Orthology"]
+        "tags": ["Alliance of Genome Resources"]
       }
     },
     "/genome-alliance/{source_type}/{target_type}/{curie}": {
@@ -2957,7 +3568,7 @@
             }
           }
         },
-        "tags": ["Alliance of Genome Resources Orthology"]
+        "tags": ["Alliance of Genome Resources"]
       }
     },
     "/genome-alliance/{node_type}/{curie}": {
@@ -3009,7 +3620,7 @@
             }
           }
         },
-        "tags": ["Alliance of Genome Resources Orthology"]
+        "tags": ["Alliance of Genome Resources"]
       }
     },
     "/genome-alliance/simple_spec": {
@@ -3063,15 +3674,15 @@
             }
           }
         },
-        "tags": ["Alliance of Genome Resources Orthology"]
+        "tags": ["Alliance of Genome Resources"]
       }
     },
-    "/gtex/1.3/meta_knowledge_graph": {
+    "/gtex/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "GTEx"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_gtex_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_gtex_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3086,12 +3697,12 @@
         }
       }
     },
-    "/gtex/1.3/sri_testing_data": {
+    "/gtex/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "GTEx"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_gtex_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_gtex_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3106,12 +3717,12 @@
         }
       }
     },
-    "/gtex/1.3/query": {
+    "/gtex/1.4/query": {
       "post": {
         "tags": ["trapi", "GTEx"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_gtex_trapi",
+        "operationId": "reasoner_api_1_4_query_post_gtex_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -3677,12 +4288,12 @@
         "tags": ["GTEx"]
       }
     },
-    "/gtopdb/1.3/meta_knowledge_graph": {
+    "/gtopdb/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "GtoPdb"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_gtopdb_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_gtopdb_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3697,12 +4308,12 @@
         }
       }
     },
-    "/gtopdb/1.3/sri_testing_data": {
+    "/gtopdb/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "GtoPdb"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_gtopdb_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_gtopdb_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3717,12 +4328,12 @@
         }
       }
     },
-    "/gtopdb/1.3/query": {
+    "/gtopdb/1.4/query": {
       "post": {
         "tags": ["trapi", "GtoPdb"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_gtopdb_trapi",
+        "operationId": "reasoner_api_1_4_query_post_gtopdb_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4288,12 +4899,12 @@
         "tags": ["GtoPdb"]
       }
     },
-    "/gwas-catalog/1.3/meta_knowledge_graph": {
+    "/gwas-catalog/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "GWAS Catalog"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_gwas-catalog_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_gwas-catalog_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -4308,12 +4919,12 @@
         }
       }
     },
-    "/gwas-catalog/1.3/sri_testing_data": {
+    "/gwas-catalog/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "GWAS Catalog"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_gwas-catalog_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_gwas-catalog_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -4328,12 +4939,12 @@
         }
       }
     },
-    "/gwas-catalog/1.3/query": {
+    "/gwas-catalog/1.4/query": {
       "post": {
         "tags": ["trapi", "GWAS Catalog"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_gwas-catalog_trapi",
+        "operationId": "reasoner_api_1_4_query_post_gwas-catalog_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -4899,12 +5510,12 @@
         "tags": ["GWAS Catalog"]
       }
     },
-    "/hetio/1.3/meta_knowledge_graph": {
+    "/hetio/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "Hetionet"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_hetio_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_hetio_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -4919,12 +5530,12 @@
         }
       }
     },
-    "/hetio/1.3/sri_testing_data": {
+    "/hetio/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "Hetionet"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_hetio_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_hetio_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -4939,12 +5550,12 @@
         }
       }
     },
-    "/hetio/1.3/query": {
+    "/hetio/1.4/query": {
       "post": {
         "tags": ["trapi", "Hetionet"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_hetio_trapi",
+        "operationId": "reasoner_api_1_4_query_post_hetio_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -5510,12 +6121,12 @@
         "tags": ["Hetionet"]
       }
     },
-    "/hgnc/1.3/meta_knowledge_graph": {
+    "/hgnc/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "HGNC"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_hgnc_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_hgnc_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -5530,12 +6141,12 @@
         }
       }
     },
-    "/hgnc/1.3/sri_testing_data": {
+    "/hgnc/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "HGNC"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_hgnc_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_hgnc_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -5550,12 +6161,12 @@
         }
       }
     },
-    "/hgnc/1.3/query": {
+    "/hgnc/1.4/query": {
       "post": {
         "tags": ["trapi", "HGNC"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_hgnc_trapi",
+        "operationId": "reasoner_api_1_4_query_post_hgnc_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6121,12 +6732,12 @@
         "tags": ["HGNC"]
       }
     },
-    "/hmdb/1.3/meta_knowledge_graph": {
+    "/hmdb/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "HMDB"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_hmdb_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_hmdb_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -6141,12 +6752,12 @@
         }
       }
     },
-    "/hmdb/1.3/sri_testing_data": {
+    "/hmdb/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "HMDB"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_hmdb_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_hmdb_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -6161,12 +6772,12 @@
         }
       }
     },
-    "/hmdb/1.3/query": {
+    "/hmdb/1.4/query": {
       "post": {
         "tags": ["trapi", "HMDB"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_hmdb_trapi",
+        "operationId": "reasoner_api_1_4_query_post_hmdb_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -6732,12 +7343,12 @@
         "tags": ["HMDB"]
       }
     },
-    "/human-goa/1.3/meta_knowledge_graph": {
+    "/human-goa/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "Human GOA"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_human-goa_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_human-goa_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -6752,12 +7363,12 @@
         }
       }
     },
-    "/human-goa/1.3/sri_testing_data": {
+    "/human-goa/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "Human GOA"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_human-goa_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_human-goa_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -6772,12 +7383,12 @@
         }
       }
     },
-    "/human-goa/1.3/query": {
+    "/human-goa/1.4/query": {
       "post": {
         "tags": ["trapi", "Human GOA"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_human-goa_trapi",
+        "operationId": "reasoner_api_1_4_query_post_human-goa_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -7343,12 +7954,12 @@
         "tags": ["Human GOA"]
       }
     },
-    "/icees-kg/1.3/meta_knowledge_graph": {
+    "/icees-kg/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "ICEES KG"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_icees-kg_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_icees-kg_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -7363,12 +7974,12 @@
         }
       }
     },
-    "/icees-kg/1.3/sri_testing_data": {
+    "/icees-kg/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "ICEES KG"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_icees-kg_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_icees-kg_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -7383,12 +7994,12 @@
         }
       }
     },
-    "/icees-kg/1.3/query": {
+    "/icees-kg/1.4/query": {
       "post": {
         "tags": ["trapi", "ICEES KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_icees-kg_trapi",
+        "operationId": "reasoner_api_1_4_query_post_icees-kg_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -7954,12 +8565,12 @@
         "tags": ["ICEES KG"]
       }
     },
-    "/intact/1.3/meta_knowledge_graph": {
+    "/intact/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "IntAct Molecular Interaction Database"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_intact_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_intact_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -7974,12 +8585,12 @@
         }
       }
     },
-    "/intact/1.3/sri_testing_data": {
+    "/intact/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "IntAct Molecular Interaction Database"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_intact_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_intact_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -7994,12 +8605,12 @@
         }
       }
     },
-    "/intact/1.3/query": {
+    "/intact/1.4/query": {
       "post": {
         "tags": ["trapi", "IntAct Molecular Interaction Database"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_intact_trapi",
+        "operationId": "reasoner_api_1_4_query_post_intact_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -8565,12 +9176,12 @@
         "tags": ["IntAct Molecular Interaction Database"]
       }
     },
-    "/panther/1.3/meta_knowledge_graph": {
+    "/panther/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "PANTHER"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_panther_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_panther_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -8585,12 +9196,12 @@
         }
       }
     },
-    "/panther/1.3/sri_testing_data": {
+    "/panther/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "PANTHER"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_panther_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_panther_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -8605,12 +9216,12 @@
         }
       }
     },
-    "/panther/1.3/query": {
+    "/panther/1.4/query": {
       "post": {
         "tags": ["trapi", "PANTHER"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_panther_trapi",
+        "operationId": "reasoner_api_1_4_query_post_panther_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -9176,12 +9787,12 @@
         "tags": ["PANTHER"]
       }
     },
-    "/pharos/1.3/meta_knowledge_graph": {
+    "/pharos/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "Pharos"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_pharos_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_pharos_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -9196,12 +9807,12 @@
         }
       }
     },
-    "/pharos/1.3/sri_testing_data": {
+    "/pharos/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "Pharos"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_pharos_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_pharos_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -9216,12 +9827,12 @@
         }
       }
     },
-    "/pharos/1.3/query": {
+    "/pharos/1.4/query": {
       "post": {
         "tags": ["trapi", "Pharos"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_pharos_trapi",
+        "operationId": "reasoner_api_1_4_query_post_pharos_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -9787,12 +10398,12 @@
         "tags": ["Pharos"]
       }
     },
-    "/robokopkg/1.3/meta_knowledge_graph": {
+    "/reactome/1.4/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "ROBOKOP KG"],
+        "tags": ["trapi", "Reactome"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_robokopkg_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_reactome_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -9807,12 +10418,12 @@
         }
       }
     },
-    "/robokopkg/1.3/sri_testing_data": {
+    "/reactome/1.4/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "ROBOKOP KG"],
+        "tags": ["trapi", "Reactome"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_robokopkg_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_reactome_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -9827,12 +10438,623 @@
         }
       }
     },
-    "/robokopkg/1.3/query": {
+    "/reactome/1.4/query": {
+      "post": {
+        "tags": ["trapi", "Reactome"],
+        "summary": "Query reasoner via one of several inputs.",
+        "description": "Handle TRAPI request.",
+        "operationId": "reasoner_api_1_4_query_post_reactome_trapi",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReasonerRequest"
+              },
+              "example": {
+                "message": {
+                  "query_graph": {
+                    "nodes": {
+                      "n0": {
+                        "categories": ["biolink:ChemicalEntity"],
+                        "ids": [
+                          "CHEMBL.COMPOUND:CHEMBL3234626",
+                          "CHEMBL.COMPOUND:CHEMBL3234633"
+                        ]
+                      },
+                      "n1": {
+                        "categories": ["biolink:GeneOrGeneProduct"],
+                        "ids": ["NCBIGene:2099"]
+                      }
+                    },
+                    "edges": {
+                      "e01": {
+                        "subject": "n0",
+                        "object": "n1",
+                        "predicates": ["biolink:affects"],
+                        "qualifier_constraints": [
+                          {
+                            "qualifier_set": [
+                              {
+                                "qualifier_type_id": "biolink:object_aspect_qualifier",
+                                "qualifier_value": "activity"
+                              },
+                              {
+                                "qualifier_type_id": "biolink:object_direction_qualifier",
+                                "qualifier_value": "increased"
+                              },
+                              {
+                                "qualifier_type_id": "biolink:qualified_predicate",
+                                "qualifier_value": "biolink:causes"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                },
+                "workflow": [
+                  {
+                    "id": "lookup"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reactome/cypher": {
+      "post": {
+        "summary": "Run cypher query",
+        "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
+        "operationId": "cypher_cypher_post_reactome",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CypherRequest"
+              },
+              "example": {
+                "query": "MATCH (n) RETURN count(n)"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Reactome"]
+      }
+    },
+    "/reactome/overlay": {
+      "post": {
+        "tags": ["translator", "Reactome"],
+        "summary": "Overlay results with available connections between each node.",
+        "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
+        "operationId": "overlay_overlay_post_reactome_translator",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReasonerRequest"
+              },
+              "example": {
+                "message": {
+                  "query_graph": {
+                    "nodes": {
+                      "n1": {
+                        "id": "NCBIGene:6352",
+                        "category": "biolink:Gene",
+                        "is_set": false
+                      },
+                      "n2": {
+                        "category": "biolink:GeneFamily",
+                        "is_set": false
+                      },
+                      "n3": {
+                        "category": "biolink:GeneFamily",
+                        "is_set": false
+                      }
+                    },
+                    "edges": {
+                      "e12": {
+                        "subject": "n1",
+                        "object": "n2",
+                        "predicate": "biolink:part_of"
+                      },
+                      "e23": {
+                        "subject": "n3",
+                        "object": "n2",
+                        "predicate": "biolink:part_of"
+                      }
+                    }
+                  },
+                  "knowledge_graph": {
+                    "nodes": {
+                      "NCBIGene:6352": {
+                        "category": [
+                          "biolink:NamedThing",
+                          "biolink:BiologicalEntity",
+                          "biolink:MolecularEntity",
+                          "biolink:GenomicEntity",
+                          "biolink:GeneOrGeneProduct",
+                          "biolink:MacromolecularMachine",
+                          "biolink:Gene"
+                        ],
+                        "name": "CCL5",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "locus_group": "protein-coding gene",
+                              "synonyms": [],
+                              "chromosome": "17",
+                              "location": "17q12",
+                              "gene_family": ["Chemokine ligands"],
+                              "taxon": 9606,
+                              "category": [
+                                "biolink:BiologicalEntity",
+                                "biolink:GenomicEntity",
+                                "biolink:GeneOrGeneProduct",
+                                "biolink:MacromolecularMachine",
+                                "biolink:NamedThing",
+                                "biolink:MolecularEntity",
+                                "biolink:Gene"
+                              ],
+                              "gene_family_id": [483],
+                              "equivalent_identifiers": [
+                                "ENSEMBL:ENSG00000271503",
+                                "NCBIGene:6352",
+                                "NCBIGene:6352",
+                                "HGNC:10632",
+                                "UniProtKB:P13501"
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "PANTHER.FAMILY:PTHR12015:SF170": {
+                        "category": [
+                          "biolink:NamedThing",
+                          "biolink:BiologicalEntity",
+                          "biolink:GeneFamily",
+                          "biolink:MolecularEntity",
+                          "biolink:Entity"
+                        ],
+                        "name": "C-C MOTIF CHEMOKINE 5",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "synonyms": [],
+                              "category": [
+                                "biolink:BiologicalEntity",
+                                "biolink:GeneFamily",
+                                "biolink:NamedThing",
+                                "biolink:MolecularEntity",
+                                "biolink:Entity"
+                              ],
+                              "equivalent_identifiers": [
+                                "PANTHER.FAMILY:PTHR12015:SF170"
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "PANTHER.FAMILY:PTHR12015": {
+                        "category": [
+                          "biolink:NamedThing",
+                          "biolink:BiologicalEntity",
+                          "biolink:GeneFamily",
+                          "biolink:MolecularEntity",
+                          "biolink:Entity"
+                        ],
+                        "name": "SMALL INDUCIBLE CYTOKINE A",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "synonyms": [],
+                              "category": [
+                                "biolink:BiologicalEntity",
+                                "biolink:GeneFamily",
+                                "biolink:NamedThing",
+                                "biolink:MolecularEntity",
+                                "biolink:Entity"
+                              ],
+                              "equivalent_identifiers": [
+                                "PANTHER.FAMILY:PTHR12015"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "edges": {
+                      "dd8ef7a4606c4f8e405e6a5b1b095993": {
+                        "subject": "NCBIGene:6352",
+                        "object": "PANTHER.FAMILY:PTHR12015",
+                        "predicate": "biolink:part_of",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "predicate": "biolink:part_of",
+                              "relation_label": "part of",
+                              "provided_by": "panther.get_gene_by_gene_family",
+                              "ctime": 1584932086.0009434,
+                              "target_id": "PANTHER.FAMILY:PTHR12015",
+                              "source_id": "NCBIGene:6352",
+                              "source_database": "panther",
+                              "relation": "BFO:0000050",
+                              "publications": []
+                            }
+                          }
+                        ]
+                      },
+                      "9f7f9d86cb57e7190aafa57f7564eb05": {
+                        "subject": "PANTHER.FAMILY:PTHR12015:SF170",
+                        "object": "PANTHER.FAMILY:PTHR12015",
+                        "predicate": "biolink:part_of",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "predicate": "biolink:part_of",
+                              "relation_label": "part of",
+                              "provided_by": "panther.get_gene_family_by_gene_family",
+                              "ctime": 1610437123.7988985,
+                              "target_id": "PANTHER.FAMILY:PTHR12015",
+                              "source_id": "PANTHER.FAMILY:PTHR12015:SF170",
+                              "source_database": "panther",
+                              "relation": "BFO:0000050",
+                              "publications": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "results": [
+                    {
+                      "node_bindings": {
+                        "n1": [
+                          {
+                            "id": "NCBIGene:6352"
+                          }
+                        ],
+                        "n2": [
+                          {
+                            "id": "PANTHER.FAMILY:PTHR12015"
+                          }
+                        ],
+                        "n3": [
+                          {
+                            "id": "PANTHER.FAMILY:PTHR12015:SF170"
+                          }
+                        ]
+                      },
+                      "edge_bindings": {
+                        "e12": [
+                          {
+                            "id": "dd8ef7a4606c4f8e405e6a5b1b095993"
+                          }
+                        ],
+                        "e23": [
+                          {
+                            "id": "9f7f9d86cb57e7190aafa57f7564eb05"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reactome/metadata": {
+      "get": {
+        "summary": "Metadata about the knowledge graph.",
+        "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
+        "operationId": "metadata_metadata_get_reactome",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Metadata Metadata Get"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Reactome"]
+      }
+    },
+    "/reactome/{source_type}/{target_type}/{curie}": {
+      "get": {
+        "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
+        "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
+        "operationId": "one_hop__source_type___target_type___curie__get_reactome",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Source Type",
+              "type": "string"
+            },
+            "name": "source_type",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Target Type",
+              "type": "string"
+            },
+            "name": "target_type",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Curie",
+              "type": "string"
+            },
+            "name": "curie",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response One Hop  Source Type   Target Type   Curie  Get",
+                  "type": "array",
+                  "items": {}
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Reactome"]
+      }
+    },
+    "/reactome/{node_type}/{curie}": {
+      "get": {
+        "summary": "Find `node` by `curie`",
+        "description": "Returns `node` matching `curie`.",
+        "operationId": "node__node_type___curie__get_reactome",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Node Type",
+              "type": "string"
+            },
+            "name": "node_type",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Curie",
+              "type": "string"
+            },
+            "name": "curie",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Node  Node Type   Curie  Get",
+                  "type": "array",
+                  "items": {}
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Reactome"]
+      }
+    },
+    "/reactome/simple_spec": {
+      "get": {
+        "summary": "Get one-hop connection schema",
+        "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
+        "operationId": "simple_spec_simple_spec_get_reactome",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Source",
+              "type": "string"
+            },
+            "name": "source",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Target",
+              "type": "string"
+            },
+            "name": "target",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Simple Spec Simple Spec Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SimpleSpecElement"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Reactome"]
+      }
+    },
+    "/robokopkg/1.4/meta_knowledge_graph": {
+      "get": {
+        "tags": ["trapi", "ROBOKOP KG"],
+        "summary": "Meta knowledge graph representation of this TRAPI web service.",
+        "description": "Returns meta knowledge graph representation of this TRAPI web service.",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_robokopkg_trapi",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetaKnowledgeGraph"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/robokopkg/1.4/sri_testing_data": {
+      "get": {
+        "tags": ["trapi", "ROBOKOP KG"],
+        "summary": "Test data for usage by the SRI Testing Harness.",
+        "description": "Returns a list of edges that are representative examples of the knowledge graph.",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_robokopkg_trapi",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SRITestData"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/robokopkg/1.4/query": {
       "post": {
         "tags": ["trapi", "ROBOKOP KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_robokopkg_trapi",
+        "operationId": "reasoner_api_1_4_query_post_robokopkg_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -10398,12 +11620,12 @@
         "tags": ["ROBOKOP KG"]
       }
     },
-    "/sri-reference-kg/1.3/meta_knowledge_graph": {
+    "/sri-reference-kg/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "SRI Reference KG"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_sri-reference-kg_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_sri-reference-kg_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -10418,12 +11640,12 @@
         }
       }
     },
-    "/sri-reference-kg/1.3/sri_testing_data": {
+    "/sri-reference-kg/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "SRI Reference KG"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_sri-reference-kg_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_sri-reference-kg_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -10438,12 +11660,12 @@
         }
       }
     },
-    "/sri-reference-kg/1.3/query": {
+    "/sri-reference-kg/1.4/query": {
       "post": {
         "tags": ["trapi", "SRI Reference KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_sri-reference-kg_trapi",
+        "operationId": "reasoner_api_1_4_query_post_sri-reference-kg_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -11009,12 +12231,12 @@
         "tags": ["SRI Reference KG"]
       }
     },
-    "/string-db/1.3/meta_knowledge_graph": {
+    "/string-db/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "STRING"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_string-db_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_string-db_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -11029,12 +12251,12 @@
         }
       }
     },
-    "/string-db/1.3/sri_testing_data": {
+    "/string-db/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "STRING"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_string-db_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_string-db_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -11049,12 +12271,12 @@
         }
       }
     },
-    "/string-db/1.3/query": {
+    "/string-db/1.4/query": {
       "post": {
         "tags": ["trapi", "STRING"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_string-db_trapi",
+        "operationId": "reasoner_api_1_4_query_post_string-db_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -11620,12 +12842,12 @@
         "tags": ["STRING"]
       }
     },
-    "/textminingkp/1.3/meta_knowledge_graph": {
+    "/textminingkp/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "Text Mining Provider KG"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_textminingkp_trapi",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_textminingkp_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -11640,12 +12862,12 @@
         }
       }
     },
-    "/textminingkp/1.3/sri_testing_data": {
+    "/textminingkp/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "Text Mining Provider KG"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_textminingkp_trapi",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_textminingkp_trapi",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -11660,12 +12882,12 @@
         }
       }
     },
-    "/textminingkp/1.3/query": {
+    "/textminingkp/1.4/query": {
       "post": {
         "tags": ["trapi", "Text Mining Provider KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_textminingkp_trapi",
+        "operationId": "reasoner_api_1_4_query_post_textminingkp_trapi",
         "requestBody": {
           "content": {
             "application/json": {
@@ -12231,12 +13453,12 @@
         "tags": ["Text Mining Provider KG"]
       }
     },
-    "/ubergraph/1.3/meta_knowledge_graph": {
+    "/ubergraph/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "Ubergraph"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_trapi_ubergraph",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_trapi_ubergraph",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -12251,12 +13473,12 @@
         }
       }
     },
-    "/ubergraph/1.3/sri_testing_data": {
+    "/ubergraph/1.4/sri_testing_data": {
       "get": {
         "tags": ["trapi", "Ubergraph"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_trapi_ubergraph",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_trapi_ubergraph",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -12271,12 +13493,12 @@
         }
       }
     },
-    "/ubergraph/1.3/query": {
+    "/ubergraph/1.4/query": {
       "post": {
         "tags": ["trapi", "Ubergraph"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_trapi_ubergraph",
+        "operationId": "reasoner_api_1_4_query_post_trapi_ubergraph",
         "requestBody": {
           "content": {
             "application/json": {
@@ -12842,12 +14064,12 @@
         "tags": ["Ubergraph"]
       }
     },
-    "/viral-proteome/1.3/meta_knowledge_graph": {
+    "/viral-proteome/1.4/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "Viral Proteome"],
+        "tags": ["trapi", "Text Mining Provider KG"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_3_meta_knowledge_graph_get_trapi_viral-proteome",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_trapi_viral-proteome",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -12862,12 +14084,12 @@
         }
       }
     },
-    "/viral-proteome/1.3/sri_testing_data": {
+    "/viral-proteome/1.4/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "Viral Proteome"],
+        "tags": ["trapi", "Text Mining Provider KG"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_3_sri_testing_data_get_trapi_viral-proteome",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_trapi_viral-proteome",
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -12882,12 +14104,12 @@
         }
       }
     },
-    "/viral-proteome/1.3/query": {
+    "/viral-proteome/1.4/query": {
       "post": {
-        "tags": ["trapi", "Viral Proteome"],
+        "tags": ["trapi", "Text Mining Provider KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_3_query_post_trapi_viral-proteome",
+        "operationId": "reasoner_api_1_4_query_post_trapi_viral-proteome",
         "requestBody": {
           "content": {
             "application/json": {
@@ -13011,12 +14233,12 @@
             }
           }
         },
-        "tags": ["Viral Proteome"]
+        "tags": ["Text Mining Provider KG"]
       }
     },
     "/viral-proteome/overlay": {
       "post": {
-        "tags": ["translator", "Viral Proteome"],
+        "tags": ["translator", "Text Mining Provider KG"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post_translator_viral-proteome",
@@ -13283,7 +14505,7 @@
             }
           }
         },
-        "tags": ["Viral Proteome"]
+        "tags": ["Text Mining Provider KG"]
       }
     },
     "/viral-proteome/{source_type}/{target_type}/{curie}": {
@@ -13344,7 +14566,7 @@
             }
           }
         },
-        "tags": ["Viral Proteome"]
+        "tags": ["Text Mining Provider KG"]
       }
     },
     "/viral-proteome/{node_type}/{curie}": {
@@ -13396,7 +14618,7 @@
             }
           }
         },
-        "tags": ["Viral Proteome"]
+        "tags": ["Text Mining Provider KG"]
       }
     },
     "/viral-proteome/simple_spec": {
@@ -13450,7 +14672,7 @@
             }
           }
         },
-        "tags": ["Viral Proteome"]
+        "tags": ["Text Mining Provider KG"]
       }
     },
     "/registry": {
@@ -13478,92 +14700,100 @@
   },
   "tags": [
     {
-      "name": "RENCI SRI Reference KG",
-      "description": "\nThis KG represents a RENCI instantiation of the SRI Reference KG (https://robokop.renci.org/api-docs/docs/automat/sri-reference-kg). It contains select edges drawn from the Monarch KG and several OBO ontologies.\n\n**Version:** 11163199d3ca8a16\n\n**URL:** [https://github.com/Knowledge-Graph-Hub/sri-reference-kg](https://github.com/Knowledge-Graph-Hub/sri-reference-kg)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/Biolink_Automat/11163199d3ca8a16/graph_11163199d3ca8a16.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/Biolink_Automat/11163199d3ca8a16/graph_11163199d3ca8a16.db.dump)\n\n**Nodes:** 604,067\n\n**Edges:** 4,616,569\n\n"
+      "name": "BINDING",
+      "description": "\nBinding DataBase (BindingDB) openly exposes curated data on chemical entities and their molecular targets.\n\n**Version:** 6ff4faf347a97f7f\n\n**URL:** [https://www.bindingdb.org/](https://www.bindingdb.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/BINDING_Automat/6ff4faf347a97f7f](https://stars.renci.org/var/plater/bl-3.5.4/BINDING_Automat/6ff4faf347a97f7f)\n\n**Nodes:** 998,906\n\n**Edges:** 2,016,461\n\n"
     },
     {
-      "name": "CAM KP",
-      "description": "\nCAMs (Causal Activity Models) are small knowledge graphs built using the Web Ontology Language (OWL). The CAM database combines many CAM graphs along with a large merged bio-ontology containing the full vocabulary of concepts referenced within the individual CAMs. Each CAM describes an instantiation of some of those concepts in a particular context, modeling the interactions between those instances as an interlinked representation of a complex biological or environmental process.\n\n**Version:** 766ee0e72d9016ef\n\n\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/CAMKP_Automat/766ee0e72d9016ef/graph_766ee0e72d9016ef.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/CAMKP_Automat/766ee0e72d9016ef/graph_766ee0e72d9016ef.db.dump)\n\n**Nodes:** 48,819\n\n**Edges:** 575,781\n\n"
+      "name": "RENCI SRI Reference KG",
+      "description": "\nThe RENCI Standards and Reference Implementation (SRI) Reference KG represents a subset of the SRI Reference KG.\n\n**Version:** 0fb5e8f1bc5475b2\n\n**URL:** [https://github.com/Knowledge-Graph-Hub/sri-reference-kg](https://github.com/Knowledge-Graph-Hub/sri-reference-kg)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/Biolink_Automat/0fb5e8f1bc5475b2](https://stars.renci.org/var/plater/bl-3.5.4/Biolink_Automat/0fb5e8f1bc5475b2)\n\n**Nodes:** 643,091\n\n**Edges:** 4,671,793\n\n"
+    },
+    {
+      "name": "CAM Provider KG",
+      "description": "\nThe CAMP Provider KG contains data on CAMs (Causal Activity Models), which are small knowledge graphs built using the Web Ontology Language (OWL). The CAM database combines many CAM graphs, along with a large merged bio-ontology containing the full vocabulary of concepts referenced within the individual CAMs. Each CAM describes an instantiation of some of those concepts in a particular context, modeling the interactions between those instances as an interlinked representation of a complex biological or environmental process.\n\n**Version:** ded8cfcdee598475\n\n\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/CAMKP_Automat/ded8cfcdee598475](https://stars.renci.org/var/plater/bl-3.5.4/CAMKP_Automat/ded8cfcdee598475)\n\n**Nodes:** 111,273\n\n**Edges:** 3,525,826\n\n"
     },
     {
       "name": "CTD",
-      "description": "\nThe Comparative Toxicogenomics Database (CTD) is an open-source database that provides manually curated information about chemical-gene/protein, chemical-disease, and gene/protein-disease relationships, with additional support for the curated relationships provided by function and pathway data.\n\n**Version:** eb067a5f55c8a4dd\n\n**URL:** [http://ctdbase.org/about/](http://ctdbase.org/about/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/CTD_Automat/eb067a5f55c8a4dd/graph_eb067a5f55c8a4dd.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/CTD_Automat/eb067a5f55c8a4dd/graph_eb067a5f55c8a4dd.db.dump)\n\n**Nodes:** 441,863\n\n**Edges:** 1,462,012\n\n"
+      "description": "\nThe Comparative Toxicogenomics Database (CTD) is an open-source database that provides manually curated information about chemical-gene/protein, chemical-disease, and gene/protein-disease relationships, with additional support for the curated relationships provided by function and pathway data.\n\n**Version:** 20d3dfad16037510\n\n**URL:** [http://ctdbase.org/about/](http://ctdbase.org/about/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/CTD_Automat/20d3dfad16037510](https://stars.renci.org/var/plater/bl-3.5.4/CTD_Automat/20d3dfad16037510)\n\n**Nodes:** 444,472\n\n**Edges:** 1,464,525\n\n"
     },
     {
       "name": "DrugCentral",
-      "description": "\nDrugCentral provides open-source data on active ingredients, chemical entities, pharmaceutical products, drug mode of action, indications, and pharmacologic action for approved drugs, derived from information provided by the US Food & Drug Administration, the European Medicines Agency, and the Pharmaceutical and Medical Devices Agency. Caveat: DrugCentral provides limited information on discontinued drugs and drugs approved outside of the US, but that information has not been validated.\n\n**Version:** 40591a308833c43a\n\n**URL:** [https://drugcentral.org/](https://drugcentral.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/DrugCentral_Automat/40591a308833c43a/graph_40591a308833c43a.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/DrugCentral_Automat/40591a308833c43a/graph_40591a308833c43a.db.dump)\n\n**Nodes:** 76,355\n\n**Edges:** 645,905\n\n"
+      "description": "\nDrugCentral provides open-source data on active ingredients, chemical entities, pharmaceutical products, drug mode of action, indications, and pharmacologic action for approved drugs, derived from information provided by the US Food & Drug Administration, the European Medicines Agency, and the Pharmaceutical and Medical Devices Agency. Note that DrugCentral provides limited information on discontinued drugs and drugs approved outside of the US, but that information has not been validated.\n\n**Version:** a186a44d2f9578d9\n\n**URL:** [https://drugcentral.org/](https://drugcentral.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/DrugCentral_Automat/a186a44d2f9578d9](https://stars.renci.org/var/plater/bl-3.5.4/DrugCentral_Automat/a186a44d2f9578d9)\n\n**Nodes:** 77,217\n\n**Edges:** 647,107\n\n"
     },
     {
-      "name": "Alliance of Genome Resources Orthology",
-      "description": "\nThe Alliance of Genome Resources is a consortium of 7 model organism databases (MODs) and the Gene Ontology (GO) Consortium whose goal is to provide an integrated view of their data to all biologists, clinicians and other interested parties. The Alliance provides the results of all methods that have been benchmarked by the Quest for Orthologs Consortium (QfO), as well as curated ortholog inferences from HGNC (for human, mouse and rat genes).\n\n**Version:** eeadb0cfeb83a973\n\n**URL:** [https://www.alliancegenome.org/](https://www.alliancegenome.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/GenomeAllianceOrthologs_Automat/eeadb0cfeb83a973/graph_eeadb0cfeb83a973.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/GenomeAllianceOrthologs_Automat/eeadb0cfeb83a973/graph_eeadb0cfeb83a973.db.dump)\n\n**Nodes:** 94,352\n\n**Edges:** 530,513\n\n"
+      "name": "Alliance of Genome Resources",
+      "description": "\nThe Alliance of Genome Resources is a consortium of the owners of seven model organism databases (MODs) and the Gene Ontology (GO) Consortium, whose goal is to provide an integrated view of their data to all biologists, clinicians, and other interested parties. The Alliance provides the results of all methods that have been benchmarked by the Quest for Orthologs Consortium (QfO), as well as curated ortholog inferences from HGNC (human, mouse, rat genes).\n\n**Version:** f713443719161796\n\n**URL:** [https://www.alliancegenome.org/](https://www.alliancegenome.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/GenomeAllianceOrthologs_Automat/f713443719161796](https://stars.renci.org/var/plater/bl-3.5.4/GenomeAllianceOrthologs_Automat/f713443719161796)\n\n**Nodes:** 94,350\n\n**Edges:** 530,499\n\n"
     },
     {
       "name": "GTEx",
-      "description": "\nThe Genotype-Tissue Expression (GTEx) portal provides open access to data on tissue-specific gene expression and regulation, derived from molecular assays (e.g., WGS, WES, RNA-Seq) on 54 non-diseased tissue sites across nearly 1000 individuals.\n\n**Version:** 84a3ea1931622448\n\n**URL:** [https://gtexportal.org/home/](https://gtexportal.org/home/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/GTEx_Automat/84a3ea1931622448/graph_84a3ea1931622448.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/GTEx_Automat/84a3ea1931622448/graph_84a3ea1931622448.db.dump)\n\n**Nodes:** 4,924,964\n\n**Edges:** 49,258,128\n\n"
+      "description": "\nThe Genotype-Tissue Expression (GTEx) portal provides open access to data on tissue-specific gene expression and regulation, derived from molecular assays (e.g., WGS, WES, RNA-Seq) on 54 non-diseased tissue sites across nearly 1000 individuals.\n\n**Version:** d878cf6c8e891f3d\n\n**URL:** [https://gtexportal.org/home/](https://gtexportal.org/home/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/GTEx_Automat/d878cf6c8e891f3d](https://stars.renci.org/var/plater/bl-3.5.4/GTEx_Automat/d878cf6c8e891f3d)\n\n**Nodes:** 4,924,278\n\n**Edges:** 49,234,722\n\n"
     },
     {
       "name": "GtoPdb",
-      "description": "\nThe International Union of Basic and Clinical Pharmacology (IUPHAR) / British Pharmacological Society (BPS) Guide to Pharmacology database (GtoPdb) provides searchable open-source quantitative information on drug targets and the prescription medicines and experimental drugs that act on them.\n\n**Version:** 0e262e752794616a\n\n**URL:** [http://www.guidetopharmacology.org/](http://www.guidetopharmacology.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/GtoPdb_Automat/0e262e752794616a/graph_0e262e752794616a.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/GtoPdb_Automat/0e262e752794616a/graph_0e262e752794616a.db.dump)\n\n**Nodes:** 11,706\n\n**Edges:** 90,908\n\n"
+      "description": "\nThe International Union of Basic and Clinical Pharmacology (IUPHAR) / British Pharmacological Society (BPS) Guide to Pharmacology database (GtoPdb) provides searchable open-source quantitative information on drug targets and the prescription medicines and experimental drugs that act on them.\n\n**Version:** 52db0299e911237e\n\n**URL:** [http://www.guidetopharmacology.org/](http://www.guidetopharmacology.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/GtoPdb_Automat/52db0299e911237e](https://stars.renci.org/var/plater/bl-3.5.4/GtoPdb_Automat/52db0299e911237e)\n\n**Nodes:** 12,497\n\n**Edges:** 93,393\n\n"
     },
     {
       "name": "GWAS Catalog",
-      "description": "\nThe Genome-Wide Association Studies (GWAS) Catalog provides a curated, searchable, visualisable, and openly available database of single nucleotide polymorphism (SNP)-trait associations, derived from GWAS publications, including the reported trait, significant SNP-trait associations, and sample metadata.\n\n**Version:** d452d59852264c0e\n\n**URL:** [https://www.ebi.ac.uk/gwas/](https://www.ebi.ac.uk/gwas/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/GWASCatalog_Automat/d452d59852264c0e/graph_d452d59852264c0e.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/GWASCatalog_Automat/d452d59852264c0e/graph_d452d59852264c0e.db.dump)\n\n**Nodes:** 315,084\n\n**Edges:** 2,052,628\n\n"
+      "description": "\nThe Genome-Wide Association Studies (GWAS) Catalog provides a curated, searchable, visualisable, and openly available database of single nucleotide polymorphism (SNP)-trait associations, derived from GWAS publications, including the reported trait, significant SNP-trait associations, and sample metadata.\n\n**Version:** 368283ad08d634a9\n\n**URL:** [https://www.ebi.ac.uk/gwas/](https://www.ebi.ac.uk/gwas/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/GWASCatalog_Automat/368283ad08d634a9](https://stars.renci.org/var/plater/bl-3.5.4/GWASCatalog_Automat/368283ad08d634a9)\n\n**Nodes:** 416,774\n\n**Edges:** 2,761,033\n\n"
     },
     {
       "name": "Hetionet",
-      "description": "\nHetionet is an open-source biomedical \"heterogeneous information network\" (hetnet) or graph-based resource describing relationships uncovered by millions of biomedical research studies over the past fifty years.\n\n**Version:** b3ca6690f8b0b8e9\n\n**URL:** [https://het.io/](https://het.io/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/Hetio_Automat/b3ca6690f8b0b8e9/graph_b3ca6690f8b0b8e9.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/Hetio_Automat/b3ca6690f8b0b8e9/graph_b3ca6690f8b0b8e9.db.dump)\n\n**Nodes:** 116,044\n\n**Edges:** 2,697,025\n\n"
+      "description": "\nHetionet is an open-source biomedical \"heterogeneous information network\" (hetnet) or graph-based resource describing relationships uncovered by millions of biomedical research studies over the past fifty years.\n\n**Version:** 2e660b5a4be6569f\n\n**URL:** [https://het.io/](https://het.io/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/Hetio_Automat/2e660b5a4be6569f](https://stars.renci.org/var/plater/bl-3.5.4/Hetio_Automat/2e660b5a4be6569f)\n\n**Nodes:** 116,190\n\n**Edges:** 2,692,805\n\n"
     },
     {
       "name": "HGNC",
-      "description": "\nThe HUGO Gene Nomenclature Committee (HGNC) database provides open access to HGNC-approved unique symbols and names for human genes, gene groups, and associated resources, including links to genomic, proteomic and phenotypic information.\n\n**Version:** c161ca6a9005d5c4\n\n**URL:** [https://www.genenames.org/](https://www.genenames.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/HGNC_Automat/c161ca6a9005d5c4/graph_c161ca6a9005d5c4.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/HGNC_Automat/c161ca6a9005d5c4/graph_c161ca6a9005d5c4.db.dump)\n\n**Nodes:** 26,473\n\n**Edges:** 52,274\n\n"
+      "description": "\nThe HUGO Gene Nomenclature Committee (HGNC) database provides open access to HGNC-approved unique symbols and names for human genes, gene groups, and associated resources, including links to genomic, proteomic and phenotypic information.\n\n**Version:** f9142ab64a9d5d7e\n\n**URL:** [https://www.genenames.org/](https://www.genenames.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/HGNC_Automat/f9142ab64a9d5d7e](https://stars.renci.org/var/plater/bl-3.5.4/HGNC_Automat/f9142ab64a9d5d7e)\n\n**Nodes:** 27,217\n\n**Edges:** 53,680\n\n"
     },
     {
       "name": "HMDB",
-      "description": "\nThe Human Metabolome DataBase (HMDB) is an openly accessible database containing detailed information about small molecule metabolites found in the human body, with links between chemical data, clinical data, and molecular biology/biochemistry data, including protein sequences (enzymes and transporters).\n\n**Version:** 804f10a099251451\n\n**URL:** [https://hmdb.ca/](https://hmdb.ca/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/HMDB_Automat/804f10a099251451/graph_804f10a099251451.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/HMDB_Automat/804f10a099251451/graph_804f10a099251451.db.dump)\n\n**Nodes:** 130,300\n\n**Edges:** 1,880,070\n\n"
+      "description": "\nThe Human Metabolome DataBase (HMDB) is an openly accessible database containing detailed information about small molecule metabolites found in the human body, with links between chemical data, clinical data, and molecular biology/biochemistry data, including protein sequences (enzymes and transporters).\n\n**Version:** 9d9965bd2381d38b\n\n**URL:** [https://hmdb.ca/](https://hmdb.ca/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/HMDB_Automat/9d9965bd2381d38b](https://stars.renci.org/var/plater/bl-3.5.4/HMDB_Automat/9d9965bd2381d38b)\n\n**Nodes:** 129,243\n\n**Edges:** 1,884,362\n\n"
     },
     {
       "name": "Human GOA",
-      "description": "\nThe Gene Ontology (GO) Consortium’s Human Gene Ontologies Annotations (Human GOA) resource provides open access to curated assignment of GO terms to proteins in the UniProt KnowledgeBase (UniProtKB), RNA molecules from RNACentral, and protein complexes from the Complex Portal.\n\n**Version:** 8d70f9e595173d0f\n\n**URL:** [https://www.ebi.ac.uk/GOA/index](https://www.ebi.ac.uk/GOA/index)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/HumanGOA_Automat/8d70f9e595173d0f/graph_8d70f9e595173d0f.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/HumanGOA_Automat/8d70f9e595173d0f/graph_8d70f9e595173d0f.db.dump)\n\n**Nodes:** 129,867\n\n**Edges:** 1,314,623\n\n"
+      "description": "\nThe Gene Ontology (GO) Consortium’s Human Gene Ontologies Annotations (Human GOA) resource provides open access to curated assignment of GO terms to proteins in the UniProt KnowledgeBase (UniProtKB), RNA molecules from RNACentral, and protein complexes from the Complex Portal.\n\n**Version:** 10cad49161e08033\n\n**URL:** [https://www.ebi.ac.uk/GOA/index](https://www.ebi.ac.uk/GOA/index)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/HumanGOA_Automat/10cad49161e08033](https://stars.renci.org/var/plater/bl-3.5.4/HumanGOA_Automat/10cad49161e08033)\n\n**Nodes:** 129,615\n\n**Edges:** 1,312,572\n\n"
     },
     {
       "name": "ICEES KG",
-      "description": "\nICEES KG is the KG version of the Integrated Clinical and Environmental Exposures Service (ICEES), which provides regulatory-compliant open access to clinical data (e.g., electronic health records, survey data, clinical research data) that have been integrated at the patient level with environmental exposures data (e.g., airborne pollutants, landfills, concentrated animal feeding operations, socio-economic indicators).\n\n\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES](https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-2.1/icees-kg/3_27_23/icees_kg_03_27_23.dump](https://stars.renci.org/var/plater/bl-2.1/icees-kg/3_27_23/icees_kg_03_27_23.dump)\n\n**Nodes:** 811\n\n**Edges:** 2,601,835\n\n"
+      "description": "\nICEES KG is the KG version of the Integrated Clinical and Environmental Exposures Service (ICEES), which provides regulatory-compliant open access to clinical data (e.g., electronic health records, survey data, clinical research data) that have been integrated at the patient level with environmental exposures data (e.g., airborne pollutants, landfills, concentrated animal feeding operations, socio-economic indicators).\n\n\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES](https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.4.2/icees-kg/8-2-2023](https://stars.renci.org/var/plater/bl-3.4.2/icees-kg/8-2-2023)\n\n**Nodes:** 770\n\n**Edges:** 4,802,581\n\n"
     },
     {
       "name": "IntAct Molecular Interaction Database",
-      "description": "\nThe IntAct Molecular Interaction Database provides open access to molecular interactions data derived from literature curation or direct user submission.\n\n**Version:** 5055b5d916b9fb0d\n\n**URL:** [https://www.ebi.ac.uk/intact/home](https://www.ebi.ac.uk/intact/home)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/IntAct_Automat/5055b5d916b9fb0d/graph_5055b5d916b9fb0d.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/IntAct_Automat/5055b5d916b9fb0d/graph_5055b5d916b9fb0d.db.dump)\n\n**Nodes:** 215,343\n\n**Edges:** 2,463,214\n\n"
+      "description": "\nThe IntAct Molecular Interaction Database provides open access to molecular interactions data derived from literature curation or direct user submission.\n\n**Version:** d204043214fd7f20\n\n**URL:** [https://www.ebi.ac.uk/intact/home](https://www.ebi.ac.uk/intact/home)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/IntAct_Automat/d204043214fd7f20](https://stars.renci.org/var/plater/bl-3.5.4/IntAct_Automat/d204043214fd7f20)\n\n**Nodes:** 230,764\n\n**Edges:** 2,555,268\n\n"
     },
     {
       "name": "PANTHER",
-      "description": "\nThe Protein ANalysis THrough Evolutionary Relationships (PANTHER) classification system provides an openly available annotation library of gene family phylogenetic trees, with persistent identifiers attached to all nodes in the trees and annotation of each protein member of the family by its family and protein class, subfamily, orthologs, paralogs, GO Phylogenetic Annotation Project function and Reactome pathways.\n\n**Version:** 3e790a43b7817525\n\n**URL:** [http://pantherdb.org/](http://pantherdb.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/PANTHER_Automat/3e790a43b7817525/graph_3e790a43b7817525.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/PANTHER_Automat/3e790a43b7817525/graph_3e790a43b7817525.db.dump)\n\n**Nodes:** 88,494\n\n**Edges:** 1,192,222\n\n"
+      "description": "\nThe Protein ANalysis THrough Evolutionary Relationships (PANTHER) classification system provides an openly available annotation library of gene family phylogenetic trees, with persistent identifiers attached to all nodes in the trees and annotation of each protein member of the family by its family and protein class, subfamily, orthologs, paralogs, GO Phylogenetic Annotation Project function, and Reactome pathways.\n\n**Version:** bc372fa16b7f4d7e\n\n**URL:** [http://pantherdb.org/](http://pantherdb.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/PANTHER_Automat/bc372fa16b7f4d7e](https://stars.renci.org/var/plater/bl-3.5.4/PANTHER_Automat/bc372fa16b7f4d7e)\n\n**Nodes:** 87,183\n\n**Edges:** 1,051,806\n\n"
     },
     {
       "name": "Pharos",
-      "description": "\nPharos is the openly accessible user interface to the Illuminating the Druggable Genome (IDG) program’s Knowledge Management Center (KMC), which aims to develop a comprehensive, integrated knowledge-base for the Druggable Genome (DG) to illuminate the uncharacterized and/or poorly annotated portion of the DG, focusing on three of the most common drug-targeted protein families: G-protein-coupled receptors; ion channels; and kinases.\n\n**Version:** b7ec4c82dd54f9d4\n\n**URL:** [https://pharos.nih.gov/](https://pharos.nih.gov/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/PHAROS_Automat/b7ec4c82dd54f9d4/graph_b7ec4c82dd54f9d4.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/PHAROS_Automat/b7ec4c82dd54f9d4/graph_b7ec4c82dd54f9d4.db.dump)\n\n**Nodes:** 341,462\n\n**Edges:** 1,072,544\n\n"
+      "description": "\nPharos is the openly accessible user interface to the Illuminating the Druggable Genome (IDG) program’s Knowledge Management Center (KMC), which aims to develop a comprehensive, integrated knowledge-base for the Druggable Genome (DG) to illuminate the uncharacterized and/or poorly annotated portion of the DG, focusing on three of the most common drug-targeted protein families: G-protein-coupled receptors; ion channels; and kinases.\n\n**Version:** 6fb3d37e4c9e6d4d\n\n**URL:** [https://pharos.nih.gov/](https://pharos.nih.gov/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/PHAROS_Automat/6fb3d37e4c9e6d4d](https://stars.renci.org/var/plater/bl-3.5.4/PHAROS_Automat/6fb3d37e4c9e6d4d)\n\n**Nodes:** 342,517\n\n**Edges:** 1,074,009\n\n"
+    },
+    {
+      "name": "Reactome",
+      "description": "\nREACTOME is an open-source, open access, manually curated and peer-reviewed pathway database. Our goal is to provide intuitive bioinformatics tools for the visualization, interpretation and analysis of pathway knowledge to support basic and clinical research, genome analysis, modeling, systems biology and education.\n\n**Version:** fcc09b773f0cb846\n\n**URL:** [https://reactome.org/](https://reactome.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/Reactome_Automat/fcc09b773f0cb846](https://stars.renci.org/var/plater/bl-3.5.4/Reactome_Automat/fcc09b773f0cb846)\n\n**Nodes:** 561,626\n\n**Edges:** 2,355,585\n\n"
     },
     {
       "name": "ROBOKOP KG",
-      "description": "\nROBOKOP (KG) is an open-source biomedical KG that supports the ROBOKOP application and currently contains millions of biomedical relationships derived from dozens of integrated and harmonized biological knowledge sources and bio-ontologies, including the Automat primary and aggregate knowledge sources. ROBOKOP KG also includes text-mined assertions from PubMed and PubMed Central, derived from natural language processing (NLP). Note that text-based assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** fea2a2951a8c18a3\n\n**URL:** [http://robokopkg.renci.org/browser/](http://robokopkg.renci.org/browser/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/RobokopKG/fea2a2951a8c18a3/graph_fea2a2951a8c18a3.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/RobokopKG/fea2a2951a8c18a3/graph_fea2a2951a8c18a3.db.dump)\n\n**Nodes:** 8,661,893\n\n**Edges:** 130,429,763\n\n"
+      "description": "\nROBOKOP (KG) is an open-source biomedical KG that supports the ROBOKOP application and currently contains millions of biomedical relationships derived from dozens of integrated and harmonized biological knowledge sources and bio-ontologies, including the Automat primary and aggregate knowledge sources. ROBOKOP KG also includes text-mined assertions from PubMed and PubMed Central, derived from natural language processing (NLP). Note that text-based assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** 929354295ba7d43c\n\n**URL:** [http://robokopkg.renci.org/browser/](http://robokopkg.renci.org/browser/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/RobokopKG/929354295ba7d43c](https://stars.renci.org/var/plater/bl-3.5.4/RobokopKG/929354295ba7d43c)\n\n**Nodes:** 9,560,014\n\n**Edges:** 136,156,958\n\n"
     },
     {
       "name": "SRI Reference KG",
-      "description": "\nThe SRI knowledge graph is a reference implementation of the Biolink model specification. It contains data from the Monarch Initiative aggregated database, as well as several OBO ontologies. These data sources provide links between diseases, phenotypes, genomic features across human and non-human organisms. It is built using the knowledge graph exchange (KGX) framework, which transforms a variety of standard formats, such as RDF, OWL, and TRAPI JSON, to nodes and edges CSV files that are uploaded into Neo4j. The TRAPI API (https://github.com/NCATSTranslator/ReasonerAPI) is built using PLATER (https://github.com/NCATSTranslator/Translator-All/wiki/Plater), a tool that creates a TRAPI service given a Biolink compliant instance of Neo4j.\n\n\n\n**URL:** [https://github.com/Knowledge-Graph-Hub/sri-reference-kg](https://github.com/Knowledge-Graph-Hub/sri-reference-kg)\n\n**Neo4J:** [https://data.monarchinitiative.org/monarch-kg-dev/2023-03-17/monarch-kg.neo4j.dump](https://data.monarchinitiative.org/monarch-kg-dev/2023-03-17/monarch-kg.neo4j.dump)\n\n**Nodes:** 832,694\n\n**Edges:** 5,730,115\n\n"
+      "description": "\nThe SRI knowledge graph is a reference implementation of the Biolink model specification. It contains data from the Monarch Initiative aggregated database, as well as several OBO ontologies. These data sources provide links between diseases, phenotypes, genomic features across human and non-human organisms. It is built using the knowledge graph exchange (KGX) framework, which transforms a variety of standard formats, such as RDF, OWL, and TRAPI JSON, to nodes and edges CSV files that are uploaded into Neo4j. The TRAPI API (https://github.com/NCATSTranslator/ReasonerAPI) is built using PLATER (https://github.com/NCATSTranslator/Translator-All/wiki/Plater), a tool that creates a TRAPI service given a Biolink compliant instance of Neo4j.\n\n\n\n**URL:** [https://github.com/Knowledge-Graph-Hub/sri-reference-kg](https://github.com/Knowledge-Graph-Hub/sri-reference-kg)\n\n**Files:** [https://data.monarchinitiative.org/monarch-kg-dev/2023-05-25](https://data.monarchinitiative.org/monarch-kg-dev/2023-05-25)\n\n**Nodes:** 774,488\n\n**Edges:** 5,462,534\n\n"
     },
     {
       "name": "STRING",
-      "description": "\nThe Search Tool for the Retrieval of INteracting Genes/proteins (STRING) database provides information on known and predicted protein-protein interactions (both direct and indirect) derived from genomic context predictions, high-throughput laboratory experiments, conserved co-expression, automated text mining, and aggregated knowledge from primary data sources.\n\n**Version:** 5f825f8481bc10fe\n\n**URL:** [https://string-db.org/](https://string-db.org/)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/STRING-DB_Automat/5f825f8481bc10fe/graph_5f825f8481bc10fe.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/STRING-DB_Automat/5f825f8481bc10fe/graph_5f825f8481bc10fe.db.dump)\n\n**Nodes:** 56,115\n\n**Edges:** 8,749,817\n\n"
+      "description": "\nThe Search Tool for the Retrieval of INteracting Genes/proteins (STRING) database provides information on known and predicted protein-protein interactions (both direct and indirect) derived from genomic context predictions, high-throughput laboratory experiments, conserved co-expression, automated text mining, and aggregated knowledge from primary data sources.\n\n**Version:** 8b43900253975098\n\n**URL:** [https://string-db.org/](https://string-db.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/STRING-DB_Automat/8b43900253975098](https://stars.renci.org/var/plater/bl-3.5.4/STRING-DB_Automat/8b43900253975098)\n\n**Nodes:** 56,816\n\n**Edges:** 11,500,574\n\n"
     },
     {
       "name": "Text Mining Provider KG",
-      "description": "\nThe Text Mining Provider KG contains subject-predicate-object assertions derived from the application of natural language processing (NLP) algorithms to the PubMedCentral Open Access collection of publications plus additional titles and abstracts from PubMed. Caveat: Text-mined assertions must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** e9168f8fd1192afa\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider](https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/TMKP_Automat/e9168f8fd1192afa/graph_e9168f8fd1192afa.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/TMKP_Automat/e9168f8fd1192afa/graph_e9168f8fd1192afa.db.dump)\n\n**Nodes:** 161,041\n\n**Edges:** 2,843,020\n\n"
+      "description": "\nThe Text Mining Provider KG contains subject-predicate-object assertions derived from the application of natural language processing (NLP) algorithms to the PubMedCentral Open Access collection of publications plus additional titles and abstracts from PubMed. Note thattext-mined assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** e4eb87d37071ba87\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider](https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/TMKP_Automat/e4eb87d37071ba87](https://stars.renci.org/var/plater/bl-3.5.4/TMKP_Automat/e4eb87d37071ba87)\n\n**Nodes:** 159,550\n\n**Edges:** 2,730,979\n\n"
     },
     {
       "name": "Ubergraph",
-      "description": "\nUbergraph is an open-source graph database containing integrated ontologies, including Gene Ontology (GO), Chemical Entities of Biological Interest (ChEBI), Human Phenotype Ontology (HPO), and the Uber-anatomy ontology (Uberon).\n\n**Version:** 4b41581778f020c3\n\n**URL:** [https://github.com/INCATools/ubergraph](https://github.com/INCATools/ubergraph)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/UbergraphRedundant_Automat/4b41581778f020c3/graph_4b41581778f020c3.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/UbergraphRedundant_Automat/4b41581778f020c3/graph_4b41581778f020c3.db.dump)\n\n**Nodes:** 3,098,316\n\n**Edges:** 142,239,591\n\n"
+      "description": "\nUbergraph is an open-source graph database containing integrated ontologies, including Gene Ontology (GO), Chemical Entities of Biological Interest (ChHEBI), Human Phenotype Ontology (HPO), and the Uber-anatomy ontology (Uberon)’s anatomical ontology. The redundant version \n\n**Version:** 439d05ca99a0dfcd\n\n**URL:** [https://github.com/INCATools/ubergraph](https://github.com/INCATools/ubergraph)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/UbergraphRedundant_Automat/439d05ca99a0dfcd](https://stars.renci.org/var/plater/bl-3.5.4/UbergraphRedundant_Automat/439d05ca99a0dfcd)\n\n**Nodes:** 3,139,556\n\n**Edges:** 143,018,671\n\n"
     },
     {
-      "name": "Viral Proteome",
-      "description": "\nThe Gene Ontology (GO) Consortium’s Viral Proteome resource provides open access to curated assignment of GO terms to proteins and proteome relationships derived from the UniProt KnowledgeBase for all NCBI taxa classified as viruses.\n\n**Version:** 631a7899574c1c60\n\n**URL:** [https://www.ebi.ac.uk/GOA/proteomes](https://www.ebi.ac.uk/GOA/proteomes)\n\n**Neo4J:** [https://stars.renci.org/var/plater/bl-3.2.1/ViralProteome_Automat/631a7899574c1c60/graph_631a7899574c1c60.db.dump](https://stars.renci.org/var/plater/bl-3.2.1/ViralProteome_Automat/631a7899574c1c60/graph_631a7899574c1c60.db.dump)\n\n**Nodes:** 87,280\n\n**Edges:** 359,227\n\n"
+      "name": "Text Mining Provider KG",
+      "description": "\nThe Text Mining Provider KG contains subject-predicate-object assertions derived from the application of natural language processing (NLP) algorithms to the PubMedCentral Open Access collection of publications plus additional titles and abstracts from PubMed. Note thattext-mined assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** e4eb87d37071ba87\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider](https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/TMKP_Automat/e4eb87d37071ba87](https://stars.renci.org/var/plater/bl-3.5.4/TMKP_Automat/e4eb87d37071ba87)\n\n**Nodes:** 159,550\n\n**Edges:** 2,730,979\n\n"
     }
   ],
   "components": {
@@ -13573,6 +14803,54 @@
         "enum": ["above", "below"],
         "type": "string",
         "description": "'above' or 'below'."
+      },
+      "Analysis": {
+        "title": "analysis",
+        "required": ["resource_id", "edge_bindings"],
+        "type": "object",
+        "properties": {
+          "resource_id": {
+            "title": "resource infores",
+            "type": "string"
+          },
+          "edge_bindings": {
+            "title": "list of edge bindings",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HashableMapping_str__HashableSet_EdgeBinding__"
+              }
+            ]
+          },
+          "score": {
+            "title": "Score",
+            "type": "number",
+            "format": "float"
+          },
+          "support_graphs": {
+            "title": "Support Graphs",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HashableSet_str_"
+              }
+            ],
+            "nullable": true
+          },
+          "scoring_method": {
+            "title": "Scoring Method",
+            "type": "string",
+            "nullable": true
+          },
+          "attributes": {
+            "title": "Attributes",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HashableSet_Attribute_"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "description": "Analysis."
       },
       "AnnotateEdgesParameters": {
         "title": "AnnotateEdgesParameters",
@@ -13691,6 +14969,36 @@
         "additionalProperties": false,
         "description": "QNode or QEdge attribute constraint."
       },
+      "AuxiliaryGraph": {
+        "title": "auxiliary graph",
+        "required": ["edges"],
+        "type": "object",
+        "properties": {
+          "edges": {
+            "title": "edges in auxiliary graph",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HashableSet_str_"
+              }
+            ]
+          },
+          "attributes": {
+            "title": "Attributes",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HashableSet_Attribute_"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "description": "Auxiliary Graph"
+      },
+      "AuxiliaryGraphs": {
+        "$ref": "#/components/schemas/HashableMapping_str__AuxiliaryGraph_",
+        "title": "auxiliary graphs",
+        "description": "Auxiliary Graphs"
+      },
       "CypherDatum": {
         "title": "CypherDatum",
         "required": ["row", "meta"],
@@ -13778,7 +15086,7 @@
       },
       "Edge": {
         "title": "knowledge-graph edge",
-        "required": ["subject", "object"],
+        "required": ["subject", "object", "predicate", "sources"],
         "type": "object",
         "properties": {
           "subject": {
@@ -13790,10 +15098,17 @@
             "type": "string"
           },
           "predicate": {
-            "title": "Predicate",
+            "title": "edge predicate",
             "pattern": "^biolink:[a-z][a-z_]*$",
-            "type": "string",
-            "nullable": true
+            "type": "string"
+          },
+          "sources": {
+            "title": "list of source retrievals",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HashableSet_RetrievalSource_"
+              }
+            ]
           },
           "qualifiers": {
             "title": "Qualifiers",
@@ -14142,6 +15457,15 @@
         "description": "Custom class that implements MutableMapping and is hashable",
         "default": {}
       },
+      "HashableMapping_str__AuxiliaryGraph_": {
+        "title": "HashableMapping[str, AuxiliaryGraph]",
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/AuxiliaryGraph"
+        },
+        "description": "Custom class that implements MutableMapping and is hashable",
+        "default": {}
+      },
       "HashableMapping_str__HashableSet_EdgeBinding__": {
         "title": "HashableMapping[str, HashableSet[EdgeBinding]]",
         "type": "object",
@@ -14252,6 +15576,15 @@
         "description": "Custom class that implements MutableSequence and is hashable",
         "default": []
       },
+      "HashableSequence_MetaQualifier_": {
+        "title": "HashableSequence[MetaQualifier]",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/MetaQualifier"
+        },
+        "description": "Custom class that implements MutableSequence and is hashable",
+        "default": []
+      },
       "HashableSequence_Operation_": {
         "title": "HashableSequence[Operation]",
         "type": "array",
@@ -14306,6 +15639,16 @@
         "description": "Custom class that implements MutableSequence and is hashable",
         "default": []
       },
+      "HashableSet_Analysis_": {
+        "title": "HashableSet[Analysis]",
+        "uniqueItems": true,
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Analysis"
+        },
+        "description": "Custom class that implements MutableSet and is hashable",
+        "default": []
+      },
       "HashableSet_Attribute_": {
         "title": "HashableSet[Attribute]",
         "uniqueItems": true,
@@ -14322,6 +15665,16 @@
         "type": "array",
         "items": {
           "pattern": "^biolink:[A-Z][a-zA-Z]*$",
+          "type": "string"
+        },
+        "description": "Custom class that implements MutableSet and is hashable",
+        "default": []
+      },
+      "HashableSet_CURIE_": {
+        "title": "HashableSet[CURIE]",
+        "uniqueItems": true,
+        "type": "array",
+        "items": {
           "type": "string"
         },
         "description": "Custom class that implements MutableSet and is hashable",
@@ -14363,6 +15716,26 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Result"
+        },
+        "description": "Custom class that implements MutableSet and is hashable",
+        "default": []
+      },
+      "HashableSet_RetrievalSource_": {
+        "title": "HashableSet[RetrievalSource]",
+        "uniqueItems": true,
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/RetrievalSource"
+        },
+        "description": "Custom class that implements MutableSet and is hashable",
+        "default": []
+      },
+      "HashableSet_str_": {
+        "title": "HashableSet[str]",
+        "uniqueItems": true,
+        "type": "array",
+        "items": {
+          "type": "string"
         },
         "description": "Custom class that implements MutableSet and is hashable",
         "default": []
@@ -14434,7 +15807,16 @@
             "title": "list of results",
             "allOf": [
               {
-                "$ref": "#/components/schemas/HashableSet_Result_"
+                "$ref": "#/components/schemas/Results"
+              }
+            ],
+            "nullable": true
+          },
+          "auxiliary_graphs": {
+            "title": "dict of auxiliary graphs",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/AuxiliaryGraphs"
               }
             ],
             "nullable": true
@@ -14491,11 +15873,19 @@
             "pattern": "^biolink:[A-Z][a-zA-Z]*$",
             "type": "string"
           },
+          "qualifiers": {
+            "$ref": "#/components/schemas/HashableSequence_MetaQualifier_"
+          },
           "attributes": {
             "$ref": "#/components/schemas/HashableSequence_MetaAttribute_"
           },
           "knowledge_types": {
             "$ref": "#/components/schemas/HashableSequence_KnowledgeType_"
+          },
+          "association": {
+            "title": "Association",
+            "pattern": "^biolink:[A-Z][a-zA-Z]*$",
+            "type": "string"
           }
         },
         "additionalProperties": false,
@@ -14528,6 +15918,21 @@
           }
         },
         "additionalProperties": false,
+        "description": "Custom base model for all classes\n\nThis provides hash and equality methods."
+      },
+      "MetaQualifier": {
+        "title": "MetaQualifier",
+        "required": ["qualifier_type_id"],
+        "type": "object",
+        "properties": {
+          "qualifier_type_id": {
+            "title": "Qualifier Type Id",
+            "type": "string"
+          },
+          "applicable_values": {
+            "$ref": "#/components/schemas/HashableSequence_str_"
+          }
+        },
         "description": "Custom base model for all classes\n\nThis provides hash and equality methods."
       },
       "Node": {
@@ -15519,9 +16924,19 @@
         "additionalProperties": false,
         "description": "Attribute subattribute."
       },
+      "ResourceRoleEnum": {
+        "title": "ResourceRoleEnum",
+        "enum": [
+          "aggregator_knowledge_source",
+          "primary_knowledge_source",
+          "supporting_data_source"
+        ],
+        "type": "string",
+        "description": "Types of resources"
+      },
       "Result": {
         "title": "result",
-        "required": ["node_bindings", "edge_bindings"],
+        "required": ["node_bindings"],
         "type": "object",
         "properties": {
           "node_bindings": {
@@ -15532,21 +16947,60 @@
               }
             ]
           },
-          "edge_bindings": {
-            "title": "list of edge bindings",
+          "analyses": {
+            "title": "list of anlysis blocks",
             "allOf": [
               {
-                "$ref": "#/components/schemas/HashableMapping_str__HashableSet_EdgeBinding__"
+                "$ref": "#/components/schemas/HashableSet_Analysis_"
               }
-            ]
-          },
-          "score": {
-            "title": "Score",
-            "type": "number",
-            "format": "float"
+            ],
+            "nullable": true
           }
         },
         "description": "Result."
+      },
+      "Results": {
+        "$ref": "#/components/schemas/HashableSet_Result_",
+        "title": "results",
+        "description": "Results."
+      },
+      "RetrievalSource": {
+        "title": "RetrievalSource",
+        "required": ["resource_id", "resource_role"],
+        "type": "object",
+        "properties": {
+          "resource_id": {
+            "title": "infores for source",
+            "type": "string"
+          },
+          "resource_role": {
+            "title": "source type",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResourceRoleEnum"
+              }
+            ]
+          },
+          "upstream_resource_ids": {
+            "title": "Upstream Resource Ids",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HashableSet_CURIE_"
+              }
+            ],
+            "nullable": true
+          },
+          "source_record_urls": {
+            "title": "Source Record Urls",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HashableSet_str_"
+              }
+            ],
+            "nullable": true
+          }
+        },
+        "description": "A component of source retrieval provenance"
       },
       "RunnerAllowList": {
         "title": "RunnerAllowList",

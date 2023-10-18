@@ -6,19 +6,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-robokopkg-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-robokopkg-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-robokopkg-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-robokopkg-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-robokopkg-trapi",
+        id: "automat/reasoner-api-1-4-query-post-robokopkg-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -63,24 +63,86 @@ module.exports = [
   },
   {
     type: "category",
-    label: "RENCI SRI Reference KG",
-    link: { type: "doc", id: "automat/renci-sri-reference-kg" },
+    label: "BINDING",
+    link: { type: "doc", id: "automat/binding" },
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-biolink-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-binding-db-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-biolink-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-binding-db-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-biolink-trapi",
+        id: "automat/reasoner-api-1-4-query-post-binding-db-trapi",
+        label: "Query reasoner via one of several inputs.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-binding-db",
+        label: "Run cypher query",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/overlay-overlay-post-binding-db-translator",
+        label: "Overlay results with available connections between each node.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/metadata-metadata-get-binding-db",
+        label: "Metadata about the knowledge graph.",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-binding-db",
+        label:
+          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/node-node-type-curie-get-binding-db",
+        label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/simple-spec-simple-spec-get-binding-db",
+        label: "Get one-hop connection schema",
+        className: "api-method get",
+      },
+    ],
+  },
+  {
+    type: "category",
+    label: "RENCI SRI Reference KG",
+    link: { type: "doc", id: "automat/renci-sri-reference-kg" },
+    items: [
+      {
+        type: "doc",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-biolink-trapi",
+        label: "Meta knowledge graph representation of this TRAPI web service.",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-biolink-trapi",
+        label: "Test data for usage by the SRI Testing Harness.",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/reasoner-api-1-4-query-post-biolink-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -125,24 +187,24 @@ module.exports = [
   },
   {
     type: "category",
-    label: "CAM KP",
-    link: { type: "doc", id: "automat/cam-kp" },
+    label: "CAM Provider KG",
+    link: { type: "doc", id: "automat/cam-provider-kg" },
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-cam-kp-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-cam-kp-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-cam-kp-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-cam-kp-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-cam-kp-trapi",
+        id: "automat/reasoner-api-1-4-query-post-cam-kp-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -192,19 +254,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-ctd-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-ctd-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-ctd-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-ctd-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-ctd-trapi",
+        id: "automat/reasoner-api-1-4-query-post-ctd-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -254,19 +316,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-drugcentral-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-drugcentral-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-drugcentral-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-drugcentral-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-drugcentral-trapi",
+        id: "automat/reasoner-api-1-4-query-post-drugcentral-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -311,24 +373,24 @@ module.exports = [
   },
   {
     type: "category",
-    label: "Alliance of Genome Resources Orthology",
-    link: { type: "doc", id: "automat/alliance-of-genome-resources-orthology" },
+    label: "Alliance of Genome Resources",
+    link: { type: "doc", id: "automat/alliance-of-genome-resources" },
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-genome-alliance-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-genome-alliance-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-genome-alliance-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-genome-alliance-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-genome-alliance-trapi",
+        id: "automat/reasoner-api-1-4-query-post-genome-alliance-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -378,19 +440,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-gtex-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-gtex-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-gtex-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-gtex-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-gtex-trapi",
+        id: "automat/reasoner-api-1-4-query-post-gtex-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -440,19 +502,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-gtopdb-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-gtopdb-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-gtopdb-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-gtopdb-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-gtopdb-trapi",
+        id: "automat/reasoner-api-1-4-query-post-gtopdb-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -502,19 +564,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-gwas-catalog-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-gwas-catalog-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-gwas-catalog-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-gwas-catalog-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-gwas-catalog-trapi",
+        id: "automat/reasoner-api-1-4-query-post-gwas-catalog-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -564,19 +626,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-hetio-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-hetio-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-hetio-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-hetio-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-hetio-trapi",
+        id: "automat/reasoner-api-1-4-query-post-hetio-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -626,19 +688,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-hgnc-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-hgnc-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-hgnc-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-hgnc-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-hgnc-trapi",
+        id: "automat/reasoner-api-1-4-query-post-hgnc-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -688,19 +750,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-hmdb-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-hmdb-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-hmdb-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-hmdb-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-hmdb-trapi",
+        id: "automat/reasoner-api-1-4-query-post-hmdb-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -750,19 +812,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-human-goa-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-human-goa-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-human-goa-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-human-goa-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-human-goa-trapi",
+        id: "automat/reasoner-api-1-4-query-post-human-goa-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -812,19 +874,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-icees-kg-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-icees-kg-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-icees-kg-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-icees-kg-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-icees-kg-trapi",
+        id: "automat/reasoner-api-1-4-query-post-icees-kg-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -874,19 +936,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-intact-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-intact-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-intact-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-intact-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-intact-trapi",
+        id: "automat/reasoner-api-1-4-query-post-intact-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -936,19 +998,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-panther-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-panther-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-panther-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-panther-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-panther-trapi",
+        id: "automat/reasoner-api-1-4-query-post-panther-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -998,19 +1060,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-pharos-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-pharos-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-pharos-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-pharos-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-pharos-trapi",
+        id: "automat/reasoner-api-1-4-query-post-pharos-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -1055,24 +1117,86 @@ module.exports = [
   },
   {
     type: "category",
-    label: "SRI Reference KG",
-    link: { type: "doc", id: "automat/sri-reference-kg" },
+    label: "Reactome",
+    link: { type: "doc", id: "automat/reactome" },
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-sri-reference-kg-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-reactome-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-sri-reference-kg-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-reactome-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-sri-reference-kg-trapi",
+        id: "automat/reasoner-api-1-4-query-post-reactome-trapi",
+        label: "Query reasoner via one of several inputs.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-reactome",
+        label: "Run cypher query",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/overlay-overlay-post-reactome-translator",
+        label: "Overlay results with available connections between each node.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/metadata-metadata-get-reactome",
+        label: "Metadata about the knowledge graph.",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-reactome",
+        label:
+          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/node-node-type-curie-get-reactome",
+        label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/simple-spec-simple-spec-get-reactome",
+        label: "Get one-hop connection schema",
+        className: "api-method get",
+      },
+    ],
+  },
+  {
+    type: "category",
+    label: "SRI Reference KG",
+    link: { type: "doc", id: "automat/sri-reference-kg" },
+    items: [
+      {
+        type: "doc",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-sri-reference-kg-trapi",
+        label: "Meta knowledge graph representation of this TRAPI web service.",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-sri-reference-kg-trapi",
+        label: "Test data for usage by the SRI Testing Harness.",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/reasoner-api-1-4-query-post-sri-reference-kg-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -1122,19 +1246,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-string-db-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-string-db-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-string-db-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-string-db-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-string-db-trapi",
+        id: "automat/reasoner-api-1-4-query-post-string-db-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -1184,19 +1308,19 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-textminingkp-trapi",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-textminingkp-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-textminingkp-trapi",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-textminingkp-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-textminingkp-trapi",
+        id: "automat/reasoner-api-1-4-query-post-textminingkp-trapi",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -1237,90 +1361,21 @@ module.exports = [
         label: "Get one-hop connection schema",
         className: "api-method get",
       },
-    ],
-  },
-  {
-    type: "category",
-    label: "Ubergraph",
-    link: { type: "doc", id: "automat/ubergraph" },
-    items: [
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-trapi-ubergraph",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-trapi-viral-proteome",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-trapi-ubergraph",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-trapi-viral-proteome",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-trapi-ubergraph",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-ubergraph",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-translator-ubergraph",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/metadata-metadata-get-ubergraph",
-        label: "Metadata about the knowledge graph.",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-ubergraph",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/node-node-type-curie-get-ubergraph",
-        label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/simple-spec-simple-spec-get-ubergraph",
-        label: "Get one-hop connection schema",
-        className: "api-method get",
-      },
-    ],
-  },
-  {
-    type: "category",
-    label: "Viral Proteome",
-    link: { type: "doc", id: "automat/viral-proteome" },
-    items: [
-      {
-        type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-3-meta-knowledge-graph-get-trapi-viral-proteome",
-        label: "Meta knowledge graph representation of this TRAPI web service.",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/get-sri-testing-data-1-3-sri-testing-data-get-trapi-viral-proteome",
-        label: "Test data for usage by the SRI Testing Harness.",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/reasoner-api-1-3-query-post-trapi-viral-proteome",
+        id: "automat/reasoner-api-1-4-query-post-trapi-viral-proteome",
         label: "Query reasoner via one of several inputs.",
         className: "api-method post",
       },
@@ -1358,6 +1413,68 @@ module.exports = [
       {
         type: "doc",
         id: "automat/simple-spec-simple-spec-get-viral-proteome",
+        label: "Get one-hop connection schema",
+        className: "api-method get",
+      },
+    ],
+  },
+  {
+    type: "category",
+    label: "Ubergraph",
+    link: { type: "doc", id: "automat/ubergraph" },
+    items: [
+      {
+        type: "doc",
+        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-trapi-ubergraph",
+        label: "Meta knowledge graph representation of this TRAPI web service.",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-trapi-ubergraph",
+        label: "Test data for usage by the SRI Testing Harness.",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/reasoner-api-1-4-query-post-trapi-ubergraph",
+        label: "Query reasoner via one of several inputs.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-ubergraph",
+        label: "Run cypher query",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/overlay-overlay-post-translator-ubergraph",
+        label: "Overlay results with available connections between each node.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/metadata-metadata-get-ubergraph",
+        label: "Metadata about the knowledge graph.",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-ubergraph",
+        label:
+          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/node-node-type-curie-get-ubergraph",
+        label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/simple-spec-simple-spec-get-ubergraph",
         label: "Get one-hop connection schema",
         className: "api-method get",
       },
