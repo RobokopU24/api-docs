@@ -43,10 +43,11 @@ function CardLayout({ href, icon, title, description, info }) {
 
 const SOURCES = new Map([
   ["RENCI SRI Reference KG", "biolink"],
-  ["CAM KP", "cam-kp"],
+  ["BINDING", "binding-db"],
+  ["CAM Provider KG", "cam-kp"],
   ["CTD", "ctd"],
   ["DrugCentral", "drugcentral"],
-  ["Alliance of Genome Resources Orthology", "genome-alliance"],
+  ["Alliance of Genome Resources", "genome-alliance"],
   ["GTEx", "gtex"],
   ["GtoPdb", "gtopdb"],
   ["GWAS Catalog", "gwas-catalog"],
@@ -58,6 +59,7 @@ const SOURCES = new Map([
   ["IntAct Molecular Interaction Database", "intact"],
   ["PANTHER", "panther"],
   ["Pharos", "pharos"],
+  ["Reactome", "reactome"],
   ["ROBOKOP KG", "robokopkg"],
   ["SRI Reference KG", "sri-reference-kg"],
   ["STRING", "string-db"],
@@ -73,7 +75,7 @@ const getMetaData = async (label) => {
 
   try {
     const response = await fetch(
-      `https://automat-u24.apps.renci.org/${SOURCES.get(label)}/metadata`,
+      `https://robokop-automat.apps.renci.org/${SOURCES.get(label)}/metadata`,
       {
         method: "GET",
         headers: {
@@ -105,6 +107,8 @@ function CardCategory({ item }) {
       setMd(await getMetaData(item.label));
     })();
   }, []);
+
+  console.log(item);
 
   if (!href) {
     return null;

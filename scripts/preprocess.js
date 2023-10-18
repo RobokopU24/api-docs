@@ -5,7 +5,7 @@
 const fs = require("fs");
 const { v4 } = require("uuid");
 
-const BASE_URL = "https://automat-u24.apps.renci.org";
+const BASE_URL = "https://robokop-automat.apps.renci.org";
 const AUTOMAT_OPENAPI_URL = `${BASE_URL}/openapi.yml`;
 const OPENAPI_PATH = "./api/openapi.json";
 
@@ -30,6 +30,7 @@ async function fetchSpec() {
 async function writeSourceMetadata(jsonData) {
   const SOURCES = [
     "biolink",
+    "binding-db",
     "cam-kp",
     "ctd",
     "drugcentral",
@@ -45,6 +46,7 @@ async function writeSourceMetadata(jsonData) {
     "intact",
     "panther",
     "pharos",
+    "reactome",
     "robokopkg",
     "sri-reference-kg",
     "string-db",
@@ -108,11 +110,17 @@ async function writeSourceMetadata(jsonData) {
                 final_edge_count,
               } = tagMd;
 
+              // split the neo4j_dump url on '/' to get the containing directory and link to that instead
+              const fileDirLink = neo4j_dump
+                ?.split("/")
+                ?.slice(0, -1)
+                ?.join("/");
+
               tag.description = `
 ${graph_description ?? ""}\n
 ${graph_version ? `**Version:** ${graph_version}` : ""}\n
 ${graph_url ? `**URL:** [${graph_url}](${graph_url})` : ""}\n
-${neo4j_dump ? `**Neo4J:** [${neo4j_dump}](${neo4j_dump})` : ""}\n
+${fileDirLink ? `**Files:** [${fileDirLink}](${fileDirLink})` : ""}\n
 ${
   final_node_count
     ? `**Nodes:** ${parseInt(final_node_count).toLocaleString()}`
