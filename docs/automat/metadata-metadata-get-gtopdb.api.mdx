@@ -5,30 +5,36 @@ description: "Returns JSON with metadata about the data sources in this knowledg
 sidebar_label: "Metadata about the knowledge graph."
 hide_title: true
 hide_table_of_contents: true
-api: {"description":"Returns JSON with metadata about the data sources in this knowledge graph.","operationId":"metadata_metadata_get_gtopdb","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"title":"Response Metadata Metadata Get"}}}}},"tags":["GtoPdb"],"method":"get","path":"/gtopdb/metadata","servers":[{"url":"https://robokop-automat.apps.renci.org"}],"info":{"title":"Automat","version":"2.1","termsOfService":"http://loading"},"postman":{"name":"Metadata about the knowledge graph.","description":{"content":"Returns JSON with metadata about the data sources in this knowledge graph.","type":"text/plain"},"url":{"path":["gtopdb","metadata"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+api: eJytUk1v2zAM/SuCzqnd9ZhbD0OwAf1As56CoqBtxtIiS5pEtQsM//eRzsdatMf6Ykoi33t85Kg7zG2ykWzweqkfkEryWf1c392qV0tGDUjQAYGCJhRSZFDNxxxKajEr6/nOZrXz4dVh16PqE0RT6YUOERMI8I+OoU9Az+egR3ruKcSu4eSEOQafMevlqK8uL+X3Xtu6tEyYt8Wph2My17XBE3qSdIjR2XZmrH9nqRl1bg0OIBFZcji3eKhVN6fOzsEKSU/yLTRBz0o2ekXhnvU9LUS/CdIIy2beCGT4UB8aqE9N8UvG9IJJqkddkuMkQxTzsq5TaMIuxAsoFAagigXnKqFvbRVSrydmsX4b3qq9PqQyrGAejLiqvvGZMA35brtmNtvikYVJXIDOekZjjSHTALMPHgbJufk4zU8G98738b/FX7setI8iifAv1dGB9SJ5Nmw8urvR5/U4+8seGW5LHsexgYyPyU2TXP8pmPZ8z+ELJAuNGLh5YlCD0GGaB7LDvbjKmxRnU8EVEfFhdaa3E199/8V78Q90ExsT
 sidebar_class_name: "get api-method"
 info_path: docs/automat/automat
 custom_edit_url: null
 ---
 
 import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
 import MimeTabs from "@theme/MimeTabs";
 import ParamsItem from "@theme/ParamsItem";
 import ResponseSamples from "@theme/ResponseSamples";
 import SchemaItem from "@theme/SchemaItem";
 import SchemaTabs from "@theme/SchemaTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
 import TabItem from "@theme/TabItem";
 
-## Metadata about the knowledge graph.
+<h1 className={"openapi__heading"}>Metadata about the knowledge graph.</h1>
+
+<MethodEndpoint method={"get"} path={"/gtopdb/metadata"}></MethodEndpoint>
 
 
 
 Returns JSON with metadata about the data sources in this knowledge graph.
 
-<div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+## Request
+
+<div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
 
 Successful Response
 
-</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}>any</ul></details></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}>any</ul></details></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
       

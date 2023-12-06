@@ -5,30 +5,36 @@ description: "Returns JSON with metadata about the data sources in this knowledg
 sidebar_label: "Metadata about the knowledge graph."
 hide_title: true
 hide_table_of_contents: true
-api: {"description":"Returns JSON with metadata about the data sources in this knowledge graph.","operationId":"metadata_metadata_get_hetio","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{"title":"Response Metadata Metadata Get"}}}}},"tags":["Hetionet"],"method":"get","path":"/hetio/metadata","servers":[{"url":"https://robokop-automat.apps.renci.org"}],"info":{"title":"Automat","version":"2.1","termsOfService":"http://loading"},"postman":{"name":"Metadata about the knowledge graph.","description":{"content":"Returns JSON with metadata about the data sources in this knowledge graph.","type":"text/plain"},"url":{"path":["hetio","metadata"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+api: eJytUk1P5DAM/StRzkMLHOfGYcWCBEgMnEYIeVpPEyZNQuIAo6r/fe3OByD2SC+1Hfv5+dmDbjE3yUayweu5vkcqyWd1vbi7Ve+WjOqRoAUCBatQSJFBNbk5lNRgVtZzzGa18eHdYduh6hJEU+mZDhETCPBVy9AHoOej0SE9G+QEzk2YY/AZs54P+vz0VH7fqS1Kw/3yujh1v0/muiZ4Qk+SDjE620wN65csNYPOjcEexCJLDqcJd7Xq5jDY0bhE0qN8M03QMZOl/iv0PMefZjKACTIJ8+bOEciwU08T1Ieh+CFjesMk5YMuyXGOIYp5XtcprMImxBMoFHqgihnnKqFvbBVSp0duYv06fKV7sUtlWMHcKXFenbFPmPp8t15wN9vgvgs3cQFa6xmNKYZMPUxCeOgl5+bnNv+zuG/CD58a/+550DYKJcIPqqMD64XyJNiwF3epD+dxlJclMjyVvA3DCjI+JjeOEn4tmLYcZ/MNkoWV6Ld8YkyD0GKa9rHBrYjKlxQnTcEV4fDjdMav+77888B38Q+vchre
 sidebar_class_name: "get api-method"
 info_path: docs/automat/automat
 custom_edit_url: null
 ---
 
 import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
 import MimeTabs from "@theme/MimeTabs";
 import ParamsItem from "@theme/ParamsItem";
 import ResponseSamples from "@theme/ResponseSamples";
 import SchemaItem from "@theme/SchemaItem";
 import SchemaTabs from "@theme/SchemaTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
 import TabItem from "@theme/TabItem";
 
-## Metadata about the knowledge graph.
+<h1 className={"openapi__heading"}>Metadata about the knowledge graph.</h1>
+
+<MethodEndpoint method={"get"} path={"/hetio/metadata"}></MethodEndpoint>
 
 
 
 Returns JSON with metadata about the data sources in this knowledge graph.
 
-<div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+## Request
+
+<div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
 
 Successful Response
 
-</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}>any</ul></details></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}>any</ul></details></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
       

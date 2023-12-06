@@ -5,30 +5,40 @@ description: "Returns list of available PLATER instances.An entry from this list
 sidebar_label: "List of platers available"
 hide_title: true
 hide_table_of_contents: true
-api: {"description":"Returns list of available PLATER instances.An entry from this list can be a prefix to route requests to specific PLATER backend","operationId":"get_list_of_platers","parameters":[],"tags":["automat"],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","example":["plater-1","plater-2"]}}}}},"method":"get","path":"/registry","servers":[{"url":"https://robokop-automat.apps.renci.org"}],"info":{"title":"Automat","version":"2.1","termsOfService":"http://loading"},"postman":{"name":"List of platers available","description":{"content":"Returns list of available PLATER instances.An entry from this list can be a prefix to route requests to specific PLATER backend","type":"text/plain"},"url":{"path":["registry"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+api: eJzNUs1u2zAMfhVB59Tpcswth2IYVqBD252KIqBlOlYjSypFBwkMv/tIx2tR7AXmiyVK+v7I0TZYHPnMPkW7tY/IA8Vigi9sUmvgBD5AHdD8ut893z0aHwtDdFiqXTQYmS6mpdQb7vzyykE0NRowmbD1Z8PJUBoYDeH7gIWLVkpG51vv/sLW4I4YG7uyKSOBqvnRiJ4D8l5R96nd5wCMVOROBoIe58325XVlGQ66sjBw6oGtlAhLTrGg1Ee7ub3V31erDz8FyaXI4kJPIefg3Uy9fit6ZbTFddiDrviSUR6l+g0dy0M8Q58DKutV1803FXZdbuzrpN/KisouLUZm4dzJZk14EFN0kVJBOl2NjHagIKcdcy7b9ZpSnY4p3yyuKhFYKsLofJXoYCdx6WObZnWeVYvdLQGsrGJefW4qVSay+vLQPgmbd7iwCElI0PgoaCIuFe5h9h0lXrlzv0zBkvznNAjglzDHzyD/gxFaesV45rVI91HdzdmOSwde7EcHJMVOjGttHGso+JvCNGlZqOR8HrATkJ99y06wOoQGaW7ZES+au3OY59ghDMr9zzBptz6G4fvds52mP2qsNR8=
 sidebar_class_name: "get api-method"
 info_path: docs/automat/automat
 custom_edit_url: null
 ---
 
 import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
 import MimeTabs from "@theme/MimeTabs";
 import ParamsItem from "@theme/ParamsItem";
 import ResponseSamples from "@theme/ResponseSamples";
 import SchemaItem from "@theme/SchemaItem";
 import SchemaTabs from "@theme/SchemaTabs";
-import DiscriminatorTabs from "@theme/DiscriminatorTabs";
 import TabItem from "@theme/TabItem";
 
-## List of platers available
+<h1 className={"openapi__heading"}>List of platers available</h1>
+
+<MethodEndpoint method={"get"} path={"/registry"}></MethodEndpoint>
 
 
 
 Returns list of available PLATER instances.An entry from this list can be a prefix to route requests to specific PLATER backend
 
-<div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+## Request
+
+<div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
 
 OK
 
-</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><li><div><strong>object</strong></div></li></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"[\n  \"plater-1\",\n  \"plater-2\"\n]"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><div style={{"marginTop":".5rem","marginBottom":".5rem","marginLeft":"1rem"}}>
+
+object
+
+</div></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"[\n  \"plater-1\",\n  \"plater-2\"\n]"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
       
