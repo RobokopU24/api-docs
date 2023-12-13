@@ -18,6 +18,34 @@ if (robokopKGIndex !== -1) {
   sidebar.unshift(robokopKg);
 }
 
+// Rearrange sidebar endpoints
+const labelOrder = [
+  "Query reasoner via one of several inputs.",
+  "Run cypher query",
+  "Overlay results with available connections between each node.",
+  "Find `node` by `curie`",
+  "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
+  "Get one-hop connection schema",
+  "Metadata about the knowledge graph.",
+  "Meta knowledge graph representation of this TRAPI web service.",
+  "Test data for usage by the SRI Testing Harness.",
+];
+
+sidebar.forEach((category) => {
+  if (category.items && category.items.length) {
+    const orderedItems = [];
+
+    labelOrder.forEach((label) => {
+      const foundItem = category.items.find((item) => item.label === label);
+      if (foundItem) {
+        orderedItems.push(foundItem);
+      }
+    });
+
+    category.items = orderedItems;
+  }
+});
+
 const stringified = `module.exports=${JSON.stringify(sidebar)};`;
 
 fs.writeFile(SIDEBAR_PATH, stringified, (err) => {
