@@ -24,10 +24,16 @@ Ubergraph is an open-source graph database containing integrated ontologies, inc
 
 
 
+## Query Endpoints
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<DocCardList items={useCurrentSidebarCategory().items.slice(0, 6)}/>
+```
+
+## Metadata Endpoints    
+```mdx-code-block
+<DocCardList items={useCurrentSidebarCategory().items.slice(6)}/>
 ```
       

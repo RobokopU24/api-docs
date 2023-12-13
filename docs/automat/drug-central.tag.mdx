@@ -24,10 +24,16 @@ DrugCentral provides open-source data on active ingredients, chemical entities, 
 
 
 
+## Query Endpoints
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<DocCardList items={useCurrentSidebarCategory().items.slice(0, 6)}/>
+```
+
+## Metadata Endpoints    
+```mdx-code-block
+<DocCardList items={useCurrentSidebarCategory().items.slice(6)}/>
 ```
       
