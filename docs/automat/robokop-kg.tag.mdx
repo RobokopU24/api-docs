@@ -5,9 +5,6 @@ description: "ROBOKOP KG"
 custom_edit_url: null
 ---
 
-
-
-
 ROBOKOP (KG) is an open-source biomedical KG that supports the ROBOKOP application and currently contains millions of biomedical relationships derived from dozens of integrated and harmonized biological knowledge sources and bio-ontologies, including the Automat primary and aggregate knowledge sources. ROBOKOP KG also includes text-mined assertions from PubMed and PubMed Central, derived from natural language processing (NLP). Note that text-based assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.
 
 **Version:** 929354295ba7d43c
@@ -20,14 +17,17 @@ ROBOKOP (KG) is an open-source biomedical KG that supports the ROBOKOP applicati
 
 **Edges:** 136,156,958
 
-
-
-
+## Query Endpoints
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<DocCardList items={useCurrentSidebarCategory().items.slice(0, 6)}/>
 ```
-      
+
+## Metadata Endpoints
+
+```mdx-code-block
+<DocCardList items={useCurrentSidebarCategory().items.slice(6)}/>
+```
