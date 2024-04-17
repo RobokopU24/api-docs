@@ -29,7 +29,6 @@ async function fetchSpec() {
 
 async function writeSourceMetadata(jsonData) {
   const SOURCES = [
-    "biolink",
     "binding-db",
     "cam-kp",
     "ctd",
@@ -44,11 +43,11 @@ async function writeSourceMetadata(jsonData) {
     "human-goa",
     "icees-kg",
     "intact",
+    "monarch-kg",
     "panther",
     "pharos",
     "reactome",
     "robokopkg",
-    "sri-reference-kg",
     "string-db",
     "textminingkp",
     "ubergraph",

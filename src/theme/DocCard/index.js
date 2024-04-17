@@ -42,9 +42,9 @@ function CardLayout({ href, icon, title, description, info }) {
 }
 
 const SOURCES = new Map([
-  ["RENCI SRI Reference KG", "biolink"],
+  ["ROBOKOP KG", "robokopkg"],
   ["BINDING", "binding-db"],
-  ["CAM Provider KG", "cam-kp"],
+  ["CAM KG", "cam-kp"],
   ["CTD", "ctd"],
   ["DrugCentral", "drugcentral"],
   ["Alliance of Genome Resources", "genome-alliance"],
@@ -60,7 +60,7 @@ const SOURCES = new Map([
   ["PANTHER", "panther"],
   ["Pharos", "pharos"],
   ["Reactome", "reactome"],
-  ["ROBOKOP KG", "robokopkg"],
+  ["Monarch KG", "monarch-kg"],
   ["SRI Reference KG", "sri-reference-kg"],
   ["STRING", "string-db"],
   ["Text Mining Provider KG", "textminingkp"],

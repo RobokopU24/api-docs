@@ -68,40 +68,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:SmallMolecule"],
+                        "ids": ["PUBCHEM.COMPOUND:32281"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:Protein"],
+                        "ids": ["PR:000000001"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:subclass_of"]
                       }
                     }
                   }
@@ -123,6 +102,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -622,620 +612,9 @@
         "tags": ["BINDING"]
       }
     },
-    "/biolink/1.4/meta_knowledge_graph": {
-      "get": {
-        "tags": ["trapi", "RENCI SRI Reference KG"],
-        "summary": "Meta knowledge graph representation of this TRAPI web service.",
-        "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_biolink_trapi",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MetaKnowledgeGraph"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/biolink/1.4/sri_testing_data": {
-      "get": {
-        "tags": ["trapi", "RENCI SRI Reference KG"],
-        "summary": "Test data for usage by the SRI Testing Harness.",
-        "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_biolink_trapi",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SRITestData"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/biolink/1.4/query": {
-      "post": {
-        "tags": ["trapi", "RENCI SRI Reference KG"],
-        "summary": "Query reasoner via one of several inputs.",
-        "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_4_query_post_biolink_trapi",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReasonerRequest"
-              },
-              "example": {
-                "message": {
-                  "query_graph": {
-                    "nodes": {
-                      "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
-                      },
-                      "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
-                      }
-                    },
-                    "edges": {
-                      "e01": {
-                        "subject": "n0",
-                        "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    }
-                  }
-                },
-                "workflow": [
-                  {
-                    "id": "lookup"
-                  }
-                ]
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReasonerRequest"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/biolink/cypher": {
-      "post": {
-        "summary": "Run cypher query",
-        "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post_biolink",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CypherRequest"
-              },
-              "example": {
-                "query": "MATCH (n) RETURN count(n)"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["RENCI SRI Reference KG"]
-      }
-    },
-    "/biolink/overlay": {
-      "post": {
-        "tags": ["translator", "RENCI SRI Reference KG"],
-        "summary": "Overlay results with available connections between each node.",
-        "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post_biolink_translator",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReasonerRequest"
-              },
-              "example": {
-                "message": {
-                  "query_graph": {
-                    "nodes": {
-                      "n1": {
-                        "id": "NCBIGene:6352",
-                        "category": "biolink:Gene",
-                        "is_set": false
-                      },
-                      "n2": {
-                        "category": "biolink:GeneFamily",
-                        "is_set": false
-                      },
-                      "n3": {
-                        "category": "biolink:GeneFamily",
-                        "is_set": false
-                      }
-                    },
-                    "edges": {
-                      "e12": {
-                        "subject": "n1",
-                        "object": "n2",
-                        "predicate": "biolink:part_of"
-                      },
-                      "e23": {
-                        "subject": "n3",
-                        "object": "n2",
-                        "predicate": "biolink:part_of"
-                      }
-                    }
-                  },
-                  "knowledge_graph": {
-                    "nodes": {
-                      "NCBIGene:6352": {
-                        "category": [
-                          "biolink:NamedThing",
-                          "biolink:BiologicalEntity",
-                          "biolink:MolecularEntity",
-                          "biolink:GenomicEntity",
-                          "biolink:GeneOrGeneProduct",
-                          "biolink:MacromolecularMachine",
-                          "biolink:Gene"
-                        ],
-                        "name": "CCL5",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "locus_group": "protein-coding gene",
-                              "synonyms": [],
-                              "chromosome": "17",
-                              "location": "17q12",
-                              "gene_family": ["Chemokine ligands"],
-                              "taxon": 9606,
-                              "category": [
-                                "biolink:BiologicalEntity",
-                                "biolink:GenomicEntity",
-                                "biolink:GeneOrGeneProduct",
-                                "biolink:MacromolecularMachine",
-                                "biolink:NamedThing",
-                                "biolink:MolecularEntity",
-                                "biolink:Gene"
-                              ],
-                              "gene_family_id": [483],
-                              "equivalent_identifiers": [
-                                "ENSEMBL:ENSG00000271503",
-                                "NCBIGene:6352",
-                                "NCBIGene:6352",
-                                "HGNC:10632",
-                                "UniProtKB:P13501"
-                              ]
-                            }
-                          }
-                        ]
-                      },
-                      "PANTHER.FAMILY:PTHR12015:SF170": {
-                        "category": [
-                          "biolink:NamedThing",
-                          "biolink:BiologicalEntity",
-                          "biolink:GeneFamily",
-                          "biolink:MolecularEntity",
-                          "biolink:Entity"
-                        ],
-                        "name": "C-C MOTIF CHEMOKINE 5",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "synonyms": [],
-                              "category": [
-                                "biolink:BiologicalEntity",
-                                "biolink:GeneFamily",
-                                "biolink:NamedThing",
-                                "biolink:MolecularEntity",
-                                "biolink:Entity"
-                              ],
-                              "equivalent_identifiers": [
-                                "PANTHER.FAMILY:PTHR12015:SF170"
-                              ]
-                            }
-                          }
-                        ]
-                      },
-                      "PANTHER.FAMILY:PTHR12015": {
-                        "category": [
-                          "biolink:NamedThing",
-                          "biolink:BiologicalEntity",
-                          "biolink:GeneFamily",
-                          "biolink:MolecularEntity",
-                          "biolink:Entity"
-                        ],
-                        "name": "SMALL INDUCIBLE CYTOKINE A",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "synonyms": [],
-                              "category": [
-                                "biolink:BiologicalEntity",
-                                "biolink:GeneFamily",
-                                "biolink:NamedThing",
-                                "biolink:MolecularEntity",
-                                "biolink:Entity"
-                              ],
-                              "equivalent_identifiers": [
-                                "PANTHER.FAMILY:PTHR12015"
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    "edges": {
-                      "dd8ef7a4606c4f8e405e6a5b1b095993": {
-                        "subject": "NCBIGene:6352",
-                        "object": "PANTHER.FAMILY:PTHR12015",
-                        "predicate": "biolink:part_of",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "predicate": "biolink:part_of",
-                              "relation_label": "part of",
-                              "provided_by": "panther.get_gene_by_gene_family",
-                              "ctime": 1584932086.0009434,
-                              "target_id": "PANTHER.FAMILY:PTHR12015",
-                              "source_id": "NCBIGene:6352",
-                              "source_database": "panther",
-                              "relation": "BFO:0000050",
-                              "publications": []
-                            }
-                          }
-                        ]
-                      },
-                      "9f7f9d86cb57e7190aafa57f7564eb05": {
-                        "subject": "PANTHER.FAMILY:PTHR12015:SF170",
-                        "object": "PANTHER.FAMILY:PTHR12015",
-                        "predicate": "biolink:part_of",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "predicate": "biolink:part_of",
-                              "relation_label": "part of",
-                              "provided_by": "panther.get_gene_family_by_gene_family",
-                              "ctime": 1610437123.7988985,
-                              "target_id": "PANTHER.FAMILY:PTHR12015",
-                              "source_id": "PANTHER.FAMILY:PTHR12015:SF170",
-                              "source_database": "panther",
-                              "relation": "BFO:0000050",
-                              "publications": []
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  },
-                  "results": [
-                    {
-                      "node_bindings": {
-                        "n1": [
-                          {
-                            "id": "NCBIGene:6352"
-                          }
-                        ],
-                        "n2": [
-                          {
-                            "id": "PANTHER.FAMILY:PTHR12015"
-                          }
-                        ],
-                        "n3": [
-                          {
-                            "id": "PANTHER.FAMILY:PTHR12015:SF170"
-                          }
-                        ]
-                      },
-                      "edge_bindings": {
-                        "e12": [
-                          {
-                            "id": "dd8ef7a4606c4f8e405e6a5b1b095993"
-                          }
-                        ],
-                        "e23": [
-                          {
-                            "id": "9f7f9d86cb57e7190aafa57f7564eb05"
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Message"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/biolink/metadata": {
-      "get": {
-        "summary": "Metadata about the knowledge graph.",
-        "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get_biolink",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "Response Metadata Metadata Get"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["RENCI SRI Reference KG"]
-      }
-    },
-    "/biolink/{source_type}/{target_type}/{curie}": {
-      "get": {
-        "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
-        "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get_biolink",
-        "parameters": [
-          {
-            "required": true,
-            "schema": {
-              "title": "Source Type",
-              "type": "string"
-            },
-            "name": "source_type",
-            "in": "path"
-          },
-          {
-            "required": true,
-            "schema": {
-              "title": "Target Type",
-              "type": "string"
-            },
-            "name": "target_type",
-            "in": "path"
-          },
-          {
-            "required": true,
-            "schema": {
-              "title": "Curie",
-              "type": "string"
-            },
-            "name": "curie",
-            "in": "path"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "Response One Hop  Source Type   Target Type   Curie  Get",
-                  "type": "array",
-                  "items": {}
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["RENCI SRI Reference KG"]
-      }
-    },
-    "/biolink/{node_type}/{curie}": {
-      "get": {
-        "summary": "Find `node` by `curie`",
-        "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get_biolink",
-        "parameters": [
-          {
-            "required": true,
-            "schema": {
-              "title": "Node Type",
-              "type": "string"
-            },
-            "name": "node_type",
-            "in": "path"
-          },
-          {
-            "required": true,
-            "schema": {
-              "title": "Curie",
-              "type": "string"
-            },
-            "name": "curie",
-            "in": "path"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "Response Node  Node Type   Curie  Get",
-                  "type": "array",
-                  "items": {}
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["RENCI SRI Reference KG"]
-      }
-    },
-    "/biolink/simple_spec": {
-      "get": {
-        "summary": "Get one-hop connection schema",
-        "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get_biolink",
-        "parameters": [
-          {
-            "required": false,
-            "schema": {
-              "title": "Source",
-              "type": "string"
-            },
-            "name": "source",
-            "in": "query"
-          },
-          {
-            "required": false,
-            "schema": {
-              "title": "Target",
-              "type": "string"
-            },
-            "name": "target",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "Response Simple Spec Simple Spec Get",
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SimpleSpecElement"
-                  }
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["RENCI SRI Reference KG"]
-      }
-    },
     "/cam-kp/1.4/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "CAM Provider KG"],
+        "tags": ["trapi", "CAM KG"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_cam-kp_trapi",
@@ -1255,7 +634,7 @@
     },
     "/cam-kp/1.4/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "CAM Provider KG"],
+        "tags": ["trapi", "CAM KG"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_cam-kp_trapi",
@@ -1275,7 +654,7 @@
     },
     "/cam-kp/1.4/query": {
       "post": {
-        "tags": ["trapi", "CAM Provider KG"],
+        "tags": ["trapi", "CAM KG"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_4_query_post_cam-kp_trapi",
@@ -1290,40 +669,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:BiologicalProcess"],
+                        "ids": ["GO:0000209"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:BiologicalProcess"],
+                        "ids": ["GO:0006511"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:causes"]
                       }
                     }
                   }
@@ -1345,6 +703,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -1402,12 +771,12 @@
             }
           }
         },
-        "tags": ["CAM Provider KG"]
+        "tags": ["CAM KG"]
       }
     },
     "/cam-kp/overlay": {
       "post": {
-        "tags": ["translator", "CAM Provider KG"],
+        "tags": ["translator", "CAM KG"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post_cam-kp_translator",
@@ -1674,7 +1043,7 @@
             }
           }
         },
-        "tags": ["CAM Provider KG"]
+        "tags": ["CAM KG"]
       }
     },
     "/cam-kp/{source_type}/{target_type}/{curie}": {
@@ -1735,7 +1104,7 @@
             }
           }
         },
-        "tags": ["CAM Provider KG"]
+        "tags": ["CAM KG"]
       }
     },
     "/cam-kp/{node_type}/{curie}": {
@@ -1787,7 +1156,7 @@
             }
           }
         },
-        "tags": ["CAM Provider KG"]
+        "tags": ["CAM KG"]
       }
     },
     "/cam-kp/simple_spec": {
@@ -1841,7 +1210,7 @@
             }
           }
         },
-        "tags": ["CAM Provider KG"]
+        "tags": ["CAM KG"]
       }
     },
     "/ctd/1.4/meta_knowledge_graph": {
@@ -1901,40 +1270,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:SmallMolecule"],
+                        "ids": ["PUBCHEM.COMPOUND:137994"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:Gene"],
+                        "ids": ["NCBIGene:2177"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:decreases_response_to"]
                       }
                     }
                   }
@@ -1956,6 +1304,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -2512,40 +1871,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:SmallMolecule"],
+                        "ids": ["PUBCHEM.COMPOUND:66553195"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:Disease"],
+                        "ids": ["MONDO:0004979"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:contraindicated_for"]
                       }
                     }
                   }
@@ -2567,6 +1905,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -3123,40 +2472,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:Gene"],
+                        "ids": ["NCBIGene:98303"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:Gene"],
+                        "ids": ["NCBIGene:98303"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:subclass_of"]
                       }
                     }
                   }
@@ -3178,6 +2506,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -3734,40 +3073,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:SequenceVariant"],
+                        "ids": ["CAID:CA34248818"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:Gene"],
+                        "ids": ["ENSEMBL:ENSG00000228918"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:is_non_coding_variant_of"]
                       }
                     }
                   }
@@ -3789,6 +3107,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -4345,40 +3674,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:SmallMolecule"],
+                        "ids": ["GTOPDB:9311"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:Gene"],
+                        "ids": ["NCBIGene:3604"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:binds"]
                       }
                     }
                   }
@@ -4400,6 +3708,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -4956,40 +4275,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:SequenceVariant"],
+                        "ids": ["CAID:CA15566411"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:Gene"],
+                        "ids": ["NCBIGene:57623"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:is_non_coding_variant_of"]
                       }
                     }
                   }
@@ -5011,6 +4309,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -5567,40 +4876,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:AnatomicalEntity"],
+                        "ids": ["UBERON:0000178"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:Gene"],
+                        "ids": ["NCBIGene:9489"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:regulates"]
                       }
                     }
                   }
@@ -5622,6 +4910,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -6178,40 +5477,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:GeneFamily"],
+                        "ids": ["HGNC.FAMILY:594"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:Gene"],
+                        "ids": ["NCBIGene:1"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:has_part"]
                       }
                     }
                   }
@@ -6233,6 +5511,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -6789,40 +6078,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:Pathway"],
+                        "ids": ["SMPDB:SMP0000044"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:SmallMolecule"],
+                        "ids": ["CHEMBL.COMPOUND:CHEMBL1233327"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:has_participant"]
                       }
                     }
                   }
@@ -6844,6 +6112,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -7400,40 +6679,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:Protein"],
+                        "ids": ["UniProtKB:A0A024RBG1"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:MolecularActivity"],
+                        "ids": ["GO:0003723"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:catalyzes"]
                       }
                     }
                   }
@@ -7455,6 +6713,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -8011,40 +7280,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:PhenotypicFeature"],
+                        "ids": ["UMLS:C0581124"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:PhenotypicFeature"],
+                        "ids": ["UMLS:C4716381"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:positively_correlated_with"]
                       }
                     }
                   }
@@ -8066,6 +7314,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -8622,40 +7881,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:Protein"],
+                        "ids": ["UniProtKB:Q60954"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:Protein"],
+                        "ids": ["PR:000010316"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:subclass_of"]
                       }
                     }
                   }
@@ -8677,6 +7915,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -9176,6 +8425,607 @@
         "tags": ["IntAct Molecular Interaction Database"]
       }
     },
+    "/monarch-kg/1.4/meta_knowledge_graph": {
+      "get": {
+        "tags": ["trapi", "Monarch KG"],
+        "summary": "Meta knowledge graph representation of this TRAPI web service.",
+        "description": "Returns meta knowledge graph representation of this TRAPI web service.",
+        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_monarch-kg_trapi",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetaKnowledgeGraph"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/monarch-kg/1.4/sri_testing_data": {
+      "get": {
+        "tags": ["trapi", "Monarch KG"],
+        "summary": "Test data for usage by the SRI Testing Harness.",
+        "description": "Returns a list of edges that are representative examples of the knowledge graph.",
+        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_monarch-kg_trapi",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SRITestData"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/monarch-kg/1.4/query": {
+      "post": {
+        "tags": ["trapi", "Monarch KG"],
+        "summary": "Query reasoner via one of several inputs.",
+        "description": "Handle TRAPI request.",
+        "operationId": "reasoner_api_1_4_query_post_monarch-kg_trapi",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReasonerRequest"
+              },
+              "example": {
+                "message": {
+                  "query_graph": {
+                    "nodes": {
+                      "n0": {
+                        "categories": ["biolink:Gene"],
+                        "ids": ["HGNC:16391"]
+                      },
+                      "n1": {
+                        "categories": ["biolink:Disease"],
+                        "ids": ["MONDO:0008905"]
+                      }
+                    },
+                    "edges": {
+                      "e01": {
+                        "subject": "n0",
+                        "object": "n1",
+                        "predicates": ["biolink:causes"]
+                      }
+                    }
+                  }
+                },
+                "workflow": [
+                  {
+                    "id": "lookup"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/monarch-kg/cypher": {
+      "post": {
+        "summary": "Run cypher query",
+        "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
+        "operationId": "cypher_cypher_post_monarch-kg",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CypherRequest"
+              },
+              "example": {
+                "query": "MATCH (n) RETURN count(n)"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Monarch KG"]
+      }
+    },
+    "/monarch-kg/overlay": {
+      "post": {
+        "tags": ["translator", "Monarch KG"],
+        "summary": "Overlay results with available connections between each node.",
+        "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
+        "operationId": "overlay_overlay_post_monarch-kg_translator",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReasonerRequest"
+              },
+              "example": {
+                "message": {
+                  "query_graph": {
+                    "nodes": {
+                      "n1": {
+                        "id": "NCBIGene:6352",
+                        "category": "biolink:Gene",
+                        "is_set": false
+                      },
+                      "n2": {
+                        "category": "biolink:GeneFamily",
+                        "is_set": false
+                      },
+                      "n3": {
+                        "category": "biolink:GeneFamily",
+                        "is_set": false
+                      }
+                    },
+                    "edges": {
+                      "e12": {
+                        "subject": "n1",
+                        "object": "n2",
+                        "predicate": "biolink:part_of"
+                      },
+                      "e23": {
+                        "subject": "n3",
+                        "object": "n2",
+                        "predicate": "biolink:part_of"
+                      }
+                    }
+                  },
+                  "knowledge_graph": {
+                    "nodes": {
+                      "NCBIGene:6352": {
+                        "category": [
+                          "biolink:NamedThing",
+                          "biolink:BiologicalEntity",
+                          "biolink:MolecularEntity",
+                          "biolink:GenomicEntity",
+                          "biolink:GeneOrGeneProduct",
+                          "biolink:MacromolecularMachine",
+                          "biolink:Gene"
+                        ],
+                        "name": "CCL5",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "locus_group": "protein-coding gene",
+                              "synonyms": [],
+                              "chromosome": "17",
+                              "location": "17q12",
+                              "gene_family": ["Chemokine ligands"],
+                              "taxon": 9606,
+                              "category": [
+                                "biolink:BiologicalEntity",
+                                "biolink:GenomicEntity",
+                                "biolink:GeneOrGeneProduct",
+                                "biolink:MacromolecularMachine",
+                                "biolink:NamedThing",
+                                "biolink:MolecularEntity",
+                                "biolink:Gene"
+                              ],
+                              "gene_family_id": [483],
+                              "equivalent_identifiers": [
+                                "ENSEMBL:ENSG00000271503",
+                                "NCBIGene:6352",
+                                "NCBIGene:6352",
+                                "HGNC:10632",
+                                "UniProtKB:P13501"
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "PANTHER.FAMILY:PTHR12015:SF170": {
+                        "category": [
+                          "biolink:NamedThing",
+                          "biolink:BiologicalEntity",
+                          "biolink:GeneFamily",
+                          "biolink:MolecularEntity",
+                          "biolink:Entity"
+                        ],
+                        "name": "C-C MOTIF CHEMOKINE 5",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "synonyms": [],
+                              "category": [
+                                "biolink:BiologicalEntity",
+                                "biolink:GeneFamily",
+                                "biolink:NamedThing",
+                                "biolink:MolecularEntity",
+                                "biolink:Entity"
+                              ],
+                              "equivalent_identifiers": [
+                                "PANTHER.FAMILY:PTHR12015:SF170"
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      "PANTHER.FAMILY:PTHR12015": {
+                        "category": [
+                          "biolink:NamedThing",
+                          "biolink:BiologicalEntity",
+                          "biolink:GeneFamily",
+                          "biolink:MolecularEntity",
+                          "biolink:Entity"
+                        ],
+                        "name": "SMALL INDUCIBLE CYTOKINE A",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "synonyms": [],
+                              "category": [
+                                "biolink:BiologicalEntity",
+                                "biolink:GeneFamily",
+                                "biolink:NamedThing",
+                                "biolink:MolecularEntity",
+                                "biolink:Entity"
+                              ],
+                              "equivalent_identifiers": [
+                                "PANTHER.FAMILY:PTHR12015"
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "edges": {
+                      "dd8ef7a4606c4f8e405e6a5b1b095993": {
+                        "subject": "NCBIGene:6352",
+                        "object": "PANTHER.FAMILY:PTHR12015",
+                        "predicate": "biolink:part_of",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "predicate": "biolink:part_of",
+                              "relation_label": "part of",
+                              "provided_by": "panther.get_gene_by_gene_family",
+                              "ctime": 1584932086.0009434,
+                              "target_id": "PANTHER.FAMILY:PTHR12015",
+                              "source_id": "NCBIGene:6352",
+                              "source_database": "panther",
+                              "relation": "BFO:0000050",
+                              "publications": []
+                            }
+                          }
+                        ]
+                      },
+                      "9f7f9d86cb57e7190aafa57f7564eb05": {
+                        "subject": "PANTHER.FAMILY:PTHR12015:SF170",
+                        "object": "PANTHER.FAMILY:PTHR12015",
+                        "predicate": "biolink:part_of",
+                        "attributes": [
+                          {
+                            "type": "WIKIDATA:Q80585",
+                            "value": {
+                              "predicate": "biolink:part_of",
+                              "relation_label": "part of",
+                              "provided_by": "panther.get_gene_family_by_gene_family",
+                              "ctime": 1610437123.7988985,
+                              "target_id": "PANTHER.FAMILY:PTHR12015",
+                              "source_id": "PANTHER.FAMILY:PTHR12015:SF170",
+                              "source_database": "panther",
+                              "relation": "BFO:0000050",
+                              "publications": []
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "results": [
+                    {
+                      "node_bindings": {
+                        "n1": [
+                          {
+                            "id": "NCBIGene:6352"
+                          }
+                        ],
+                        "n2": [
+                          {
+                            "id": "PANTHER.FAMILY:PTHR12015"
+                          }
+                        ],
+                        "n3": [
+                          {
+                            "id": "PANTHER.FAMILY:PTHR12015:SF170"
+                          }
+                        ]
+                      },
+                      "edge_bindings": {
+                        "e12": [
+                          {
+                            "id": "dd8ef7a4606c4f8e405e6a5b1b095993"
+                          }
+                        ],
+                        "e23": [
+                          {
+                            "id": "9f7f9d86cb57e7190aafa57f7564eb05"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Message"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/monarch-kg/metadata": {
+      "get": {
+        "summary": "Metadata about the knowledge graph.",
+        "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
+        "operationId": "metadata_metadata_get_monarch-kg",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Metadata Metadata Get"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Monarch KG"]
+      }
+    },
+    "/monarch-kg/{source_type}/{target_type}/{curie}": {
+      "get": {
+        "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
+        "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
+        "operationId": "one_hop__source_type___target_type___curie__get_monarch-kg",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Source Type",
+              "type": "string"
+            },
+            "name": "source_type",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Target Type",
+              "type": "string"
+            },
+            "name": "target_type",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Curie",
+              "type": "string"
+            },
+            "name": "curie",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response One Hop  Source Type   Target Type   Curie  Get",
+                  "type": "array",
+                  "items": {}
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Monarch KG"]
+      }
+    },
+    "/monarch-kg/{node_type}/{curie}": {
+      "get": {
+        "summary": "Find `node` by `curie`",
+        "description": "Returns `node` matching `curie`.",
+        "operationId": "node__node_type___curie__get_monarch-kg",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Node Type",
+              "type": "string"
+            },
+            "name": "node_type",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "title": "Curie",
+              "type": "string"
+            },
+            "name": "curie",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Node  Node Type   Curie  Get",
+                  "type": "array",
+                  "items": {}
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Monarch KG"]
+      }
+    },
+    "/monarch-kg/simple_spec": {
+      "get": {
+        "summary": "Get one-hop connection schema",
+        "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
+        "operationId": "simple_spec_simple_spec_get_monarch-kg",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Source",
+              "type": "string"
+            },
+            "name": "source",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Target",
+              "type": "string"
+            },
+            "name": "target",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Simple Spec Simple Spec Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SimpleSpecElement"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Monarch KG"]
+      }
+    },
     "/panther/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "PANTHER"],
@@ -9233,40 +9083,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:GeneFamily"],
+                        "ids": ["PANTHER.FAMILY:PTHR23158"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:GeneFamily"],
+                        "ids": ["PANTHER.FAMILY:PTHR23158:SF57"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:has_part"]
                       }
                     }
                   }
@@ -9288,6 +9117,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -9844,40 +9684,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:Gene"],
+                        "ids": ["NCBIGene:1491"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:Disease"],
+                        "ids": ["MONDO:0009058"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:genetically_associated_with"]
                       }
                     }
                   }
@@ -9899,6 +9718,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -10455,40 +10285,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:MolecularActivity"],
+                        "ids": ["REACT:R-DDI-5672017"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:BiologicalProcess"],
+                        "ids": ["GO:0016241"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:subclass_of"]
                       }
                     }
                   }
@@ -10510,6 +10319,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -11066,40 +10886,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:OrganismTaxon"],
+                        "ids": ["NCBITaxon:1661386"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:OrganismTaxon"],
+                        "ids": ["NCBITaxon:286"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:subclass_of"]
                       }
                     }
                   }
@@ -11121,6 +10920,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -11620,617 +11430,6 @@
         "tags": ["ROBOKOP KG"]
       }
     },
-    "/sri-reference-kg/1.4/meta_knowledge_graph": {
-      "get": {
-        "tags": ["trapi", "SRI Reference KG"],
-        "summary": "Meta knowledge graph representation of this TRAPI web service.",
-        "description": "Returns meta knowledge graph representation of this TRAPI web service.",
-        "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_sri-reference-kg_trapi",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/MetaKnowledgeGraph"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/sri-reference-kg/1.4/sri_testing_data": {
-      "get": {
-        "tags": ["trapi", "SRI Reference KG"],
-        "summary": "Test data for usage by the SRI Testing Harness.",
-        "description": "Returns a list of edges that are representative examples of the knowledge graph.",
-        "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_sri-reference-kg_trapi",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SRITestData"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/sri-reference-kg/1.4/query": {
-      "post": {
-        "tags": ["trapi", "SRI Reference KG"],
-        "summary": "Query reasoner via one of several inputs.",
-        "description": "Handle TRAPI request.",
-        "operationId": "reasoner_api_1_4_query_post_sri-reference-kg_trapi",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReasonerRequest"
-              },
-              "example": {
-                "message": {
-                  "query_graph": {
-                    "nodes": {
-                      "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
-                      },
-                      "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
-                      }
-                    },
-                    "edges": {
-                      "e01": {
-                        "subject": "n0",
-                        "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    }
-                  }
-                },
-                "workflow": [
-                  {
-                    "id": "lookup"
-                  }
-                ]
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ReasonerRequest"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/sri-reference-kg/cypher": {
-      "post": {
-        "summary": "Run cypher query",
-        "description": "Runs cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
-        "operationId": "cypher_cypher_post_sri-reference-kg",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CypherRequest"
-              },
-              "example": {
-                "query": "MATCH (n) RETURN count(n)"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["SRI Reference KG"]
-      }
-    },
-    "/sri-reference-kg/overlay": {
-      "post": {
-        "tags": ["translator", "SRI Reference KG"],
-        "summary": "Overlay results with available connections between each node.",
-        "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
-        "operationId": "overlay_overlay_post_sri-reference-kg_translator",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ReasonerRequest"
-              },
-              "example": {
-                "message": {
-                  "query_graph": {
-                    "nodes": {
-                      "n1": {
-                        "id": "NCBIGene:6352",
-                        "category": "biolink:Gene",
-                        "is_set": false
-                      },
-                      "n2": {
-                        "category": "biolink:GeneFamily",
-                        "is_set": false
-                      },
-                      "n3": {
-                        "category": "biolink:GeneFamily",
-                        "is_set": false
-                      }
-                    },
-                    "edges": {
-                      "e12": {
-                        "subject": "n1",
-                        "object": "n2",
-                        "predicate": "biolink:part_of"
-                      },
-                      "e23": {
-                        "subject": "n3",
-                        "object": "n2",
-                        "predicate": "biolink:part_of"
-                      }
-                    }
-                  },
-                  "knowledge_graph": {
-                    "nodes": {
-                      "NCBIGene:6352": {
-                        "category": [
-                          "biolink:NamedThing",
-                          "biolink:BiologicalEntity",
-                          "biolink:MolecularEntity",
-                          "biolink:GenomicEntity",
-                          "biolink:GeneOrGeneProduct",
-                          "biolink:MacromolecularMachine",
-                          "biolink:Gene"
-                        ],
-                        "name": "CCL5",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "locus_group": "protein-coding gene",
-                              "synonyms": [],
-                              "chromosome": "17",
-                              "location": "17q12",
-                              "gene_family": ["Chemokine ligands"],
-                              "taxon": 9606,
-                              "category": [
-                                "biolink:BiologicalEntity",
-                                "biolink:GenomicEntity",
-                                "biolink:GeneOrGeneProduct",
-                                "biolink:MacromolecularMachine",
-                                "biolink:NamedThing",
-                                "biolink:MolecularEntity",
-                                "biolink:Gene"
-                              ],
-                              "gene_family_id": [483],
-                              "equivalent_identifiers": [
-                                "ENSEMBL:ENSG00000271503",
-                                "NCBIGene:6352",
-                                "NCBIGene:6352",
-                                "HGNC:10632",
-                                "UniProtKB:P13501"
-                              ]
-                            }
-                          }
-                        ]
-                      },
-                      "PANTHER.FAMILY:PTHR12015:SF170": {
-                        "category": [
-                          "biolink:NamedThing",
-                          "biolink:BiologicalEntity",
-                          "biolink:GeneFamily",
-                          "biolink:MolecularEntity",
-                          "biolink:Entity"
-                        ],
-                        "name": "C-C MOTIF CHEMOKINE 5",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "synonyms": [],
-                              "category": [
-                                "biolink:BiologicalEntity",
-                                "biolink:GeneFamily",
-                                "biolink:NamedThing",
-                                "biolink:MolecularEntity",
-                                "biolink:Entity"
-                              ],
-                              "equivalent_identifiers": [
-                                "PANTHER.FAMILY:PTHR12015:SF170"
-                              ]
-                            }
-                          }
-                        ]
-                      },
-                      "PANTHER.FAMILY:PTHR12015": {
-                        "category": [
-                          "biolink:NamedThing",
-                          "biolink:BiologicalEntity",
-                          "biolink:GeneFamily",
-                          "biolink:MolecularEntity",
-                          "biolink:Entity"
-                        ],
-                        "name": "SMALL INDUCIBLE CYTOKINE A",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "synonyms": [],
-                              "category": [
-                                "biolink:BiologicalEntity",
-                                "biolink:GeneFamily",
-                                "biolink:NamedThing",
-                                "biolink:MolecularEntity",
-                                "biolink:Entity"
-                              ],
-                              "equivalent_identifiers": [
-                                "PANTHER.FAMILY:PTHR12015"
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    "edges": {
-                      "dd8ef7a4606c4f8e405e6a5b1b095993": {
-                        "subject": "NCBIGene:6352",
-                        "object": "PANTHER.FAMILY:PTHR12015",
-                        "predicate": "biolink:part_of",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "predicate": "biolink:part_of",
-                              "relation_label": "part of",
-                              "provided_by": "panther.get_gene_by_gene_family",
-                              "ctime": 1584932086.0009434,
-                              "target_id": "PANTHER.FAMILY:PTHR12015",
-                              "source_id": "NCBIGene:6352",
-                              "source_database": "panther",
-                              "relation": "BFO:0000050",
-                              "publications": []
-                            }
-                          }
-                        ]
-                      },
-                      "9f7f9d86cb57e7190aafa57f7564eb05": {
-                        "subject": "PANTHER.FAMILY:PTHR12015:SF170",
-                        "object": "PANTHER.FAMILY:PTHR12015",
-                        "predicate": "biolink:part_of",
-                        "attributes": [
-                          {
-                            "type": "WIKIDATA:Q80585",
-                            "value": {
-                              "predicate": "biolink:part_of",
-                              "relation_label": "part of",
-                              "provided_by": "panther.get_gene_family_by_gene_family",
-                              "ctime": 1610437123.7988985,
-                              "target_id": "PANTHER.FAMILY:PTHR12015",
-                              "source_id": "PANTHER.FAMILY:PTHR12015:SF170",
-                              "source_database": "panther",
-                              "relation": "BFO:0000050",
-                              "publications": []
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  },
-                  "results": [
-                    {
-                      "node_bindings": {
-                        "n1": [
-                          {
-                            "id": "NCBIGene:6352"
-                          }
-                        ],
-                        "n2": [
-                          {
-                            "id": "PANTHER.FAMILY:PTHR12015"
-                          }
-                        ],
-                        "n3": [
-                          {
-                            "id": "PANTHER.FAMILY:PTHR12015:SF170"
-                          }
-                        ]
-                      },
-                      "edge_bindings": {
-                        "e12": [
-                          {
-                            "id": "dd8ef7a4606c4f8e405e6a5b1b095993"
-                          }
-                        ],
-                        "e23": [
-                          {
-                            "id": "9f7f9d86cb57e7190aafa57f7564eb05"
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Message"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/sri-reference-kg/metadata": {
-      "get": {
-        "summary": "Metadata about the knowledge graph.",
-        "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
-        "operationId": "metadata_metadata_get_sri-reference-kg",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "Response Metadata Metadata Get"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["SRI Reference KG"]
-      }
-    },
-    "/sri-reference-kg/{source_type}/{target_type}/{curie}": {
-      "get": {
-        "summary": "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
-        "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get_sri-reference-kg",
-        "parameters": [
-          {
-            "required": true,
-            "schema": {
-              "title": "Source Type",
-              "type": "string"
-            },
-            "name": "source_type",
-            "in": "path"
-          },
-          {
-            "required": true,
-            "schema": {
-              "title": "Target Type",
-              "type": "string"
-            },
-            "name": "target_type",
-            "in": "path"
-          },
-          {
-            "required": true,
-            "schema": {
-              "title": "Curie",
-              "type": "string"
-            },
-            "name": "curie",
-            "in": "path"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "Response One Hop  Source Type   Target Type   Curie  Get",
-                  "type": "array",
-                  "items": {}
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["SRI Reference KG"]
-      }
-    },
-    "/sri-reference-kg/{node_type}/{curie}": {
-      "get": {
-        "summary": "Find `node` by `curie`",
-        "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get_sri-reference-kg",
-        "parameters": [
-          {
-            "required": true,
-            "schema": {
-              "title": "Node Type",
-              "type": "string"
-            },
-            "name": "node_type",
-            "in": "path"
-          },
-          {
-            "required": true,
-            "schema": {
-              "title": "Curie",
-              "type": "string"
-            },
-            "name": "curie",
-            "in": "path"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "Response Node  Node Type   Curie  Get",
-                  "type": "array",
-                  "items": {}
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["SRI Reference KG"]
-      }
-    },
-    "/sri-reference-kg/simple_spec": {
-      "get": {
-        "summary": "Get one-hop connection schema",
-        "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
-        "operationId": "simple_spec_simple_spec_get_sri-reference-kg",
-        "parameters": [
-          {
-            "required": false,
-            "schema": {
-              "title": "Source",
-              "type": "string"
-            },
-            "name": "source",
-            "in": "query"
-          },
-          {
-            "required": false,
-            "schema": {
-              "title": "Target",
-              "type": "string"
-            },
-            "name": "target",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "Response Simple Spec Simple Spec Get",
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/SimpleSpecElement"
-                  }
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        },
-        "tags": ["SRI Reference KG"]
-      }
-    },
     "/string-db/1.4/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "STRING"],
@@ -12288,40 +11487,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:Protein"],
+                        "ids": ["UniProtKB:Q6P1M3-1"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:Protein"],
+                        "ids": ["PR:000036194"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:subclass_of"]
                       }
                     }
                   }
@@ -12343,6 +11521,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -12899,40 +12088,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:SmallMolecule"],
+                        "ids": ["PUBCHEM.COMPOUND:32281"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:Protein"],
+                        "ids": ["PR:000000001"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:subclass_of"]
                       }
                     }
                   }
@@ -12954,6 +12122,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -13510,40 +12689,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:Protein"],
+                        "ids": ["UniProtKB:Q9R0M5-1"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:ChemicalEntity"],
+                        "ids": ["CHEBI:33579"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:subclass_of"]
                       }
                     }
                   }
@@ -13565,6 +12723,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -14066,7 +13235,7 @@
     },
     "/viral-proteome/1.4/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "Text Mining Provider KG"],
+        "tags": ["trapi", "Viral Proteome"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns meta knowledge graph representation of this TRAPI web service.",
         "operationId": "get_meta_knowledge_graph_1_4_meta_knowledge_graph_get_trapi_viral-proteome",
@@ -14086,7 +13255,7 @@
     },
     "/viral-proteome/1.4/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "Text Mining Provider KG"],
+        "tags": ["trapi", "Viral Proteome"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_1_4_sri_testing_data_get_trapi_viral-proteome",
@@ -14106,7 +13275,7 @@
     },
     "/viral-proteome/1.4/query": {
       "post": {
-        "tags": ["trapi", "Text Mining Provider KG"],
+        "tags": ["trapi", "Viral Proteome"],
         "summary": "Query reasoner via one of several inputs.",
         "description": "Handle TRAPI request.",
         "operationId": "reasoner_api_1_4_query_post_trapi_viral-proteome",
@@ -14121,40 +13290,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalEntity"],
-                        "ids": [
-                          "CHEMBL.COMPOUND:CHEMBL3234626",
-                          "CHEMBL.COMPOUND:CHEMBL3234633"
-                        ]
+                        "categories": ["biolink:Protein"],
+                        "ids": ["UniProtKB:P03129"]
                       },
                       "n1": {
-                        "categories": ["biolink:GeneOrGeneProduct"],
-                        "ids": ["NCBIGene:2099"]
+                        "categories": ["biolink:CellularComponent"],
+                        "ids": ["GO:0042025"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:affects"],
-                        "qualifier_constraints": [
-                          {
-                            "qualifier_set": [
-                              {
-                                "qualifier_type_id": "biolink:object_aspect_qualifier",
-                                "qualifier_value": "activity"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:object_direction_qualifier",
-                                "qualifier_value": "increased"
-                              },
-                              {
-                                "qualifier_type_id": "biolink:qualified_predicate",
-                                "qualifier_value": "biolink:causes"
-                              }
-                            ]
-                          }
-                        ]
+                        "predicates": ["biolink:colocalizes_with"]
                       }
                     }
                   }
@@ -14176,6 +13324,17 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api 1 4 Query Post",
+                  "type": "object"
                 }
               }
             }
@@ -14233,12 +13392,12 @@
             }
           }
         },
-        "tags": ["Text Mining Provider KG"]
+        "tags": ["Viral Proteome"]
       }
     },
     "/viral-proteome/overlay": {
       "post": {
-        "tags": ["translator", "Text Mining Provider KG"],
+        "tags": ["translator", "Viral Proteome"],
         "summary": "Overlay results with available connections between each node.",
         "description": "Given a ReasonerAPI graph, add support edges for any nodes linked in result bindings.",
         "operationId": "overlay_overlay_post_translator_viral-proteome",
@@ -14505,7 +13664,7 @@
             }
           }
         },
-        "tags": ["Text Mining Provider KG"]
+        "tags": ["Viral Proteome"]
       }
     },
     "/viral-proteome/{source_type}/{target_type}/{curie}": {
@@ -14566,7 +13725,7 @@
             }
           }
         },
-        "tags": ["Text Mining Provider KG"]
+        "tags": ["Viral Proteome"]
       }
     },
     "/viral-proteome/{node_type}/{curie}": {
@@ -14618,7 +13777,7 @@
             }
           }
         },
-        "tags": ["Text Mining Provider KG"]
+        "tags": ["Viral Proteome"]
       }
     },
     "/viral-proteome/simple_spec": {
@@ -14672,7 +13831,7 @@
             }
           }
         },
-        "tags": ["Text Mining Provider KG"]
+        "tags": ["Viral Proteome"]
       }
     },
     "/registry": {
@@ -14701,99 +13860,95 @@
   "tags": [
     {
       "name": "BINDING",
-      "description": "\nBinding DataBase (BindingDB) openly exposes curated data on chemical entities and their molecular targets.\n\n**Version:** 6ff4faf347a97f7f\n\n**URL:** [https://www.bindingdb.org/](https://www.bindingdb.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/BINDING_Automat/6ff4faf347a97f7f](https://stars.renci.org/var/plater/bl-3.5.4/BINDING_Automat/6ff4faf347a97f7f)\n\n**Nodes:** 998,906\n\n**Edges:** 2,016,461\n\n"
+      "description": "\nBinding DataBase (BindingDB) openly exposes curated data on chemical entities and their molecular targets.\n\n**Version:** 711f33bcebbef313\n\n**URL:** [https://www.bindingdb.org/](https://www.bindingdb.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/BINDING_Automat/711f33bcebbef313](https://stars.renci.org/var/plater/bl-3.5.4/BINDING_Automat/711f33bcebbef313)\n\n**Nodes:** 1,082,743\n\n**Edges:** 2,168,353\n\n"
     },
     {
-      "name": "RENCI SRI Reference KG",
-      "description": "\nThe RENCI Standards and Reference Implementation (SRI) Reference KG represents a subset of the SRI Reference KG.\n\n**Version:** 0fb5e8f1bc5475b2\n\n**URL:** [https://github.com/Knowledge-Graph-Hub/sri-reference-kg](https://github.com/Knowledge-Graph-Hub/sri-reference-kg)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/Biolink_Automat/0fb5e8f1bc5475b2](https://stars.renci.org/var/plater/bl-3.5.4/Biolink_Automat/0fb5e8f1bc5475b2)\n\n**Nodes:** 643,091\n\n**Edges:** 4,671,793\n\n"
-    },
-    {
-      "name": "CAM Provider KG",
-      "description": "\nThe CAMP Provider KG contains data on CAMs (Causal Activity Models), which are small knowledge graphs built using the Web Ontology Language (OWL). The CAM database combines many CAM graphs, along with a large merged bio-ontology containing the full vocabulary of concepts referenced within the individual CAMs. Each CAM describes an instantiation of some of those concepts in a particular context, modeling the interactions between those instances as an interlinked representation of a complex biological or environmental process.\n\n**Version:** ded8cfcdee598475\n\n\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/CAMKP_Automat/ded8cfcdee598475](https://stars.renci.org/var/plater/bl-3.5.4/CAMKP_Automat/ded8cfcdee598475)\n\n**Nodes:** 111,273\n\n**Edges:** 3,525,826\n\n"
+      "name": "CAM KG",
+      "description": "\nThe CAM KG contains data on CAMs (Causal Activity Models), which are small knowledge graphs built using the Web Ontology Language (OWL). The CAM database combines many CAM graphs, along with a large merged bio-ontology containing the full vocabulary of concepts referenced within the individual CAMs. Each CAM describes an instantiation of some of those concepts in a particular context, modeling the interactions between those instances as an interlinked representation of a complex biological or environmental process.\n\n**Version:** e553a5174c60a698\n\n\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/CAMKP_Automat/e553a5174c60a698](https://stars.renci.org/var/plater/bl-3.5.4/CAMKP_Automat/e553a5174c60a698)\n\n**Nodes:** 119,464\n\n**Edges:** 2,199,905\n\n"
     },
     {
       "name": "CTD",
-      "description": "\nThe Comparative Toxicogenomics Database (CTD) is an open-source database that provides manually curated information about chemical-gene/protein, chemical-disease, and gene/protein-disease relationships, with additional support for the curated relationships provided by function and pathway data.\n\n**Version:** 20d3dfad16037510\n\n**URL:** [http://ctdbase.org/about/](http://ctdbase.org/about/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/CTD_Automat/20d3dfad16037510](https://stars.renci.org/var/plater/bl-3.5.4/CTD_Automat/20d3dfad16037510)\n\n**Nodes:** 444,472\n\n**Edges:** 1,464,525\n\n"
+      "description": "\nThe Comparative Toxicogenomics Database (CTD) is an open-source database that provides manually curated information about chemical-gene/protein, chemical-disease, and gene/protein-disease relationships, with additional support for the curated relationships provided by function and pathway data.\n\n**Version:** c471321e4404efde\n\n**URL:** [http://ctdbase.org/about/](http://ctdbase.org/about/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/CTD_Automat/c471321e4404efde](https://stars.renci.org/var/plater/bl-3.5.4/CTD_Automat/c471321e4404efde)\n\n**Nodes:** 446,233\n\n**Edges:** 1,467,233\n\n"
     },
     {
       "name": "DrugCentral",
-      "description": "\nDrugCentral provides open-source data on active ingredients, chemical entities, pharmaceutical products, drug mode of action, indications, and pharmacologic action for approved drugs, derived from information provided by the US Food & Drug Administration, the European Medicines Agency, and the Pharmaceutical and Medical Devices Agency. Note that DrugCentral provides limited information on discontinued drugs and drugs approved outside of the US, but that information has not been validated.\n\n**Version:** a186a44d2f9578d9\n\n**URL:** [https://drugcentral.org/](https://drugcentral.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/DrugCentral_Automat/a186a44d2f9578d9](https://stars.renci.org/var/plater/bl-3.5.4/DrugCentral_Automat/a186a44d2f9578d9)\n\n**Nodes:** 77,217\n\n**Edges:** 647,107\n\n"
+      "description": "\nDrugCentral provides open-source data on active ingredients, chemical entities, pharmaceutical products, drug mode of action, indications, and pharmacologic action for approved drugs, derived from information provided by the US Food & Drug Administration, the European Medicines Agency, and the Pharmaceutical and Medical Devices Agency. Note that DrugCentral provides limited information on discontinued drugs and drugs approved outside of the US, but that information has not been validated.\n\n**Version:** 25acfc0e82d4f8c5\n\n**URL:** [https://drugcentral.org/](https://drugcentral.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/DrugCentral_Automat/25acfc0e82d4f8c5](https://stars.renci.org/var/plater/bl-3.5.4/DrugCentral_Automat/25acfc0e82d4f8c5)\n\n**Nodes:** 77,648\n\n**Edges:** 648,622\n\n"
     },
     {
       "name": "Alliance of Genome Resources",
-      "description": "\nThe Alliance of Genome Resources is a consortium of the owners of seven model organism databases (MODs) and the Gene Ontology (GO) Consortium, whose goal is to provide an integrated view of their data to all biologists, clinicians, and other interested parties. The Alliance provides the results of all methods that have been benchmarked by the Quest for Orthologs Consortium (QfO), as well as curated ortholog inferences from HGNC (human, mouse, rat genes).\n\n**Version:** f713443719161796\n\n**URL:** [https://www.alliancegenome.org/](https://www.alliancegenome.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/GenomeAllianceOrthologs_Automat/f713443719161796](https://stars.renci.org/var/plater/bl-3.5.4/GenomeAllianceOrthologs_Automat/f713443719161796)\n\n**Nodes:** 94,350\n\n**Edges:** 530,499\n\n"
+      "description": "\nThe Alliance of Genome Resources is a consortium of the owners of seven model organism databases (MODs) and the Gene Ontology (GO) Consortium, whose goal is to provide an integrated view of their data to all biologists, clinicians, and other interested parties. The Alliance provides the results of all methods that have been benchmarked by the Quest for Orthologs Consortium (QfO), as well as curated ortholog inferences from HGNC (human, mouse, rat genes).\n\n**Version:** 52b222baedc80328\n\n**URL:** [https://www.alliancegenome.org/](https://www.alliancegenome.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/GenomeAllianceOrthologs_Automat/52b222baedc80328](https://stars.renci.org/var/plater/bl-3.5.4/GenomeAllianceOrthologs_Automat/52b222baedc80328)\n\n**Nodes:** 94,336\n\n**Edges:** 530,374\n\n"
     },
     {
       "name": "GTEx",
-      "description": "\nThe Genotype-Tissue Expression (GTEx) portal provides open access to data on tissue-specific gene expression and regulation, derived from molecular assays (e.g., WGS, WES, RNA-Seq) on 54 non-diseased tissue sites across nearly 1000 individuals.\n\n**Version:** d878cf6c8e891f3d\n\n**URL:** [https://gtexportal.org/home/](https://gtexportal.org/home/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/GTEx_Automat/d878cf6c8e891f3d](https://stars.renci.org/var/plater/bl-3.5.4/GTEx_Automat/d878cf6c8e891f3d)\n\n**Nodes:** 4,924,278\n\n**Edges:** 49,234,722\n\n"
+      "description": "\nThe Genotype-Tissue Expression (GTEx) portal provides open access to data on tissue-specific gene expression and regulation, derived from molecular assays (e.g., WGS, WES, RNA-Seq) on 54 non-diseased tissue sites across nearly 1000 individuals.\n\n**Version:** 069168a67b09b862\n\n**URL:** [https://gtexportal.org/home/](https://gtexportal.org/home/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/GTEx_Automat/069168a67b09b862](https://stars.renci.org/var/plater/bl-3.5.4/GTEx_Automat/069168a67b09b862)\n\n**Nodes:** 4,924,278\n\n**Edges:** 49,234,693\n\n"
     },
     {
       "name": "GtoPdb",
-      "description": "\nThe International Union of Basic and Clinical Pharmacology (IUPHAR) / British Pharmacological Society (BPS) Guide to Pharmacology database (GtoPdb) provides searchable open-source quantitative information on drug targets and the prescription medicines and experimental drugs that act on them.\n\n**Version:** 52db0299e911237e\n\n**URL:** [http://www.guidetopharmacology.org/](http://www.guidetopharmacology.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/GtoPdb_Automat/52db0299e911237e](https://stars.renci.org/var/plater/bl-3.5.4/GtoPdb_Automat/52db0299e911237e)\n\n**Nodes:** 12,497\n\n**Edges:** 93,393\n\n"
+      "description": "\nThe International Union of Basic and Clinical Pharmacology (IUPHAR) / British Pharmacological Society (BPS) Guide to Pharmacology database (GtoPdb) provides searchable open-source quantitative information on drug targets and the prescription medicines and experimental drugs that act on them.\n\n**Version:** 570e405b674eb991\n\n**URL:** [http://www.guidetopharmacology.org/](http://www.guidetopharmacology.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/GtoPdb_Automat/570e405b674eb991](https://stars.renci.org/var/plater/bl-3.5.4/GtoPdb_Automat/570e405b674eb991)\n\n**Nodes:** 12,642\n\n**Edges:** 94,375\n\n"
     },
     {
       "name": "GWAS Catalog",
-      "description": "\nThe Genome-Wide Association Studies (GWAS) Catalog provides a curated, searchable, visualisable, and openly available database of single nucleotide polymorphism (SNP)-trait associations, derived from GWAS publications, including the reported trait, significant SNP-trait associations, and sample metadata.\n\n**Version:** 368283ad08d634a9\n\n**URL:** [https://www.ebi.ac.uk/gwas/](https://www.ebi.ac.uk/gwas/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/GWASCatalog_Automat/368283ad08d634a9](https://stars.renci.org/var/plater/bl-3.5.4/GWASCatalog_Automat/368283ad08d634a9)\n\n**Nodes:** 416,774\n\n**Edges:** 2,761,033\n\n"
+      "description": "\nThe Genome-Wide Association Studies (GWAS) Catalog provides a curated, searchable, visualisable, and openly available database of single nucleotide polymorphism (SNP)-trait associations, derived from GWAS publications, including the reported trait, significant SNP-trait associations, and sample metadata.\n\n**Version:** 7c0cb91e678a3d1f\n\n**URL:** [https://www.ebi.ac.uk/gwas/](https://www.ebi.ac.uk/gwas/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/GWASCatalog_Automat/7c0cb91e678a3d1f](https://stars.renci.org/var/plater/bl-3.5.4/GWASCatalog_Automat/7c0cb91e678a3d1f)\n\n**Nodes:** 417,306\n\n**Edges:** 2,761,494\n\n"
     },
     {
       "name": "Hetionet",
-      "description": "\nHetionet is an open-source biomedical \"heterogeneous information network\" (hetnet) or graph-based resource describing relationships uncovered by millions of biomedical research studies over the past fifty years.\n\n**Version:** 2e660b5a4be6569f\n\n**URL:** [https://het.io/](https://het.io/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/Hetio_Automat/2e660b5a4be6569f](https://stars.renci.org/var/plater/bl-3.5.4/Hetio_Automat/2e660b5a4be6569f)\n\n**Nodes:** 116,190\n\n**Edges:** 2,692,805\n\n"
+      "description": "\nHetionet is an open-source biomedical \"heterogeneous information network\" (hetnet) or graph-based resource describing relationships uncovered by millions of biomedical research studies over the past fifty years.\n\n**Version:** 1491072f27daadfc\n\n**URL:** [https://het.io/](https://het.io/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/Hetio_Automat/1491072f27daadfc](https://stars.renci.org/var/plater/bl-3.5.4/Hetio_Automat/1491072f27daadfc)\n\n**Nodes:** 116,580\n\n**Edges:** 2,690,136\n\n"
     },
     {
       "name": "HGNC",
-      "description": "\nThe HUGO Gene Nomenclature Committee (HGNC) database provides open access to HGNC-approved unique symbols and names for human genes, gene groups, and associated resources, including links to genomic, proteomic and phenotypic information.\n\n**Version:** f9142ab64a9d5d7e\n\n**URL:** [https://www.genenames.org/](https://www.genenames.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/HGNC_Automat/f9142ab64a9d5d7e](https://stars.renci.org/var/plater/bl-3.5.4/HGNC_Automat/f9142ab64a9d5d7e)\n\n**Nodes:** 27,217\n\n**Edges:** 53,680\n\n"
+      "description": "\nThe HUGO Gene Nomenclature Committee (HGNC) database provides open access to HGNC-approved unique symbols and names for human genes, gene groups, and associated resources, including links to genomic, proteomic and phenotypic information.\n\n**Version:** a49bc657186d2f87\n\n**URL:** [https://www.genenames.org/](https://www.genenames.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/HGNC_Automat/a49bc657186d2f87](https://stars.renci.org/var/plater/bl-3.5.4/HGNC_Automat/a49bc657186d2f87)\n\n**Nodes:** 27,291\n\n**Edges:** 53,821\n\n"
     },
     {
       "name": "HMDB",
-      "description": "\nThe Human Metabolome DataBase (HMDB) is an openly accessible database containing detailed information about small molecule metabolites found in the human body, with links between chemical data, clinical data, and molecular biology/biochemistry data, including protein sequences (enzymes and transporters).\n\n**Version:** 9d9965bd2381d38b\n\n**URL:** [https://hmdb.ca/](https://hmdb.ca/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/HMDB_Automat/9d9965bd2381d38b](https://stars.renci.org/var/plater/bl-3.5.4/HMDB_Automat/9d9965bd2381d38b)\n\n**Nodes:** 129,243\n\n**Edges:** 1,884,362\n\n"
+      "description": "\nThe Human Metabolome DataBase (HMDB) is an openly accessible database containing detailed information about small molecule metabolites found in the human body, with links between chemical data, clinical data, and molecular biology/biochemistry data, including protein sequences (enzymes and transporters).\n\n**Version:** c31a890b052df047\n\n**URL:** [https://hmdb.ca/](https://hmdb.ca/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/HMDB_Automat/c31a890b052df047](https://stars.renci.org/var/plater/bl-3.5.4/HMDB_Automat/c31a890b052df047)\n\n**Nodes:** 129,417\n\n**Edges:** 1,887,856\n\n"
     },
     {
       "name": "Human GOA",
-      "description": "\nThe Gene Ontology (GO) Consortium’s Human Gene Ontologies Annotations (Human GOA) resource provides open access to curated assignment of GO terms to proteins in the UniProt KnowledgeBase (UniProtKB), RNA molecules from RNACentral, and protein complexes from the Complex Portal.\n\n**Version:** 10cad49161e08033\n\n**URL:** [https://www.ebi.ac.uk/GOA/index](https://www.ebi.ac.uk/GOA/index)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/HumanGOA_Automat/10cad49161e08033](https://stars.renci.org/var/plater/bl-3.5.4/HumanGOA_Automat/10cad49161e08033)\n\n**Nodes:** 129,615\n\n**Edges:** 1,312,572\n\n"
+      "description": "\nThe Gene Ontology (GO) Consortium’s Human Gene Ontologies Annotations (Human GOA) resource provides open access to curated assignment of GO terms to proteins in the UniProt KnowledgeBase (UniProtKB), RNA molecules from RNACentral, and protein complexes from the Complex Portal.\n\n**Version:** 50dc16e17d5763eb\n\n**URL:** [https://www.ebi.ac.uk/GOA/index](https://www.ebi.ac.uk/GOA/index)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/HumanGOA_Automat/50dc16e17d5763eb](https://stars.renci.org/var/plater/bl-3.5.4/HumanGOA_Automat/50dc16e17d5763eb)\n\n**Nodes:** 129,749\n\n**Edges:** 1,312,303\n\n"
     },
     {
       "name": "ICEES KG",
-      "description": "\nICEES KG is the KG version of the Integrated Clinical and Environmental Exposures Service (ICEES), which provides regulatory-compliant open access to clinical data (e.g., electronic health records, survey data, clinical research data) that have been integrated at the patient level with environmental exposures data (e.g., airborne pollutants, landfills, concentrated animal feeding operations, socio-economic indicators).\n\n\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES](https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.4.2/icees-kg/8-2-2023](https://stars.renci.org/var/plater/bl-3.4.2/icees-kg/8-2-2023)\n\n**Nodes:** 770\n\n**Edges:** 4,802,581\n\n"
+      "description": "\nICEES KG is the KG version of the Integrated Clinical and Environmental Exposures Service (ICEES), which provides regulatory-compliant open access to clinical data (e.g., electronic health records, survey data, clinical research data) that have been integrated at the patient level with environmental exposures data (e.g., airborne pollutants, landfills, concentrated animal feeding operations, socio-economic indicators).\n\n**Version:** 10-25-2023\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES](https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/icees-kg/10-25-2023](https://stars.renci.org/var/plater/bl-3.5.4/icees-kg/10-25-2023)\n\n**Nodes:** 770\n\n**Edges:** 4,802,581\n\n"
     },
     {
       "name": "IntAct Molecular Interaction Database",
-      "description": "\nThe IntAct Molecular Interaction Database provides open access to molecular interactions data derived from literature curation or direct user submission.\n\n**Version:** d204043214fd7f20\n\n**URL:** [https://www.ebi.ac.uk/intact/home](https://www.ebi.ac.uk/intact/home)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/IntAct_Automat/d204043214fd7f20](https://stars.renci.org/var/plater/bl-3.5.4/IntAct_Automat/d204043214fd7f20)\n\n**Nodes:** 230,764\n\n**Edges:** 2,555,268\n\n"
+      "description": "\nThe IntAct Molecular Interaction Database provides open access to molecular interactions data derived from literature curation or direct user submission.\n\n**Version:** 95bbc26a9a1f8fb2\n\n**URL:** [https://www.ebi.ac.uk/intact/home](https://www.ebi.ac.uk/intact/home)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/IntAct_Automat/95bbc26a9a1f8fb2](https://stars.renci.org/var/plater/bl-3.5.4/IntAct_Automat/95bbc26a9a1f8fb2)\n\n**Nodes:** 231,148\n\n**Edges:** 2,559,625\n\n"
+    },
+    {
+      "name": "Monarch KG",
+      "description": "\nThe Monarch knowledge graph is a reference implementation of the Biolink model specification. It contains data from the Monarch Initiative aggregated database, as well as several OBO ontologies. These data sources provide links between diseases, phenotypes, genomic features across human and non-human organisms. It is built using the knowledge graph exchange (KGX) framework, which transforms a variety of standard formats, such as RDF, OWL, and TRAPI JSON, to nodes and edges CSV files that are uploaded into Neo4j. The TRAPI API (https://github.com/NCATSTranslator/ReasonerAPI) is built using PLATER (https://github.com/NCATSTranslator/Translator-All/wiki/Plater), a tool that creates a TRAPI service given a Biolink compliant instance of Neo4j.\n\n**Version:** 2023-09-15\n\n**URL:** [https://github.com/monarch-initiative/monarch-ingest](https://github.com/monarch-initiative/monarch-ingest)\n\n**Files:** [https://data.monarchinitiative.org/monarch-kg-dev/2023-09-15](https://data.monarchinitiative.org/monarch-kg-dev/2023-09-15)\n\n**Nodes:** 830,288\n\n**Edges:** 8,260,697\n\n"
     },
     {
       "name": "PANTHER",
-      "description": "\nThe Protein ANalysis THrough Evolutionary Relationships (PANTHER) classification system provides an openly available annotation library of gene family phylogenetic trees, with persistent identifiers attached to all nodes in the trees and annotation of each protein member of the family by its family and protein class, subfamily, orthologs, paralogs, GO Phylogenetic Annotation Project function, and Reactome pathways.\n\n**Version:** bc372fa16b7f4d7e\n\n**URL:** [http://pantherdb.org/](http://pantherdb.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/PANTHER_Automat/bc372fa16b7f4d7e](https://stars.renci.org/var/plater/bl-3.5.4/PANTHER_Automat/bc372fa16b7f4d7e)\n\n**Nodes:** 87,183\n\n**Edges:** 1,051,806\n\n"
+      "description": "\nThe Protein ANalysis THrough Evolutionary Relationships (PANTHER) classification system provides an openly available annotation library of gene family phylogenetic trees, with persistent identifiers attached to all nodes in the trees and annotation of each protein member of the family by its family and protein class, subfamily, orthologs, paralogs, GO Phylogenetic Annotation Project function, and Reactome pathways.\n\n**Version:** bfb3978535ac7d5f\n\n**URL:** [http://pantherdb.org/](http://pantherdb.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/PANTHER_Automat/bfb3978535ac7d5f](https://stars.renci.org/var/plater/bl-3.5.4/PANTHER_Automat/bfb3978535ac7d5f)\n\n**Nodes:** 88,252\n\n**Edges:** 1,072,836\n\n"
     },
     {
       "name": "Pharos",
-      "description": "\nPharos is the openly accessible user interface to the Illuminating the Druggable Genome (IDG) program’s Knowledge Management Center (KMC), which aims to develop a comprehensive, integrated knowledge-base for the Druggable Genome (DG) to illuminate the uncharacterized and/or poorly annotated portion of the DG, focusing on three of the most common drug-targeted protein families: G-protein-coupled receptors; ion channels; and kinases.\n\n**Version:** 6fb3d37e4c9e6d4d\n\n**URL:** [https://pharos.nih.gov/](https://pharos.nih.gov/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/PHAROS_Automat/6fb3d37e4c9e6d4d](https://stars.renci.org/var/plater/bl-3.5.4/PHAROS_Automat/6fb3d37e4c9e6d4d)\n\n**Nodes:** 342,517\n\n**Edges:** 1,074,009\n\n"
+      "description": "\nPharos is the openly accessible user interface to the Illuminating the Druggable Genome (IDG) program’s Knowledge Management Center (KMC), which aims to develop a comprehensive, integrated knowledge-base for the Druggable Genome (DG) to illuminate the uncharacterized and/or poorly annotated portion of the DG, focusing on three of the most common drug-targeted protein families: G-protein-coupled receptors; ion channels; and kinases.\n\n**Version:** 1a20bf45c2983099\n\n**URL:** [https://pharos.nih.gov/](https://pharos.nih.gov/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/PHAROS_Automat/1a20bf45c2983099](https://stars.renci.org/var/plater/bl-3.5.4/PHAROS_Automat/1a20bf45c2983099)\n\n**Nodes:** 342,894\n\n**Edges:** 1,076,938\n\n"
     },
     {
       "name": "Reactome",
-      "description": "\nREACTOME is an open-source, open access, manually curated and peer-reviewed pathway database. Our goal is to provide intuitive bioinformatics tools for the visualization, interpretation and analysis of pathway knowledge to support basic and clinical research, genome analysis, modeling, systems biology and education.\n\n**Version:** fcc09b773f0cb846\n\n**URL:** [https://reactome.org/](https://reactome.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/Reactome_Automat/fcc09b773f0cb846](https://stars.renci.org/var/plater/bl-3.5.4/Reactome_Automat/fcc09b773f0cb846)\n\n**Nodes:** 561,626\n\n**Edges:** 2,355,585\n\n"
+      "description": "\nREACTOME is an open-source, open access, manually curated and peer-reviewed pathway database. Our goal is to provide intuitive bioinformatics tools for the visualization, interpretation and analysis of pathway knowledge to support basic and clinical research, genome analysis, modeling, systems biology and education.\n\n**Version:** d7df62d3266ae128\n\n**URL:** [https://reactome.org/](https://reactome.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/Reactome_Automat/d7df62d3266ae128](https://stars.renci.org/var/plater/bl-3.5.4/Reactome_Automat/d7df62d3266ae128)\n\n**Nodes:** 564,908\n\n**Edges:** 2,371,795\n\n"
     },
     {
       "name": "ROBOKOP KG",
-      "description": "\nROBOKOP (KG) is an open-source biomedical KG that supports the ROBOKOP application and currently contains millions of biomedical relationships derived from dozens of integrated and harmonized biological knowledge sources and bio-ontologies, including the Automat primary and aggregate knowledge sources. ROBOKOP KG also includes text-mined assertions from PubMed and PubMed Central, derived from natural language processing (NLP). Note that text-based assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** 929354295ba7d43c\n\n**URL:** [http://robokopkg.renci.org/browser/](http://robokopkg.renci.org/browser/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/RobokopKG/929354295ba7d43c](https://stars.renci.org/var/plater/bl-3.5.4/RobokopKG/929354295ba7d43c)\n\n**Nodes:** 9,560,014\n\n**Edges:** 136,156,958\n\n"
-    },
-    {
-      "name": "SRI Reference KG",
-      "description": "\nThe SRI knowledge graph is a reference implementation of the Biolink model specification. It contains data from the Monarch Initiative aggregated database, as well as several OBO ontologies. These data sources provide links between diseases, phenotypes, genomic features across human and non-human organisms. It is built using the knowledge graph exchange (KGX) framework, which transforms a variety of standard formats, such as RDF, OWL, and TRAPI JSON, to nodes and edges CSV files that are uploaded into Neo4j. The TRAPI API (https://github.com/NCATSTranslator/ReasonerAPI) is built using PLATER (https://github.com/NCATSTranslator/Translator-All/wiki/Plater), a tool that creates a TRAPI service given a Biolink compliant instance of Neo4j.\n\n\n\n**URL:** [https://github.com/Knowledge-Graph-Hub/sri-reference-kg](https://github.com/Knowledge-Graph-Hub/sri-reference-kg)\n\n**Files:** [https://data.monarchinitiative.org/monarch-kg-dev/2023-05-25](https://data.monarchinitiative.org/monarch-kg-dev/2023-05-25)\n\n**Nodes:** 774,488\n\n**Edges:** 5,462,534\n\n"
+      "description": "\nROBOKOP (KG) is an open-source biomedical KG that supports the ROBOKOP application and currently contains millions of biomedical relationships derived from dozens of integrated and harmonized biological knowledge sources and bio-ontologies, including the Automat primary and aggregate knowledge sources. ROBOKOP KG also includes text-mined assertions from PubMed and PubMed Central, derived from natural language processing (NLP). Note that text-based assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** b0a6856ee32b9b09\n\n**URL:** [http://robokopkg.renci.org/browser/](http://robokopkg.renci.org/browser/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.1.4/RobokopKG/b0a6856ee32b9b09](https://stars.renci.org/var/plater/bl-4.1.4/RobokopKG/b0a6856ee32b9b09)\n\n**Nodes:** 9,564,760\n\n**Edges:** 133,672,722\n\n"
     },
     {
       "name": "STRING",
-      "description": "\nThe Search Tool for the Retrieval of INteracting Genes/proteins (STRING) database provides information on known and predicted protein-protein interactions (both direct and indirect) derived from genomic context predictions, high-throughput laboratory experiments, conserved co-expression, automated text mining, and aggregated knowledge from primary data sources.\n\n**Version:** 8b43900253975098\n\n**URL:** [https://string-db.org/](https://string-db.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/STRING-DB_Automat/8b43900253975098](https://stars.renci.org/var/plater/bl-3.5.4/STRING-DB_Automat/8b43900253975098)\n\n**Nodes:** 56,816\n\n**Edges:** 11,500,574\n\n"
+      "description": "\nThe Search Tool for the Retrieval of INteracting Genes/proteins (STRING) database provides information on known and predicted protein-protein interactions (both direct and indirect) derived from genomic context predictions, high-throughput laboratory experiments, conserved co-expression, automated text mining, and aggregated knowledge from primary data sources.\n\n**Version:** 6d1da8f1689a8bac\n\n**URL:** [https://string-db.org/](https://string-db.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/STRING-DB_Automat/6d1da8f1689a8bac](https://stars.renci.org/var/plater/bl-3.5.4/STRING-DB_Automat/6d1da8f1689a8bac)\n\n**Nodes:** 56,898\n\n**Edges:** 11,506,622\n\n"
     },
     {
       "name": "Text Mining Provider KG",
-      "description": "\nThe Text Mining Provider KG contains subject-predicate-object assertions derived from the application of natural language processing (NLP) algorithms to the PubMedCentral Open Access collection of publications plus additional titles and abstracts from PubMed. Note thattext-mined assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** e4eb87d37071ba87\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider](https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/TMKP_Automat/e4eb87d37071ba87](https://stars.renci.org/var/plater/bl-3.5.4/TMKP_Automat/e4eb87d37071ba87)\n\n**Nodes:** 159,550\n\n**Edges:** 2,730,979\n\n"
+      "description": "\nThe Text Mining Provider KG contains subject-predicate-object assertions derived from the application of natural language processing (NLP) algorithms to the PubMedCentral Open Access collection of publications plus additional titles and abstracts from PubMed. Note thattext-mined assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** d14a28a2fa096e82\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider](https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/TMKP_Automat/d14a28a2fa096e82](https://stars.renci.org/var/plater/bl-3.5.4/TMKP_Automat/d14a28a2fa096e82)\n\n**Nodes:** 160,892\n\n**Edges:** 2,735,329\n\n"
     },
     {
       "name": "Ubergraph",
-      "description": "\nUbergraph is an open-source graph database containing integrated ontologies, including Gene Ontology (GO), Chemical Entities of Biological Interest (ChHEBI), Human Phenotype Ontology (HPO), and the Uber-anatomy ontology (Uberon)’s anatomical ontology. The redundant version \n\n**Version:** 439d05ca99a0dfcd\n\n**URL:** [https://github.com/INCATools/ubergraph](https://github.com/INCATools/ubergraph)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/UbergraphRedundant_Automat/439d05ca99a0dfcd](https://stars.renci.org/var/plater/bl-3.5.4/UbergraphRedundant_Automat/439d05ca99a0dfcd)\n\n**Nodes:** 3,139,556\n\n**Edges:** 143,018,671\n\n"
+      "description": "\nUbergraph is an open-source graph database containing integrated ontologies, including Gene Ontology (GO), Chemical Entities of Biological Interest (ChHEBI), Human Phenotype Ontology (HPO), and the Uber-anatomy ontology (Uberon)’s anatomical ontology.\n\n**Version:** f6c87c92c433b5d7\n\n**URL:** [https://github.com/INCATools/ubergraph](https://github.com/INCATools/ubergraph)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/UbergraphRedundant_Automat/f6c87c92c433b5d7](https://stars.renci.org/var/plater/bl-3.5.4/UbergraphRedundant_Automat/f6c87c92c433b5d7)\n\n**Nodes:** 3,155,099\n\n**Edges:** 143,500,000\n\n"
     },
     {
-      "name": "Text Mining Provider KG",
-      "description": "\nThe Text Mining Provider KG contains subject-predicate-object assertions derived from the application of natural language processing (NLP) algorithms to the PubMedCentral Open Access collection of publications plus additional titles and abstracts from PubMed. Note thattext-mined assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** e4eb87d37071ba87\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider](https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/TMKP_Automat/e4eb87d37071ba87](https://stars.renci.org/var/plater/bl-3.5.4/TMKP_Automat/e4eb87d37071ba87)\n\n**Nodes:** 159,550\n\n**Edges:** 2,730,979\n\n"
+      "name": "Viral Proteome",
+      "description": "\nThe Gene Ontology (GO) Consortium’s Viral Proteome resource provides open access to curated assignment of GO terms to proteins and proteome relationships derived from the UniProt KnowledgeBase for all NCBI taxa classified as viruses.\n\n**Version:** 8a78ab9faf52b16d\n\n**URL:** [https://www.ebi.ac.uk/GOA/proteomes](https://www.ebi.ac.uk/GOA/proteomes)\n\n**Files:** [https://stars.renci.org/var/plater/bl-3.5.4/ViralProteome_Automat/8a78ab9faf52b16d](https://stars.renci.org/var/plater/bl-3.5.4/ViralProteome_Automat/8a78ab9faf52b16d)\n\n**Nodes:** 77,747\n\n**Edges:** 310,367\n\n"
     }
   ],
   "components": {
@@ -15169,6 +14324,9 @@
           },
           "qnode_keys": {
             "$ref": "#/components/schemas/HashableSequence_str_"
+          },
+          "predicates_to_exclude": {
+            "$ref": "#/components/schemas/HashableSequence_BiolinkPredicate_"
           }
         },
         "description": "Custom base model for all classes\n\nThis provides hash and equality methods."
@@ -15621,6 +14779,15 @@
         "description": "Custom class that implements MutableSequence and is hashable",
         "default": []
       },
+      "HashableSequence_Result_": {
+        "title": "HashableSequence[Result]",
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Result"
+        },
+        "description": "Custom class that implements MutableSequence and is hashable",
+        "default": []
+      },
       "HashableSequence_SubAttribute_": {
         "title": "HashableSequence[SubAttribute]",
         "type": "array",
@@ -15706,16 +14873,6 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/Qualifier"
-        },
-        "description": "Custom class that implements MutableSet and is hashable",
-        "default": []
-      },
-      "HashableSet_Result_": {
-        "title": "HashableSet[Result]",
-        "uniqueItems": true,
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Result"
         },
         "description": "Custom class that implements MutableSet and is hashable",
         "default": []
@@ -16936,7 +16093,7 @@
       },
       "Result": {
         "title": "result",
-        "required": ["node_bindings"],
+        "required": ["node_bindings", "analyses"],
         "type": "object",
         "properties": {
           "node_bindings": {
@@ -16953,14 +16110,13 @@
               {
                 "$ref": "#/components/schemas/HashableSet_Analysis_"
               }
-            ],
-            "nullable": true
+            ]
           }
         },
         "description": "Result."
       },
       "Results": {
-        "$ref": "#/components/schemas/HashableSet_Result_",
+        "$ref": "#/components/schemas/HashableSequence_Result_",
         "title": "results",
         "description": "Results."
       },
@@ -17008,6 +16164,10 @@
         "properties": {
           "allowlist": {
             "$ref": "#/components/schemas/HashableSequence_str_"
+          },
+          "timeout": {
+            "title": "Timeout",
+            "type": "number"
           }
         },
         "additionalProperties": false,
@@ -17019,6 +16179,10 @@
         "properties": {
           "denylist": {
             "$ref": "#/components/schemas/HashableSequence_str_"
+          },
+          "timeout": {
+            "title": "Timeout",
+            "type": "number"
           }
         },
         "additionalProperties": false,
@@ -17032,8 +16196,23 @@
           },
           {
             "$ref": "#/components/schemas/RunnerDenyList"
+          },
+          {
+            "$ref": "#/components/schemas/RunnerTimeout"
           }
         ],
+        "description": "Custom base model for all classes\n\nThis provides hash and equality methods."
+      },
+      "RunnerTimeout": {
+        "title": "RunnerTimeout",
+        "type": "object",
+        "properties": {
+          "timeout": {
+            "title": "Timeout",
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
         "description": "Custom base model for all classes\n\nThis provides hash and equality methods."
       },
       "SRITestData": {
