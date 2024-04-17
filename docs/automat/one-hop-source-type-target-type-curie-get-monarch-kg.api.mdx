@@ -1,11 +1,11 @@
 ---
-id: node-node-type-curie-get-sri-reference-kg
-title: "Find `node` by `curie`"
-description: "Returns `node` matching `curie`."
-sidebar_label: "Find `node` by `curie`"
+id: one-hop-source-type-target-type-curie-get-monarch-kg
+title: "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source"
+description: "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`."
+sidebar_label: "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9VE1v2zAM/SuCThuQxl2wk2/F1mXFPjqk2S5BkSg246i1LZWSiwWG//tI2U7cpu2KHZZDosjk4+PzI2uZgktQW69NKWM5A19h6cSqNCmsRKF8stVlJlZJhRpWYzmSxgIqDr9IKYHjlsvw7XeWjssQuVxm4JcO9QnCBhDKBE5uM8q2ClUBHtDJeFFLhLtKIxCSxwpG0iVbKJSMa+m1z4EKfCdoMSdoSuYKdOU8EifZjGRJWD0J38ZobsMqv6Xnr8H/wHRfwE665wPc6xHhOmtKB46hJqen/PNQyasqScC5TZWLWRdMKIkpPZSew5W1uU6CktGN45z6CXp9rgg6iL0aQojAXIgp+AN9hah2zNZDwdwa/ozk+8nkmOEvles01BfniAb/hd7n+fzHAaeH6ciY9Q0kTM4im8brVq4UvNL5EOVje/NsF/vA41KHF7yQuUnopnBZj3T9NyqcMYD/atqGX2Ciyt3lJlj3sWH2N5o0zADJJyw90xmU+EaeUNmThmsvDqGhxWesv//QE5XxLMmr2QU5rRs28WXK3dOkbQ2PaRZMEuwby+jxXEb1foKaqA6ObyjcAd73g1ohvTG59d66OIrQrM2tsSeq8oZ2xJjM4saMpscGszAhutyYYTdnbSjBMmbrwMn4HbcGWLjLzRVV0wl0VahIblTaSWON84UKHuzG8pMu035LrXf9fiK0Bx6vD45+zWrrRPbw20c2VzTyVDt0XnfaLeQTOy0e7p+4XRikwJZIc0Zdr5WDn5g3DV/fVYA7uqfjvUKt1iwPKZxqx2d6WxuVO3ihkzezzvRvxXOke/uWbN57lVf8j463sHuwL9m2/7Fwqw0NBqkDKqUh4c7bZ2e0L60fZB1toGbo6On5nMbgD5YPTkI=
+api: eJy9VU1P20AQ/SurPbVSiGnUk2+oRVC1FARpLwg5G3tiL9jeZXYNjaz8986sncThs0IqucS7nnnz9d64lRm4FLX12tQylufgG6ydMDWIwlhhlS+cWKCpxMyZBlNIapNB4pcWZkLca1+IWdqgppM3YuYV5uAHNmM5ksYCKg7wLaMQBJ0QdJL0eGyWJEnv2Z8CZJLwTWVqhWmxd5MTlFWoKvCATsaXrUS4bTQCwXpsYCRdWkClZNxKr30JFO0iBBFTgiV3RqdL51HXuVyNZE1ofLFNhaw0d4IrJ4t/iTENqb8WY1DgG2J84Ya8gJ727we4VyPCddbUDhxDTfb3+W934BdNmoJzi6YU570xoaSm9lB7NlfWljoN44uuHfu0T6S39hWnRJxjIo4YNF4IMWgRnUIxQhyB31akENWSC/BQcbor/o3k58nkcdK/VamzkJI4RDT4loyPp9OzLc4apk/GzK8h5eQsMnm97jqYgVe6HKJ87W6erWJj+DjUduaXsjQp3VQuXyNdvZYKewzgf5iu4BcyUfXydBFU85BDmxtNPcwBiTrcek5nEOKEaKLyJznYXWxNQ4nP6GHzozcqZxnLk07h4vsR103yLgwvijzQI3A5ltF2DUTtQK6rqB0Ii05BCCtydIB36z3RIE1NFt5bF0cRmrm5MXZPNd5Uyo+JMG6MUKd6bDAPwtH1wgwrOuhMCZYxOxZOxp+4PMDKnS4uKJpOoY9CQUqjsr491jhfqcDDXq3E/M2KJY02pe+XbFeZ4Fp4n3alheNY/DQeYnFWgiKdHR1ORWSJPsx0cGyc8V6sNMHeF8qvfXNDb8OeVj06Jb0jp3Yrnv+z/3sGePjjI1sqWlHUlDCSth/vpdzZ8vHuPo53V2fc7TqaUkGNZee2nVNPfmG5WvH1bQO4pHt6vFOo1ZxHSCzItONn4tZClQ5eaMOH816cH8Vz+a9lVrPI7lTZ8Ikeb2D54IPCAnvH0MNmvXPobjC0PWg0oDLaJNz27t0BfWesH3g9WtOrofiJ37Qr/gKTRvoj
 sidebar_class_name: "get api-method"
 info_path: docs/automat/automat
 custom_edit_url: null
@@ -22,19 +22,19 @@ import SchemaItem from "@theme/SchemaItem";
 import SchemaTabs from "@theme/SchemaTabs";
 import TabItem from "@theme/TabItem";
 
-<h1 className={"openapi__heading"}>Find `node` by `curie`</h1>
+<h1 className={"openapi__heading"}>Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source</h1>
 
-<MethodEndpoint method={"get"} path={"/sri-reference-kg/{node_type}/{curie}"}></MethodEndpoint>
+<MethodEndpoint method={"get"} path={"/monarch-kg/{source_type}/{target_type}/{curie}"}></MethodEndpoint>
 
 
 
-Returns `node` matching `curie`.
+Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.
 
 <details><summary>Schema</summary>
 
 ## Request
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Node Type","type":"string"},"name":"node_type","in":"path"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Curie","type":"string"},"name":"curie","in":"path"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Source Type","type":"string"},"name":"source_type","in":"path"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Target Type","type":"string"},"name":"target_type","in":"path"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Curie","type":"string"},"name":"curie","in":"path"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
 
 Successful Response
 
