@@ -108,8 +108,6 @@ function CardCategory({ item }) {
     })();
   }, []);
 
-  console.log(item);
-
   if (!href) {
     return null;
   }
