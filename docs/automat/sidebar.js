@@ -6,33 +6,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-robokopkg-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-robokopkg",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-robokopkg-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-robokopkg",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-robokopkg",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -49,13 +24,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-robokopkg-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-robokopkg-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-robokopkg-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-robokopkg-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -68,33 +43,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-binding-db-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-binding-db",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-binding-db-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-binding-db",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-binding-db",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -111,13 +61,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-binding-db-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-binding-db-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-binding-db-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-binding-db-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -130,33 +80,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-cam-kp-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-cam-kp",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-cam-kp-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-cam-kp",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-cam-kp",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -173,13 +98,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-cam-kp-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-cam-kp-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-cam-kp-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-cam-kp-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -192,33 +117,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-ctd-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-ctd",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-ctd-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-ctd",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-ctd",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -235,13 +135,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-ctd-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-ctd-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-ctd-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-ctd-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -254,33 +154,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-drugcentral-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-drugcentral",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-drugcentral-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-drugcentral",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-drugcentral",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -297,13 +172,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-drugcentral-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-drugcentral-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-drugcentral-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-drugcentral-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -316,33 +191,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-genome-alliance-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-genome-alliance",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-genome-alliance-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-genome-alliance",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-genome-alliance",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -359,13 +209,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-genome-alliance-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-genome-alliance-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-genome-alliance-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-genome-alliance-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -378,33 +228,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-gtex-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-gtex",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-gtex-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-gtex",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-gtex",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -421,13 +246,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-gtex-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-gtex-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-gtex-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-gtex-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -440,33 +265,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-gtopdb-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-gtopdb",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-gtopdb-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-gtopdb",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-gtopdb",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -483,13 +283,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-gtopdb-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-gtopdb-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-gtopdb-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-gtopdb-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -502,33 +302,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-gwas-catalog-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-gwas-catalog",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-gwas-catalog-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-gwas-catalog",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-gwas-catalog",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -545,13 +320,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-gwas-catalog-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-gwas-catalog-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-gwas-catalog-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-gwas-catalog-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -564,33 +339,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-hetio-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-hetio",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-hetio-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-hetio",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-hetio",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -607,13 +357,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-hetio-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-hetio-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-hetio-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-hetio-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -626,33 +376,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-hgnc-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-hgnc",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-hgnc-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-hgnc",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-hgnc",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -669,13 +394,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-hgnc-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-hgnc-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-hgnc-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-hgnc-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -688,33 +413,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-hmdb-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-hmdb",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-hmdb-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-hmdb",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-hmdb",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -731,13 +431,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-hmdb-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-hmdb-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-hmdb-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-hmdb-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -750,33 +450,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-human-goa-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-human-goa",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-human-goa-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-human-goa",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-human-goa",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -793,13 +468,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-human-goa-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-human-goa-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-human-goa-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-human-goa-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -812,33 +487,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-icees-kg-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-icees-kg",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-icees-kg-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-icees-kg",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-icees-kg",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -855,13 +505,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-icees-kg-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-icees-kg-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-icees-kg-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-icees-kg-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -874,33 +524,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-intact-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-intact",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-intact-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-intact",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-intact",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -917,13 +542,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-intact-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-intact-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-intact-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-intact-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -936,33 +561,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-monarch-kg-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-monarch-kg",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-monarch-kg-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-monarch-kg",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-monarch-kg",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -979,13 +579,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-monarch-kg-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-monarch-kg-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-monarch-kg-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-monarch-kg-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -998,33 +598,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-panther-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-panther",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-panther-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-panther",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-panther",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -1041,13 +616,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-panther-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-panther-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-panther-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-panther-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -1060,33 +635,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-pharos-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-pharos",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-pharos-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-pharos",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-pharos",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -1103,13 +653,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-pharos-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-pharos-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-pharos-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-pharos-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -1122,33 +672,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-reactome-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-reactome",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-reactome-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-reactome",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-reactome",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -1165,13 +690,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-reactome-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-reactome-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-reactome-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-reactome-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -1184,33 +709,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-string-db-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-string-db",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-string-db-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-string-db",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-string-db",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -1227,13 +727,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-string-db-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-string-db-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-string-db-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-string-db-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -1246,33 +746,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-textminingkp-trapi",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-textminingkp",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-textminingkp-translator",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-textminingkp",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-textminingkp",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -1289,13 +764,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-textminingkp-trapi",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-textminingkp-trapi",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-textminingkp-trapi",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-textminingkp-trapi",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -1308,33 +783,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-trapi-ubergraph",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-ubergraph",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-translator-ubergraph",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-ubergraph",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-ubergraph",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -1351,13 +801,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-trapi-ubergraph",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-trapi-ubergraph",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-trapi-ubergraph",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-trapi-ubergraph",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
@@ -1370,33 +820,8 @@ module.exports = [
     items: [
       {
         type: "doc",
-        id: "automat/reasoner-api-1-4-query-post-trapi-viral-proteome",
-        label: "Query reasoner via one of several inputs.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/cypher-cypher-post-viral-proteome",
-        label: "Run cypher query",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
-        id: "automat/overlay-overlay-post-translator-viral-proteome",
-        label: "Overlay results with available connections between each node.",
-        className: "api-method post",
-      },
-      {
-        type: "doc",
         id: "automat/node-node-type-curie-get-viral-proteome",
         label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-viral-proteome",
-        label:
-          "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
         className: "api-method get",
       },
       {
@@ -1413,13 +838,13 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/get-meta-knowledge-graph-1-4-meta-knowledge-graph-get-trapi-viral-proteome",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-trapi-viral-proteome",
         label: "Meta knowledge graph representation of this TRAPI web service.",
         className: "api-method get",
       },
       {
         type: "doc",
-        id: "automat/get-sri-testing-data-1-4-sri-testing-data-get-trapi-viral-proteome",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-trapi-viral-proteome",
         label: "Test data for usage by the SRI Testing Harness.",
         className: "api-method get",
       },
