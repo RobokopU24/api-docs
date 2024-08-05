@@ -91,18 +91,18 @@
                     "nodes": {
                       "n0": {
                         "categories": ["biolink:SmallMolecule"],
-                        "ids": ["PUBCHEM.COMPOUND:3009304"]
+                        "ids": ["PUBCHEM.COMPOUND:44640149"]
                       },
                       "n1": {
                         "categories": ["biolink:Protein"],
-                        "ids": ["UniProtKB:P03367"]
+                        "ids": ["UniProtKB:P51570"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:binds"]
+                        "predicates": ["biolink:affects"]
                       }
                     }
                   }
@@ -175,7 +175,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -460,7 +462,7 @@
                     "nodes": {
                       "n0": {
                         "categories": ["biolink:BiologicalProcess"],
-                        "ids": ["GO:0006974"]
+                        "ids": ["GO:0000209"]
                       },
                       "n1": {
                         "categories": ["biolink:BiologicalProcess"],
@@ -471,7 +473,7 @@
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:has_part"]
+                        "predicates": ["biolink:precedes"]
                       }
                     }
                   }
@@ -544,7 +546,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -913,7 +917,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -1198,18 +1204,18 @@
                     "nodes": {
                       "n0": {
                         "categories": ["biolink:SmallMolecule"],
-                        "ids": ["PUBCHEM.COMPOUND:66553195"]
+                        "ids": ["PUBCHEM.COMPOUND:91668186"]
                       },
                       "n1": {
                         "categories": ["biolink:Disease"],
-                        "ids": ["MONDO:0004979"]
+                        "ids": ["MONDO:0005494"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:contraindicated_in"]
+                        "predicates": ["biolink:treats"]
                       }
                     }
                   }
@@ -1282,7 +1288,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -1651,7 +1659,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -1936,18 +1946,18 @@
                     "nodes": {
                       "n0": {
                         "categories": ["biolink:SequenceVariant"],
-                        "ids": ["CAID:CA52769390"]
+                        "ids": ["CAID:CA8545933"]
                       },
                       "n1": {
                         "categories": ["biolink:Gene"],
-                        "ids": ["ENSEMBL:ENSG00000269383"]
+                        "ids": ["NCBIGene:192666"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:is_nearby_variant_of"]
+                        "predicates": ["biolink:is_frameshift_variant_of"]
                       }
                     }
                   }
@@ -2020,7 +2030,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -2305,18 +2317,18 @@
                     "nodes": {
                       "n0": {
                         "categories": ["biolink:SmallMolecule"],
-                        "ids": ["GTOPDB:9311"]
+                        "ids": ["CHEBI:195557"]
                       },
                       "n1": {
                         "categories": ["biolink:Gene"],
-                        "ids": ["NCBIGene:3604"]
+                        "ids": ["NCBIGene:239"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:binds"]
+                        "predicates": ["biolink:affects"]
                       }
                     }
                   }
@@ -2389,7 +2401,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -2758,7 +2772,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -3127,7 +3143,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -3496,7 +3514,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -3865,7 +3885,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -4234,7 +4256,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -4603,7 +4627,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -4974,7 +5000,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -5259,18 +5287,18 @@
                     "nodes": {
                       "n0": {
                         "categories": ["biolink:Gene"],
-                        "ids": ["HGNC:2883"]
+                        "ids": ["FB:FBgn0004373"]
                       },
                       "n1": {
-                        "categories": ["biolink:PhenotypicFeature"],
-                        "ids": ["HP:0000006"]
+                        "categories": ["biolink:Gene"],
+                        "ids": ["FB:FBgn0010348"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:has_mode_of_inheritance"]
+                        "predicates": ["biolink:interacts_with"]
                       }
                     }
                   }
@@ -5343,7 +5371,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -5712,7 +5742,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -6081,7 +6113,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -6366,18 +6400,18 @@
                     "nodes": {
                       "n0": {
                         "categories": ["biolink:MolecularActivity"],
-                        "ids": ["REACT:R-DDI-5672017"]
+                        "ids": ["REACT:R-HSA-9626253"]
                       },
                       "n1": {
                         "categories": ["biolink:BiologicalProcess"],
-                        "ids": ["GO:0016241"]
+                        "ids": ["GO:0061684"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:subclass_of"]
+                        "predicates": ["biolink:occurs_in"]
                       }
                     }
                   }
@@ -6450,7 +6484,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -6819,7 +6855,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -7104,18 +7142,18 @@
                     "nodes": {
                       "n0": {
                         "categories": ["biolink:Protein"],
-                        "ids": ["UniProtKB:Q6P1M3-1"]
+                        "ids": ["UniProtKB:Q9Y6E7"]
                       },
                       "n1": {
                         "categories": ["biolink:Protein"],
-                        "ids": ["PR:000036194"]
+                        "ids": ["UniProtKB:Q16667-1"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:subclass_of"]
+                        "predicates": ["biolink:coexpressed_with"]
                       }
                     }
                   }
@@ -7188,7 +7226,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -7473,11 +7513,11 @@
                     "nodes": {
                       "n0": {
                         "categories": ["biolink:SmallMolecule"],
-                        "ids": ["CHEBI:5931"]
+                        "ids": ["CHEBI:17089"]
                       },
                       "n1": {
                         "categories": ["biolink:Protein"],
-                        "ids": ["UMLS:C0597192"]
+                        "ids": ["PR:000000001"]
                       }
                     },
                     "edges": {
@@ -7557,7 +7597,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -7926,7 +7968,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -8211,18 +8255,18 @@
                     "nodes": {
                       "n0": {
                         "categories": ["biolink:Protein"],
-                        "ids": ["UniProtKB:P03129"]
+                        "ids": ["UniProtKB:Q96679"]
                       },
                       "n1": {
                         "categories": ["biolink:CellularComponent"],
-                        "ids": ["GO:0042025"]
+                        "ids": ["GO:0030430"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:colocalizes_with"]
+                        "predicates": ["biolink:active_in"]
                       }
                     }
                   }
@@ -8295,7 +8339,9 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/CypherResponse"
+                }
               }
             }
           },
@@ -8526,87 +8572,87 @@
   "tags": [
     {
       "name": "BINDING",
-      "description": "\nBinding DataBase (BindingDB) openly exposes curated data on chemical entities and their molecular targets.\n\n**Version:** 57e22a8a314b0df8\n\n**URL:** [https://www.bindingdb.org/](https://www.bindingdb.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/BINDING_Automat/57e22a8a314b0df8](https://stars.renci.org/var/plater/bl-4.2.0/BINDING_Automat/57e22a8a314b0df8)\n\n**Nodes:** 1,114,169\n\n**Edges:** 2,230,910\n\n"
+      "description": "\nBinding DataBase (BindingDB) openly exposes curated data on chemical entities and their molecular targets.\n\n**Version:** 9164067231dc9b8c\n\n**URL:** [https://www.bindingdb.org/](https://www.bindingdb.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/BINDING_Automat/9164067231dc9b8c](https://stars.renci.org/var/plater/bl-4.2.1/BINDING_Automat/9164067231dc9b8c)\n\n**Nodes:** 1,129,797\n\n**Edges:** 2,241,210\n\n"
     },
     {
       "name": "CAM KG",
-      "description": "\nThe CAM KG contains data on CAMs (Causal Activity Models), which are small knowledge graphs built using the Web Ontology Language (OWL). The CAM database combines many CAM graphs, along with a large merged bio-ontology containing the full vocabulary of concepts referenced within the individual CAMs. Each CAM describes an instantiation of some of those concepts in a particular context, modeling the interactions between those instances as an interlinked representation of a complex biological or environmental process.\n\n**Version:** dfdb15b2ecef5629\n\n\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/CAMKP_Automat/dfdb15b2ecef5629](https://stars.renci.org/var/plater/bl-4.2.0/CAMKP_Automat/dfdb15b2ecef5629)\n\n**Nodes:** 119,931\n\n**Edges:** 2,222,643\n\n"
+      "description": "\nThe CAM KG contains data on CAMs (Causal Activity Models), which are small knowledge graphs built using the Web Ontology Language (OWL). The CAM database combines many CAM graphs, along with a large merged bio-ontology containing the full vocabulary of concepts referenced within the individual CAMs. Each CAM describes an instantiation of some of those concepts in a particular context, modeling the interactions between those instances as an interlinked representation of a complex biological or environmental process.\n\n**Version:** e92bd7b217535f2d\n\n\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/CAMKP_Automat/e92bd7b217535f2d](https://stars.renci.org/var/plater/bl-4.2.1/CAMKP_Automat/e92bd7b217535f2d)\n\n**Nodes:** 119,917\n\n**Edges:** 2,219,632\n\n"
     },
     {
       "name": "CTD",
-      "description": "\nThe Comparative Toxicogenomics Database (CTD) is an open-source database that provides manually curated information about chemical-gene/protein, chemical-disease, and gene/protein-disease relationships, with additional support for the curated relationships provided by function and pathway data.\n\n**Version:** 8b5f74462c4179ca\n\n**URL:** [http://ctdbase.org/about/](http://ctdbase.org/about/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/CTD_Automat/8b5f74462c4179ca](https://stars.renci.org/var/plater/bl-4.2.0/CTD_Automat/8b5f74462c4179ca)\n\n**Nodes:** 504,315\n\n**Edges:** 1,602,508\n\n"
+      "description": "\nThe Comparative Toxicogenomics Database (CTD) is an open-source database that provides manually curated information about chemical-gene/protein, chemical-disease, and gene/protein-disease relationships, with additional support for the curated relationships provided by function and pathway data.\n\n**Version:** f92c663160ec5e36\n\n**URL:** [http://ctdbase.org/about/](http://ctdbase.org/about/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/CTD_Automat/f92c663160ec5e36](https://stars.renci.org/var/plater/bl-4.2.1/CTD_Automat/f92c663160ec5e36)\n\n**Nodes:** 506,190\n\n**Edges:** 1,336,266\n\n"
     },
     {
       "name": "DrugCentral",
-      "description": "\nDrugCentral provides open-source data on active ingredients, chemical entities, pharmaceutical products, drug mode of action, indications, and pharmacologic action for approved drugs, derived from information provided by the US Food & Drug Administration, the European Medicines Agency, and the Pharmaceutical and Medical Devices Agency. Note that DrugCentral provides limited information on discontinued drugs and drugs approved outside of the US, but that information has not been validated.\n\n**Version:** 33887d252c2a0de4\n\n**URL:** [https://drugcentral.org/](https://drugcentral.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/DrugCentral_Automat/33887d252c2a0de4](https://stars.renci.org/var/plater/bl-4.2.0/DrugCentral_Automat/33887d252c2a0de4)\n\n**Nodes:** 83,052\n\n**Edges:** 687,080\n\n"
+      "description": "\nDrugCentral provides open-source data on active ingredients, chemical entities, pharmaceutical products, drug mode of action, indications, and pharmacologic action for approved drugs, derived from information provided by the US Food & Drug Administration, the European Medicines Agency, and the Pharmaceutical and Medical Devices Agency. Note that DrugCentral provides limited information on discontinued drugs and drugs approved outside of the US, but that information has not been validated.\n\n**Version:** dec0617490b49c7a\n\n**URL:** [https://drugcentral.org/](https://drugcentral.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/DrugCentral_Automat/dec0617490b49c7a](https://stars.renci.org/var/plater/bl-4.2.1/DrugCentral_Automat/dec0617490b49c7a)\n\n**Nodes:** 83,627\n\n**Edges:** 680,919\n\n"
     },
     {
       "name": "Alliance of Genome Resources",
-      "description": "\nThe Alliance of Genome Resources is a consortium of the owners of seven model organism databases (MODs) and the Gene Ontology (GO) Consortium, whose goal is to provide an integrated view of their data to all biologists, clinicians, and other interested parties. The Alliance provides the results of all methods that have been benchmarked by the Quest for Orthologs Consortium (QfO), as well as curated ortholog inferences from HGNC (human, mouse, rat genes).\n\n**Version:** 85a6ce01fb7d2cbe\n\n**URL:** [https://www.alliancegenome.org/](https://www.alliancegenome.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.1.6/GenomeAllianceOrthologs_Automat/85a6ce01fb7d2cbe](https://stars.renci.org/var/plater/bl-4.1.6/GenomeAllianceOrthologs_Automat/85a6ce01fb7d2cbe)\n\n**Nodes:** 94,314\n\n**Edges:** 489,908\n\n"
+      "description": "\nThe Alliance of Genome Resources is a consortium of the owners of seven model organism databases (MODs) and the Gene Ontology (GO) Consortium, whose goal is to provide an integrated view of their data to all biologists, clinicians, and other interested parties. The Alliance provides the results of all methods that have been benchmarked by the Quest for Orthologs Consortium (QfO), as well as curated ortholog inferences from HGNC (human, mouse, rat genes).\n\n**Version:** 06e2a3c1eeea5251\n\n**URL:** [https://www.alliancegenome.org/](https://www.alliancegenome.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/GenomeAllianceOrthologs_Automat/06e2a3c1eeea5251](https://stars.renci.org/var/plater/bl-4.2.1/GenomeAllianceOrthologs_Automat/06e2a3c1eeea5251)\n\n**Nodes:** 94,246\n\n**Edges:** 489,352\n\n"
     },
     {
       "name": "GTEx",
-      "description": "\nThe Genotype-Tissue Expression (GTEx) portal provides open access to data on tissue-specific gene expression and regulation, derived from molecular assays (e.g., WGS, WES, RNA-Seq) on 54 non-diseased tissue sites across nearly 1000 individuals.\n\n**Version:** 982fac378b629570\n\n**URL:** [https://gtexportal.org/home/](https://gtexportal.org/home/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/GTEx_Automat/982fac378b629570](https://stars.renci.org/var/plater/bl-4.2.0/GTEx_Automat/982fac378b629570)\n\n**Nodes:** 4,924,092\n\n**Edges:** 53,036,350\n\n"
+      "description": "\nThe Genotype-Tissue Expression (GTEx) portal provides open access to data on tissue-specific gene expression and regulation, derived from molecular assays (e.g., WGS, WES, RNA-Seq) on 54 non-diseased tissue sites across nearly 1000 individuals.\n\n**Version:** a6448b9092bb81a1\n\n**URL:** [https://gtexportal.org/home/](https://gtexportal.org/home/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/GTEx_Automat/a6448b9092bb81a1](https://stars.renci.org/var/plater/bl-4.2.1/GTEx_Automat/a6448b9092bb81a1)\n\n**Nodes:** 4,921,318\n\n**Edges:** 52,935,456\n\n"
     },
     {
       "name": "GtoPdb",
-      "description": "\nThe International Union of Basic and Clinical Pharmacology (IUPHAR) / British Pharmacological Society (BPS) Guide to Pharmacology database (GtoPdb) provides searchable open-source quantitative information on drug targets and the prescription medicines and experimental drugs that act on them.\n\n**Version:** b0048e5f6f14c0f7\n\n**URL:** [http://www.guidetopharmacology.org/](http://www.guidetopharmacology.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/GtoPdb_Automat/b0048e5f6f14c0f7](https://stars.renci.org/var/plater/bl-4.2.0/GtoPdb_Automat/b0048e5f6f14c0f7)\n\n**Nodes:** 12,759\n\n**Edges:** 91,514\n\n"
+      "description": "\nThe International Union of Basic and Clinical Pharmacology (IUPHAR) / British Pharmacological Society (BPS) Guide to Pharmacology database (GtoPdb) provides searchable open-source quantitative information on drug targets and the prescription medicines and experimental drugs that act on them.\n\n**Version:** 0ea6074c824c2236\n\n**URL:** [http://www.guidetopharmacology.org/](http://www.guidetopharmacology.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/GtoPdb_Automat/0ea6074c824c2236](https://stars.renci.org/var/plater/bl-4.2.1/GtoPdb_Automat/0ea6074c824c2236)\n\n**Nodes:** 13,000\n\n**Edges:** 93,957\n\n"
     },
     {
       "name": "GWAS Catalog",
-      "description": "\nThe Genome-Wide Association Studies (GWAS) Catalog provides a curated, searchable, visualisable, and openly available database of single nucleotide polymorphism (SNP)-trait associations, derived from GWAS publications, including the reported trait, significant SNP-trait associations, and sample metadata.\n\n**Version:** 1fe140b41b7349e8\n\n**URL:** [https://www.ebi.ac.uk/gwas/](https://www.ebi.ac.uk/gwas/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/GWASCatalog_Automat/1fe140b41b7349e8](https://stars.renci.org/var/plater/bl-4.2.0/GWASCatalog_Automat/1fe140b41b7349e8)\n\n**Nodes:** 512,693\n\n**Edges:** 3,520,730\n\n"
+      "description": "\nThe Genome-Wide Association Studies (GWAS) Catalog provides a curated, searchable, visualisable, and openly available database of single nucleotide polymorphism (SNP)-trait associations, derived from GWAS publications, including the reported trait, significant SNP-trait associations, and sample metadata.\n\n**Version:** e30aceb322a33462\n\n**URL:** [https://www.ebi.ac.uk/gwas/](https://www.ebi.ac.uk/gwas/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/GWASCatalog_Automat/e30aceb322a33462](https://stars.renci.org/var/plater/bl-4.2.1/GWASCatalog_Automat/e30aceb322a33462)\n\n**Nodes:** 513,490\n\n**Edges:** 3,522,694\n\n"
     },
     {
       "name": "Hetionet",
-      "description": "\nHetionet is an open-source biomedical \"heterogeneous information network\" (hetnet) or graph-based resource describing relationships uncovered by millions of biomedical research studies over the past fifty years.\n\n**Version:** 35c7d6be215e8cc9\n\n**URL:** [https://het.io/](https://het.io/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/Hetio_Automat/35c7d6be215e8cc9](https://stars.renci.org/var/plater/bl-4.2.0/Hetio_Automat/35c7d6be215e8cc9)\n\n**Nodes:** 117,197\n\n**Edges:** 2,645,364\n\n"
+      "description": "\nHetionet is an open-source biomedical \"heterogeneous information network\" (hetnet) or graph-based resource describing relationships uncovered by millions of biomedical research studies over the past fifty years.\n\n**Version:** 85a5f53e63150e1e\n\n**URL:** [https://het.io/](https://het.io/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/Hetio_Automat/85a5f53e63150e1e](https://stars.renci.org/var/plater/bl-4.2.1/Hetio_Automat/85a5f53e63150e1e)\n\n**Nodes:** 117,671\n\n**Edges:** 2,620,982\n\n"
     },
     {
       "name": "HGNC",
-      "description": "\nThe HUGO Gene Nomenclature Committee (HGNC) database provides open access to HGNC-approved unique symbols and names for human genes, gene groups, and associated resources, including links to genomic, proteomic and phenotypic information.\n\n**Version:** 012197dd15067551\n\n**URL:** [https://www.genenames.org/](https://www.genenames.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/HGNC_Automat/012197dd15067551](https://stars.renci.org/var/plater/bl-4.2.0/HGNC_Automat/012197dd15067551)\n\n**Nodes:** 27,527\n\n**Edges:** 31,247\n\n"
+      "description": "\nThe HUGO Gene Nomenclature Committee (HGNC) database provides open access to HGNC-approved unique symbols and names for human genes, gene groups, and associated resources, including links to genomic, proteomic and phenotypic information.\n\n**Version:** dee31cfce74e5944\n\n**URL:** [https://www.genenames.org/](https://www.genenames.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/HGNC_Automat/dee31cfce74e5944](https://stars.renci.org/var/plater/bl-4.2.1/HGNC_Automat/dee31cfce74e5944)\n\n**Nodes:** 27,527\n\n**Edges:** 31,246\n\n"
     },
     {
       "name": "HMDB",
-      "description": "\nThe Human Metabolome DataBase (HMDB) is an openly accessible database containing detailed information about small molecule metabolites found in the human body, with links between chemical data, clinical data, and molecular biology/biochemistry data, including protein sequences (enzymes and transporters).\n\n**Version:** 9bf6cb5142d79b7f\n\n**URL:** [https://hmdb.ca/](https://hmdb.ca/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/HMDB_Automat/9bf6cb5142d79b7f](https://stars.renci.org/var/plater/bl-4.2.0/HMDB_Automat/9bf6cb5142d79b7f)\n\n**Nodes:** 139,331\n\n**Edges:** 1,883,522\n\n"
+      "description": "\nThe Human Metabolome DataBase (HMDB) is an openly accessible database containing detailed information about small molecule metabolites found in the human body, with links between chemical data, clinical data, and molecular biology/biochemistry data, including protein sequences (enzymes and transporters).\n\n**Version:** 6715124699b6dbf0\n\n**URL:** [https://hmdb.ca/](https://hmdb.ca/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/HMDB_Automat/6715124699b6dbf0](https://stars.renci.org/var/plater/bl-4.2.1/HMDB_Automat/6715124699b6dbf0)\n\n**Nodes:** 139,424\n\n**Edges:** 1,859,317\n\n"
     },
     {
       "name": "Human GOA",
-      "description": "\nThe Gene Ontology (GO) Consortium’s Human Gene Ontologies Annotations (Human GOA) resource provides open access to curated assignment of GO terms to proteins in the UniProt KnowledgeBase (UniProtKB), RNA molecules from RNACentral, and protein complexes from the Complex Portal.\n\n**Version:** 73059966f266f5a8\n\n**URL:** [https://www.ebi.ac.uk/GOA/index](https://www.ebi.ac.uk/GOA/index)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/HumanGOA_Automat/73059966f266f5a8](https://stars.renci.org/var/plater/bl-4.2.0/HumanGOA_Automat/73059966f266f5a8)\n\n**Nodes:** 153,734\n\n**Edges:** 1,284,818\n\n"
+      "description": "\nThe Gene Ontology (GO) Consortium’s Human Gene Ontologies Annotations (Human GOA) resource provides open access to curated assignment of GO terms to proteins in the UniProt KnowledgeBase (UniProtKB), RNA molecules from RNACentral, and protein complexes from the Complex Portal.\n\n**Version:** 06f107a4e9e8e547\n\n**URL:** [https://www.ebi.ac.uk/GOA/index](https://www.ebi.ac.uk/GOA/index)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/HumanGOA_Automat/06f107a4e9e8e547](https://stars.renci.org/var/plater/bl-4.2.1/HumanGOA_Automat/06f107a4e9e8e547)\n\n**Nodes:** 153,511\n\n**Edges:** 1,191,073\n\n"
     },
     {
       "name": "ICEES KG",
-      "description": "\nICEES KG is the KG version of the Integrated Clinical and Environmental Exposures Service (ICEES), which provides regulatory-compliant open access to clinical data (e.g., electronic health records, survey data, clinical research data) that have been integrated at the patient level with environmental exposures data (e.g., airborne pollutants, landfills, concentrated animal feeding operations, socio-economic indicators).\n\n**Version:** 4-11-2024\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES](https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/icees-kg/1.5.0](https://stars.renci.org/var/plater/bl-4.2.0/icees-kg/1.5.0)\n\n**Nodes:** 226\n\n**Edges:** 160,413\n\n"
+      "description": "\nICEES KG is the KG version of the Integrated Clinical and Environmental Exposures Service (ICEES), which provides regulatory-compliant open access to clinical data (e.g., electronic health records, survey data, clinical research data) that have been integrated at the patient level with environmental exposures data (e.g., airborne pollutants, landfills, concentrated animal feeding operations, socio-economic indicators).\n\n**Version:** 4-11-2024\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES](https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/icees-kg/1.5.0](https://stars.renci.org/var/plater/bl-4.2.1/icees-kg/1.5.0)\n\n**Nodes:** 226\n\n**Edges:** 160,413\n\n"
     },
     {
       "name": "IntAct Molecular Interaction Database",
-      "description": "\nThe IntAct Molecular Interaction Database provides open access to molecular interactions data derived from literature curation or direct user submission.\n\n**Version:** 2a79dda9d5bc2312\n\n**URL:** [https://www.ebi.ac.uk/intact/home](https://www.ebi.ac.uk/intact/home)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/IntAct_Automat/2a79dda9d5bc2312](https://stars.renci.org/var/plater/bl-4.2.0/IntAct_Automat/2a79dda9d5bc2312)\n\n**Nodes:** 255,898\n\n**Edges:** 2,545,702\n\n"
+      "description": "\nThe IntAct Molecular Interaction Database provides open access to molecular interactions data derived from literature curation or direct user submission.\n\n**Version:** e5b936f966a02c2c\n\n**URL:** [https://www.ebi.ac.uk/intact/home](https://www.ebi.ac.uk/intact/home)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/IntAct_Automat/e5b936f966a02c2c](https://stars.renci.org/var/plater/bl-4.2.1/IntAct_Automat/e5b936f966a02c2c)\n\n**Nodes:** 257,855\n\n**Edges:** 2,529,050\n\n"
     },
     {
       "name": "Monarch KG",
-      "description": "\nThe Monarch knowledge graph is a reference implementation of the Biolink model specification. It contains data from the Monarch Initiative aggregated database, as well as several OBO ontologies. These data sources provide links between diseases, phenotypes, genomic features across human and non-human organisms. It is built using the knowledge graph exchange (KGX) framework, which transforms a variety of standard formats, such as RDF, OWL, and TRAPI JSON, to nodes and edges CSV files that are uploaded into Neo4j. The TRAPI API (https://github.com/NCATSTranslator/ReasonerAPI) is built using PLATER (https://github.com/NCATSTranslator/Translator-All/wiki/Plater), a tool that creates a TRAPI service given a Biolink compliant instance of Neo4j.\n\n**Version:** 2024-04-18\n\n**URL:** [https://github.com/monarch-initiative/monarch-ingest](https://github.com/monarch-initiative/monarch-ingest)\n\n**Files:** [https://stars.renci.org/var/plater/monarch-kg/2024-04-18](https://stars.renci.org/var/plater/monarch-kg/2024-04-18)\n\n**Nodes:** 868,859\n\n**Edges:** 10,482,577\n\n"
+      "description": "\nThe Monarch knowledge graph is a reference implementation of the Biolink model specification. It contains data from the Monarch Initiative aggregated database, as well as several OBO ontologies. These data sources provide links between diseases, phenotypes, genomic features across human and non-human organisms. It is built using the knowledge graph exchange (KGX) framework, which transforms a variety of standard formats, such as RDF, OWL, and TRAPI JSON, to nodes and edges CSV files that are uploaded into Neo4j. The TRAPI API (https://github.com/NCATSTranslator/ReasonerAPI) is built using PLATER (https://github.com/NCATSTranslator/Translator-All/wiki/Plater), a tool that creates a TRAPI service given a Biolink compliant instance of Neo4j.\n\n**Version:** 2024-07-12\n\n**URL:** [https://github.com/monarch-initiative/monarch-ingest](https://github.com/monarch-initiative/monarch-ingest)\n\n**Files:** [https://stars.renci.org/var/plater/monarch-kg/2024-07-12](https://stars.renci.org/var/plater/monarch-kg/2024-07-12)\n\n**Nodes:** 1,028,155\n\n**Edges:** 11,076,689\n\n"
     },
     {
       "name": "PANTHER",
-      "description": "\nThe Protein ANalysis THrough Evolutionary Relationships (PANTHER) classification system provides an openly available annotation library of gene family phylogenetic trees, with persistent identifiers attached to all nodes in the trees and annotation of each protein member of the family by its family and protein class, subfamily, orthologs, paralogs, GO Phylogenetic Annotation Project function, and Reactome pathways.\n\n**Version:** 04726ca2b1148f20\n\n**URL:** [http://pantherdb.org/](http://pantherdb.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/PANTHER_Automat/04726ca2b1148f20](https://stars.renci.org/var/plater/bl-4.2.0/PANTHER_Automat/04726ca2b1148f20)\n\n**Nodes:** 87,880\n\n**Edges:** 1,044,070\n\n"
+      "description": "\nThe Protein ANalysis THrough Evolutionary Relationships (PANTHER) classification system provides an openly available annotation library of gene family phylogenetic trees, with persistent identifiers attached to all nodes in the trees and annotation of each protein member of the family by its family and protein class, subfamily, orthologs, paralogs, GO Phylogenetic Annotation Project function, and Reactome pathways.\n\n**Version:** c0189f14ba41da6c\n\n**URL:** [http://pantherdb.org/](http://pantherdb.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/PANTHER_Automat/c0189f14ba41da6c](https://stars.renci.org/var/plater/bl-4.2.1/PANTHER_Automat/c0189f14ba41da6c)\n\n**Nodes:** 87,559\n\n**Edges:** 986,863\n\n"
     },
     {
       "name": "Pharos",
-      "description": "\nPharos is the openly accessible user interface to the Illuminating the Druggable Genome (IDG) program’s Knowledge Management Center (KMC), which aims to develop a comprehensive, integrated knowledge-base for the Druggable Genome (DG) to illuminate the uncharacterized and/or poorly annotated portion of the DG, focusing on three of the most common drug-targeted protein families: G-protein-coupled receptors; ion channels; and kinases.\n\n**Version:** 727a90a7317f97a8\n\n**URL:** [https://pharos.nih.gov/](https://pharos.nih.gov/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/PHAROS_Automat/727a90a7317f97a8](https://stars.renci.org/var/plater/bl-4.2.0/PHAROS_Automat/727a90a7317f97a8)\n\n**Nodes:** 344,144\n\n**Edges:** 1,063,113\n\n"
+      "description": "\nPharos is the openly accessible user interface to the Illuminating the Druggable Genome (IDG) program’s Knowledge Management Center (KMC), which aims to develop a comprehensive, integrated knowledge-base for the Druggable Genome (DG) to illuminate the uncharacterized and/or poorly annotated portion of the DG, focusing on three of the most common drug-targeted protein families: G-protein-coupled receptors; ion channels; and kinases.\n\n**Version:** d3068b509bf17ff3\n\n**URL:** [https://pharos.nih.gov/](https://pharos.nih.gov/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/PHAROS_Automat/d3068b509bf17ff3](https://stars.renci.org/var/plater/bl-4.2.1/PHAROS_Automat/d3068b509bf17ff3)\n\n**Nodes:** 345,008\n\n**Edges:** 1,073,458\n\n"
     },
     {
       "name": "Reactome",
-      "description": "\nREACTOME is an open-source, open access, manually curated and peer-reviewed pathway database. Our goal is to provide intuitive bioinformatics tools for the visualization, interpretation and analysis of pathway knowledge to support basic and clinical research, genome analysis, modeling, systems biology and education.\n\n**Version:** 59c5f5859ca31e58\n\n**URL:** [https://reactome.org/](https://reactome.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/Reactome_Automat/59c5f5859ca31e58](https://stars.renci.org/var/plater/bl-4.2.0/Reactome_Automat/59c5f5859ca31e58)\n\n**Nodes:** 622,798\n\n**Edges:** 2,548,893\n\n"
+      "description": "\nREACTOME is an open-source, open access, manually curated and peer-reviewed pathway database. Our goal is to provide intuitive bioinformatics tools for the visualization, interpretation and analysis of pathway knowledge to support basic and clinical research, genome analysis, modeling, systems biology and education.\n\n**Version:** 07a8dc1cac1936b5\n\n**URL:** [https://reactome.org/](https://reactome.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/Reactome_Automat/07a8dc1cac1936b5](https://stars.renci.org/var/plater/bl-4.2.1/Reactome_Automat/07a8dc1cac1936b5)\n\n**Nodes:** 626,481\n\n**Edges:** 2,018,587\n\n"
     },
     {
       "name": "ROBOKOP KG",
-      "description": "\nROBOKOP (KG) is an open-source biomedical KG that supports the ROBOKOP application and currently contains millions of biomedical relationships derived from dozens of integrated and harmonized biological knowledge sources and bio-ontologies, including the Automat primary and aggregate knowledge sources. ROBOKOP KG also includes text-mined assertions from PubMed and PubMed Central, derived from natural language processing (NLP). Note that text-based assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** c5ec1f282158182f\n\n**URL:** [http://robokopkg.renci.org/browser/](http://robokopkg.renci.org/browser/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/RobokopKG/c5ec1f282158182f](https://stars.renci.org/var/plater/bl-4.2.0/RobokopKG/c5ec1f282158182f)\n\n**Nodes:** 9,748,240\n\n**Edges:** 137,706,046\n\n"
+      "description": "\nROBOKOP (KG) is an open-source biomedical KG that supports the ROBOKOP application and currently contains millions of biomedical relationships derived from dozens of integrated and harmonized biological knowledge sources and bio-ontologies, including the Automat primary and aggregate knowledge sources. ROBOKOP KG also includes text-mined assertions from PubMed and PubMed Central, derived from natural language processing (NLP). Note that text-based assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** 4901b2bc764444ea\n\n**URL:** [http://robokopkg.renci.org/browser/](http://robokopkg.renci.org/browser/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/RobokopKG/4901b2bc764444ea](https://stars.renci.org/var/plater/bl-4.2.1/RobokopKG/4901b2bc764444ea)\n\n**Nodes:** 9,800,836\n\n**Edges:** 137,235,468\n\n"
     },
     {
       "name": "STRING",
-      "description": "\nThe Search Tool for the Retrieval of INteracting Genes/proteins (STRING) database provides information on known and predicted protein-protein interactions (both direct and indirect) derived from genomic context predictions, high-throughput laboratory experiments, conserved co-expression, automated text mining, and aggregated knowledge from primary data sources.\n\n**Version:** 8921aec4382a896c\n\n**URL:** [https://string-db.org/](https://string-db.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/STRING-DB_Automat/8921aec4382a896c](https://stars.renci.org/var/plater/bl-4.2.0/STRING-DB_Automat/8921aec4382a896c)\n\n**Nodes:** 65,198\n\n**Edges:** 11,482,451\n\n"
+      "description": "\nThe Search Tool for the Retrieval of INteracting Genes/proteins (STRING) database provides information on known and predicted protein-protein interactions (both direct and indirect) derived from genomic context predictions, high-throughput laboratory experiments, conserved co-expression, automated text mining, and aggregated knowledge from primary data sources.\n\n**Version:** 4ca5a0ce557e2c18\n\n**URL:** [https://string-db.org/](https://string-db.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/STRING-DB_Automat/4ca5a0ce557e2c18](https://stars.renci.org/var/plater/bl-4.2.1/STRING-DB_Automat/4ca5a0ce557e2c18)\n\n**Nodes:** 65,069\n\n**Edges:** 11,402,297\n\n"
     },
     {
       "name": "Text Mining Provider KG",
-      "description": "\nThe Text Mining Provider KG contains subject-predicate-object assertions derived from the application of natural language processing (NLP) algorithms to the PubMedCentral Open Access collection of publications plus additional titles and abstracts from PubMed. Note thattext-mined assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** 19817a8eab6dbd1c\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider](https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/TMKP_Automat/19817a8eab6dbd1c](https://stars.renci.org/var/plater/bl-4.2.0/TMKP_Automat/19817a8eab6dbd1c)\n\n**Nodes:** 199,712\n\n**Edges:** 2,518,775\n\n"
+      "description": "\nThe Text Mining Provider KG contains subject-predicate-object assertions derived from the application of natural language processing (NLP) algorithms to the PubMedCentral Open Access collection of publications plus additional titles and abstracts from PubMed. Note thattext-mined assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** 2ae17047aa1b5f3c\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider](https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/TMKP_Automat/2ae17047aa1b5f3c](https://stars.renci.org/var/plater/bl-4.2.1/TMKP_Automat/2ae17047aa1b5f3c)\n\n**Nodes:** 195,390\n\n**Edges:** 2,354,366\n\n"
     },
     {
       "name": "Ubergraph",
@@ -8614,7 +8660,7 @@
     },
     {
       "name": "Viral Proteome",
-      "description": "\nThe Gene Ontology (GO) Consortium’s Viral Proteome resource provides open access to curated assignment of GO terms to proteins and proteome relationships derived from the UniProt KnowledgeBase for all NCBI taxa classified as viruses.\n\n**Version:** 365c51354d2ed0cc\n\n**URL:** [https://www.ebi.ac.uk/GOA/proteomes](https://www.ebi.ac.uk/GOA/proteomes)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/ViralProteome_Automat/365c51354d2ed0cc](https://stars.renci.org/var/plater/bl-4.2.0/ViralProteome_Automat/365c51354d2ed0cc)\n\n**Nodes:** 84,015\n\n**Edges:** 370,010\n\n"
+      "description": "\nThe Gene Ontology (GO) Consortium’s Viral Proteome resource provides open access to curated assignment of GO terms to proteins and proteome relationships derived from the UniProt KnowledgeBase for all NCBI taxa classified as viruses.\n\n**Version:** 8ca116ae0bba6945\n\n**URL:** [https://www.ebi.ac.uk/GOA/proteomes](https://www.ebi.ac.uk/GOA/proteomes)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/ViralProteome_Automat/8ca116ae0bba6945](https://stars.renci.org/var/plater/bl-4.2.1/ViralProteome_Automat/8ca116ae0bba6945)\n\n**Nodes:** 85,062\n\n**Edges:** 317,487\n\n"
     }
   ],
   "components": {
@@ -8820,6 +8866,38 @@
         "title": "auxiliary graphs",
         "description": "Auxiliary Graphs"
       },
+      "CypherDatum": {
+        "title": "CypherDatum",
+        "required": ["row", "meta"],
+        "type": "object",
+        "properties": {
+          "row": {
+            "title": "Row",
+            "type": "array",
+            "items": {}
+          },
+          "meta": {
+            "title": "Meta",
+            "type": "array",
+            "items": {}
+          }
+        }
+      },
+      "CypherError": {
+        "title": "CypherError",
+        "required": ["code", "message"],
+        "type": "object",
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          }
+        }
+      },
       "CypherRequest": {
         "title": "CypherRequest",
         "required": ["query"],
@@ -8828,6 +8906,48 @@
           "query": {
             "title": "Query",
             "type": "string"
+          }
+        }
+      },
+      "CypherResponse": {
+        "title": "CypherResponse",
+        "required": ["results", "errors"],
+        "type": "object",
+        "properties": {
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CypherResult"
+            }
+          },
+          "errors": {
+            "title": "Errors",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CypherError"
+            }
+          }
+        }
+      },
+      "CypherResult": {
+        "title": "CypherResult",
+        "required": ["columns", "data"],
+        "type": "object",
+        "properties": {
+          "columns": {
+            "title": "Columns",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "data": {
+            "title": "Data",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CypherDatum"
+            }
           }
         }
       },
@@ -9811,6 +9931,9 @@
             "$ref": "#/components/schemas/OperationLookup"
           },
           {
+            "$ref": "#/components/schemas/OperationLookupAndScore"
+          },
+          {
             "$ref": "#/components/schemas/OperationOverlay"
           },
           {
@@ -10162,6 +10285,24 @@
           },
           "id": {
             "$ref": "#/components/schemas/lookup"
+          },
+          "parameters": {
+            "title": "Parameters"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Custom base model for all classes\n\nThis provides hash and equality methods."
+      },
+      "OperationLookupAndScore": {
+        "title": "OperationLookupAndScore",
+        "required": ["id"],
+        "type": "object",
+        "properties": {
+          "runner_parameters": {
+            "$ref": "#/components/schemas/RunnerParameters"
+          },
+          "id": {
+            "$ref": "#/components/schemas/lookup_and_score"
           },
           "parameters": {
             "title": "Parameters"
@@ -10529,6 +10670,7 @@
                 "$ref": "#/components/schemas/SetInterpretationEnum"
               }
             ],
+            "default": "BATCH",
             "nullable": true
           },
           "constraints": {
@@ -10536,6 +10678,17 @@
             "allOf": [
               {
                 "$ref": "#/components/schemas/HashableSequence_AttributeConstraint_"
+              }
+            ],
+            "default": {
+              "__root__": []
+            }
+          },
+          "member_ids": {
+            "title": "set member ids",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HashableSequence_CURIE_"
               }
             ],
             "default": {
@@ -11150,6 +11303,12 @@
       "lookup": {
         "title": "lookup",
         "enum": ["lookup"],
+        "type": "string",
+        "description": "An enumeration."
+      },
+      "lookup_and_score": {
+        "title": "lookup_and_score",
+        "enum": ["lookup_and_score"],
         "type": "string",
         "description": "An enumeration."
       },
