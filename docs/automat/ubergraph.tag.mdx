@@ -10,24 +10,31 @@ custom_edit_url: null
 
 Ubergraph is an open-source graph database containing integrated ontologies, including Gene Ontology (GO), Chemical Entities of Biological Interest (ChHEBI), Human Phenotype Ontology (HPO), and the Uber-anatomy ontology (Uberon)’s anatomical ontology.
 
-**Version:** 470b86cde433f1fb
+**Version:** e6b3204fd3a04413
 
 **URL:** [https://github.com/INCATools/ubergraph](https://github.com/INCATools/ubergraph)
 
-**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/UbergraphRedundant_Automat/470b86cde433f1fb](https://stars.renci.org/var/plater/bl-4.2.0/UbergraphRedundant_Automat/470b86cde433f1fb)
+**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/UbergraphRedundant_Automat/e6b3204fd3a04413](https://stars.renci.org/var/plater/bl-4.2.1/UbergraphRedundant_Automat/e6b3204fd3a04413)
 
-**Nodes:** 3,138,576
+**Nodes:** 3,191,939
 
-**Edges:** 151,050,736
-
-
+**Edges:** 142,336,210
 
 
 
+
+
+
+## Query Endpoints
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<DocCardList items={useCurrentSidebarCategory().items.slice(0, 5)}/>
+```
+
+## Metadata Endpoints    
+```mdx-code-block
+<DocCardList items={useCurrentSidebarCategory().items.slice(5)}/>
 ```
       

@@ -5,7 +5,7 @@ description: "Returns a list of available predicates when choosing a single sour
 sidebar_label: "Get one-hop connection schema"
 hide_title: true
 hide_table_of_contents: true
-api: eJzVVcFu2zAM/RVBZzdpg51y69agK7C1Q5PtUgSBYtO2WllSJbldYOTfR9pOrTRtOuy2XBzL5OMjH0k1PAOfOmmDNJpP+S2E2mnPBFPSB2ZyJp6EVGKtgFkHmUxFAM+eS9AsLY3xUhdoTA+08KZ2KTDjWBCugMDS2kkYsS9CKTIMpfQMdGaN1IE9y1AybdhjDW7DrHCiggAO0aVSzLVMGHoya7yXxKA01rMc4ek0bCz4EU+4seAE8b/KMAMvK6tg5S2kq/g/0lmtpc6Qx0m2RrchIJ/eNdzBYy0xQz7NhfKQcJ+WUAk+bXiQQQFCz9v00JVCU6jgEI1vE64RiQ52BpJq2eaFX/8Ke9EW7Ah22BnE2MsEsb012oMntMnpKT32NZ3XaQre57Vit70xwqRGB9CBzIW1ioRF8/G9J5/mDYY7XzZvq8rmWNW9/5cxf+Gc2BDbAJXfK2LrQQ4zBRUxSKL63PU1XLUwSZ/17g2yov+yfAlk1veQEoh11AhBdpWIYQ4kZIse/XWt43AH4rzrNdCKfGZ4+I5H90v4p8nkUK1fQsms1YLNnDPuX6T6ulj8GHB2MMcLlkHAQY9RLrqTjyU9DBULqkyKJ5UvdkgfakceEfw30yV8hInQm5u8HePX4ryc4MaBAhzODJWe6EQhvuN8iOLtlnitK6V4VNhW2yAK2iv889X1xdX1JSWNy6Y0tKK6ObYilPgyHpbSONpXaODBPe22U+1QGl6GYP10PHZmbR6MPRF1MJUII+wKP3KgUzkyrmjXgtS5iWmfd6YIS5hdq01GZ5QDuMrf5HOMJlPoo2AQZUTW1wAXcKhE22z9NsJZZ0bDCW5khu2pUUbq2L4Vk/2eboYO/i8vmF7lAL/D2CqBCxhr0irS9Cre8b2rJdYRtSixfGTTNGvh4adT2y0ddzuc1M2kpwIM98MDbOLr5Emomhi0/fyO8cv9MBgv6cVJssYwSyRdgshwBihm53WOV4ONvQ4WzDbu3MvZArv8DyFZ2Yk=
+api: eJzVVU1v2zAM/SuCzm5SdDvl1m1BV2BrhybbpQgCxaZttbKkSnK7wMh/H+mPWmnadNhtuTiWycdHPpJqeAY+ddIGaTSf8RsItdOeCaakD8zkTDwKqcRGAbMOMpmKAJ49laBZWhrjpS7QmB5o4U3tUmDGsSBcAYGltZMwYZ+FUmQYSukZ6MwaqQN7kqFk2rCHGtyWWeFEBQEcokulmGuZMPRk1ngviUFprGc5wtNp2FrwE55wY8EJ4n+ZYQZeVlbB2ltI1/F/pLPeSJ0hj5Nsg25jQD67bbiDh1pihnyWC+Uh4T4toRJ81vAggwKEXrTpoSuFplDBIRrfJVwjEh0MBpJq2eaFX/8Ke9kW7Ah2GAxi7FWC2N4a7cET2tnpKT32NV3UaQre57ViN70xwqRGB9CBzIW1ioRF8+mdJ5/mFYaDL1u0VWULrOre/4uYv3BObIltgMrvFbH1IIe5gooYJFF9bvsarluYpM96eIOs6L+sngOZzR2kBGIdNUKQXSVimAMJ2bJHf1nrONyBOG96jbQinzkevuHR/RL+8ezsUK1fQsms1YLNnTPuX6T6ulz+GHEGmOMFyyDgoMcoX7qT9yU9DBULqkyKJ5UvBqR3tSOPCP6b6RI+wkTo7XXejvFLcZ5PcONAAQ5nhkpPdKIQ33E+RPF6S7zUlVI8KmyrbRAF7RX+6fLqy+XVBSWNy6Y0tKK6ObYilPgyHZfSNNpXaODBPQ7bqXYoDS9DsH42nTqzMffGnog6mEqECXaFnzjQqZwYV7RrQercxLTPO1OEJcyu1T5MTikHcJW/zhcYTabQR8EgyoisrwEu4FCJttn6bYSzzoyGE9zIDNtTo4zUsX0rJvs93Ywd/F9eML3KAX6HqVUCFzDWpFWk6VW85XtXS6wjalFi+cimaTbCw0+ndjs67nY4qZtJTwUY74d72MbXyaNQNTFo+/kN4+f7YTRe0YuTZI1hVki6BJHhDFDMzuscrwYbex0smF3cuRfzJXb5HyFb2Yk=
 sidebar_class_name: "get api-method"
 info_path: docs/automat/automat
 custom_edit_url: null
@@ -30,6 +30,8 @@ import TabItem from "@theme/TabItem";
 
 Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.
 
+<details><summary>Schema</summary>
+
 ## Request
 
 <details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"required":false,"schema":{"title":"Source","type":"string"},"name":"source","in":"query"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"required":false,"schema":{"title":"Target","type":"string"},"name":"target","in":"query"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
@@ -50,3 +52,4 @@ integer
 
 </div></TabItem></SchemaTabs></div><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem><SchemaItem collapsible={false} name={"msg"} required={true} schemaName={"Message"} qualifierMessage={undefined} schema={{"title":"Message","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"type"} required={true} schemaName={"Error Type"} qualifierMessage={undefined} schema={{"title":"Error Type","type":"string"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        0\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
       
+</details>

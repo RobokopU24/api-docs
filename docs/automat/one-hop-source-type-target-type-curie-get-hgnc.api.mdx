@@ -5,7 +5,7 @@ description: "Returns one hop paths from `source_node_type`  with `curie` to `ta
 sidebar_label: "Get one hop results from source type to target type. "
 hide_title: true
 hide_table_of_contents: true
-api: eJy9VU1v2zAM/SuCThuQxV2wk29FV7QDtnVos12KwlFsxlZrWyoldwsM//eRspM4/RwKrL7EksnHr/eYVmbgUtTWa1PLWJ6Db7B2wtQgCmOFVb5wYoWmEgtnGkwhqU0GiV9bWAjxW/tCLNIGNZ28EQuvMAc/spnKiTQWUHGALxmFIOiEoJNkwGOzJEkGz+EUIJOEb4q8TgnEKlQVeEAn48tWItw2GoEAPTYwkS4toFIybqXXvgSKcxHgxZwAyZ1x6dJ51HUuu4msCY0vdkmQleYecM1k8S8x5iHpl2KMSntFjCNuxTPo6fB9hHs1IVxnTe3AMdTs4IB/9kd90aQpOLdqSnE+GBNKamoPtWdzZW2p0zC46NqxT/tIehtfcUaUOSXKiFHjhRCjFtEpFCPECfhdRQpRrbkADxWn2/EzkZ9ms4dJ/1KlzkJK4hjR4GsyPp3Pf+xwNjBDMmZ5DSknZ5Fp63XfwQy80uUY5XN/82QVW8OHoXYzv5SlYXJXLt8gXb2UCnuM4L+avuBnMlH1+mwVVHOfQ9sbTT3MAYk63HpOZxTiG9FE5Y9ysL/YmYYSn9DD9qEvKmcZy9OT70dcMQm7MLwc8kCMwOJYRiz9qB1JtIvakZjoFMjfkYsDvNvshgZpUrLw3ro4itAszY2xH1TjTaX8lEjipgh1qqcG8yAWXa/MuIrD3pRgGbNn3mz6kUsCrNzZ6oKi6RSGKBSkNCobWmKN85UK3BsUSmzfLlTSZVP6YaX2lQmuhbdnX1o4TgUF26N+uyP6/9nSw7Q8/PGRLRWtEyomtLIdBnIph10c72/NeH/Bxf1Gor4W1Ap2a9ulcvATy67j69sGcE339HqnUKslN53mlmnH78SDlSodPNOAd+eDhN6LpzLfiKFmKdypsuETvd7A+t7aZxm8Yehxs944dD8Y0jiNBlRGeue2998O6d/A+pHXg2XajYV6cjwnRf8FTYjXAA==
+api: eJy9VU1v2zAM/SuCThuQxUW3k29FV6QDtnVos12KwlFsxlZrWyoldwsM//eRspM4/RwKrL7EksnHr/eYVmbgUtTWa1PLWJ6Db7B2wtQgCmOFVb5wYoWmEgtnGkwhqU0GiV9bWAjxW/tCLNIGNZ28EQuvMAc/spnKiTQWUHGALxmFIOiEoJNkwGOzJEkGz+EUIJOEb4q8TgnEKlQVeEAn48tWItw2GoEAPTYwkS4toFIybqXXvgSKcxHgxZwAyZ1x6dJ51HUuu4msCY0vdkmQleYecM1k8S8x5iHpl2KMSntFjGNuxTPo6fB9hHs1IVxnTe3AMdThwQH/7I/6oklTcG7VlOJ8MCaU1NQeas/mytpSp2Fw0bVjn/aR9Da+4owoc0qUEaPGCyFGLaJTKEaIGfhdRQpRrbkADxWn2/EzkZ8ODx8m/UuVOgspiRNEg6/J+HQ+/7HD2cAMyZjlNaScnEWmrdd9BzPwSpdjlM/9zZNVbA0fhtrN/FKWhslduXyDdPVSKuwxgv9q+oKfyUTV67NVUM19Dm1vNPUwByTqcOs5nVGIb0QTlT/Kwf5iZxpKfEIP24e+qJxlLE9n34+5YhJ2YXg55IEYgcWxjFj6UTuSaBe1IzHRKZC/IxcHeLfZDQ3SpGThvXVxFKFZmhtjP6jGm0r5KZHETRHqVE8N5kEsul6ZcRVHvSnBMmbPvI/TAy4JsHJnqwuKplMYolCQ0qhsaIk1zlcqcG9QKLF9u1BJl03ph5XaVya4Ft6efWnhOBUUbI/67Y7o/2dLD9Py8MdHtlS0TqiY0Mp2GMilHHZxvL814/0FF/cbifpaUCvYrW2XysFPLLuOr28bwDXd0+udQq2W3HSaW6YdvxMPVqp08EwD3p0PEnovnsp8I4aapXCnyoZP9HoD63trn2XwhqHHzXrj0P1gSOM0GlAZ6Z3b3n87on8D60deD5ZpNxbq7GROiv4LTYrXAA==
 sidebar_class_name: "get api-method"
 info_path: docs/automat/automat
 custom_edit_url: null
@@ -30,6 +30,8 @@ import TabItem from "@theme/TabItem";
 
 Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.
 
+<details><summary>Schema</summary>
+
 ## Request
 
 <details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Source Type","type":"string"},"name":"source_type","in":"path"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Target Type","type":"string"},"name":"target_type","in":"path"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Curie","type":"string"},"name":"curie","in":"path"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
@@ -50,3 +52,4 @@ integer
 
 </div></TabItem></SchemaTabs></div><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem><SchemaItem collapsible={false} name={"msg"} required={true} schemaName={"Message"} qualifierMessage={undefined} schema={{"title":"Message","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"type"} required={true} schemaName={"Error Type"} qualifierMessage={undefined} schema={{"title":"Error Type","type":"string"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        0\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
       
+</details>

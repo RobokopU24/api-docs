@@ -20,11 +20,10 @@ if (robokopKGIndex !== -1) {
 
 // Rearrange sidebar endpoints
 const labelOrder = [
-  "Query reasoner via one of several inputs.",
-  "Run cypher query",
-  "Overlay results with available connections between each node.",
+  "Accepts TRAPI Queries.",
+  "Run a Neo4j cypher query.",
   "Find `node` by `curie`",
-  "Get one hop results from source type to target type. Note: Please GET /predicates to determine what target goes with a source",
+  "Get one hop results from source type to target type. ",
   "Get one-hop connection schema",
   "Metadata about the knowledge graph.",
   "Meta knowledge graph representation of this TRAPI web service.",

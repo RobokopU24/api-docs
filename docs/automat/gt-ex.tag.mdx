@@ -24,10 +24,17 @@ The Genotype-Tissue Expression (GTEx) portal provides open access to data on tis
 
 
 
+
+## Query Endpoints
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<DocCardList items={useCurrentSidebarCategory().items.slice(0, 5)}/>
+```
+
+## Metadata Endpoints    
+```mdx-code-block
+<DocCardList items={useCurrentSidebarCategory().items.slice(5)}/>
 ```
       

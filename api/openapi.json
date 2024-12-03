@@ -2,7 +2,7 @@
   "openapi": "3.0.2",
   "info": {
     "title": "Automat",
-    "version": "2.1",
+    "version": "3.0",
     "termsOfService": "http://loading"
   },
   "servers": [
@@ -76,6 +76,16 @@
               "default": false
             },
             "name": "validate",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
             "in": "query"
           }
         ],
@@ -175,9 +185,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -448,6 +456,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -546,9 +564,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -819,6 +835,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -917,9 +943,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -1190,6 +1214,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -1288,9 +1322,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -1561,6 +1593,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -1659,9 +1701,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -1932,6 +1972,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -2030,9 +2080,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -2303,6 +2351,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -2401,9 +2459,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -2674,6 +2730,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -2772,9 +2838,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -3045,6 +3109,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -3143,9 +3217,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -3416,6 +3488,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -3514,9 +3596,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -3787,6 +3867,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -3885,9 +3975,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -4158,6 +4246,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -4256,9 +4354,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -4529,6 +4625,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -4542,19 +4648,19 @@
                   "query_graph": {
                     "nodes": {
                       "n0": {
-                        "categories": ["biolink:ChemicalExposure"],
+                        "categories": ["biolink:SmallMolecule"],
                         "ids": ["PUBCHEM.COMPOUND:2083"]
                       },
                       "n1": {
                         "categories": ["biolink:Disease"],
-                        "ids": ["MONDO:0002367"]
+                        "ids": ["MONDO:0007079"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:negatively_correlated_with"]
+                        "predicates": ["biolink:positively_correlated_with"]
                       }
                     }
                   }
@@ -4627,9 +4733,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -4900,6 +5004,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -5000,9 +5114,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -5273,6 +5385,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -5371,9 +5493,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -5644,6 +5764,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -5742,9 +5872,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -6015,6 +6143,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -6113,9 +6251,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -6386,6 +6522,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -6484,9 +6630,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -6757,6 +6901,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -6855,9 +7009,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -7128,6 +7280,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -7226,9 +7388,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -7499,6 +7659,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -7597,9 +7767,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -7870,6 +8038,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -7884,18 +8062,18 @@
                     "nodes": {
                       "n0": {
                         "categories": ["biolink:Protein"],
-                        "ids": ["UniProtKB:Q9BT40-2"]
+                        "ids": ["UniProtKB:Q9R0M5-1"]
                       },
                       "n1": {
                         "categories": ["biolink:ChemicalEntity"],
-                        "ids": ["CHEBI:33839"]
+                        "ids": ["CHEBI:33579"]
                       }
                     },
                     "edges": {
                       "e01": {
                         "subject": "n0",
                         "object": "n1",
-                        "predicates": ["biolink:has_part"]
+                        "predicates": ["biolink:subclass_of"]
                       }
                     }
                   }
@@ -7968,9 +8146,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -8241,6 +8417,16 @@
             },
             "name": "validate",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
           }
         ],
         "requestBody": {
@@ -8339,9 +8525,7 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CypherResponse"
-                }
+                "schema": {}
               }
             }
           },
@@ -8548,7 +8732,7 @@
     },
     "/registry": {
       "get": {
-        "description": "Returns list of available PLATER instances.An entry from this list can be a prefix to route requests to specific PLATER backend",
+        "description": "Returns list of available PLATER instances. An entry from this list can be a prefix to route requests to a specific PLATER backend.",
         "operationId": "get_list_of_platers",
         "summary": "List of platers available",
         "parameters": [],
@@ -8620,7 +8804,7 @@
     },
     {
       "name": "ICEES KG",
-      "description": "\nICEES KG is the KG version of the Integrated Clinical and Environmental Exposures Service (ICEES), which provides regulatory-compliant open access to clinical data (e.g., electronic health records, survey data, clinical research data) that have been integrated at the patient level with environmental exposures data (e.g., airborne pollutants, landfills, concentrated animal feeding operations, socio-economic indicators).\n\n**Version:** 4-11-2024\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES](https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/icees-kg/1.5.0](https://stars.renci.org/var/plater/bl-4.2.1/icees-kg/1.5.0)\n\n**Nodes:** 226\n\n**Edges:** 160,413\n\n"
+      "description": "\nICEES KG is the KG version of the Integrated Clinical and Environmental Exposures Service (ICEES), which provides regulatory-compliant open access to clinical data (e.g., electronic health records, survey data, clinical research data) that have been integrated at the patient level with environmental exposures data (e.g., airborne pollutants, landfills, concentrated animal feeding operations, socio-economic indicators).\n\n**Version:** 8-20-2024\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES](https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/icees-kg/1.5.0_collapsed](https://stars.renci.org/var/plater/bl-4.2.1/icees-kg/1.5.0_collapsed)\n\n**Nodes:** 226\n\n**Edges:** 14,342\n\n"
     },
     {
       "name": "IntAct Molecular Interaction Database",
@@ -8656,7 +8840,7 @@
     },
     {
       "name": "Ubergraph",
-      "description": "\nUbergraph is an open-source graph database containing integrated ontologies, including Gene Ontology (GO), Chemical Entities of Biological Interest (ChHEBI), Human Phenotype Ontology (HPO), and the Uber-anatomy ontology (Uberon)’s anatomical ontology.\n\n**Version:** 470b86cde433f1fb\n\n**URL:** [https://github.com/INCATools/ubergraph](https://github.com/INCATools/ubergraph)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.0/UbergraphRedundant_Automat/470b86cde433f1fb](https://stars.renci.org/var/plater/bl-4.2.0/UbergraphRedundant_Automat/470b86cde433f1fb)\n\n**Nodes:** 3,138,576\n\n**Edges:** 151,050,736\n\n"
+      "description": "\nUbergraph is an open-source graph database containing integrated ontologies, including Gene Ontology (GO), Chemical Entities of Biological Interest (ChHEBI), Human Phenotype Ontology (HPO), and the Uber-anatomy ontology (Uberon)’s anatomical ontology.\n\n**Version:** e6b3204fd3a04413\n\n**URL:** [https://github.com/INCATools/ubergraph](https://github.com/INCATools/ubergraph)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/UbergraphRedundant_Automat/e6b3204fd3a04413](https://stars.renci.org/var/plater/bl-4.2.1/UbergraphRedundant_Automat/e6b3204fd3a04413)\n\n**Nodes:** 3,191,939\n\n**Edges:** 142,336,210\n\n"
     },
     {
       "name": "Viral Proteome",
@@ -8866,38 +9050,6 @@
         "title": "auxiliary graphs",
         "description": "Auxiliary Graphs"
       },
-      "CypherDatum": {
-        "title": "CypherDatum",
-        "required": ["row", "meta"],
-        "type": "object",
-        "properties": {
-          "row": {
-            "title": "Row",
-            "type": "array",
-            "items": {}
-          },
-          "meta": {
-            "title": "Meta",
-            "type": "array",
-            "items": {}
-          }
-        }
-      },
-      "CypherError": {
-        "title": "CypherError",
-        "required": ["code", "message"],
-        "type": "object",
-        "properties": {
-          "code": {
-            "title": "Code",
-            "type": "string"
-          },
-          "message": {
-            "title": "Message",
-            "type": "string"
-          }
-        }
-      },
       "CypherRequest": {
         "title": "CypherRequest",
         "required": ["query"],
@@ -8906,48 +9058,6 @@
           "query": {
             "title": "Query",
             "type": "string"
-          }
-        }
-      },
-      "CypherResponse": {
-        "title": "CypherResponse",
-        "required": ["results", "errors"],
-        "type": "object",
-        "properties": {
-          "results": {
-            "title": "Results",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CypherResult"
-            }
-          },
-          "errors": {
-            "title": "Errors",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CypherError"
-            }
-          }
-        }
-      },
-      "CypherResult": {
-        "title": "CypherResult",
-        "required": ["columns", "data"],
-        "type": "object",
-        "properties": {
-          "columns": {
-            "title": "Columns",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "data": {
-            "title": "Data",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CypherDatum"
-            }
           }
         }
       },

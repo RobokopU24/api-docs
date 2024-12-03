@@ -17,12 +17,12 @@ const newStringTag = `
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-<DocCardList items={useCurrentSidebarCategory().items.slice(0, 6)}/>
+<DocCardList items={useCurrentSidebarCategory().items.slice(0, 5)}/>
 \`\`\`
 
 ## Metadata Endpoints    
 \`\`\`mdx-code-block
-<DocCardList items={useCurrentSidebarCategory().items.slice(6)}/>
+<DocCardList items={useCurrentSidebarCategory().items.slice(5)}/>
 \`\`\``;
 
 // Strings for .api.mdx files

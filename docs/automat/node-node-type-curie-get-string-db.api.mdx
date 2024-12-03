@@ -5,7 +5,7 @@ description: "Returns `node` matching `curie`."
 sidebar_label: "Find `node` by `curie`"
 hide_title: true
 hide_table_of_contents: true
-api: eJy9VE1v2zAM/SuCThuQxl2wk2/D1nUFtnZIs12KIlFkxlFrWyolFwsM//eRsp2468eKHeZDIlPk4yP9yEZm4DUaF4ytZCrnEGqsvFhVNoOVKFXQW1PlYqVrNLCayom0DlCx+1lGAey3XMbfsHN0XEbP5TKHsPQBKfgoW1OYU6hKCIBepleNRLirDQJBBKxhIr3eQqlk2shgQgGEfE6YYkGYFMzQZOrwZDuRFWEN2UPnY5i/U2FL96/B/8g8X8DW/f0I93pCuN7ZyoNnqNnxMf89bOFlrTV4v6kLMe+dCUXbKkAV2F05VxgdW5jceI5pnqA3xIrYB7HvhhAiMhfiFMKBvkJUO2YboGRuLT8T+X42e8zwpypMFvOLE0SL/0Lvy2Lx/YAzwPRk7PoGNJNzyGoJpmtXBkGZYozyqbM8W8Xe8XGqwwe+koXVZCl9PiBd/40KR4zgv9qu4BeYqGp3sYnS/VMwe4uhHuaApBNuPdMZpfhGmlD5k4LrDAfXWOIz0t8/dKNyniV5uZifnZ9yzTRfW8tTmUdpRNGmMtmPYdLsB6ZNmijwlvw84P0wlzXSB5LbEJxPkwTt2t5ad6TqYGkXTEkbfopQaTO1mMeBMNXGjsl/6FwJljE7wc2m77gSwNJfbC4pm9HQZ6EkhVVZ3wlnfShVlFw/hZ9NlQ3baL0b9hChPZB0cxDwa1ZY39MAv0LiCkUTTrlj5U3ftCs53l3peM+k3WKg0rfEll2bZq08/MCibdl8VwPuyE7He4VGrbkv1NrMeD7T99mowsMLJbyZ9+J+K55jO8i0YpHeq6LmNzrewu7BXmR5/sfEXW9oAKg7oDIaBq68u/tAe9GFUdSjTdOONXx6siC5/wbsVkLt
+api: eJy9VE1v2zAM/SuCThuQxkW3k2/F2nUFtnZIs12KIlFkxlFrWyolFwsM//eRsp2468eKHeZDIlPk4yP9yEZm4DUaF4ytZCpnEGqsvFhWNoOlKFXQG1PlYqlrNLCcyom0DlCx+3lGAey3WMTfsHV0XETPxSKHsPABKfggW1GYU6hKCIBepteNRLivDQJBBKxhIr3eQKlk2shgQgGEfEGYYk6YFMzQZOrwZDuRFWEN2UPnY5i/U2FD92/B/8Q8X8HW/f0I92ZCuN7ZyoNnqKPDQ/573MKrWmvwfl0XYtY7E4q2VYAqsLtyrjA6tjC59RzTPENviBWxD2LXDSFEZC7EGYQ9fYWotsw2QMncWn4m8uPR0VOGP1VhsphfnCJa/Bd6X+bz73ucAaYnY1e3oJmcQ1ZLMF27MgjKFGOUk87yYhU7x6ep9h/4WhZWk6X0+YB08zcqHDGC/2q7gl9hoqrt5TpK90/B7CyGepgDkk649UxnlOIbaULlzwquM+xdY4kvSH/30I3KeZbk1Xx2fnHGNdN8bSxPZR6lEUWbymQ3hkmzG5g2aaLAW/LzgA/DXNZIH0huQnA+TRK0K3tn3YGqg6VdMCVt+ClCpc3UYh4HwlRrOyZ/3LkSLGN2gvswPeRKAEt/ub6ibEZDn4WSFFZlfSec9aFUUXL9FH42VTZso9V22EOE9kjSzV7Ab1lhfU8D/AqJKxRNOOWOlTd9067leHel4z2TdouBSt8QW3ZtmpXy8AOLtmXzfQ24JTsdHxQateK+UGsz4/lM32etCg+vlPBu1ov7vXiJ7SDTikX6oIqa3+h4B9tHe5Hl+R8Td72hAaDugMpoGLjy7u6Y9qILo6gnm6Yda/jsdE5y/w3sWELt
 sidebar_class_name: "get api-method"
 info_path: docs/automat/automat
 custom_edit_url: null
@@ -30,6 +30,8 @@ import TabItem from "@theme/TabItem";
 
 Returns `node` matching `curie`.
 
+<details><summary>Schema</summary>
+
 ## Request
 
 <details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Node Type","type":"string"},"name":"node_type","in":"path"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Curie","type":"string"},"name":"curie","in":"path"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
@@ -50,3 +52,4 @@ integer
 
 </div></TabItem></SchemaTabs></div><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem><SchemaItem collapsible={false} name={"msg"} required={true} schemaName={"Message"} qualifierMessage={undefined} schema={{"title":"Message","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"type"} required={true} schemaName={"Error Type"} qualifierMessage={undefined} schema={{"title":"Error Type","type":"string"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        0\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
       
+</details>

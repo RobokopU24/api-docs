@@ -6,8 +6,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-robokopkg-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-robokopkg",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-robokopkg",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-robokopkg",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -43,8 +61,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-binding-db-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-binding-db",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-binding-db",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-binding-db",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -80,8 +116,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-cam-kp-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-cam-kp",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-cam-kp",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-cam-kp",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -117,8 +171,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-ctd-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-ctd",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-ctd",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-ctd",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -154,8 +226,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-drugcentral-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-drugcentral",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-drugcentral",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-drugcentral",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -191,8 +281,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-genome-alliance-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-genome-alliance",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-genome-alliance",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-genome-alliance",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -228,8 +336,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-gtex-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-gtex",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-gtex",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-gtex",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -265,8 +391,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-gtopdb-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-gtopdb",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-gtopdb",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-gtopdb",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -302,8 +446,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-gwas-catalog-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-gwas-catalog",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-gwas-catalog",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-gwas-catalog",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -339,8 +501,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-hetio-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-hetio",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-hetio",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-hetio",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -376,8 +556,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-hgnc-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-hgnc",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-hgnc",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-hgnc",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -413,8 +611,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-hmdb-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-hmdb",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-hmdb",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-hmdb",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -450,8 +666,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-human-goa-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-human-goa",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-human-goa",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-human-goa",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -487,8 +721,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-icees-kg-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-icees-kg",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-icees-kg",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-icees-kg",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -524,8 +776,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-intact-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-intact",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-intact",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-intact",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -561,8 +831,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-monarch-kg-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-monarch-kg",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-monarch-kg",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-monarch-kg",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -598,8 +886,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-panther-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-panther",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-panther",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-panther",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -635,8 +941,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-pharos-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-pharos",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-pharos",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-pharos",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -672,8 +996,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-reactome-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-reactome",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-reactome",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-reactome",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -709,8 +1051,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-string-db-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-string-db",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-string-db",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-string-db",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -746,8 +1106,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-textminingkp-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-textminingkp",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-textminingkp",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-textminingkp",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -783,8 +1161,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-trapi-ubergraph",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-ubergraph",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-ubergraph",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-ubergraph",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {
@@ -820,8 +1216,26 @@ module.exports = [
     items: [
       {
         type: "doc",
+        id: "automat/reasoner-api-query-post-trapi-viral-proteome",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-viral-proteome",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
         id: "automat/node-node-type-curie-get-viral-proteome",
         label: "Find `node` by `curie`",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/one-hop-source-type-target-type-curie-get-viral-proteome",
+        label: "Get one hop results from source type to target type. ",
         className: "api-method get",
       },
       {

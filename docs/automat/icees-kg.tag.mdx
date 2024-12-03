@@ -10,24 +10,31 @@ custom_edit_url: null
 
 ICEES KG is the KG version of the Integrated Clinical and Environmental Exposures Service (ICEES), which provides regulatory-compliant open access to clinical data (e.g., electronic health records, survey data, clinical research data) that have been integrated at the patient level with environmental exposures data (e.g., airborne pollutants, landfills, concentrated animal feeding operations, socio-economic indicators).
 
-**Version:** 4-11-2024
+**Version:** 8-20-2024
 
 **URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES](https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES)
 
-**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/icees-kg/1.5.0](https://stars.renci.org/var/plater/bl-4.2.1/icees-kg/1.5.0)
+**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/icees-kg/1.5.0_collapsed](https://stars.renci.org/var/plater/bl-4.2.1/icees-kg/1.5.0_collapsed)
 
 **Nodes:** 226
 
-**Edges:** 160,413
+**Edges:** 14,342
 
 
 
 
 
+
+## Query Endpoints
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<DocCardList items={useCurrentSidebarCategory().items.slice(0, 5)}/>
+```
+
+## Metadata Endpoints    
+```mdx-code-block
+<DocCardList items={useCurrentSidebarCategory().items.slice(5)}/>
 ```
       
