@@ -7047,36 +7047,19 @@
         "tags": ["ROBOKOP KG"]
       }
     },
-    "/robokopkg/{source_type}/{target_type}/{curie}": {
+    "/robokopkg/node/{curie}": {
       "get": {
-        "summary": "Get one hop results from source type to target type. ",
-        "description": "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.",
-        "operationId": "one_hop__source_type___target_type___curie__get_robokopkg",
+        "summary": "Find a node by it's `curie` identifier.",
+        "description": "Returns information about a node matching `curie`.",
+        "operationId": "node_node__curie__get_robokopkg",
         "parameters": [
-          {
-            "required": true,
-            "schema": {
-              "title": "Source Type",
-              "type": "string"
-            },
-            "name": "source_type",
-            "in": "path"
-          },
-          {
-            "required": true,
-            "schema": {
-              "title": "Target Type",
-              "type": "string"
-            },
-            "name": "target_type",
-            "in": "path"
-          },
           {
             "required": true,
             "schema": {
               "title": "Curie",
               "type": "string"
             },
+            "example": "NCBITaxon:7227",
             "name": "curie",
             "in": "path"
           }
@@ -7087,9 +7070,8 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Response One Hop  Source Type   Target Type   Curie  Get",
-                  "type": "array",
-                  "items": {}
+                  "title": "Response Node Node  Curie  Get",
+                  "type": "object"
                 }
               }
             }
@@ -7108,27 +7090,104 @@
         "tags": ["ROBOKOP KG"]
       }
     },
-    "/robokopkg/{node_type}/{curie}": {
+    "/robokopkg/edges/{curie}": {
       "get": {
-        "summary": "Find `node` by `curie`",
-        "description": "Returns `node` matching `curie`.",
-        "operationId": "node__node_type___curie__get_robokopkg",
+        "summary": "Get edges connected to the node with the identifier `curie`. ",
+        "description": "Returns edges connected to the node with the identifier `curie`. Optionally, filter edges by predicate or adjacent node category.",
+        "operationId": "one_hop_edges__curie__get_robokopkg",
         "parameters": [
-          {
-            "required": true,
-            "schema": {
-              "title": "Node Type",
-              "type": "string"
-            },
-            "name": "node_type",
-            "in": "path"
-          },
           {
             "required": true,
             "schema": {
               "title": "Curie",
               "type": "string"
             },
+            "example": "NCBITaxon:7227",
+            "name": "curie",
+            "in": "path"
+          },
+          {
+            "description": "Optionally provide a category to filter adjacent nodes and their edges by.",
+            "required": false,
+            "schema": {
+              "title": "Category",
+              "type": "string",
+              "description": "Optionally provide a category to filter adjacent nodes and their edges by."
+            },
+            "example": "biolink:AnatomicalEntity",
+            "name": "category",
+            "in": "query"
+          },
+          {
+            "description": "Optionally provide a predicate to filter edges by.",
+            "required": false,
+            "schema": {
+              "title": "Predicate",
+              "type": "string",
+              "description": "Optionally provide a predicate to filter edges by."
+            },
+            "example": "biolink:has_part",
+            "name": "predicate",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Limit",
+              "type": "integer"
+            },
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Offset",
+              "type": "integer"
+            },
+            "name": "offset",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response One Hop Edges  Curie  Get",
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["ROBOKOP KG"]
+      }
+    },
+    "/robokopkg/edge_summary/{curie}": {
+      "get": {
+        "summary": "Get a summary of edges connected to the node with the identifier `curie`. ",
+        "description": "Returns a list of the kinds edges connected to the node with the identifier `curie`. Results are formatted like [[predicate, node_category, count], ...].",
+        "operationId": "one_hop_summary_edge_summary__curie__get_robokopkg",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Curie",
+              "type": "string"
+            },
+            "example": "NCBITaxon:7227",
             "name": "curie",
             "in": "path"
           }
@@ -7139,9 +7198,8 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Response Node  Node Type   Curie  Get",
-                  "type": "array",
-                  "items": {}
+                  "title": "Response One Hop Summary Edge Summary  Curie  Get",
+                  "type": "object"
                 }
               }
             }
@@ -8756,95 +8814,95 @@
   "tags": [
     {
       "name": "BINDING",
-      "description": "\nBinding DataBase (BindingDB) openly exposes curated data on chemical entities and their molecular targets.\n\n**Version:** 9164067231dc9b8c\n\n**URL:** [https://www.bindingdb.org/](https://www.bindingdb.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/BINDING_Automat/9164067231dc9b8c](https://stars.renci.org/var/plater/bl-4.2.1/BINDING_Automat/9164067231dc9b8c)\n\n**Nodes:** 1,129,797\n\n**Edges:** 2,241,210\n\n"
+      "description": "\nBinding DataBase (BindingDB) openly exposes curated data on chemical entities and their molecular targets.\n\n**Version:** 9164067231dc9b8c\n\n**URL:** [https://www.bindingdb.org/](https://www.bindingdb.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/BINDING_Automat/9164067231dc9b8c/](https://stars.renci.org/var/plater/bl-4.2.1/BINDING_Automat/9164067231dc9b8c/)\n\n**Nodes:** 1,129,797\n\n**Edges:** 2,241,210\n\n"
     },
     {
       "name": "CAM KG",
-      "description": "\nThe CAM KG contains data on CAMs (Causal Activity Models), which are small knowledge graphs built using the Web Ontology Language (OWL). The CAM database combines many CAM graphs, along with a large merged bio-ontology containing the full vocabulary of concepts referenced within the individual CAMs. Each CAM describes an instantiation of some of those concepts in a particular context, modeling the interactions between those instances as an interlinked representation of a complex biological or environmental process.\n\n**Version:** e92bd7b217535f2d\n\n\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/CAMKP_Automat/e92bd7b217535f2d](https://stars.renci.org/var/plater/bl-4.2.1/CAMKP_Automat/e92bd7b217535f2d)\n\n**Nodes:** 119,917\n\n**Edges:** 2,219,632\n\n"
+      "description": "\nThe CAM KG contains data on CAMs (Causal Activity Models), which are small knowledge graphs built using the Web Ontology Language (OWL). The CAM database combines many CAM graphs, along with a large merged bio-ontology containing the full vocabulary of concepts referenced within the individual CAMs. Each CAM describes an instantiation of some of those concepts in a particular context, modeling the interactions between those instances as an interlinked representation of a complex biological or environmental process.\n\n**Version:** e92bd7b217535f2d\n\n\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/CAMKP_Automat/e92bd7b217535f2d/](https://stars.renci.org/var/plater/bl-4.2.1/CAMKP_Automat/e92bd7b217535f2d/)\n\n**Nodes:** 119,917\n\n**Edges:** 2,219,632\n\n"
     },
     {
       "name": "CTD",
-      "description": "\nThe Comparative Toxicogenomics Database (CTD) is an open-source database that provides manually curated information about chemical-gene/protein, chemical-disease, and gene/protein-disease relationships, with additional support for the curated relationships provided by function and pathway data.\n\n**Version:** f92c663160ec5e36\n\n**URL:** [http://ctdbase.org/about/](http://ctdbase.org/about/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/CTD_Automat/f92c663160ec5e36](https://stars.renci.org/var/plater/bl-4.2.1/CTD_Automat/f92c663160ec5e36)\n\n**Nodes:** 506,190\n\n**Edges:** 1,336,266\n\n"
+      "description": "\nThe Comparative Toxicogenomics Database (CTD) is an open-source database that provides manually curated information about chemical-gene/protein, chemical-disease, and gene/protein-disease relationships, with additional support for the curated relationships provided by function and pathway data.\n\n**Version:** f92c663160ec5e36\n\n**URL:** [http://ctdbase.org/about/](http://ctdbase.org/about/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/CTD_Automat/f92c663160ec5e36/](https://stars.renci.org/var/plater/bl-4.2.1/CTD_Automat/f92c663160ec5e36/)\n\n**Nodes:** 506,190\n\n**Edges:** 1,336,266\n\n"
     },
     {
       "name": "DrugCentral",
-      "description": "\nDrugCentral provides open-source data on active ingredients, chemical entities, pharmaceutical products, drug mode of action, indications, and pharmacologic action for approved drugs, derived from information provided by the US Food & Drug Administration, the European Medicines Agency, and the Pharmaceutical and Medical Devices Agency. Note that DrugCentral provides limited information on discontinued drugs and drugs approved outside of the US, but that information has not been validated.\n\n**Version:** dec0617490b49c7a\n\n**URL:** [https://drugcentral.org/](https://drugcentral.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/DrugCentral_Automat/dec0617490b49c7a](https://stars.renci.org/var/plater/bl-4.2.1/DrugCentral_Automat/dec0617490b49c7a)\n\n**Nodes:** 83,627\n\n**Edges:** 680,919\n\n"
+      "description": "\nDrugCentral provides open-source data on active ingredients, chemical entities, pharmaceutical products, drug mode of action, indications, and pharmacologic action for approved drugs, derived from information provided by the US Food & Drug Administration, the European Medicines Agency, and the Pharmaceutical and Medical Devices Agency. Note that DrugCentral provides limited information on discontinued drugs and drugs approved outside of the US, but that information has not been validated.\n\n**Version:** dec0617490b49c7a\n\n**URL:** [https://drugcentral.org/](https://drugcentral.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/DrugCentral_Automat/dec0617490b49c7a/](https://stars.renci.org/var/plater/bl-4.2.1/DrugCentral_Automat/dec0617490b49c7a/)\n\n**Nodes:** 83,627\n\n**Edges:** 680,919\n\n"
     },
     {
       "name": "Alliance of Genome Resources",
-      "description": "\nThe Alliance of Genome Resources is a consortium of the owners of seven model organism databases (MODs) and the Gene Ontology (GO) Consortium, whose goal is to provide an integrated view of their data to all biologists, clinicians, and other interested parties. The Alliance provides the results of all methods that have been benchmarked by the Quest for Orthologs Consortium (QfO), as well as curated ortholog inferences from HGNC (human, mouse, rat genes).\n\n**Version:** 06e2a3c1eeea5251\n\n**URL:** [https://www.alliancegenome.org/](https://www.alliancegenome.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/GenomeAllianceOrthologs_Automat/06e2a3c1eeea5251](https://stars.renci.org/var/plater/bl-4.2.1/GenomeAllianceOrthologs_Automat/06e2a3c1eeea5251)\n\n**Nodes:** 94,246\n\n**Edges:** 489,352\n\n"
+      "description": "\nThe Alliance of Genome Resources is a consortium of the owners of seven model organism databases (MODs) and the Gene Ontology (GO) Consortium, whose goal is to provide an integrated view of their data to all biologists, clinicians, and other interested parties. The Alliance provides the results of all methods that have been benchmarked by the Quest for Orthologs Consortium (QfO), as well as curated ortholog inferences from HGNC (human, mouse, rat genes).\n\n**Version:** 06e2a3c1eeea5251\n\n**URL:** [https://www.alliancegenome.org/](https://www.alliancegenome.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/GenomeAllianceOrthologs_Automat/06e2a3c1eeea5251/](https://stars.renci.org/var/plater/bl-4.2.1/GenomeAllianceOrthologs_Automat/06e2a3c1eeea5251/)\n\n**Nodes:** 94,246\n\n**Edges:** 489,352\n\n"
     },
     {
       "name": "GTEx",
-      "description": "\nThe Genotype-Tissue Expression (GTEx) portal provides open access to data on tissue-specific gene expression and regulation, derived from molecular assays (e.g., WGS, WES, RNA-Seq) on 54 non-diseased tissue sites across nearly 1000 individuals.\n\n**Version:** a6448b9092bb81a1\n\n**URL:** [https://gtexportal.org/home/](https://gtexportal.org/home/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/GTEx_Automat/a6448b9092bb81a1](https://stars.renci.org/var/plater/bl-4.2.1/GTEx_Automat/a6448b9092bb81a1)\n\n**Nodes:** 4,921,318\n\n**Edges:** 52,935,456\n\n"
+      "description": "\nThe Genotype-Tissue Expression (GTEx) portal provides open access to data on tissue-specific gene expression and regulation, derived from molecular assays (e.g., WGS, WES, RNA-Seq) on 54 non-diseased tissue sites across nearly 1000 individuals.\n\n**Version:** a6448b9092bb81a1\n\n**URL:** [https://gtexportal.org/home/](https://gtexportal.org/home/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/GTEx_Automat/a6448b9092bb81a1/](https://stars.renci.org/var/plater/bl-4.2.1/GTEx_Automat/a6448b9092bb81a1/)\n\n**Nodes:** 4,921,318\n\n**Edges:** 52,935,456\n\n"
     },
     {
       "name": "GtoPdb",
-      "description": "\nThe International Union of Basic and Clinical Pharmacology (IUPHAR) / British Pharmacological Society (BPS) Guide to Pharmacology database (GtoPdb) provides searchable open-source quantitative information on drug targets and the prescription medicines and experimental drugs that act on them.\n\n**Version:** 0ea6074c824c2236\n\n**URL:** [http://www.guidetopharmacology.org/](http://www.guidetopharmacology.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/GtoPdb_Automat/0ea6074c824c2236](https://stars.renci.org/var/plater/bl-4.2.1/GtoPdb_Automat/0ea6074c824c2236)\n\n**Nodes:** 13,000\n\n**Edges:** 93,957\n\n"
+      "description": "\nThe International Union of Basic and Clinical Pharmacology (IUPHAR) / British Pharmacological Society (BPS) Guide to Pharmacology database (GtoPdb) provides searchable open-source quantitative information on drug targets and the prescription medicines and experimental drugs that act on them.\n\n**Version:** 0ea6074c824c2236\n\n**URL:** [http://www.guidetopharmacology.org/](http://www.guidetopharmacology.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/GtoPdb_Automat/0ea6074c824c2236/](https://stars.renci.org/var/plater/bl-4.2.1/GtoPdb_Automat/0ea6074c824c2236/)\n\n**Nodes:** 13,000\n\n**Edges:** 93,957\n\n"
     },
     {
       "name": "GWAS Catalog",
-      "description": "\nThe Genome-Wide Association Studies (GWAS) Catalog provides a curated, searchable, visualisable, and openly available database of single nucleotide polymorphism (SNP)-trait associations, derived from GWAS publications, including the reported trait, significant SNP-trait associations, and sample metadata.\n\n**Version:** e30aceb322a33462\n\n**URL:** [https://www.ebi.ac.uk/gwas/](https://www.ebi.ac.uk/gwas/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/GWASCatalog_Automat/e30aceb322a33462](https://stars.renci.org/var/plater/bl-4.2.1/GWASCatalog_Automat/e30aceb322a33462)\n\n**Nodes:** 513,490\n\n**Edges:** 3,522,694\n\n"
+      "description": "\nThe Genome-Wide Association Studies (GWAS) Catalog provides a curated, searchable, visualisable, and openly available database of single nucleotide polymorphism (SNP)-trait associations, derived from GWAS publications, including the reported trait, significant SNP-trait associations, and sample metadata.\n\n**Version:** e30aceb322a33462\n\n**URL:** [https://www.ebi.ac.uk/gwas/](https://www.ebi.ac.uk/gwas/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/GWASCatalog_Automat/e30aceb322a33462/](https://stars.renci.org/var/plater/bl-4.2.1/GWASCatalog_Automat/e30aceb322a33462/)\n\n**Nodes:** 513,490\n\n**Edges:** 3,522,694\n\n"
     },
     {
       "name": "Hetionet",
-      "description": "\nHetionet is an open-source biomedical \"heterogeneous information network\" (hetnet) or graph-based resource describing relationships uncovered by millions of biomedical research studies over the past fifty years.\n\n**Version:** 85a5f53e63150e1e\n\n**URL:** [https://het.io/](https://het.io/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/Hetio_Automat/85a5f53e63150e1e](https://stars.renci.org/var/plater/bl-4.2.1/Hetio_Automat/85a5f53e63150e1e)\n\n**Nodes:** 117,671\n\n**Edges:** 2,620,982\n\n"
+      "description": "\nHetionet is an open-source biomedical \"heterogeneous information network\" (hetnet) or graph-based resource describing relationships uncovered by millions of biomedical research studies over the past fifty years.\n\n**Version:** 85a5f53e63150e1e\n\n**URL:** [https://het.io/](https://het.io/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/Hetio_Automat/85a5f53e63150e1e/](https://stars.renci.org/var/plater/bl-4.2.1/Hetio_Automat/85a5f53e63150e1e/)\n\n**Nodes:** 117,671\n\n**Edges:** 2,620,982\n\n"
     },
     {
       "name": "HGNC",
-      "description": "\nThe HUGO Gene Nomenclature Committee (HGNC) database provides open access to HGNC-approved unique symbols and names for human genes, gene groups, and associated resources, including links to genomic, proteomic and phenotypic information.\n\n**Version:** dee31cfce74e5944\n\n**URL:** [https://www.genenames.org/](https://www.genenames.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/HGNC_Automat/dee31cfce74e5944](https://stars.renci.org/var/plater/bl-4.2.1/HGNC_Automat/dee31cfce74e5944)\n\n**Nodes:** 27,527\n\n**Edges:** 31,246\n\n"
+      "description": "\nThe HUGO Gene Nomenclature Committee (HGNC) database provides open access to HGNC-approved unique symbols and names for human genes, gene groups, and associated resources, including links to genomic, proteomic and phenotypic information.\n\n**Version:** dee31cfce74e5944\n\n**URL:** [https://www.genenames.org/](https://www.genenames.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/HGNC_Automat/dee31cfce74e5944/](https://stars.renci.org/var/plater/bl-4.2.1/HGNC_Automat/dee31cfce74e5944/)\n\n**Nodes:** 27,527\n\n**Edges:** 31,246\n\n"
     },
     {
       "name": "HMDB",
-      "description": "\nThe Human Metabolome DataBase (HMDB) is an openly accessible database containing detailed information about small molecule metabolites found in the human body, with links between chemical data, clinical data, and molecular biology/biochemistry data, including protein sequences (enzymes and transporters).\n\n**Version:** 6715124699b6dbf0\n\n**URL:** [https://hmdb.ca/](https://hmdb.ca/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/HMDB_Automat/6715124699b6dbf0](https://stars.renci.org/var/plater/bl-4.2.1/HMDB_Automat/6715124699b6dbf0)\n\n**Nodes:** 139,424\n\n**Edges:** 1,859,317\n\n"
+      "description": "\nThe Human Metabolome DataBase (HMDB) is an openly accessible database containing detailed information about small molecule metabolites found in the human body, with links between chemical data, clinical data, and molecular biology/biochemistry data, including protein sequences (enzymes and transporters).\n\n**Version:** 6715124699b6dbf0\n\n**URL:** [https://hmdb.ca/](https://hmdb.ca/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/HMDB_Automat/6715124699b6dbf0/](https://stars.renci.org/var/plater/bl-4.2.1/HMDB_Automat/6715124699b6dbf0/)\n\n**Nodes:** 139,424\n\n**Edges:** 1,859,317\n\n"
     },
     {
       "name": "Human GOA",
-      "description": "\nThe Gene Ontology (GO) Consortium’s Human Gene Ontologies Annotations (Human GOA) resource provides open access to curated assignment of GO terms to proteins in the UniProt KnowledgeBase (UniProtKB), RNA molecules from RNACentral, and protein complexes from the Complex Portal.\n\n**Version:** 06f107a4e9e8e547\n\n**URL:** [https://www.ebi.ac.uk/GOA/index](https://www.ebi.ac.uk/GOA/index)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/HumanGOA_Automat/06f107a4e9e8e547](https://stars.renci.org/var/plater/bl-4.2.1/HumanGOA_Automat/06f107a4e9e8e547)\n\n**Nodes:** 153,511\n\n**Edges:** 1,191,073\n\n"
+      "description": "\nThe Gene Ontology (GO) Consortium’s Human Gene Ontologies Annotations (Human GOA) resource provides open access to curated assignment of GO terms to proteins in the UniProt KnowledgeBase (UniProtKB), RNA molecules from RNACentral, and protein complexes from the Complex Portal.\n\n**Version:** 06f107a4e9e8e547\n\n**URL:** [https://www.ebi.ac.uk/GOA/index](https://www.ebi.ac.uk/GOA/index)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/HumanGOA_Automat/06f107a4e9e8e547/](https://stars.renci.org/var/plater/bl-4.2.1/HumanGOA_Automat/06f107a4e9e8e547/)\n\n**Nodes:** 153,511\n\n**Edges:** 1,191,073\n\n"
     },
     {
       "name": "ICEES KG",
-      "description": "\nICEES KG is the KG version of the Integrated Clinical and Environmental Exposures Service (ICEES), which provides regulatory-compliant open access to clinical data (e.g., electronic health records, survey data, clinical research data) that have been integrated at the patient level with environmental exposures data (e.g., airborne pollutants, landfills, concentrated animal feeding operations, socio-economic indicators).\n\n**Version:** 8-20-2024\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES](https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/icees-kg/1.5.0_collapsed](https://stars.renci.org/var/plater/bl-4.2.1/icees-kg/1.5.0_collapsed)\n\n**Nodes:** 226\n\n**Edges:** 14,342\n\n"
+      "description": "\nICEES KG is the KG version of the Integrated Clinical and Environmental Exposures Service (ICEES), which provides regulatory-compliant open access to clinical data (e.g., electronic health records, survey data, clinical research data) that have been integrated at the patient level with environmental exposures data (e.g., airborne pollutants, landfills, concentrated animal feeding operations, socio-economic indicators).\n\n**Version:** 8-20-2024\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES](https://github.com/NCATSTranslator/Translator-All/wiki/Exposures-Provider-ICEES)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/icees-kg/1.5.0_collapsed/](https://stars.renci.org/var/plater/bl-4.2.1/icees-kg/1.5.0_collapsed/)\n\n**Nodes:** 226\n\n**Edges:** 14,342\n\n"
     },
     {
       "name": "IntAct Molecular Interaction Database",
-      "description": "\nThe IntAct Molecular Interaction Database provides open access to molecular interactions data derived from literature curation or direct user submission.\n\n**Version:** e5b936f966a02c2c\n\n**URL:** [https://www.ebi.ac.uk/intact/home](https://www.ebi.ac.uk/intact/home)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/IntAct_Automat/e5b936f966a02c2c](https://stars.renci.org/var/plater/bl-4.2.1/IntAct_Automat/e5b936f966a02c2c)\n\n**Nodes:** 257,855\n\n**Edges:** 2,529,050\n\n"
+      "description": "\nThe IntAct Molecular Interaction Database provides open access to molecular interactions data derived from literature curation or direct user submission.\n\n**Version:** e5b936f966a02c2c\n\n**URL:** [https://www.ebi.ac.uk/intact/home](https://www.ebi.ac.uk/intact/home)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/IntAct_Automat/e5b936f966a02c2c/](https://stars.renci.org/var/plater/bl-4.2.1/IntAct_Automat/e5b936f966a02c2c/)\n\n**Nodes:** 257,855\n\n**Edges:** 2,529,050\n\n"
     },
     {
       "name": "Monarch KG",
-      "description": "\nThe Monarch knowledge graph is a reference implementation of the Biolink model specification. It contains data from the Monarch Initiative aggregated database, as well as several OBO ontologies. These data sources provide links between diseases, phenotypes, genomic features across human and non-human organisms. It is built using the knowledge graph exchange (KGX) framework, which transforms a variety of standard formats, such as RDF, OWL, and TRAPI JSON, to nodes and edges CSV files that are uploaded into Neo4j. The TRAPI API (https://github.com/NCATSTranslator/ReasonerAPI) is built using PLATER (https://github.com/NCATSTranslator/Translator-All/wiki/Plater), a tool that creates a TRAPI service given a Biolink compliant instance of Neo4j.\n\n**Version:** 2024-07-12\n\n**URL:** [https://github.com/monarch-initiative/monarch-ingest](https://github.com/monarch-initiative/monarch-ingest)\n\n**Files:** [https://stars.renci.org/var/plater/monarch-kg/2024-07-12](https://stars.renci.org/var/plater/monarch-kg/2024-07-12)\n\n**Nodes:** 1,028,155\n\n**Edges:** 11,076,689\n\n"
+      "description": "\nThe Monarch knowledge graph is a reference implementation of the Biolink model specification. It contains data from the Monarch Initiative aggregated database, as well as several OBO ontologies. These data sources provide links between diseases, phenotypes, genomic features across human and non-human organisms. It is built using the knowledge graph exchange (KGX) framework, which transforms a variety of standard formats, such as RDF, OWL, and TRAPI JSON, to nodes and edges CSV files that are uploaded into Neo4j. The TRAPI API (https://github.com/NCATSTranslator/ReasonerAPI) is built using PLATER (https://github.com/NCATSTranslator/Translator-All/wiki/Plater), a tool that creates a TRAPI service given a Biolink compliant instance of Neo4j.\n\n**Version:** 2024-07-12\n\n**URL:** [https://github.com/monarch-initiative/monarch-ingest](https://github.com/monarch-initiative/monarch-ingest)\n\n**Files:** [https://stars.renci.org/var/plater/monarch-kg/2024-07-12/](https://stars.renci.org/var/plater/monarch-kg/2024-07-12/)\n\n**Nodes:** 1,028,155\n\n**Edges:** 11,076,689\n\n"
     },
     {
       "name": "PANTHER",
-      "description": "\nThe Protein ANalysis THrough Evolutionary Relationships (PANTHER) classification system provides an openly available annotation library of gene family phylogenetic trees, with persistent identifiers attached to all nodes in the trees and annotation of each protein member of the family by its family and protein class, subfamily, orthologs, paralogs, GO Phylogenetic Annotation Project function, and Reactome pathways.\n\n**Version:** c0189f14ba41da6c\n\n**URL:** [http://pantherdb.org/](http://pantherdb.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/PANTHER_Automat/c0189f14ba41da6c](https://stars.renci.org/var/plater/bl-4.2.1/PANTHER_Automat/c0189f14ba41da6c)\n\n**Nodes:** 87,559\n\n**Edges:** 986,863\n\n"
+      "description": "\nThe Protein ANalysis THrough Evolutionary Relationships (PANTHER) classification system provides an openly available annotation library of gene family phylogenetic trees, with persistent identifiers attached to all nodes in the trees and annotation of each protein member of the family by its family and protein class, subfamily, orthologs, paralogs, GO Phylogenetic Annotation Project function, and Reactome pathways.\n\n**Version:** c0189f14ba41da6c\n\n**URL:** [http://pantherdb.org/](http://pantherdb.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/PANTHER_Automat/c0189f14ba41da6c/](https://stars.renci.org/var/plater/bl-4.2.1/PANTHER_Automat/c0189f14ba41da6c/)\n\n**Nodes:** 87,559\n\n**Edges:** 986,863\n\n"
     },
     {
       "name": "Pharos",
-      "description": "\nPharos is the openly accessible user interface to the Illuminating the Druggable Genome (IDG) program’s Knowledge Management Center (KMC), which aims to develop a comprehensive, integrated knowledge-base for the Druggable Genome (DG) to illuminate the uncharacterized and/or poorly annotated portion of the DG, focusing on three of the most common drug-targeted protein families: G-protein-coupled receptors; ion channels; and kinases.\n\n**Version:** d3068b509bf17ff3\n\n**URL:** [https://pharos.nih.gov/](https://pharos.nih.gov/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/PHAROS_Automat/d3068b509bf17ff3](https://stars.renci.org/var/plater/bl-4.2.1/PHAROS_Automat/d3068b509bf17ff3)\n\n**Nodes:** 345,008\n\n**Edges:** 1,073,458\n\n"
+      "description": "\nPharos is the openly accessible user interface to the Illuminating the Druggable Genome (IDG) program’s Knowledge Management Center (KMC), which aims to develop a comprehensive, integrated knowledge-base for the Druggable Genome (DG) to illuminate the uncharacterized and/or poorly annotated portion of the DG, focusing on three of the most common drug-targeted protein families: G-protein-coupled receptors; ion channels; and kinases.\n\n**Version:** d3068b509bf17ff3\n\n**URL:** [https://pharos.nih.gov/](https://pharos.nih.gov/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/PHAROS_Automat/d3068b509bf17ff3/](https://stars.renci.org/var/plater/bl-4.2.1/PHAROS_Automat/d3068b509bf17ff3/)\n\n**Nodes:** 345,008\n\n**Edges:** 1,073,458\n\n"
     },
     {
       "name": "Reactome",
-      "description": "\nREACTOME is an open-source, open access, manually curated and peer-reviewed pathway database. Our goal is to provide intuitive bioinformatics tools for the visualization, interpretation and analysis of pathway knowledge to support basic and clinical research, genome analysis, modeling, systems biology and education.\n\n**Version:** 07a8dc1cac1936b5\n\n**URL:** [https://reactome.org/](https://reactome.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/Reactome_Automat/07a8dc1cac1936b5](https://stars.renci.org/var/plater/bl-4.2.1/Reactome_Automat/07a8dc1cac1936b5)\n\n**Nodes:** 626,481\n\n**Edges:** 2,018,587\n\n"
+      "description": "\nREACTOME is an open-source, open access, manually curated and peer-reviewed pathway database. Our goal is to provide intuitive bioinformatics tools for the visualization, interpretation and analysis of pathway knowledge to support basic and clinical research, genome analysis, modeling, systems biology and education.\n\n**Version:** 07a8dc1cac1936b5\n\n**URL:** [https://reactome.org/](https://reactome.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/Reactome_Automat/07a8dc1cac1936b5/](https://stars.renci.org/var/plater/bl-4.2.1/Reactome_Automat/07a8dc1cac1936b5/)\n\n**Nodes:** 626,481\n\n**Edges:** 2,018,587\n\n"
     },
     {
       "name": "ROBOKOP KG",
-      "description": "\nROBOKOP (KG) is an open-source biomedical KG that supports the ROBOKOP application and currently contains millions of biomedical relationships derived from dozens of integrated and harmonized biological knowledge sources and bio-ontologies, including the Automat primary and aggregate knowledge sources. ROBOKOP KG also includes text-mined assertions from PubMed and PubMed Central, derived from natural language processing (NLP). Note that text-based assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** 23f46efa87c2bad7\n\n**URL:** [http://robokopkg.renci.org/browser/](http://robokopkg.renci.org/browser/)\n\n**Files:** [https://stars.renci.org/var/plater/graphs/23f46efa87c2bad7](https://stars.renci.org/var/plater/graphs/23f46efa87c2bad7)\n\n**Nodes:** 9,835,893\n\n**Edges:** 137,418,342\n\n"
+      "description": "\nROBOKOP (KG) is an open-source biomedical KG that supports the ROBOKOP application and currently contains millions of biomedical relationships derived from dozens of integrated and harmonized biological knowledge sources and bio-ontologies, including the Automat primary and aggregate knowledge sources. ROBOKOP KG also includes text-mined assertions from PubMed and PubMed Central, derived from natural language processing (NLP). Note that text-based assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** 6fe13d850fdbf89c\n\n**URL:** [http://robokopkg.renci.org/browser/](http://robokopkg.renci.org/browser/)\n\n**Files:** [https://robokop.renci.org/graphs/RobokopKG/6fe13d850fdbf89c/](https://robokop.renci.org/graphs/RobokopKG/6fe13d850fdbf89c/)\n\n**Nodes:** 9,867,160\n\n**Edges:** 129,949,060\n\n"
     },
     {
       "name": "STRING",
-      "description": "\nThe Search Tool for the Retrieval of INteracting Genes/proteins (STRING) database provides information on known and predicted protein-protein interactions (both direct and indirect) derived from genomic context predictions, high-throughput laboratory experiments, conserved co-expression, automated text mining, and aggregated knowledge from primary data sources.\n\n**Version:** 4ca5a0ce557e2c18\n\n**URL:** [https://string-db.org/](https://string-db.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/STRING-DB_Automat/4ca5a0ce557e2c18](https://stars.renci.org/var/plater/bl-4.2.1/STRING-DB_Automat/4ca5a0ce557e2c18)\n\n**Nodes:** 65,069\n\n**Edges:** 11,402,297\n\n"
+      "description": "\nThe Search Tool for the Retrieval of INteracting Genes/proteins (STRING) database provides information on known and predicted protein-protein interactions (both direct and indirect) derived from genomic context predictions, high-throughput laboratory experiments, conserved co-expression, automated text mining, and aggregated knowledge from primary data sources.\n\n**Version:** 4ca5a0ce557e2c18\n\n**URL:** [https://string-db.org/](https://string-db.org/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/STRING-DB_Automat/4ca5a0ce557e2c18/](https://stars.renci.org/var/plater/bl-4.2.1/STRING-DB_Automat/4ca5a0ce557e2c18/)\n\n**Nodes:** 65,069\n\n**Edges:** 11,402,297\n\n"
     },
     {
       "name": "Text Mining Provider KG",
-      "description": "\nThe Text Mining Provider KG contains subject-predicate-object assertions derived from the application of natural language processing (NLP) algorithms to the PubMedCentral Open Access collection of publications plus additional titles and abstracts from PubMed. Note thattext-mined assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** 2ae17047aa1b5f3c\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider](https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/TMKP_Automat/2ae17047aa1b5f3c](https://stars.renci.org/var/plater/bl-4.2.1/TMKP_Automat/2ae17047aa1b5f3c)\n\n**Nodes:** 195,390\n\n**Edges:** 2,354,366\n\n"
+      "description": "\nThe Text Mining Provider KG contains subject-predicate-object assertions derived from the application of natural language processing (NLP) algorithms to the PubMedCentral Open Access collection of publications plus additional titles and abstracts from PubMed. Note thattext-mined assertions, while providing valuable information, must be interpreted with caution, as NLP algorithms may introduce false assertions.\n\n**Version:** 2ae17047aa1b5f3c\n\n**URL:** [https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider](https://github.com/NCATSTranslator/Translator-All/wiki/Text-Mining-Provider)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/TMKP_Automat/2ae17047aa1b5f3c/](https://stars.renci.org/var/plater/bl-4.2.1/TMKP_Automat/2ae17047aa1b5f3c/)\n\n**Nodes:** 195,390\n\n**Edges:** 2,354,366\n\n"
     },
     {
       "name": "Ubergraph",
-      "description": "\nUbergraph is an open-source graph database containing integrated ontologies, including Gene Ontology (GO), Chemical Entities of Biological Interest (ChHEBI), Human Phenotype Ontology (HPO), and the Uber-anatomy ontology (Uberon)’s anatomical ontology.\n\n**Version:** e6b3204fd3a04413\n\n**URL:** [https://github.com/INCATools/ubergraph](https://github.com/INCATools/ubergraph)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/UbergraphRedundant_Automat/e6b3204fd3a04413](https://stars.renci.org/var/plater/bl-4.2.1/UbergraphRedundant_Automat/e6b3204fd3a04413)\n\n**Nodes:** 3,191,939\n\n**Edges:** 142,336,210\n\n"
+      "description": "\nUbergraph is an open-source graph database containing integrated ontologies, including Gene Ontology (GO), Chemical Entities of Biological Interest (ChHEBI), Human Phenotype Ontology (HPO), and the Uber-anatomy ontology (Uberon)’s anatomical ontology.\n\n**Version:** e6b3204fd3a04413\n\n**URL:** [https://github.com/INCATools/ubergraph](https://github.com/INCATools/ubergraph)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/UbergraphRedundant_Automat/e6b3204fd3a04413/](https://stars.renci.org/var/plater/bl-4.2.1/UbergraphRedundant_Automat/e6b3204fd3a04413/)\n\n**Nodes:** 3,191,939\n\n**Edges:** 142,336,210\n\n"
     },
     {
       "name": "Viral Proteome",
-      "description": "\nThe Gene Ontology (GO) Consortium’s Viral Proteome resource provides open access to curated assignment of GO terms to proteins and proteome relationships derived from the UniProt KnowledgeBase for all NCBI taxa classified as viruses.\n\n**Version:** 8ca116ae0bba6945\n\n**URL:** [https://www.ebi.ac.uk/GOA/proteomes](https://www.ebi.ac.uk/GOA/proteomes)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/ViralProteome_Automat/8ca116ae0bba6945](https://stars.renci.org/var/plater/bl-4.2.1/ViralProteome_Automat/8ca116ae0bba6945)\n\n**Nodes:** 85,062\n\n**Edges:** 317,487\n\n"
+      "description": "\nThe Gene Ontology (GO) Consortium’s Viral Proteome resource provides open access to curated assignment of GO terms to proteins and proteome relationships derived from the UniProt KnowledgeBase for all NCBI taxa classified as viruses.\n\n**Version:** 8ca116ae0bba6945\n\n**URL:** [https://www.ebi.ac.uk/GOA/proteomes](https://www.ebi.ac.uk/GOA/proteomes)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/ViralProteome_Automat/8ca116ae0bba6945/](https://stars.renci.org/var/plater/bl-4.2.1/ViralProteome_Automat/8ca116ae0bba6945/)\n\n**Nodes:** 85,062\n\n**Edges:** 317,487\n\n"
     }
   ],
   "components": {

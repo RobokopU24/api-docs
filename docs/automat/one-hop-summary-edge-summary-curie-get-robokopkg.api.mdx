@@ -1,11 +1,11 @@
 ---
-id: node-node-type-curie-get-robokopkg
-title: "Find `node` by `curie`"
-description: "Returns `node` matching `curie`."
-sidebar_label: "Find `node` by `curie`"
+id: one-hop-summary-edge-summary-curie-get-robokopkg
+title: "Get a summary of edges connected to the node with the identifier `curie`. "
+description: "Returns a list of the kinds edges connected to the node with the identifier `curie`. Results are formatted like [[predicate, node_category, count], ...]."
+sidebar_label: "Get a summary of edges connected to the node with the identifier `curie`. "
 hide_title: true
 hide_table_of_contents: true
-api: eJy9VMFu2zAM/RVBpw3IkqLbybdu67qh21Kk2S5FkSg246i1JZWSiwWG/32kbCfu0nbFDvMhkSny8ZF+ZC0z8ClqF7Q1MpEzCBUaL5bGZrAUpQrpRptcLNMKNSzHciStA1Ts/iWjAPZbLOJv2Do6LqLnYpFDWKBd2VvrbnMKcwpVCQHQy+Sqlgh3lUYgiIAVjKRPN1AqmdQy6FAAIX8nTDEnTApmaDL5gERGNiNpCKvPHlofzfydChu6fwn+B+b5DHba3Q9wr0eE6501HjxDHR8d8d/DFl5WaQrer6tCzDpnQkmtCWACuyvnCp3GFk5uPMfUj9DrY0Xsg9h1QwgRmQtxBmFPXyGqLbMNUDK3hp+RfHd8fMjwpyp0FvOLU0SL/0Lv83x+scfpYToydnUDKZNzyGoJum1XBkHpYojysbU8WcXO8TDV/gNfycKmZCl93iNd/40KRwzgv9q24GeYKLOdrqN0/xTMzqKphzkg6YRbz3QGKb6RJlT+qOBaw941lviE9HcP3aicZ0nOpu+n59MLcX7GddOMbSxPZh7lEYWbyMluFCf1bmiaSR1F3pCfB7zvZ7NC+khyE4LzyaSPfKOqYGkfjEkffoxgUj22mMeh0GZthwWctK4Ey5it6N6Oj7gawNJP15eUTafQZaEkhVVZ1w1nfShVlF03iZ+0yfqNtNr2u4jQHsi63ov4JWus62uAX2HiCkVTTrlj5XXXtCs53F/JcNck7XKg0jfEll3reqU8/MCiadh8VwFuyU7He4Varbgv1NpMez7T91mrwsMzJbyadQJ/LZ5i20vVsFDvVVHxGx1vYftgN7JE/2Pitjc0BNQdUBkNBFfe3p3QbnRhEHWwbZqhhs9O5yT536UwRLA=
+api: eJzNVEtv20gM/isDnrbArBx4CxTQrWmDtOh2XSTevRiGy0i0NLU0M+VQ2RiC/nsxIz+Upg+gp+oikeLjI/mRPZQUCjZejLOQww1JxzYoVI0JotxWSU1qZ2wZFJUVBVU4a6kQKpW49NO6ktT/RuokmZKsmK0hVh+Ljg19zNQNha6RoJBJbR23KNG9MTtSq5VnKk2BQjpF2sTPyvFeq8J1VtZaZVm2zkCD88QYcb4tIQdnaVM7vwld2yLvNxHdSdik1JtNRbJhd+d2zu8q0OCRsSUhDpCvemD63BmmEnLhjjSEoqYWIe9BjDQEObyKcUCD7H0Ug7CxFQwa6AFbn0z+eXX5dokPzuYv5vMXoMFiG/XFwdXEvnqUGoa1BqbgnQ0UYpb5xUV8PR7BbVcUFMK2a2LjkjFoKJwVshLN0fsmdsw4O/sUok//DeRHX7WwpN44r27H3qirsqKToFKBSl2TnKt0d5+oEBiGYdDwfD5/ivE/bEyZEKgrZse/AvDNcvnhHOcY5jEEDZ7j2MWMDStJ0DTTKK9HzckRmXEfuy7Uhqnh01Tn6a+gcQVoaEN1jLT+GZToMQn/txsL/gEStPvFNvHuazadNMYKVcQwrGPrI5xJivcUAlbfZOOoOJumEtUyap9Ynx4NglVcBLhZXC7eLT6od9ex7pakdnHFqkSKRN0cZqc9mk1XbdYnng+gIRDfHzer4wZyqEV8yGdH1z+xE9eiZOh9yJhsYTLHVdoLY7duWsHL0RQ0xJgj6/7KLmI5xG1YbG+J701Bhyz5bNY4LA/t8C5Ii4l3h2W8JlGoDpjjWfvlYwb68S70Z+b/1tfzwAKhB5n5Bo2NjUpj6g8jXsH0VE6HDBry8ZytNdQuSDTu+zsM9C83wxDVnzviPeSrtYZ7ZIN3cYyrHkoT4ncJ+RabQD/o3h83h4V8pr6H97haNkK6x6aLEmjY0f50cYf1oKEmLIkTgPHfy6IgLxOvJ0dqmFL/+moJw/AFq091OQ==
 sidebar_class_name: "get api-method"
 info_path: docs/automat/automat
 custom_edit_url: null
@@ -22,23 +22,27 @@ import SchemaItem from "@theme/SchemaItem";
 import SchemaTabs from "@theme/SchemaTabs";
 import TabItem from "@theme/TabItem";
 
-<h1 className={"openapi__heading"}>Find `node` by `curie`</h1>
+<h1 className={"openapi__heading"}>Get a summary of edges connected to the node with the identifier `curie`. </h1>
 
-<MethodEndpoint method={"get"} path={"/robokopkg/{node_type}/{curie}"}></MethodEndpoint>
+<MethodEndpoint method={"get"} path={"/robokopkg/edge_summary/{curie}"}></MethodEndpoint>
 
 
 
-Returns `node` matching `curie`.
+Returns a list of the kinds edges connected to the node with the identifier `curie`. Results are formatted like [[predicate, node_category, count], ...].
 
 <details><summary>Schema</summary>
 
 ## Request
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Node Type","type":"string"},"name":"node_type","in":"path"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Curie","type":"string"},"name":"curie","in":"path"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Curie","type":"string"},"example":"NCBITaxon:7227","name":"curie","in":"path"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
 
 Successful Response
 
-</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"[\n  null\n]"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"422"} value={"422"}><div>
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><div style={{"marginTop":".5rem","marginBottom":".5rem","marginLeft":"1rem"}}>
+
+object
+
+</div></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"422"} value={"422"}><div>
 
 Validation Error
 

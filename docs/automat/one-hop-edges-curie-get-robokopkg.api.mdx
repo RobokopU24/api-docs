@@ -1,0 +1,59 @@
+---
+id: one-hop-edges-curie-get-robokopkg
+title: "Get edges connected to the node with the identifier `curie`. "
+description: "Returns edges connected to the node with the identifier `curie`. Optionally, filter edges by predicate or adjacent node category."
+sidebar_label: "Get edges connected to the node with the identifier `curie`. "
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVdFu2zYU/RXiPm0AZwfugAJ6S7sgLdrNQertJTBcWrqWmFAkS15lMQT9e0FKsuTYdZNsBZqXQPTh4bmHl/fUkKFPnbQkjYYErpEqpz3DLEfPUqM1poQZI8OoQKZNhuxfSUX8khlqkhuJjn1OKyfx84TNI5NQasvZRipC13Gtt8w6zGQqCJlxTGS3IkVNLWdYzY3bToCDsehEYHmfQQJG46owdhVZVqt4zmqVI62cWZs7Y+9y4GCFEyUSOg/JTQ0Ov1TSYQYJuQo5+LTAUkBSA0lSCAm8DTzAgbY2fHpyUufQcMAHUdoI+evtm/cL8WB08no2ew0ctCjDetptlcEwK6iAhtePfBxsYNaZe5khE7sig5udN3sueCZ0FpyVg2nBkKGajVD+eDkd9UFF/McJ2zNrLY2S+i4514JMKVOhLjRJ2o5sGyRG575U6LZPtW5onUHiMy266ile5tFpBUe9KIRfWeFo8MCONDwy4QkVfJSlpEG91IQ5unB2R686wPOp55uNx5PcpkeMyZfBeW+N9ugD3ezsLPzbt/NTlabo/aZS7LoDA4fUaEJNAS6sVcEVafT01oc99RGJ/V4218jeGcsuovssvmTGLsfyzfoWU4KmaRoOv89mh6L+EUpm8Uh24ZxxL1H0brG4Gnh6mn0JHKwLA41k61CGJKQas/zRruw2CudEfCSEpR8DD48aLvYGlEmBQ+nznmn5PSlhx7i7TFvwCSVCb+ebOGAfj836oHGWwfogZ3TEn+i9yI+O3XZhgMYS2SKsHqB3fxxI5GHiw/X8zfzD/Ip9uAx1l0iFCeGRx6aIMzqB6S4wpvHhTus4yRvg4NHd99lROQUJFETWJ9N+z2+iIlMKmghr/cShTuXEuDy+AKk3Ziz9vIUCh8DZtturyVmoA13p55tP6O5lit0pyXSqjMg6H6zxVIrYcN3Du0R6eRw/nm310OU/RdZ3N0v4QFOrhNTBg3gDdXdtNzDO+cgPHJI2hJccCuMpoOp6LTz+7VTThOV2QIX7zKQXazWaft805H8N7aOV3eF2PwnvhaoCrM3B/6b0exl5QtE4l05LavF90DwFuwuOAbwMH04G9DOv6JfrbuT9yr5VUT+89J6/O+9j3zTLhkOBIkMXBbS/nacp2rHSgxhoxsPl8mIBTfMVsRPj6A==
+sidebar_class_name: "get api-method"
+info_path: docs/automat/automat
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get edges connected to the node with the identifier `curie`. </h1>
+
+<MethodEndpoint method={"get"} path={"/robokopkg/edges/{curie}"}></MethodEndpoint>
+
+
+
+Returns edges connected to the node with the identifier `curie`. Optionally, filter edges by predicate or adjacent node category.
+
+<details><summary>Schema</summary>
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Curie","type":"string"},"example":"NCBITaxon:7227","name":"curie","in":"path"}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"description":"Optionally provide a category to filter adjacent nodes and their edges by.","required":false,"schema":{"title":"Category","type":"string","description":"Optionally provide a category to filter adjacent nodes and their edges by."},"example":"biolink:AnatomicalEntity","name":"category","in":"query"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"description":"Optionally provide a predicate to filter edges by.","required":false,"schema":{"title":"Predicate","type":"string","description":"Optionally provide a predicate to filter edges by."},"example":"biolink:has_part","name":"predicate","in":"query"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"required":false,"schema":{"title":"Limit","type":"integer"},"name":"limit","in":"query"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"required":false,"schema":{"title":"Offset","type":"integer"},"name":"offset","in":"query"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Successful Response
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><div style={{"marginTop":".5rem","marginBottom":".5rem","marginLeft":"1rem"}}>
+
+object
+
+</div></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+Validation Error
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><span className={"openapi-schema__container"}><strong className={"openapi-schema__property"}>detail</strong><span className={"openapi-schema__name"}> object[]</span></span></summary><div style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><span className={"openapi-schema__container"}><strong className={"openapi-schema__property"}>loc</strong><span className={"openapi-schema__name"}> object[]</span><span className={"openapi-schema__divider"}></span><span className={"openapi-schema__required"}>required</span></span></summary><div style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><div><span className={"badge badge--info"}>anyOf</span><SchemaTabs><TabItem label={"MOD1"} value={"0-item-properties"}><div style={{"marginTop":".5rem","marginBottom":".5rem","marginLeft":"1rem"}}>
+
+string
+
+</div></TabItem><TabItem label={"MOD2"} value={"1-item-properties"}><div style={{"marginTop":".5rem","marginBottom":".5rem","marginLeft":"1rem"}}>
+
+integer
+
+</div></TabItem></SchemaTabs></div><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem><SchemaItem collapsible={false} name={"msg"} required={true} schemaName={"Message"} qualifierMessage={undefined} schema={{"title":"Message","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"type"} required={true} schemaName={"Error Type"} qualifierMessage={undefined} schema={{"title":"Error Type","type":"string"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        0\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
+      
+</details>

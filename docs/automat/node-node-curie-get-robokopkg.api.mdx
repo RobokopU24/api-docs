@@ -1,11 +1,11 @@
 ---
-id: one-hop-source-type-target-type-curie-get-robokopkg
-title: "Get one hop results from source type to target type. "
-description: "Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`."
-sidebar_label: "Get one hop results from source type to target type. "
+id: node-node-curie-get-robokopkg
+title: "Find a node by it's `curie` identifier."
+description: "Returns information about a node matching `curie`."
+sidebar_label: "Find a node by it's `curie` identifier."
 hide_title: true
 hide_table_of_contents: true
-api: eJy9VU1v2zAM/SuCThuQJUW3k2/dVrRDN6RIs12KwlFsxlFrWyoldwuM/PeRspMo/RwKrLnEoqnHr/foVubgMtTWa1PLRE7AN1g7YWoQS2OFVX7pxAJNJWbONJhBWpscUr+yMBPit/ZLMcsa1HTyRsy8wgJ85DOUA2ksoOIA33IKQdApQadpj8duaZr2N/tTgExTtqCZmxtjbwpCsgpVBR7QyeSylQi3jUYgVI8NDKTLllApmbTSa18CBbsIMcSUUOk6g5PRedR1IdcDWRMaG3aZkJfmRnDh5PEvMaYh85diRPW9IsYX7scz6Fn/PsK9GhCus6Z24Bjq8OCA//bnfdFkGTi3aEox6Z0JJTO1h9qzu7K21FmY3uja8Z32kfQ2d8WYeHNKvBFR44UQUYvoFIoR4gT8riKFqFZcgIeK013zbyA/HR4+TPqXKnUeUhLHiAZfk/HpdHq+w9nA9MmY+TVknJxF5q7XXQdz8EqXMcrXzvJkFVvHh6F2M7+UpcnIUrlig3T1Uip8I4L/brqCn8lE1avxIqjmPoe2Fk09LACJOtx6TicK8YNooopHOdgZdq6hxCf0sP3RG1WwjOVk/Hl8Nj4XZydcN8l7aXhPFIEegcuJHG23wKiN1LoetZGu6BR0sKZ7DvBusyYapKHJpffWJaMN0gfVeFMpPyS+uCFCnemhwSLoRtcLExd01LkSLGN2JPw4PODqACs3XlxQNJ1BH4WClEblfXescb5SgYa9WIn42wVLEm1K36/YrjLBtfA27UoLx6GgYHsqaHec/z9bux+chz9+ZEtFm4WKCa1s+6lcyng3J/tbNNlfeEm3oai5S+oH323buXLwE8v1ms23DeCK7PR4p1CrOXeehpdrx8/EiIUqHTzThXeTXlLvxVPpb8RRszTuVNnwiR5vYHXvM8CyeMPQcbPeOHQ3GNI8jQZUTvrntnfvjujrYH1068FyXceSPTmeksL/Aili3zg=
+api: eJydVFFP2zAQ/ivRvWyTvAZ1k5DyBowxxEYRdHupquIm19SQ2Ma+VFRR/vt0TtKGlW0SfUib63fn7z5/dzVk6FOnLCmjIYFbpMppHym9Mq6UHI3k0lQUyUibDKNSUrpWOo/u08opvB+BAGPRBehlBgkwbBEeiwBZLHKkhTNL82jsYw4CrHSyRELnIZnV4PCpUg4zSMhVKMCnaywlJDWQogIhgTOuAwJoa/nVk1M6h0YAPsvSBsj12enlVD4bnRyPx8cgQMuS42mXqrg7K2kNzVyAQ2+N9uj5lPHREX+9FOKuSlP0flUV0W0HBgGp0YSaGC6tLVQa2o4fPOfUrzDvc6NrFi88otBNFF0g7VsyywdMCZqmaQR8Ho8PCf2ShcraCzl3zri3sPk2nd7s6/RlXlIQYB1fKKlWnQxJqmJY5Usb2SVK5+SWJSYs/RB4eNT+qmdQmBQElD7vK83/R4UzBuW/m7bhfzCRejtZBZP9aZ1dRGnCHB00c5ae6QyO+IHey/xV67WBPTS0GE05eoDefQSQzNn1cDs5nVxNbqKrC+67RFobHp48mCL4NIF4NzQxz1NcBzM3IMCj2/TjU7kCElgTWZ/EfcpHWZEpJY2ktX7kUKdqZFwezM+zPWR+0kJBANds3fZpdMRtoCv9ZHWHbqNS7E5J4rgwMutksMZTKYPfuon7qnTWb4vlNlL0zvfLIlIZalIrhY73xguD13s7v20LdZoTPlNsC6k00wvi1J2gMxhuIS4EApJ2Q8wFrI0nBtX1Unr86Yqm4fBThW4LyWwuYCOdkksWbVZDpjz/ziBZycLjP9p5f9vZ/kP0N569gTXbdyOLit9AwCNud0usmTcC1igzdIFA+99JmqKlQdbBKmiGBrs4n0LT/AbD0Qnk
 sidebar_class_name: "get api-method"
 info_path: docs/automat/automat
 custom_edit_url: null
@@ -22,23 +22,27 @@ import SchemaItem from "@theme/SchemaItem";
 import SchemaTabs from "@theme/SchemaTabs";
 import TabItem from "@theme/TabItem";
 
-<h1 className={"openapi__heading"}>Get one hop results from source type to target type. </h1>
+<h1 className={"openapi__heading"}>Find a node by it's `curie` identifier.</h1>
 
-<MethodEndpoint method={"get"} path={"/robokopkg/{source_type}/{target_type}/{curie}"}></MethodEndpoint>
+<MethodEndpoint method={"get"} path={"/robokopkg/node/{curie}"}></MethodEndpoint>
 
 
 
-Returns one hop paths from `source_node_type`  with `curie` to `target_node_type`.
+Returns information about a node matching `curie`.
 
 <details><summary>Schema</summary>
 
 ## Request
 
-<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Source Type","type":"string"},"name":"source_type","in":"path"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Target Type","type":"string"},"name":"target_type","in":"path"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Curie","type":"string"},"name":"curie","in":"path"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Path Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"required":true,"schema":{"title":"Curie","type":"string"},"example":"NCBITaxon:7227","name":"curie","in":"path"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
 
 Successful Response
 
-</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"[\n  null\n]"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"422"} value={"422"}><div>
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><div style={{"marginTop":".5rem","marginBottom":".5rem","marginLeft":"1rem"}}>
+
+object
+
+</div></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"422"} value={"422"}><div>
 
 Validation Error
 

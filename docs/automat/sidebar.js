@@ -18,18 +18,6 @@ module.exports = [
       },
       {
         type: "doc",
-        id: "automat/node-node-type-curie-get-robokopkg",
-        label: "Find `node` by `curie`",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
-        id: "automat/one-hop-source-type-target-type-curie-get-robokopkg",
-        label: "Get one hop results from source type to target type. ",
-        className: "api-method get",
-      },
-      {
-        type: "doc",
         id: "automat/simple-spec-simple-spec-get-robokopkg",
         label: "Get one-hop connection schema",
         className: "api-method get",
