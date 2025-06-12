@@ -110,10 +110,8 @@ async function writeSourceMetadata(jsonData) {
               } = tagMd;
 
               // split the neo4j_dump url on '/' to get the containing directory and link to that instead
-              const fileDirLink = neo4j_dump
-                ?.split("/")
-                ?.slice(0, -1)
-                ?.join("/");
+              const fileDirLink =
+                neo4j_dump?.split("/")?.slice(0, -1)?.join("/") + "/";
 
               tag.description = `
 ${graph_description ?? ""}\n
