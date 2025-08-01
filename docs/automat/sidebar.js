@@ -154,6 +154,49 @@ module.exports = [
   },
   {
     type: "category",
+    label: "cebs",
+    link: { type: "doc", id: "automat/cebs" },
+    items: [
+      {
+        type: "doc",
+        id: "automat/reasoner-api-query-post-cebs-trapi",
+        label: "Accepts TRAPI Queries.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/cypher-cypher-post-cebs",
+        label: "Run a Neo4j cypher query.",
+        className: "api-method post",
+      },
+      {
+        type: "doc",
+        id: "automat/simple-spec-simple-spec-get-cebs",
+        label: "Get one-hop connection schema",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/metadata-metadata-get-cebs",
+        label: "Metadata about the knowledge graph.",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/get-meta-knowledge-graph-meta-knowledge-graph-get-cebs-trapi",
+        label: "Meta knowledge graph representation of this TRAPI web service.",
+        className: "api-method get",
+      },
+      {
+        type: "doc",
+        id: "automat/get-sri-testing-data-sri-testing-data-get-cebs-trapi",
+        label: "Test data for usage by the SRI Testing Harness.",
+        className: "api-method get",
+      },
+    ],
+  },
+  {
+    type: "category",
     label: "CTD",
     link: { type: "doc", id: "automat/ctd" },
     items: [

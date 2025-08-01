@@ -1,0 +1,55 @@
+---
+id: simple-spec-simple-spec-get-cebs
+title: "Get one-hop connection schema"
+description: "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types."
+sidebar_label: "Get one-hop connection schema"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVVFv2zgM/isCn7Wk6O3Jb8Ot6A64YYcldy9FUCgyY2uTJU2k2wWB//tA2Wncpu2GvZ1fbEvkx4/8KOoANZLNLrGLASr4jNznQMoo74hV3ClzZ5w3W48qZaydNYyk7lsMyrYxkguNMkpeHhXFPltUMSs2uUFWts8OF+pP470YcutIYahTdIHVveNWhai+9Zj3KplsOmTMpO6d9yoXJsp4r1IkcsKgjYnULuayyvuEtAANMWE2wv+vGiog1yWPt5TQ3s6/G+Rbi1sCDadQUN0cIOO33mWsodoZT6iBbIudgeoA7NgjVLAqiYEGCSpBOLvQwKAhmK4sHA2cVLFkBIP+Jex1KdUr2Hw0mGNvNGSkFAMhCdrlxYW8Hqu56q1Fol3v1efJGDTYGBgDi7lJyYukLoblFxKfwzMMj75qVeqpVgnto+/rOX+Ts9kLW8aOHhWxeIjDlcdOGOhZfW6mGt4WGD1lffzDupl2Ng+B4vYLWgFJWVqA3ViJOcyZhGo9oT+t9TzcmTgvep1ozXyu6ualOOOj4e3l5bla/xnv6qKFuso55t+R6sN6/c8J5wjzesFqZOP8HOX9uPJzSc9DzQX10YKGjpoj0k+1E48Z/N9xTPgVJibsP+3KMX4qzsOKC4wNZhg2UnqhMwvxEYlM83xLPNVVUnxV2KItm0bmCpRhs9HQIbdRJtN4iJPhFipYyvZyNqBAA2G+Ow6lPnuooGVOVC2XOW7j15jemJ5jZ3hhUqJFxmDdIuamTAMXdnHO9t1oChoEc+ywPxYXQh1zR592K8x3zuIUpVoufTT1lHqKxJ0pPTYNoWtkFQO+aWNSNoaAtjTq1IH6cSsfTo37v7xRJnEZv/MyeeOC1KQocpj0m+TV8+tGxG4jseweDltD+G/2wyDL49AWXWtHkvrpQviK+/n9cWd8L7FLA79g/HAhnIw38pOdWEN1sxk0tGhqzCXm6PXOWkxzr7OJMsy79fpqDcPwAw+L0pg=
+sidebar_class_name: "get api-method"
+info_path: docs/automat/automat
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Get one-hop connection schema</h1>
+
+<MethodEndpoint method={"get"} path={"/cebs/simple_spec"}></MethodEndpoint>
+
+
+
+Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.
+
+<details><summary>Schema</summary>
+
+## Request
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><h3 className={"openapi-markdown__details-summary-header-params"}>Query Parameters</h3></summary><div><ul><ParamsItem className={"paramsItem"} param={{"required":false,"schema":{"title":"Source","type":"string"},"name":"source","in":"query"}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"required":false,"schema":{"title":"Target","type":"string"},"name":"target","in":"query"}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Successful Response
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={false} name={"source_type"} required={true} schemaName={"Source Type"} qualifierMessage={undefined} schema={{"title":"Source Type","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"target_type"} required={true} schemaName={"Target Type"} qualifierMessage={undefined} schema={{"title":"Target Type","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"edge_type"} required={true} schemaName={"Edge Type"} qualifierMessage={undefined} schema={{"title":"Edge Type","type":"string"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"[\n  {\n    \"source_type\": \"string\",\n    \"target_type\": \"string\",\n    \"edge_type\": \"string\"\n  }\n]"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+Validation Error
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><span className={"openapi-schema__container"}><strong className={"openapi-schema__property"}>detail</strong><span className={"openapi-schema__name"}> object[]</span></span></summary><div style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><span className={"openapi-schema__container"}><strong className={"openapi-schema__property"}>loc</strong><span className={"openapi-schema__name"}> object[]</span><span className={"openapi-schema__divider"}></span><span className={"openapi-schema__required"}>required</span></span></summary><div style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><div><span className={"badge badge--info"}>anyOf</span><SchemaTabs><TabItem label={"MOD1"} value={"0-item-properties"}><div style={{"marginTop":".5rem","marginBottom":".5rem","marginLeft":"1rem"}}>
+
+string
+
+</div></TabItem><TabItem label={"MOD2"} value={"1-item-properties"}><div style={{"marginTop":".5rem","marginBottom":".5rem","marginLeft":"1rem"}}>
+
+integer
+
+</div></TabItem></SchemaTabs></div><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem><SchemaItem collapsible={false} name={"msg"} required={true} schemaName={"Message"} qualifierMessage={undefined} schema={{"title":"Message","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"type"} required={true} schemaName={"Error Type"} qualifierMessage={undefined} schema={{"title":"Error Type","type":"string"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        0\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
+      
+</details>

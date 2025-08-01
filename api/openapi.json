@@ -769,6 +769,445 @@
         "tags": ["CAM KG"]
       }
     },
+    "/cebs/meta_knowledge_graph": {
+      "get": {
+        "tags": ["trapi", "cebs"],
+        "summary": "Meta knowledge graph representation of this TRAPI web service.",
+        "description": "Returns a meta knowledge graph representation of this TRAPI web service. The meta knowledge graph is composed of the union of most specific categories and predicates for each node and edge.",
+        "operationId": "get_meta_knowledge_graph_meta_knowledge_graph_get_cebs_trapi",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetaKnowledgeGraph"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cebs/sri_testing_data": {
+      "get": {
+        "tags": ["trapi", "cebs"],
+        "summary": "Test data for usage by the SRI Testing Harness.",
+        "description": "Returns a list of edges that are representative examples of the knowledge graph.",
+        "operationId": "get_sri_testing_data_sri_testing_data_get_cebs_trapi",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SRITestData"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cebs/query": {
+      "post": {
+        "tags": ["trapi", "cebs"],
+        "summary": "Accepts TRAPI Queries.",
+        "description": "Accepts a TRAPI Query and returns a TRAPI Response. (https://github.com/NCATSTranslator/ReasonerAPI/)",
+        "operationId": "reasoner_api_query_post_cebs_trapi",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Profile",
+              "type": "boolean",
+              "default": false
+            },
+            "name": "profile",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Validate",
+              "type": "boolean",
+              "default": false
+            },
+            "name": "validate",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Subclass",
+              "type": "boolean",
+              "default": true
+            },
+            "name": "subclass",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReasonerRequest"
+              },
+              "example": {
+                "message": {
+                  "query_graph": {
+                    "nodes": {
+                      "n0": {
+                        "categories": ["biolink:SmallMolecule"],
+                        "ids": ["CHEBI:17747"]
+                      },
+                      "n1": {
+                        "categories": ["biolink:NamedThing"],
+                        "ids": ["MPATH:353"]
+                      }
+                    },
+                    "edges": {
+                      "e01": {
+                        "subject": "n0",
+                        "object": "n1",
+                        "predicates": [
+                          "biolink:associated_with_increased_likelihood_of"
+                        ]
+                      }
+                    }
+                  }
+                },
+                "workflow": [
+                  {
+                    "id": "lookup"
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReasonerRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response 400 Reasoner Api Query Post",
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cebs/cypher": {
+      "post": {
+        "summary": "Run a Neo4j cypher query.",
+        "description": "Runs a cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).",
+        "operationId": "cypher_cypher_post_cebs",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CypherRequest"
+              },
+              "example": {
+                "query": "MATCH (n) RETURN count(n)"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["cebs"]
+      }
+    },
+    "/cebs/metadata": {
+      "get": {
+        "summary": "Metadata about the knowledge graph.",
+        "description": "Returns JSON with metadata about the data sources in this knowledge graph.",
+        "operationId": "metadata_metadata_get_cebs",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Metadata Metadata Get"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["cebs"]
+      }
+    },
+    "/cebs/node/{curie}": {
+      "get": {
+        "summary": "Find a node by it's `curie` identifier.",
+        "description": "Returns information about a node matching `curie`.",
+        "operationId": "node_node__curie__get_cebs",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Curie",
+              "type": "string"
+            },
+            "example": "CHEBI:17747",
+            "name": "curie",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Node Node  Curie  Get",
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["cebs"]
+      }
+    },
+    "/cebs/edges/{curie}": {
+      "get": {
+        "summary": "Get edges connected to the node with the identifier `curie`. ",
+        "description": "Returns edges connected to the node with the identifier `curie`. Optionally, filter edges by predicate or adjacent node category.",
+        "operationId": "one_hop_edges__curie__get_cebs",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Curie",
+              "type": "string"
+            },
+            "example": "CHEBI:17747",
+            "name": "curie",
+            "in": "path"
+          },
+          {
+            "description": "Optionally provide a category to filter adjacent nodes and their edges by.",
+            "required": false,
+            "schema": {
+              "title": "Category",
+              "type": "string",
+              "description": "Optionally provide a category to filter adjacent nodes and their edges by."
+            },
+            "example": "biolink:NamedThing",
+            "name": "category",
+            "in": "query"
+          },
+          {
+            "description": "Optionally provide a predicate to filter edges by.",
+            "required": false,
+            "schema": {
+              "title": "Predicate",
+              "type": "string",
+              "description": "Optionally provide a predicate to filter edges by."
+            },
+            "example": "biolink:associated_with_increased_likelihood_of",
+            "name": "predicate",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Limit",
+              "type": "integer"
+            },
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Offset",
+              "type": "integer"
+            },
+            "name": "offset",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response One Hop Edges  Curie  Get",
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["cebs"]
+      }
+    },
+    "/cebs/edge_summary/{curie}": {
+      "get": {
+        "summary": "Get a summary of edges connected to the node with the identifier `curie`. ",
+        "description": "Returns a list of the kinds edges connected to the node with the identifier `curie`. Results are formatted like [[predicate, node_category, count], ...].",
+        "operationId": "one_hop_summary_edge_summary__curie__get_cebs",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "title": "Curie",
+              "type": "string"
+            },
+            "example": "CHEBI:17747",
+            "name": "curie",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response One Hop Summary Edge Summary  Curie  Get",
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["cebs"]
+      }
+    },
+    "/cebs/simple_spec": {
+      "get": {
+        "summary": "Get one-hop connection schema",
+        "description": "Returns a list of available predicates when choosing a single source or target curie. Calling this endpoint with no query parameters will return all possible hops for all types.",
+        "operationId": "simple_spec_simple_spec_get_cebs",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "title": "Source",
+              "type": "string"
+            },
+            "name": "source",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Target",
+              "type": "string"
+            },
+            "name": "target",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Simple Spec Simple Spec Get",
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SimpleSpecElement"
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["cebs"]
+      }
+    },
     "/ctd/meta_knowledge_graph": {
       "get": {
         "tags": ["trapi", "CTD"],
@@ -7147,6 +7586,15 @@
             },
             "name": "offset",
             "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "title": "Count Only",
+              "type": "boolean"
+            },
+            "name": "count_only",
+            "in": "query"
           }
         ],
         "responses": {
@@ -8819,6 +9267,10 @@
     {
       "name": "CAM KG",
       "description": "\nThe CAM KG contains data on CAMs (Causal Activity Models), which are small knowledge graphs built using the Web Ontology Language (OWL). The CAM database combines many CAM graphs, along with a large merged bio-ontology containing the full vocabulary of concepts referenced within the individual CAMs. Each CAM describes an instantiation of some of those concepts in a particular context, modeling the interactions between those instances as an interlinked representation of a complex biological or environmental process.\n\n**Version:** e92bd7b217535f2d\n\n\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/CAMKP_Automat/e92bd7b217535f2d/](https://stars.renci.org/var/plater/bl-4.2.1/CAMKP_Automat/e92bd7b217535f2d/)\n\n**Nodes:** 119,917\n\n**Edges:** 2,219,632\n\n"
+    },
+    {
+      "name": "cebs",
+      "description": "Operations for cebs."
     },
     {
       "name": "CTD",

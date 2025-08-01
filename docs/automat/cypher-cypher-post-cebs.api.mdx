@@ -1,0 +1,55 @@
+---
+id: cypher-cypher-post-cebs
+title: "Run a Neo4j cypher query."
+description: "Runs a cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/)."
+sidebar_label: "Run a Neo4j cypher query."
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVVFv2zgM/isCn1pAjYvenvzWdQV6wG3dpdle0mBgZCZRZ0sqJWcNAv/3A2U38dpDb3s8v1ihyU8kv4/MHiqKhm1I1jsoYdq6qFCZXdgQq8eWeKdwjdbFpNKG1Cfy7x6U/ERnSCt0lWJKLUuYU/TY2i3W5JJiisG7SIqeAplElVqxbxQOEDez2WdFrgreuqRONimFWBaFk48T45ui8iYWTDGd5ZNpmcml4nQCGnwgRsn4zwpK6JP9NryCj+mboWUEDUyPLcX03lc7KPdgvEvkkhwxhNqajFE8RCl9D9FsqEE5JZtqghKuMuS0RxnwLFMF5Rxyb2ChIe2C+PrlAxlxCizpJUtRoHq3Eebf2XAIi4mtW0PXdRroCZsgTocw+Hg5u7pRJ+5UTa9nX6aflPGtSyfutI84JpS4pWzou57vvjg/l9fPDN+1xlCMq7ZW08EZ9C+3psvXvru4eA38FWtb5TB1zez5N1APzRFVHHGeYd7ucEUJbT1G+dBbDoHIjNJym6iJY8fXV40Zrr0BDU1cPyP9J9kSMYL/y/cFv5EJut3tCsr5/qUe9MFiXaI1MXQLab2kM7riI8WIa3qtp2fD0TWXqGZi/Rf1DY+GhOso1ecRWmhoKG28jJkMllSMaQMlFPK96GcONETiLXHMlbRcQwnPE81+6b/7cIZt8g2mCYYQJ0zO2InnNXQLDaKH6XFUr1+PwbEq61Z+XNVlDwsa5P5eiX9MzqVE4iberu6It9bQkFFZFLXHagCTkhrMWnTYUL//DitqvARl6/wk99E2+Z8szYHyRE+pCDVaJx3IXO0HUgfS9bBRhf2NkF7OYb9fYqQvXHedmAde5gsNW2SLS+Fivug0bAgr4qyD7yTUXfVtOhuEt8W6zZPwch+I4vuIS2MopDd9x7r8fHs3Aw3LYck3vpIYxh8yzvgDSriHe8j/GoKQxy7b91CjW7cyPiX0uPL8Az7Gcg8=
+sidebar_class_name: "post api-method"
+info_path: docs/automat/automat
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Run a Neo4j cypher query.</h1>
+
+<MethodEndpoint method={"post"} path={"/cebs/cypher"}></MethodEndpoint>
+
+
+
+Runs a cypher query against the Neo4j instance, and returns an equivalent response expected from a Neo4j HTTP endpoint (https://neo4j.com/docs/rest-docs/current/).
+
+<details><summary>Schema</summary>
+
+## Request
+
+<MimeTabs className={"openapi-tabs__mime"}><TabItem label={"application/json"} value={"application/json-schema"}><details style={{}} className={"openapi-markdown__details mime"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-mime"}><h3 className={"openapi-markdown__details-summary-header-body"}>Body</h3><strong className={"openapi-schema__required"}>required</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"query"} required={true} schemaName={"Query"} qualifierMessage={undefined} schema={{"title":"Query","type":"string"}}></SchemaItem></ul></details></TabItem></MimeTabs><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Successful Response
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}>any</ul></details></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"422"} value={"422"}><div>
+
+Validation Error
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><span className={"openapi-schema__container"}><strong className={"openapi-schema__property"}>detail</strong><span className={"openapi-schema__name"}> object[]</span></span></summary><div style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><span className={"openapi-schema__container"}><strong className={"openapi-schema__property"}>loc</strong><span className={"openapi-schema__name"}> object[]</span><span className={"openapi-schema__divider"}></span><span className={"openapi-schema__required"}>required</span></span></summary><div style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><div><span className={"badge badge--info"}>anyOf</span><SchemaTabs><TabItem label={"MOD1"} value={"0-item-properties"}><div style={{"marginTop":".5rem","marginBottom":".5rem","marginLeft":"1rem"}}>
+
+string
+
+</div></TabItem><TabItem label={"MOD2"} value={"1-item-properties"}><div style={{"marginTop":".5rem","marginBottom":".5rem","marginLeft":"1rem"}}>
+
+integer
+
+</div></TabItem></SchemaTabs></div><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem><SchemaItem collapsible={false} name={"msg"} required={true} schemaName={"Message"} qualifierMessage={undefined} schema={{"title":"Message","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"type"} required={true} schemaName={"Error Type"} qualifierMessage={undefined} schema={{"title":"Error Type","type":"string"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        0\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
+      
+</details>

@@ -1,0 +1,43 @@
+---
+id: get-sri-testing-data-sri-testing-data-get-cebs-trapi
+title: "Test data for usage by the SRI Testing Harness."
+description: "Returns a list of edges that are representative examples of the knowledge graph."
+sidebar_label: "Test data for usage by the SRI Testing Harness."
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VMtu20AM/JUFz6oVtDfdijZofUrruL0YhkFLtLSJrN2QlBvD8L8XlF/yI82pvlgiZsSZ4S43oFgKZBNQxughgZzmAtMECpKcfVQfGshgRNpyIw5d7UVdWDgqShKnFapDJscUmYQaRfUrcvSKy1iTGFIrcs9N+FMbxZWMsRpAAiESo31+WEAGJelM2M+URH1TzgpUvC4YygTODmqZJIZGSCDbwMe7O/s7V/7Y5jmJLNrajfZgcxkapUYNjjHWPu+UpE9inA1IXtES7Um91mSfGQ3HJPoVFbu2L61nKiy4FbFYqwQktJzTTNfRWnQBWZLdewZh/kS5QgKRzbr6negDvdfr9/GLe6oo+6aE7XmLvrqu7Ma7zlesnZQe/r4rHJHIjGtIwCst5YZrg1+4lrazM/OFjbL3HJkKi9MIB5C9loHXJ+ix8m4+vUZ9YbuqGxa3/IZblId/MU6qe4wfPSvXk7j0dkPdl5PvtzTeoj+8z35psfYLT3w2rp+n6puz3Z5+CSxJq7C/fpY8agUZpHbF0svLZ/MkXnUtJxtouYYMKtUoWZpymIfnED9gq2GJOsAYZcDU5H4QuITtNAHfLEJf7OcdFJLTFYBPgztTTryUh8Uj8crntO+SpWkdsDjMK4gusbs1DS4NY+fUmU63COxawZLcfN0tn8fR0I13Ttx35IZEbAGd7YnNaSX8j2W3H4bSq6axRt+YiS7CzT71yW7zJnCV+zSBKogaZLOZo9AvrrdbK7+0ZCdnMk1ghexxbsFOptsEKsKCuBvUM60t7Tyn2IWNddudi8u1ZzM6nodv92PYbv8CqHIhtA==
+sidebar_class_name: "get api-method"
+info_path: docs/automat/automat
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Test data for usage by the SRI Testing Harness.</h1>
+
+<MethodEndpoint method={"get"} path={"/cebs/sri_testing_data"}></MethodEndpoint>
+
+
+
+Returns a list of edges that are representative examples of the knowledge graph.
+
+<details><summary>Schema</summary>
+
+## Request
+
+<div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Successful Response
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details response"} data-collapsed={false} open={true}><summary style={{}} className={"openapi-markdown__details-summary-response"}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"version"} required={true} schemaName={"Version"} qualifierMessage={undefined} schema={{"title":"Version","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"source_type"} required={true} schemaName={"Source Type"} qualifierMessage={undefined} schema={{"title":"Source Type","type":"string"}}></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><span className={"openapi-schema__container"}><strong className={"openapi-schema__property"}>edges</strong><span className={"openapi-schema__name"}> object[]</span><span className={"openapi-schema__divider"}></span><span className={"openapi-schema__required"}>required</span></span></summary><div style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={false} name={"subject_id"} required={true} schemaName={"Subject Id"} qualifierMessage={undefined} schema={{"title":"Subject Id","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"object_id"} required={true} schemaName={"Object Id"} qualifierMessage={undefined} schema={{"title":"Object Id","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"predicate"} required={true} schemaName={"Predicate"} qualifierMessage={undefined} schema={{"title":"Predicate","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"subject_category"} required={true} schemaName={"Subject Category"} qualifierMessage={undefined} schema={{"title":"Subject Category","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"object_category"} required={true} schemaName={"Object Category"} qualifierMessage={undefined} schema={{"title":"Object Category","type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"qualifiers"} required={false} schemaName={"undefined[]"} qualifierMessage={undefined} schema={{"title":"Qualifiers","type":"array","items":{}}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"version\": \"string\",\n  \"source_type\": \"string\",\n  \"edges\": [\n    {\n      \"subject_id\": \"string\",\n      \"object_id\": \"string\",\n      \"predicate\": \"string\",\n      \"subject_category\": \"string\",\n      \"object_category\": \"string\",\n      \"qualifiers\": [\n        null\n      ]\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div></div>
+      
+</details>
