@@ -154,7 +154,7 @@ module.exports = [
   },
   {
     type: "category",
-    label: "cebs",
+    label: "CEBS",
     link: { type: "doc", id: "automat/cebs" },
     items: [
       {

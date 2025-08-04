@@ -45,6 +45,7 @@ const SOURCES = new Map([
   ["ROBOKOP KG", "robokopkg"],
   ["BINDING", "binding-db"],
   ["CAM KG", "cam-kp"],
+  ["CEBS", "cebs"],
   ["CTD", "ctd"],
   ["DrugCentral", "drugcentral"],
   ["Alliance of Genome Resources", "genome-alliance"],

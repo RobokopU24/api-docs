@@ -31,6 +31,7 @@ async function writeSourceMetadata(jsonData) {
   const SOURCES = [
     "binding-db",
     "cam-kp",
+    "cebs",
     "ctd",
     "drugcentral",
     "genome-alliance",

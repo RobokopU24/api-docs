@@ -771,7 +771,7 @@
     },
     "/cebs/meta_knowledge_graph": {
       "get": {
-        "tags": ["trapi", "cebs"],
+        "tags": ["trapi", "CEBS"],
         "summary": "Meta knowledge graph representation of this TRAPI web service.",
         "description": "Returns a meta knowledge graph representation of this TRAPI web service. The meta knowledge graph is composed of the union of most specific categories and predicates for each node and edge.",
         "operationId": "get_meta_knowledge_graph_meta_knowledge_graph_get_cebs_trapi",
@@ -791,7 +791,7 @@
     },
     "/cebs/sri_testing_data": {
       "get": {
-        "tags": ["trapi", "cebs"],
+        "tags": ["trapi", "CEBS"],
         "summary": "Test data for usage by the SRI Testing Harness.",
         "description": "Returns a list of edges that are representative examples of the knowledge graph.",
         "operationId": "get_sri_testing_data_sri_testing_data_get_cebs_trapi",
@@ -811,7 +811,7 @@
     },
     "/cebs/query": {
       "post": {
-        "tags": ["trapi", "cebs"],
+        "tags": ["trapi", "CEBS"],
         "summary": "Accepts TRAPI Queries.",
         "description": "Accepts a TRAPI Query and returns a TRAPI Response. (https://github.com/NCATSTranslator/ReasonerAPI/)",
         "operationId": "reasoner_api_query_post_cebs_trapi",
@@ -960,7 +960,7 @@
             }
           }
         },
-        "tags": ["cebs"]
+        "tags": ["CEBS"]
       }
     },
     "/cebs/metadata": {
@@ -980,7 +980,7 @@
             }
           }
         },
-        "tags": ["cebs"]
+        "tags": ["CEBS"]
       }
     },
     "/cebs/node/{curie}": {
@@ -1023,7 +1023,7 @@
             }
           }
         },
-        "tags": ["cebs"]
+        "tags": ["CEBS"]
       }
     },
     "/cebs/edges/{curie}": {
@@ -1108,7 +1108,7 @@
             }
           }
         },
-        "tags": ["cebs"]
+        "tags": ["CEBS"]
       }
     },
     "/cebs/edge_summary/{curie}": {
@@ -1151,7 +1151,7 @@
             }
           }
         },
-        "tags": ["cebs"]
+        "tags": ["CEBS"]
       }
     },
     "/cebs/simple_spec": {
@@ -1205,7 +1205,7 @@
             }
           }
         },
-        "tags": ["cebs"]
+        "tags": ["CEBS"]
       }
     },
     "/ctd/meta_knowledge_graph": {
@@ -9269,8 +9269,8 @@
       "description": "\nThe CAM KG contains data on CAMs (Causal Activity Models), which are small knowledge graphs built using the Web Ontology Language (OWL). The CAM database combines many CAM graphs, along with a large merged bio-ontology containing the full vocabulary of concepts referenced within the individual CAMs. Each CAM describes an instantiation of some of those concepts in a particular context, modeling the interactions between those instances as an interlinked representation of a complex biological or environmental process.\n\n**Version:** e92bd7b217535f2d\n\n\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.1/CAMKP_Automat/e92bd7b217535f2d/](https://stars.renci.org/var/plater/bl-4.2.1/CAMKP_Automat/e92bd7b217535f2d/)\n\n**Nodes:** 119,917\n\n**Edges:** 2,219,632\n\n"
     },
     {
-      "name": "cebs",
-      "description": "Operations for cebs."
+      "name": "CEBS",
+      "description": "\nCEBS is a public, web-accessible, manually curated and accessioned repository of individual study data and summarized study data from the National Toxicology Program (NTP) testing program and other toxicology programs and research teams, including studies on carcinogenicity, short-term toxicity, and genetic toxicity.\n\n**Version:** 6a77f858e1b9852c\n\n**URL:** [https://cebs.niehs.nih.gov/cebs/](https://cebs.niehs.nih.gov/cebs/)\n\n**Files:** [https://stars.renci.org/var/plater/bl-4.2.6/CEBS_Automat/6a77f858e1b9852c/](https://stars.renci.org/var/plater/bl-4.2.6/CEBS_Automat/6a77f858e1b9852c/)\n\n**Nodes:** 333\n\n**Edges:** 1,914\n\n"
     },
     {
       "name": "CTD",
