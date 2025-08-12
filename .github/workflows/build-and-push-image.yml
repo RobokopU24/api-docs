@@ -1,26 +1,41 @@
-name: "Build and push image to Github Container Registry"
+name: Build and push image to Github Container Registry
 
 on:
-  release:
-    types: [published]
+  workflow_run:
+    workflows: ["Update docs data"] # This must exactly match the name: in update-docs-data.yml
+    types:
+      - completed
 
 jobs:
-  publish:
+  docker-build-push:
     name: Push Automat API docs to GHCR
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'release' }}
+
     steps:
       - name: Check out the repo
-        uses: actions/checkout@v2
-      - name: Get the version
-        id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-      - name: Push api docs
-        uses: docker/build-push-action@v1
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          path: .
-          dockerfile: ./Dockerfile
-          repository: robokopu24/api-docs
-          tags: latest,${{ steps.get_version.outputs.VERSION }}
+
+      - name: Extract release tag
+        id: vars
+        run: echo "TAG=${GITHUB_REF_NAME}" >> $GITHUB_ENV
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}:${{ env.TAG }}
+            ghcr.io/${{ github.repository }}:latest

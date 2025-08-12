@@ -1,0 +1,80 @@
+name: Update docs data
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  update-docs-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the current code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
+      - name: Write current date to environment variable
+        run: echo "DATE=$(date +'%Y-%m-%d-%I.%M.%S%p')" >> $GITHUB_ENV
+
+      - name: Add git user configuration
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Fetch newest Automat OpenAPI document and metadata
+        run: npm run preprocess
+
+      - name: Remove the old markdown pages and regen with new OpenAPI data
+        run: |
+          npm run clean-api-docs automat
+          npm run gen-api-docs automat
+
+      - name: Reorder sidebar listing to put TRAPI endpoints first
+        run: npm run rearrange-sidebar
+
+      - name: Group endpoints into query + metadata sections
+        run: npm run rewrite-mdx
+
+      - name: Remove "Introduction" page
+        run: rm ./docs/automat/automat.info.mdx || echo "Introduction docs page is already deleted"
+
+      - name: Check for untracked files
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Docs have not been updated, nothing has changed." > $GITHUB_STEP_SUMMARY
+          else
+            echo "UPDATED=true" >> $GITHUB_ENV
+          fi
+
+      # Only run the next two steps if there were changes detected by `git status` in the previous step
+      - name: Commit changes
+        if: ${{ env.UPDATED == 'true' }}
+        run: |
+          git commit -m "Update documentation - ${{ env.DATE }} [skip-ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
