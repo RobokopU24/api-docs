@@ -75,6 +75,6 @@ jobs:
         if: ${{ env.UPDATED == 'true' }}
         run: |
           git commit -m "Update documentation - ${{ env.DATE }} [skip-ci]"
-          git push
+          git push origin HEAD:main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
