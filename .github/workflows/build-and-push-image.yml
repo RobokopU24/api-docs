@@ -1,10 +1,8 @@
 name: Build and push image to Github Container Registry
 
 on:
-  workflow_run:
-    workflows: ["Update docs data"] # This must exactly match the name: in update-docs-data.yml
-    types:
-      - completed
+  repository_dispatch:
+    types: [build-push-docker]
 
 jobs:
   docker-build-push:
@@ -26,10 +24,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract release tag
-        id: vars
-        run: echo "TAG=${GITHUB_REF_NAME}" >> $GITHUB_ENV
-
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
@@ -37,5 +31,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ghcr.io/robokopu24/api-docs:${{ env.TAG }}
+            ghcr.io/robokopu24/api-docs:${{ github.event.client_payload.tag }}
             ghcr.io/robokopu24/api-docs:latest
