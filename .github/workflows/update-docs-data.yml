@@ -83,3 +83,11 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trigger Docker build and push workflow
+        if: ${{ env.UPDATED == 'true' }}
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: build-push-docker
+          client-payload: '{"tag": "${{ github.event.release.tag_name }}"}'
